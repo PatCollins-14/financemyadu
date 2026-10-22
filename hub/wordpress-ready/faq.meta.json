@@ -1,0 +1,208 @@
+{
+    "id":  "faq",
+    "title":  "ADU Financing FAQ for California Homeowners",
+    "metaDescription":  "Short answers to common questions about financing an ADU in California, with links to the full guides.",
+    "slug":  "faq",
+    "path":  "/adu-financing/faq/",
+    "canonical":  "https://letstalkhomemortgage.com/adu-financing/faq/",
+    "robots":  "index, follow",
+    "lastReviewed":  "2026-10-23",
+    "status":  "draft: not yet reviewed by compliance",
+    "jsonLd":  {
+                   "@context":  "https://schema.org",
+                   "@graph":  [
+                                  {
+                                      "@type":  "Organization",
+                                      "@id":  "https://letstalkhomemortgage.com/#org",
+                                      "name":  "E Mortgage Capital Inc.",
+                                      "address":  {
+                                                      "@type":  "PostalAddress",
+                                                      "streetAddress":  "3750 S. Susan Street",
+                                                      "addressLocality":  "Santa Ana",
+                                                      "addressRegion":  "CA",
+                                                      "postalCode":  "92704",
+                                                      "addressCountry":  "US"
+                                                  },
+                                      "identifier":  {
+                                                         "@type":  "PropertyValue",
+                                                         "propertyID":  "NMLS ID",
+                                                         "value":  "1416824"
+                                                     }
+                                  },
+                                  {
+                                      "@type":  "Person",
+                                      "@id":  "https://letstalkhomemortgage.com/#pat",
+                                      "name":  "Pat Collins",
+                                      "alternateName":  "Patrick D. Collins",
+                                      "jobTitle":  "Mortgage Professional",
+                                      "identifier":  {
+                                                         "@type":  "PropertyValue",
+                                                         "propertyID":  "NMLS ID",
+                                                         "value":  "1628553"
+                                                     },
+                                      "worksFor":  {
+                                                       "@id":  "https://letstalkhomemortgage.com/#org"
+                                                   },
+                                      "telephone":  "(949) 787-2662",
+                                      "email":  "pcollins@emortgagecapital.com",
+                                      "sameAs":  [
+                                                     "https://www.facebook.com/PatrickCollinsLoanOfficer/"
+                                                 ],
+                                      "url":  "https://letstalkhomemortgage.com/about/pat-collins/"
+                                  },
+                                  {
+                                      "@type":  "WebSite",
+                                      "@id":  "https://letstalkhomemortgage.com/#website",
+                                      "url":  "https://letstalkhomemortgage.com/",
+                                      "name":  "Let\u0027s Talk Home Mortgage: ADU financing guide",
+                                      "publisher":  {
+                                                        "@id":  "https://letstalkhomemortgage.com/#org"
+                                                    }
+                                  },
+                                  {
+                                      "@type":  "Article",
+                                      "@id":  "https://letstalkhomemortgage.com/adu-financing/faq/#page",
+                                      "url":  "https://letstalkhomemortgage.com/adu-financing/faq/",
+                                      "name":  "ADU Financing FAQ for California Homeowners",
+                                      "description":  "Short answers to common questions about financing an ADU in California, with links to the full guides.",
+                                      "isPartOf":  {
+                                                       "@id":  "https://letstalkhomemortgage.com/#website"
+                                                   },
+                                      "headline":  "ADU financing: frequently asked questions",
+                                      "author":  {
+                                                     "@id":  "https://letstalkhomemortgage.com/#pat"
+                                                 },
+                                      "publisher":  {
+                                                        "@id":  "https://letstalkhomemortgage.com/#org"
+                                                    },
+                                      "datePublished":  "2026-10-23",
+                                      "dateModified":  "2026-10-23",
+                                      "mainEntityOfPage":  "https://letstalkhomemortgage.com/adu-financing/faq/"
+                                  },
+                                  {
+                                      "@type":  "BreadcrumbList",
+                                      "@id":  "https://letstalkhomemortgage.com/adu-financing/faq/#crumbs",
+                                      "itemListElement":  [
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  1,
+                                                                  "name":  "Let\u0027s Talk Home Mortgage",
+                                                                  "item":  "https://letstalkhomemortgage.com/"
+                                                              },
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  2,
+                                                                  "name":  "ADU financing",
+                                                                  "item":  "https://letstalkhomemortgage.com/adu-financing/"
+                                                              },
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  3,
+                                                                  "name":  "ADU financing: frequently asked questions",
+                                                                  "item":  "https://letstalkhomemortgage.com/adu-financing/faq/"
+                                                              }
+                                                          ]
+                                  },
+                                  {
+                                      "@type":  "FAQPage",
+                                      "@id":  "https://letstalkhomemortgage.com/adu-financing/faq/#faq",
+                                      "mainEntity":  [
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "How do I finance an ADU in California?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "There is no single ADU loan. Homeowners generally look at a few tools: a HELOC or home equity loan, a cash-out refinance, a renovation or construction loan, or, for homeowners 62 and older, a reverse mortgage. Which one fits depends on your equity, your current mortgage, your timeline and how you plan to use the ADU."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "Can I use a HELOC to build an ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "A HELOC is one option homeowners consider for ADU costs. It is a line of credit secured by your home that you draw on as needed. It is also a second loan, the rate usually changes over time, and your home is the collateral."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "Is a HELOC or a cash-out refinance better for an ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "Neither is better for everyone. A HELOC adds a second loan and leaves your first mortgage alone. A cash-out refinance replaces your first mortgage with a new, larger one. Comparing your actual numbers is the only way to decide."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "How do construction and renovation loans work for an ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "These loans are built around the work being done. Fannie Mae describes a renovation loan that can finance adding an ADU when a homeowner buys or refinances a one-unit property, and a construction-to-permanent loan for a new home with an ADU. Not every lender offers them."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "Can ADU rental income count toward qualifying for a loan?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "Sometimes, under narrow rules, and not under every program. Fannie Mae\u0027s Selling Guide allows rental income from one existing ADU on certain purchase and limited cash-out refinance loans, with a cap. Rental income is not guaranteed and may not count toward qualification under every program."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "Can a reverse mortgage fund an ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "It depends on the program and the project, so ask a specialist before you plan around it. A reverse mortgage (HECM) is for homeowners 62 and older, and you must keep paying property taxes, homeowners insurance and any HOA fees, keep the home in good condition and live there as your primary residence. If you do not, the loan can become due."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "Will financing an ADU affect my current mortgage rate?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "It depends on how you finance it. A HELOC or home equity loan leaves your first mortgage in place. A cash-out refinance replaces it with a new loan at a new rate. Ask any lender what happens to your current loan."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "What should I ask a lender before financing an ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "Ask what each option does to your current mortgage, how the amount is decided, what every fee is, and what the lender needs about the project. Ask at least two lenders for a Loan Estimate so you can compare them."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "What costs should I expect when financing an ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "Expect the cost of the loan, such as lender charges and third-party services like an appraisal, and the cost of owning a larger property, such as property taxes. The building cost comes from your builder, not your lender."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "What should I know about financing an ADU in Pasadena?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "The City of Pasadena publishes its own ADU rules and process. For financing, its page raises two points to discuss with a lender: reduced fees can depend on an optional agreement that limits how the unit can be rented, and an ADU will increase property taxes."
+                                                                                }
+                                                         }
+                                                     ]
+                                  }
+                              ]
+               },
+    "internalLinks":  [
+                          {
+                              "text":  "How do I finance an ADU in California?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/"
+                          },
+                          {
+                              "text":  "What should I ask a lender before financing an ADU?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/questions-to-ask-your-lender/"
+                          },
+                          {
+                              "text":  "What costs should I expect when financing an ADU?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/costs-to-expect/"
+                          }
+                      ]
+}

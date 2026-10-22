@@ -1,0 +1,70 @@
+{
+  "_comment": "Sources cited on pages. 'read' = opened and read during the build on the access date. Hub pages cite by id in their front matter.",
+  "cfpb-heloc": {
+    "title": "What is a home equity line of credit (HELOC)? (Consumer Financial Protection Bureau)",
+    "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/",
+    "accessed": "2026-10-23", "pageDate": "last reviewed Aug. 28, 2026",
+    "supports": "HELOC is an open-end line of credit; draw period then repayment period; usually variable rate; you could lose your home if you cannot repay; lender may freeze additional borrowing."
+  },
+  "cfpb-heloc-vs-loan": {
+    "title": "What is the difference between a home equity loan and a HELOC? (Consumer Financial Protection Bureau)",
+    "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-home-equity-loan-and-a-home-equity-line-of-credit-heloc-en-247/",
+    "accessed": "2026-10-23", "pageDate": "last reviewed Aug. 28, 2026",
+    "supports": "Home equity loan pays a lump sum; HELOC can be drawn several times; HELOCs usually have adjustable rates; both are second mortgages paid in addition to the first mortgage."
+  },
+  "cfpb-reverse": {
+    "title": "What is a reverse mortgage? (Consumer Financial Protection Bureau)",
+    "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-reverse-mortgage-en-224/",
+    "accessed": "2026-10-23", "pageDate": "last reviewed Aug. 28, 2026",
+    "supports": "HECM is a home loan only for homeowners 62 and older; borrowers do not make monthly mortgage payments but owe more over time; homeowners must pay property taxes and homeowners insurance and keep the house in good condition; loan is due when the borrower no longer lives in the home."
+  },
+  "cfpb-loan-estimate": {
+    "title": "Loan estimate explainer (Consumer Financial Protection Bureau)",
+    "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+    "accessed": "2026-10-23", "pageDate": "page last modified Oct. 29, 2025",
+    "supports": "A Loan Estimate lists loan details; request several Loan Estimates to compare lenders; origination charges are lender fees; some services are required and chosen by the lender, others you can shop for."
+  },
+  "fnma-adu": {
+    "title": "Accessory Dwelling Units (ADUs) (Fannie Mae)",
+    "url": "https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/accessory-dwelling-units",
+    "accessed": "2026-10-23", "pageDate": "no date shown on page",
+    "supports": "Definition of an ADU; ADUs can be within, attached to or detached from the home; no specific type of financing is required for a home with an ADU; HomeStyle Renovation can finance adding an ADU when purchasing or refinancing a 1-unit property; construction-to-permanent for a new home with an ADU; ADUs not eligible with a 2-4 unit dwelling or a manufactured home as primary residence; multiple ADUs ineligible."
+  },
+  "fnma-b3-3-8-02": {
+    "title": "B3-3.8-02, Rental Income from the Subject Property (Fannie Mae Selling Guide)",
+    "url": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "accessed": "2026-10-23", "pageDate": "topic dated 09/02/2026",
+    "supports": "Rental income from one existing ADU allowed with a one-unit primary residence; purchase or limited cash-out refinance only; ADU income limited to 30% of total qualifying income; lenders must support rent with Form 1007 or 1025."
+  },
+  "pasadena-adu": {
+    "title": "Accessory Dwelling Units (City of Pasadena Planning & Community Development)",
+    "url": "https://www.cityofpasadena.net/planning/planning-division/community-planning/accessory-dwelling-units/",
+    "accessed": "2026-10-23", "pageDate": "no update date shown on page",
+    "supports": "Ordinance No. 7420 effective May 20, 2024; online applications through the CSS Permit Portal; virtual consultation for preliminary zoning feedback; ADU Standard Plans Program with no modifications; fee reductions for smaller ADUs or when using a standard plan or Housing Agreement; optional Housing Agreements restrict how the unit is used or rented; JADU size cap and location; an ADU will increase property taxes, set by LA County."
+  },
+  "lthm-heloc": {
+    "title": "HELOC and Home Equity Loans (Let's Talk Home Mortgage)",
+    "url": "https://letstalkhomemortgage.com/heloc-loans/", "accessed": "2026-10-23", "pageDate": "n/a",
+    "supports": "Pat's own explanation: HELOC vs home equity loan, second position, draw and repayment periods, closing cost categories, appraisal or automated valuation."
+  },
+  "lthm-refinance": {
+    "title": "Refinance (Let's Talk Home Mortgage)",
+    "url": "https://letstalkhomemortgage.com/refinance/", "accessed": "2026-10-23", "pageDate": "n/a",
+    "supports": "Pat's own explanation: cash-out refinance replaces the existing mortgage with a new larger loan; considerations; if you already have a low first-mortgage rate a refinance may not be ideal and a HELOC or home equity loan are alternatives."
+  },
+  "lthm-reverse": {
+    "title": "Reverse Mortgage (Let's Talk Home Mortgage)",
+    "url": "https://letstalkhomemortgage.com/reverse-mortgage/", "accessed": "2026-10-23", "pageDate": "n/a",
+    "supports": "Pat's own explanation: HECM for 62+, obligations, counseling, eligible property types, cost categories, repayment events, existing mortgage paid off first."
+  },
+  "lthm-nonqm": {
+    "title": "Non-QM Mortgage (Let's Talk Home Mortgage)",
+    "url": "https://letstalkhomemortgage.com/non-qm-mortgage/", "accessed": "2026-10-23", "pageDate": "n/a",
+    "supports": "DSCR rental-income loans are described for investment properties."
+  },
+  "lthm-home": {
+    "title": "Let's Talk Home Mortgage home page",
+    "url": "https://letstalkhomemortgage.com/", "accessed": "2026-10-23", "pageDate": "n/a",
+    "supports": "About Pat, process, FAQ answers (documents, factors affecting rate, timelines vary, pre-qualification vs pre-approval), identifiers."
+  }
+}

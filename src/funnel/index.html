@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head}}
+</head>
+<body data-endpoint="{{form_endpoint}}" data-analytics="{{analytics_id}}">
+<a class="skip" href="#main" style="position:absolute;left:-9999px">Skip to main content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="ADU financing with Pat Collins, home">ADU Financing with Pat Collins</a>
+    <span class="bar__id">NMLS #{{person_nmls}} &middot; E Mortgage Capital Inc. NMLS #{{company_nmls}}</span>
+    <span style="display:flex;align-items:center;gap:16px">
+      <a class="bar__phone" href="{{phone_tel}}" data-event="phone_click">{{phone}}</a>
+      <a class="bar__cta" href="#quiz">See my financing options</a>
+    </span>
+  </div>
+</header>
+
+<main id="main">
+<a id="top"></a>
+
+<!-- ===== 1. HERO + quiz ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Find the smartest way to pay for your ADU.</h1>
+      <p class="lead">Clear options, honest guidance. Compare the real ways to finance an ADU with a California mortgage professional before you commit to anything.</p>
+      <div class="hero__actions">
+        <a class="btn" href="#quiz">See my financing options</a>
+        <a class="btn btn--ghost" href="{{booking_url}}" data-event="consult_booked" rel="noopener">Book a call with Pat</a>
+      </div>
+      <p class="hero__note">[PAT: confirm no-obligation wording]</p>
+    </div>
+
+    <div class="form-card" id="quiz">
+      <h2>A few quick questions</h2>
+      <p class="sub">Four short steps. Pat reviews your answers personally.</p>
+      <div class="quiz-progress" aria-hidden="true"><i id="quizBar"></i></div>
+      <form id="quizForm" method="post" {{form_action_attr}} novalidate>
+        <fieldset class="qstep">
+          <legend>About your home</legend>
+          <div class="field"><label for="homeValue">Estimated home value</label>
+            <select id="homeValue" name="home_value" required>
+              <option value="">Choose a range</option>
+              <option>Under $500,000</option><option>$500,000 to $750,000</option><option>$750,000 to $1,000,000</option>
+              <option>$1,000,000 to $1,500,000</option><option>$1,500,000 to $2,000,000</option><option>Over $2,000,000</option><option>Not sure</option>
+            </select><span class="msg">Choose a range.</span></div>
+          <div class="field"><label for="balance">Current mortgage balance</label>
+            <select id="balance" name="mortgage_balance" required>
+              <option value="">Choose a range</option>
+              <option>No mortgage</option><option>Under $250,000</option><option>$250,000 to $500,000</option>
+              <option>$500,000 to $750,000</option><option>$750,000 to $1,000,000</option><option>Over $1,000,000</option><option>Not sure</option>
+            </select><span class="msg">Choose a range.</span></div>
+        </fieldset>
+        <fieldset class="qstep">
+          <legend>About the project</legend>
+          <div class="field"><label for="budget">Project budget</label>
+            <select id="budget" name="project_budget" required>
+              <option value="">Choose a range</option>
+              <option>Under $100,000</option><option>$100,000 to $200,000</option><option>$200,000 to $300,000</option>
+              <option>$300,000 to $400,000</option><option>Over $400,000</option><option>Not sure yet</option>
+            </select><span class="msg">Choose a range.</span></div>
+          <div class="field"><label for="age">Age range of the homeowner</label>
+            <select id="age" name="age_range" required>
+              <option value="">Choose one</option><option>Under 62</option><option>62 or older</option>
+            </select><span class="msg">Choose one.</span></div>
+        </fieldset>
+        <fieldset class="qstep">
+          <legend>Your goal</legend>
+          <div class="field"><label for="goal">Main goal for the ADU</label>
+            <select id="goal" name="goal" required>
+              <option value="">Choose one</option><option>Rental income</option><option>Space for family</option>
+              <option>Added home value</option><option>A mix of these</option><option>Not sure yet</option>
+            </select><span class="msg">Choose one.</span></div>
+          <div class="field"><label for="timing">When do you hope to start?</label>
+            <select id="timing" name="timing" required>
+              <option value="">Choose one</option><option>Within 3 months</option><option>3 to 6 months</option>
+              <option>6 to 12 months</option><option>Just researching</option>
+            </select><span class="msg">Choose one.</span></div>
+        </fieldset>
+        <fieldset class="qstep">
+          <legend>How should Pat reach you?</legend>
+          <div class="field"><label for="fullName">Full name</label><input id="fullName" name="name" type="text" autocomplete="name" required><span class="msg">Enter your name.</span></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required><span class="msg">Enter a 10-digit phone number.</span></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><span class="msg">Enter a valid email address.</span></div>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required>
+            <span>I agree that Pat Collins and E Mortgage Capital may contact me about my request by phone, email or text. By providing my phone number, I agree to receive text messages from E Mortgage Capital. See the <a href="{{privacy_url}}" rel="noopener">Privacy Policy</a> and <a href="{{terms_url}}" rel="noopener">Terms</a>. [PAT: compliance to approve final consent wording]</span></label>
+        </fieldset>
+        <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value="">
+        <p id="quizNote" class="msg" role="alert" style="display:block;color:#b3261e;font-size:.82rem;margin:6px 0" hidden></p>
+        <div class="quiz-nav">
+          <button type="button" class="btn btn--ghost" id="quizBack" hidden>Back</button>
+          <button type="button" class="btn btn--navy" id="quizNext">Next</button>
+          <button type="submit" class="btn" id="quizSubmit">See my financing options</button>
+        </div>
+        <p class="fine">[PAT: confirm no credit check at this step]</p>
+      </form>
+      <div class="quiz-ok" id="quizOk" role="status">
+        <h2>Thank you.</h2>
+        <p>Pat will review your answers and reach out about next steps. If you would rather talk now, call {{phone}}.</p>
+      </div>
+      <div class="alt-actions">
+        <a href="{{booking_url}}" data-event="consult_booked" rel="noopener">Book a call</a>
+        <a href="{{phone_tel}}" data-event="phone_click">Call {{phone}}</a>
+        <a href="mailto:{{email}}">Email Pat</a>
+      </div>
+      <p class="fine" style="margin-top:10px">{{application_line}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. TRUST STRIP ===== -->
+<!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved 2026-10-23 -->
+<div class="strip">
+  <div class="wrap">
+    <div>Pat Collins, Mortgage Professional<small>NMLS #{{person_nmls}}</small></div>
+    <div>E Mortgage Capital Inc.<small>NMLS #{{company_nmls}}</small></div>
+    <div>30+ years in mortgages<small>Licensed in California</small></div>
+    <div><a href="{{nmls_url}}" rel="noopener">Check licenses on NMLS Consumer Access</a></div>
+    <img src="assets/equal-housing-opportunity.png" alt="Equal Housing Opportunity" width="44" height="44">
+  </div>
+</div>
+
+<!-- ===== 3. WHICH OPTION FITS YOU ===== -->
+<section class="band">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Your options</span>
+      <h2 class="sec-title">Which option fits you?</h2>
+      <p class="sec-sub">There is no single ADU loan. These are the main ways homeowners pay for an ADU. Which one fits depends on your equity, your current mortgage, your age and your goal.</p>
+    </div>
+    <div class="grid grid--3" style="margin-top:40px">
+      <!-- SOURCE: https://letstalkhomemortgage.com/heloc-loans/ | retrieved 2026-10-23 -->
+      <article class="card">
+        <span class="tag">Second loan</span>
+        <h3>HELOC or home equity loan</h3>
+        <p>You borrow against the equity in your home and keep your current first mortgage in place. A HELOC lets you draw money as you need it. A home equity loan gives you one lump sum.</p>
+        <div class="kv"><b>Tends to fit</b>Homeowners with equity who want to leave their first mortgage alone.</div>
+        <div class="kv"><b>Main trade-off</b>It is a second loan secured by your home. HELOC rates usually change over time, and you must repay what you borrow.</div>
+        <div class="kv"><b>Ask a lender</b>How is my limit set? What happens when the draw period ends? What are the closing costs?</div>
+      </article>
+      <!-- SOURCE: https://letstalkhomemortgage.com/refinance/ | retrieved 2026-10-23 -->
+      <article class="card">
+        <span class="tag">New first mortgage</span>
+        <h3>Cash-out refinance</h3>
+        <p>You replace your current mortgage with a new, larger one and receive the difference in cash. You get a new rate, term and payment.</p>
+        <div class="kv"><b>Tends to fit</b>Homeowners whose whole picture improves by replacing the first mortgage, not only the cash they receive.</div>
+        <div class="kv"><b>Main trade-off</b>If you already have a low first-mortgage rate, replacing that loan may not be ideal. There are closing costs, and your balance resets higher.</div>
+        <div class="kv"><b>Ask a lender</b>How does the new loan compare with my current one over the time I plan to stay?</div>
+      </article>
+      <!-- SOURCE: https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/accessory-dwelling-units | retrieved 2026-10-23 -->
+      <article class="card">
+        <span class="tag">Learn about it</span>
+        <h3>Renovation or construction loan</h3>
+        <p>These loans are built around the work being done. Fannie Mae describes a renovation loan that can finance a new ADU when a homeowner buys or refinances a one-unit home.</p>
+        <div class="kv"><b>Tends to fit</b>Homeowners who are also buying or refinancing and want the project in one loan.</div>
+        <div class="kv"><b>Ask a lender</b>How are funds released during construction? What plans and contractor details do you need?</div>
+        <p style="margin-top:10px;font-size:.9rem">[PAT: confirm whether you offer renovation or construction financing]</p>
+      </article>
+      <!--IF:SHOW_REVERSE_SECTION-->
+      <!-- COMPLIANCE-GATE: reverse-mortgage -->
+      <!-- SOURCE: https://letstalkhomemortgage.com/reverse-mortgage/ | retrieved 2026-10-23 -->
+      <article class="card card--gate">
+        <span class="tag">Homeowners 62+</span>
+        <h3>Reverse mortgage (HECM)</h3>
+        <p>A reverse mortgage lets homeowners 62 and older turn part of their home equity into funds. You must keep paying property taxes, homeowners insurance and any HOA fees, keep the home in good condition, and live there as your primary residence. If you do not, the loan can become due.</p>
+        <div class="kv"><b>Ask a lender</b>How would my plans for the ADU fit the loan rules? [PAT: verify HECM rules for funding an ADU]</div>
+      </article>
+      <!--/IF-->
+    </div>
+    <p class="note" style="margin-top:22px;font-size:.84rem;color:var(--muted);text-align:center">Sources:
+      <a href="https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/accessory-dwelling-units" rel="noopener">Fannie Mae, Accessory Dwelling Units</a> ·
+      <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/" rel="noopener">CFPB, What is a HELOC?</a>
+      (read 2026-10-23).</p>
+  </div>
+</section>
+
+<!-- ===== 4. THE ADU ANGLE ===== -->
+<section class="band band--soft">
+  <div class="narrow">
+    <span class="eyebrow">Rental income and value</span>
+    <h2 class="sec-title">How lenders look at an ADU</h2>
+    <p style="margin-top:16px">Some programs may consider projected rental income or the value of your property after the ADU is built. Some do not. The answer depends on the loan program, not on the ADU alone.</p>
+    <p style="margin-top:14px">For example, Fannie Mae's published guide allows rental income from one <em>existing</em> ADU in certain purchase and limited cash-out refinance loans, and limits how much of your qualifying income it can be. An ADU that is not built yet is a different question to ask your lender.</p>
+    <div class="callout"><strong>Rental income is not guaranteed and may not count toward qualification under every program.</strong></div>
+    <p>Investor loans that qualify a rental property on its rent, such as the DSCR loans described on <a href="{{site_nonqm}}" rel="noopener">Pat's Non-QM page</a>, are a different situation from an owner-occupied home with an ADU. Do not assume they apply to your project. [PAT: confirm which programs you offer that consider ADU rental income or after-ADU value]</p>
+    <p style="font-size:.84rem;color:var(--muted)">Source: <a href="https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property" rel="noopener">Fannie Mae Selling Guide, B3-3.8-02</a>, read 2026-10-23. Lenders set their own rules and may differ.</p>
+  </div>
+</section>
+
+<!--IF:SHOW_REVERSE_SECTION-->
+<!-- COMPLIANCE-GATE: reverse-mortgage -->
+<!-- ===== 5. SENIOR PATH (62+) ===== -->
+<section class="band" id="seniors">
+  <div class="narrow">
+    <span class="eyebrow">Homeowners 62 and older</span>
+    <h2 class="sec-title">Using a reverse mortgage to help fund an ADU</h2>
+    <!-- SOURCE: https://letstalkhomemortgage.com/reverse-mortgage/ | retrieved 2026-10-23 -->
+    <p style="margin-top:16px">A Home Equity Conversion Mortgage (HECM) is a reverse mortgage for homeowners 62 and older. Before you can get one, you must meet with a HUD-approved counselor so you understand the terms and obligations.</p>
+    <h3 style="margin-top:22px;font-size:1.15rem">What you must keep doing</h3>
+    <ul>
+      <li>Pay your property taxes, homeowners insurance and any HOA fees on time.</li>
+      <li>Keep the home in good condition.</li>
+      <li>Live in the home as your primary residence.</li>
+    </ul>
+    <div class="callout callout--warn"><strong>If you do not meet these obligations, the loan can become due.</strong> A reverse mortgage balance grows over time as interest and fees are added, which reduces the equity left in your home.</div>
+    <p>[PAT: verify HECM rules for funding an ADU] [PAT: confirm the lender of record for reverse mortgages and the disclosures required when it is named]</p>
+  </div>
+</section>
+<!--/IF-->
+
+<!--IF:SHOW_EXAMPLE-->
+<!-- ===== 6. WORKED EXAMPLE (component only, hidden by default) ===== -->
+<section class="band band--soft" id="example">
+  <div class="narrow">
+    <h2 class="sec-title">A worked example</h2>
+    <p class="sec-sub">Every figure below is a placeholder. This block must not be shown until your lender approves the required disclosures.</p>
+    <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin-top:18px">
+      <tr><th align="left">Project cost</th><td>[PAT: project cost]</td></tr>
+      <tr><th align="left">Loan type</th><td>[PAT: loan type]</td></tr>
+      <tr><th align="left">Rate and APR</th><td>[PAT: rate and APR]</td></tr>
+      <tr><th align="left">Term</th><td>[PAT: term]</td></tr>
+      <tr><th align="left">Payment</th><td>[PAT: payment]</td></tr>
+      <tr><th align="left">Assumptions and required disclosures</th><td>[PAT: assumptions and Regulation Z disclosures approved by lender]</td></tr>
+    </table></div>
+  </div>
+</section>
+<!--/IF-->
+
+<!-- ===== 7. PROCESS ===== -->
+<!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved 2026-10-23 -->
+<section class="band band--navy">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">How it works</span>
+      <h2 class="sec-title">Know what happens before it happens.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step__n">1</div><h3>Answer a few questions</h3><p>Tell Pat about your home, your project and your goal. It takes a few minutes.</p></div>
+      <div class="step"><div class="step__n">2</div><h3>Get a side-by-side options review</h3><p>Pat explains the real choices, what each asks of you, and the trade-offs that matter for your situation.</p></div>
+      <div class="step"><div class="step__n">3</div><h3>Choose and close</h3><p>Once the strategy makes sense, you choose, and Pat guides the paperwork and closing with steady communication.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. LOCAL PROOF ===== -->
+<section class="band">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Local proof</span>
+      <h2 class="sec-title">What homeowners say</h2>
+    </div>
+    <div class="grid grid--2" style="margin-top:34px">
+      <article class="card"><h3>Pasadena-area ADU story</h3><p>[PAT: real story and written permission]</p></article>
+      <article class="card"><h3>Pasadena-area ADU story</h3><p>[PAT: second real story and written permission, optional]</p></article>
+    </div>
+    <div class="center" style="margin-top:46px">
+      <h3 style="font-size:1.4rem">{{reviews_label}}</h3>
+      <p class="sec-sub" style="font-size:.95rem">{{reviews_note}} Updated on the source site {{reviews_updated}}. <a href="{{bbb_url}}" rel="noopener">Read them on the BBB profile</a>.</p>
+    </div>
+    <!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved 2026-10-23 -->
+    <div class="grid grid--3" style="margin-top:26px">
+{{reviews_html}}
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. FAQ ===== -->
+<section class="band band--soft" id="faq">
+  <div class="narrow">
+    <div class="center">
+      <span class="eyebrow">Questions</span>
+      <h2 class="sec-title">Common questions about financing an ADU</h2>
+    </div>
+    <div style="margin-top:30px">
+{{faq_html}}
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. REPEAT CTA ===== -->
+<section class="band">
+  <div class="narrow center">
+    <h2 class="sec-title">Ready to compare your options?</h2>
+    <p class="sec-sub">Answer a few questions and Pat will walk you through what fits your home, your goal and your budget.</p>
+    <p style="margin-top:26px"><a class="btn" href="#quiz">See my financing options</a></p>
+    <p style="margin-top:14px;font-size:.92rem"><a href="{{booking_url}}" data-event="consult_booked" rel="noopener">Book a call</a> &middot; <a href="{{phone_tel}}" data-event="phone_click">{{phone}}</a></p>
+  </div>
+</section>
+</main>
+
+{{footer}}
+
+<div class="mbar">
+  <a class="call" href="{{phone_tel}}" data-event="phone_click">Call Pat</a>
+  <a class="est" href="#quiz">See options</a>
+</div>
+{{consent_bar}}
+<script src="assets/quiz.js" defer></script>
+</body>
+</html>

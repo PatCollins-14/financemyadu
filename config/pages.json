@@ -1,0 +1,20 @@
+{
+  "_comment": "Registry of every page and ad. id is the key used in compliance/REVIEW-CHECKLIST.md. gate = COMPLIANCE-GATE name (page is noindex until approved).",
+  "hub": [
+    {"id": "pillar", "path": "/adu-financing/", "file": "pillar.html"},
+    {"id": "heloc-for-adu", "path": "/adu-financing/heloc-for-adu/", "file": "heloc-for-adu.html"},
+    {"id": "heloc-vs-cash-out-refinance", "path": "/adu-financing/heloc-vs-cash-out-refinance-for-adu/", "file": "heloc-vs-cash-out-refinance.html"},
+    {"id": "construction-or-renovation-loan", "path": "/adu-financing/construction-or-renovation-loan-for-adu/", "file": "construction-or-renovation-loan.html"},
+    {"id": "rental-income-qualifying", "path": "/adu-financing/adu-rental-income-and-qualifying/", "file": "rental-income-qualifying.html"},
+    {"id": "reverse-mortgage-for-adu", "path": "/adu-financing/reverse-mortgage-for-adu/", "file": "reverse-mortgage-for-adu.html", "gate": "reverse-mortgage"},
+    {"id": "keep-low-first-mortgage-rate", "path": "/adu-financing/keep-your-low-first-mortgage-rate/", "file": "keep-low-first-mortgage-rate.html"},
+    {"id": "200k-adu-example", "path": "/adu-financing/200k-adu-on-a-1-2m-home-example/", "file": "200k-adu-example.html"},
+    {"id": "pasadena", "path": "/adu-financing/pasadena/", "file": "pasadena.html"},
+    {"id": "questions-to-ask-lender", "path": "/adu-financing/questions-to-ask-your-lender/", "file": "questions-to-ask-lender.html"},
+    {"id": "costs-to-expect", "path": "/adu-financing/costs-to-expect/", "file": "costs-to-expect.html"},
+    {"id": "faq", "path": "/adu-financing/faq/", "file": "faq.html"},
+    {"id": "about-pat", "path": "/about/pat-collins/", "file": "about-pat.html", "kind": "author"}
+  ],
+  "funnel": {"id": "funnel", "path": "/"},
+  "ads": {"id": "ads-chatgpt"}
+}

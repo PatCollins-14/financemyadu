@@ -1,0 +1,37 @@
+{
+  "_comment": "Regex patterns (case-insensitive) that preflight fails on. Source: build brief Appendix B and G plus additions logged in docs/COMPLIANCE-RULES.md. Required disclosure sentences in allowedExact are removed from page text before scanning.",
+  "patterns": [
+    {"id": "guarantee", "re": "\\bguarantee(d|s)?\\b", "why": "Appendix B"},
+    {"id": "approved-claim", "re": "\\byou('| a)?re (pre-?)?approved\\b", "why": "Appendix B"},
+    {"id": "no-credit-check", "re": "\\bno credit check\\b", "why": "Appendix B (only if Pat approves)"},
+    {"id": "lowest-best-rate", "re": "\\b(lowest|best) rates?\\b", "why": "Appendix B"},
+    {"id": "rates-low", "re": "\\b(our )?rates (are|as) low\\b", "why": "Appendix B / G"},
+    {"id": "fixed-rate-of", "re": "\\bfixed rate of\\b", "why": "Appendix B"},
+    {"id": "apr", "re": "\\bAPR\\b", "why": "Reg Z trigger term"},
+    {"id": "percent", "re": "\\d+(\\.\\d+)?\\s?(%|percent)", "why": "Rates, LTV, fees: no percentages unless the page lists an allowTerms exception"},
+    {"id": "per-month", "re": "\\bper month\\b|\\ba month\\b|/\\s?mo\\b|/\\s?month\\b", "why": "Payment pattern"},
+    {"id": "monthly-payment-of", "re": "\\bmonthly payments? of\\b", "why": "Appendix B"},
+    {"id": "dollar-amount", "re": "\\$\\s?\\d", "why": "No dollar amounts unless the page lists an allowTerms exception"},
+    {"id": "zero-down", "re": "\\b(zero down|no money down|\\$0 down)\\b", "why": "Appendix B"},
+    {"id": "no-payments", "re": "\\bno (monthly )?payments?\\b|\\bpayment-free\\b", "why": "Appendix B / G (CFPB reverse mortgage history)"},
+    {"id": "lose-home", "re": "\\b(can'?t|cannot|never|won'?t) lose your home\\b", "why": "Appendix B"},
+    {"id": "never-owe-more", "re": "\\bnever owe more than\\b", "why": "Appendix G"},
+    {"id": "eliminate-debt", "re": "\\b(eliminate|wipe out) (your |all )?debt\\b", "why": "Appendix B"},
+    {"id": "free-money", "re": "\\bfree money\\b", "why": "Appendix B"},
+    {"id": "free-quote", "re": "\\bfree (rate )?quote\\b", "why": "Appendix G (site wording)"},
+    {"id": "fastest", "re": "\\bfastest\\b", "why": "Appendix B"},
+    {"id": "instant", "re": "\\binstant(ly)? approv", "why": "Appendix B"},
+    {"id": "state-endorse", "re": "\\b(approved by the state of california|DFPI approved|DRE approved|state approved)\\b", "why": "Appendix B"},
+    {"id": "debt-topics", "re": "\\bdebt (consolidation|relief|settlement|assistance)\\b|\\bconsolidate your debt\\b|\\bcredit repair\\b|\\bfix your credit\\b", "why": "Appendix B / OpenAI ad policy"},
+    {"id": "risk-free", "re": "\\b(risk-free|no risk)\\b", "why": "Appendix B"},
+    {"id": "urgency", "re": "\\b(act now|limited time)\\b", "why": "Appendix B / E"},
+    {"id": "income-promise", "re": "\\brental income guaranteed\\b|\\b(will )?pays? for itself\\b", "why": "Appendix B"},
+    {"id": "save-thousands", "re": "\\bsave thousands\\b|\\bcould save you\\b|\\blower your rate and monthly payment\\b", "why": "Appendix B / G"},
+    {"id": "preapproved-cta", "re": "\\bget (pre-?approved|preapproved)\\b|\\b(you('| a)?re )?pre-?approved\\b", "why": "Appendix G: use 'Start your application' or 'See my financing options'"},
+    {"id": "no-obligation", "re": "\\bno[- ]obligation\\b", "why": "Claim needs Pat and compliance confirmation"}
+  ],
+  "allowedExact": [
+    "Rental income is not guaranteed and may not count toward qualification under every program.",
+    "Rental income is not guaranteed and may not be counted for qualification under every program."
+  ]
+}

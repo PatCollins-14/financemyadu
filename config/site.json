@@ -1,0 +1,15 @@
+{
+  "_comment": "Flags and URLs. Any key can be overridden by an environment variable of the same name. No secrets belong in this file.",
+  "FUNNEL_NOINDEX": true,
+  "SHOW_REVERSE_SECTION": false,
+  "SHOW_EXAMPLE": false,
+  "HUB_BASE_URL": "https://letstalkhomemortgage.com",
+  "FUNNEL_BASE_URL": "https://myadufinancing.com",
+  "FORM_ENDPOINT": "",
+  "ANALYTICS_ID": "",
+  "BOOKING_URL": "https://check.letstalkhomemortgage.com/",
+  "APPLICATION_URL": "",
+  "BUILD_DATE": "2026-10-23",
+  "ALLOW_GPTBOT": true,
+  "UTM_DEFAULTS": {"utm_source": "chatgpt", "utm_medium": "cpc", "utm_campaign": "adu-financing"}
+}

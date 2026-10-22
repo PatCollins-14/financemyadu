@@ -1,0 +1,151 @@
+{
+    "_generated":  "from source/extract.json (retrieved 2026-10-23); do not edit by hand",
+    "person":  {
+                   "fullName":  "Patrick D. Collins",
+                   "shortName":  "Pat Collins",
+                   "jobTitle":  "Mortgage Professional",
+                   "nmls":  "1628553",
+                   "dre":  "[PAT: confirm DRE license number and label; the live site shows \"BRE #02143449\"]",
+                   "yearsExperience":  "30+ years",
+                   "yearsExperienceNote":  "Pat\u0027s own statement in the build brief; the website says \u0027decades in business, sales, real estate\u0027",
+                   "aboutText":  "I have spent decades in business, sales, real estate, and helping people solve problems. My role is not to push a loan. It is to help you understand the numbers, see the choices, and make a decision that supports the life you want after closing.",
+                   "audiences":  [
+                                     {
+                                         "who":  "buyers",
+                                         "line":  "Know what is truly affordable before you shop."
+                                     },
+                                     {
+                                         "who":  "homeowners",
+                                         "line":  "Use refinancing or equity with a clear purpose."
+                                     },
+                                     {
+                                         "who":  "seniors",
+                                         "line":  "Explore reverse mortgage choices without pressure."
+                                     },
+                                     {
+                                         "who":  "entrepreneurs",
+                                         "line":  "Find programs that understand nontraditional income."
+                                     }
+                                 ],
+                   "principles":  [
+                                      {
+                                          "name":  "Clarity before commitment",
+                                          "line":  "Understand the payment, costs, and tradeoffs before making a decision."
+                                      },
+                                      {
+                                          "name":  "Strategy before paperwork",
+                                          "line":  "Start with your goals, timeline, and real monthly budget—not a generic loan pitch."
+                                      },
+                                      {
+                                          "name":  "Communication through closing",
+                                          "line":  "Know what is happening, what is needed, and what comes next."
+                                      }
+                                  ]
+               },
+    "company":  {
+                    "name":  "E Mortgage Capital Inc.",
+                    "nmls":  "1416824",
+                    "address":  "3750 S. Susan Street, Santa Ana, CA 92704",
+                    "brand":  "Let\u0027s Talk Home Mortgage",
+                    "poweredBy":  "E Mortgage Capital"
+                },
+    "contact":  {
+                    "phone":  "(949) 787-2662",
+                    "phoneTel":  "tel:+19497872662",
+                    "email":  "pcollins@emortgagecapital.com",
+                    "bookingUrl":  "https://check.letstalkhomemortgage.com/",
+                    "applicationUrl":  "https://prod.lendingpad.com/emci/pos",
+                    "applicationUrlNote":  "[PAT: confirm application link for this campaign]",
+                    "nmlsConsumerAccess":  "https://www.nmlsconsumeraccess.org/"
+                },
+    "social":  {
+                   "facebook":  "https://www.facebook.com/PatrickCollinsLoanOfficer/",
+                   "sameAs":  [
+                                  "https://www.facebook.com/PatrickCollinsLoanOfficer/"
+                              ],
+                   "otherProfiles":  "[PAT: other real profile URLs for sameAs (YouTube, newsletter, LinkedIn, Google Business Profile)]"
+               },
+    "reviews":  {
+                    "label":  "E Mortgage Capital customer reviews from BBB",
+                    "note":  "These reviews are about E Mortgage Capital and are not specific to ADU financing.",
+                    "bbbProfile":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews",
+                    "updatedOnSite":  "Aug 25, 2026",
+                    "items":  [
+                                  {
+                                      "initials":  "DS",
+                                      "name":  "Dennis S",
+                                      "date":  "Aug 25, 2026",
+                                      "stars":  5,
+                                      "source":  "BBB",
+                                      "summary":  "The loan settled in under a month, and questions were answered throughout the process."
+                                  },
+                                  {
+                                      "initials":  "DR",
+                                      "name":  "David R",
+                                      "date":  "Aug 21, 2026",
+                                      "stars":  5,
+                                      "source":  "BBB",
+                                      "summary":  "The process was easy, straightforward, and transparent, with strong effort from the team to get the loan completed."
+                                  },
+                                  {
+                                      "initials":  "CR",
+                                      "name":  "Caroline R",
+                                      "date":  "Aug 20, 2026",
+                                      "stars":  5,
+                                      "source":  "BBB",
+                                      "summary":  "The customer highlighted the team\u0027s guidance, patience, and professionalism throughout the mortgage experience."
+                                  },
+                                  {
+                                      "initials":  "GG",
+                                      "name":  "Grace G",
+                                      "date":  "Aug 12, 2026",
+                                      "stars":  5,
+                                      "source":  "BBB",
+                                      "summary":  "The process from application through funding was described as smooth and seamless, with knowledgeable, transparent, and responsive communication."
+                                  },
+                                  {
+                                      "initials":  "AP",
+                                      "name":  "Ambrose P",
+                                      "date":  "Jul 23, 2026",
+                                      "stars":  5,
+                                      "source":  "BBB",
+                                      "summary":  "After a third transaction with the team, this investor praised the professionalism and kindness and said they would work with them again."
+                                  },
+                                  {
+                                      "initials":  "XP",
+                                      "name":  "Xpertss P",
+                                      "date":  "Jul 16, 2026",
+                                      "stars":  5,
+                                      "source":  "BBB",
+                                      "summary":  "The customer said the mortgage professional went above and beyond, stayed available for questions, explained options clearly, and kept the transaction on track."
+                                  }
+                              ]
+                },
+    "assets":  {
+                   "logo":  "assets/lthm-logo-orange.png",
+                   "equalHousing":  "assets/equal-housing-opportunity.png",
+                   "aime":  "assets/aime-brokers-are-better.webp",
+                   "aimeApproved":  false
+               },
+    "siteLinks":  {
+                      "home":  "https://letstalkhomemortgage.com/",
+                      "heloc":  "https://letstalkhomemortgage.com/heloc-loans/",
+                      "refinance":  "https://letstalkhomemortgage.com/refinance/",
+                      "reverse":  "https://letstalkhomemortgage.com/reverse-mortgage/",
+                      "nonqm":  "https://letstalkhomemortgage.com/non-qm-mortgage/",
+                      "contact":  "https://letstalkhomemortgage.com/contact-us/",
+                      "articles":  "https://letstalkhomemortgage.com/articles/",
+                      "equityArticle":  "https://letstalkhomemortgage.com/home-equity-next-move-2026/",
+                      "multigenArticle":  "https://letstalkhomemortgage.com/multigenerational-home-value-2026/",
+                      "agingParentArticle":  "https://letstalkhomemortgage.com/lets-talk-the-cost-of-caring-for-an-aging-parent/",
+                      "privacy":  "https://letstalkhomemortgage.com/privacy-policy/",
+                      "terms":  "https://letstalkhomemortgage.com/terms-and-conditions/",
+                      "accessibility":  "https://letstalkhomemortgage.com/accessibility/"
+                  },
+    "disclosure":  {
+                       "standard":  "This is not a commitment to lend. All loans are subject to credit, income, property, and underwriting approval. Programs, rates, and terms may change without notice.",
+                       "adu":  "Rental income is not guaranteed and may not be counted for qualification under every program.",
+                       "smsConsent":  "By providing my phone number, I agree to receive text messages from the E Mortgage Capital. [PAT: compliance to approve final consent wording]"
+                   },
+    "sourceNote":  "SOURCE: https://letstalkhomemortgage.com/ | retrieved 2026-10-23"
+}

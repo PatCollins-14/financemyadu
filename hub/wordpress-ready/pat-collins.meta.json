@@ -1,0 +1,120 @@
+{
+    "id":  "about-pat",
+    "title":  "Pat Collins, California Mortgage Professional",
+    "metaDescription":  "About Pat Collins, a California mortgage professional with E Mortgage Capital. His approach, who he helps, license details and how to reach him.",
+    "slug":  "pat-collins",
+    "path":  "/about/pat-collins/",
+    "canonical":  "https://letstalkhomemortgage.com/about/pat-collins/",
+    "robots":  "index, follow",
+    "lastReviewed":  "2026-10-23",
+    "status":  "draft: not yet reviewed by compliance",
+    "jsonLd":  {
+                   "@context":  "https://schema.org",
+                   "@graph":  [
+                                  {
+                                      "@type":  "Organization",
+                                      "@id":  "https://letstalkhomemortgage.com/#org",
+                                      "name":  "E Mortgage Capital Inc.",
+                                      "address":  {
+                                                      "@type":  "PostalAddress",
+                                                      "streetAddress":  "3750 S. Susan Street",
+                                                      "addressLocality":  "Santa Ana",
+                                                      "addressRegion":  "CA",
+                                                      "postalCode":  "92704",
+                                                      "addressCountry":  "US"
+                                                  },
+                                      "identifier":  {
+                                                         "@type":  "PropertyValue",
+                                                         "propertyID":  "NMLS ID",
+                                                         "value":  "1416824"
+                                                     }
+                                  },
+                                  {
+                                      "@type":  "Person",
+                                      "@id":  "https://letstalkhomemortgage.com/#pat",
+                                      "name":  "Pat Collins",
+                                      "alternateName":  "Patrick D. Collins",
+                                      "jobTitle":  "Mortgage Professional",
+                                      "identifier":  {
+                                                         "@type":  "PropertyValue",
+                                                         "propertyID":  "NMLS ID",
+                                                         "value":  "1628553"
+                                                     },
+                                      "worksFor":  {
+                                                       "@id":  "https://letstalkhomemortgage.com/#org"
+                                                   },
+                                      "telephone":  "(949) 787-2662",
+                                      "email":  "pcollins@emortgagecapital.com",
+                                      "sameAs":  [
+                                                     "https://www.facebook.com/PatrickCollinsLoanOfficer/"
+                                                 ],
+                                      "url":  "https://letstalkhomemortgage.com/about/pat-collins/"
+                                  },
+                                  {
+                                      "@type":  "WebSite",
+                                      "@id":  "https://letstalkhomemortgage.com/#website",
+                                      "url":  "https://letstalkhomemortgage.com/",
+                                      "name":  "Let\u0027s Talk Home Mortgage: ADU financing guide",
+                                      "publisher":  {
+                                                        "@id":  "https://letstalkhomemortgage.com/#org"
+                                                    }
+                                  },
+                                  {
+                                      "@type":  "ProfilePage",
+                                      "@id":  "https://letstalkhomemortgage.com/about/pat-collins/#page",
+                                      "url":  "https://letstalkhomemortgage.com/about/pat-collins/",
+                                      "name":  "Pat Collins, California Mortgage Professional",
+                                      "description":  "About Pat Collins, a California mortgage professional with E Mortgage Capital. His approach, who he helps, license details and how to reach him.",
+                                      "isPartOf":  {
+                                                       "@id":  "https://letstalkhomemortgage.com/#website"
+                                                   },
+                                      "mainEntity":  {
+                                                         "@id":  "https://letstalkhomemortgage.com/#pat"
+                                                     },
+                                      "dateModified":  "2026-10-23"
+                                  },
+                                  {
+                                      "@type":  "BreadcrumbList",
+                                      "@id":  "https://letstalkhomemortgage.com/about/pat-collins/#crumbs",
+                                      "itemListElement":  [
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  1,
+                                                                  "name":  "Let\u0027s Talk Home Mortgage",
+                                                                  "item":  "https://letstalkhomemortgage.com/"
+                                                              },
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  2,
+                                                                  "name":  "About",
+                                                                  "item":  "https://letstalkhomemortgage.com/about/pat-collins/"
+                                                              },
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  3,
+                                                                  "name":  "Pat Collins",
+                                                                  "item":  "https://letstalkhomemortgage.com/about/pat-collins/"
+                                                              }
+                                                          ]
+                                  }
+                              ]
+               },
+    "internalLinks":  [
+                          {
+                              "text":  "How do I finance an ADU in California?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/"
+                          },
+                          {
+                              "text":  "ADU financing: frequently asked questions",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/faq/"
+                          },
+                          {
+                              "text":  "Let\u0027s Talk Home Mortgage",
+                              "url":  "https://letstalkhomemortgage.com/"
+                          },
+                          {
+                              "text":  "Contact Pat",
+                              "url":  "https://letstalkhomemortgage.com/contact-us/"
+                          }
+                      ]
+}

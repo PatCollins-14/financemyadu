@@ -1,0 +1,134 @@
+{
+    "id":  "keep-low-first-mortgage-rate",
+    "title":  "Will Financing an ADU Affect My Mortgage Rate?",
+    "metaDescription":  "Some ADU financing leaves your first mortgage alone and some replaces it. See which is which, and what to ask before you decide.",
+    "slug":  "keep-your-low-first-mortgage-rate",
+    "path":  "/adu-financing/keep-your-low-first-mortgage-rate/",
+    "canonical":  "https://letstalkhomemortgage.com/adu-financing/keep-your-low-first-mortgage-rate/",
+    "robots":  "index, follow",
+    "lastReviewed":  "2026-10-23",
+    "status":  "draft: not yet reviewed by compliance",
+    "jsonLd":  {
+                   "@context":  "https://schema.org",
+                   "@graph":  [
+                                  {
+                                      "@type":  "Organization",
+                                      "@id":  "https://letstalkhomemortgage.com/#org",
+                                      "name":  "E Mortgage Capital Inc.",
+                                      "address":  {
+                                                      "@type":  "PostalAddress",
+                                                      "streetAddress":  "3750 S. Susan Street",
+                                                      "addressLocality":  "Santa Ana",
+                                                      "addressRegion":  "CA",
+                                                      "postalCode":  "92704",
+                                                      "addressCountry":  "US"
+                                                  },
+                                      "identifier":  {
+                                                         "@type":  "PropertyValue",
+                                                         "propertyID":  "NMLS ID",
+                                                         "value":  "1416824"
+                                                     }
+                                  },
+                                  {
+                                      "@type":  "Person",
+                                      "@id":  "https://letstalkhomemortgage.com/#pat",
+                                      "name":  "Pat Collins",
+                                      "alternateName":  "Patrick D. Collins",
+                                      "jobTitle":  "Mortgage Professional",
+                                      "identifier":  {
+                                                         "@type":  "PropertyValue",
+                                                         "propertyID":  "NMLS ID",
+                                                         "value":  "1628553"
+                                                     },
+                                      "worksFor":  {
+                                                       "@id":  "https://letstalkhomemortgage.com/#org"
+                                                   },
+                                      "telephone":  "(949) 787-2662",
+                                      "email":  "pcollins@emortgagecapital.com",
+                                      "sameAs":  [
+                                                     "https://www.facebook.com/PatrickCollinsLoanOfficer/"
+                                                 ],
+                                      "url":  "https://letstalkhomemortgage.com/about/pat-collins/"
+                                  },
+                                  {
+                                      "@type":  "WebSite",
+                                      "@id":  "https://letstalkhomemortgage.com/#website",
+                                      "url":  "https://letstalkhomemortgage.com/",
+                                      "name":  "Let\u0027s Talk Home Mortgage: ADU financing guide",
+                                      "publisher":  {
+                                                        "@id":  "https://letstalkhomemortgage.com/#org"
+                                                    }
+                                  },
+                                  {
+                                      "@type":  "Article",
+                                      "@id":  "https://letstalkhomemortgage.com/adu-financing/keep-your-low-first-mortgage-rate/#page",
+                                      "url":  "https://letstalkhomemortgage.com/adu-financing/keep-your-low-first-mortgage-rate/",
+                                      "name":  "Will Financing an ADU Affect My Mortgage Rate?",
+                                      "description":  "Some ADU financing leaves your first mortgage alone and some replaces it. See which is which, and what to ask before you decide.",
+                                      "isPartOf":  {
+                                                       "@id":  "https://letstalkhomemortgage.com/#website"
+                                                   },
+                                      "headline":  "Will financing an ADU affect my current mortgage rate?",
+                                      "author":  {
+                                                     "@id":  "https://letstalkhomemortgage.com/#pat"
+                                                 },
+                                      "publisher":  {
+                                                        "@id":  "https://letstalkhomemortgage.com/#org"
+                                                    },
+                                      "datePublished":  "2026-10-23",
+                                      "dateModified":  "2026-10-23",
+                                      "mainEntityOfPage":  "https://letstalkhomemortgage.com/adu-financing/keep-your-low-first-mortgage-rate/"
+                                  },
+                                  {
+                                      "@type":  "BreadcrumbList",
+                                      "@id":  "https://letstalkhomemortgage.com/adu-financing/keep-your-low-first-mortgage-rate/#crumbs",
+                                      "itemListElement":  [
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  1,
+                                                                  "name":  "Let\u0027s Talk Home Mortgage",
+                                                                  "item":  "https://letstalkhomemortgage.com/"
+                                                              },
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  2,
+                                                                  "name":  "ADU financing",
+                                                                  "item":  "https://letstalkhomemortgage.com/adu-financing/"
+                                                              },
+                                                              {
+                                                                  "@type":  "ListItem",
+                                                                  "position":  3,
+                                                                  "name":  "Will financing an ADU affect my current mortgage rate?",
+                                                                  "item":  "https://letstalkhomemortgage.com/adu-financing/keep-your-low-first-mortgage-rate/"
+                                                              }
+                                                          ]
+                                  }
+                              ]
+               },
+    "internalLinks":  [
+                          {
+                              "text":  "How do I finance an ADU in California?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/"
+                          },
+                          {
+                              "text":  "Can I use a HELOC to build an ADU?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/heloc-for-adu/"
+                          },
+                          {
+                              "text":  "HELOC vs. cash-out refinance for an ADU: which is better?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/heloc-vs-cash-out-refinance-for-adu/"
+                          },
+                          {
+                              "text":  "How do construction and renovation loans work for an ADU?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/construction-or-renovation-loan-for-adu/"
+                          },
+                          {
+                              "text":  "Can a reverse mortgage fund an ADU?",
+                              "url":  "https://letstalkhomemortgage.com/adu-financing/reverse-mortgage-for-adu/"
+                          },
+                          {
+                              "text":  "Refinance on Pat\u0027s site",
+                              "url":  "https://letstalkhomemortgage.com/refinance/"
+                          }
+                      ]
+}
