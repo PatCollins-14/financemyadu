@@ -61,6 +61,9 @@ p{margin:0}
 /* hero */
 .hero .wrap{display:grid;grid-template-columns:1fr minmax(0,440px);align-items:end;gap:32px 40px;grid-template-areas:"title title" "copy art"}
 .hero h1{grid-area:title;font-size:clamp(42px,6.8vw,92px);line-height:1;letter-spacing:-.045em}
+/* two-line headline: title line, then a highlighted cursive line */
+.hero h1 .h1-title{display:block;white-space:nowrap}
+.hero h1 .h1-script{display:inline-block;white-space:nowrap;font-family:"Dancing Script","Brush Script MT",cursive;font-weight:700;font-size:1.08em;letter-spacing:0;line-height:1.12;margin-top:.04em;padding:0 .2em .04em .08em;background:linear-gradient(transparent 42%,var(--sun) 42%,var(--sun) 90%,transparent 90%);border-radius:4px}
 .hero-copy{grid-area:copy;display:grid;gap:36px;min-width:0;padding-bottom:8px}
 .dash-list{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:19px}
 .dash-list li{display:flex;gap:14px}
@@ -268,6 +271,7 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 }
 @media (max-width:640px){
   body{font-size:16.5px}
+  .hero h1{font-size:clamp(32px,10.2vw,54px)}
   .features,.form-grid,.tiles,.tile-grid{grid-template-columns:1fr}
   .feature{max-width:none;grid-template-columns:96px 1fr;align-items:center}
   .feature svg{width:96px;height:76px}

@@ -239,6 +239,8 @@ function Build-Funnel {
   $crumbs = $null
   $ld = New-Graph $funnelBase $canonical 'WebPage' $title '' $desc '' $today $null $null $false
   $head = Get-Head $title $desc $canonical $robots $ld 'assets/site.css' 'website'
+  # the funnel headline uses a cursive face for its second line
+  $head = $head.Replace('family=Hanken+Grotesk:wght@300;400;500;600&display=swap', 'family=Hanken+Grotesk:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap')
   # head goes in untouched; body is marked
   $body = $body.Replace('{{head}}', $head)
   # mark placeholders only outside the head block

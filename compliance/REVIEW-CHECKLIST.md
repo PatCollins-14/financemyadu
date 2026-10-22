@@ -31,6 +31,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | Form consent and text-message wording | funnel form | Pat asked for only name, email, phone and a plans upload, so there is no consent checkbox; consent is a statement under the button with privacy and terms links. Wording copied from the live site. Compliance may require a checkbox for text messages |
 | Plans upload | funnel form | Visitors can upload existing plans (personal property information). Confirm the privacy policy covers uploaded files and how long they are kept |
 | "FinanceMyADU" trade name | funnel footer | Needs approval as a trade name for E Mortgage Capital |
+| Headline "Finance My ADU & Renovations" | funnel hero | Implies renovation financing; Pat's website lists no renovation or construction loan. Confirm Pat offers it and that the wording is approved |
 | "30+ years" and "Licensed in California" | funnel trust strip | Pat's own statements, not on the website |
 | DRE number and label | every footer and byline | Footers now show "DRE #02143449" (confirmed by Pat in chat); the live website says "BRE". Confirm the label |
 | Rental income statements | funnel, `rental-income-qualifying` | Cites Fannie Mae Selling Guide B3-3.8-02 (version dated 09/02/2026); confirm wording and currency |
