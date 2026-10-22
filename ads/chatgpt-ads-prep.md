@@ -19,14 +19,14 @@ Targeting: United States only.
 Prohibited ad topics: credit repair, debt settlement and debt assistance ads are prohibited. Ads must not exaggerate results. The ad copy and the funnel page contain none of these.
 
 ## 2. Ad copy
-See `ads/ad-copy.md` and `ads/ad-copy.csv`. Six titles and six descriptions, character counts checked by script.
+See `ads/ad-copy.md` and `ads/ad-copy.csv`. Seven titles and seven descriptions, character counts checked by script.
 **UNVERIFIED:** reported format limits (titles about 16 to 24 characters, descriptions about 32 to 48). Confirm in OpenAI's ad manager.
 
 ## 3. Landing-page requirements checklist
 - [ ] Loads fast on mobile (measure after deployment; not measured in this build).
 - [ ] It is an offer page, not the homepage of a company site (done: one offer, no site menu).
 - [ ] Does not block `OAI-AdsBot`, `OAI-SearchBot` or Googlebot (done: robots.txt has explicit allow groups, no `Disallow: /`). The page is hidden from search with a meta `noindex`, not with robots.txt.
-- [ ] The page matches the ad's promise: financing options for an ADU, nothing more.
+- [ ] The page matches the ad's promise: financing options for an ADU and renovations, nothing more.
 - [ ] No rates, payments, APRs, loan amounts, "preapproved", "guaranteed" or other banned phrases (enforced by `run.cmd preflight`).
 - [ ] Licensee identity is clear: Pat Collins, E Mortgage Capital Inc., both NMLS numbers, Equal Housing Opportunity.
 - [ ] The form posts to a real endpoint (`FORM_ENDPOINT`) and shows the consent statement under the button (name, email, phone and an optional plans upload only; no checkbox). `[PAT: create an ADU qualifier form, or tell me to use another endpoint]`

@@ -16,7 +16,7 @@ LetsTalkADU.com is **not built now**. Pat has not confirmed what is on the domai
 ## Page list
 Funnel (`/`): hero, trust strip, option comparison, ADU angle, senior path (gated), worked example (hidden), 3-step process, local proof, FAQ, repeat CTA, disclosure footer. Lead form in the form band: full name, email, phone and an optional upload of existing plans (Pat, 2026-10-23; replaces the earlier multi-step quiz). Visual design takes its style, layout and inspiration from https://www.samara.com/adus/financing (Pat's choice, 2026-10-23); see DECISIONS D24.
 
-Hub (13): pillar; HELOC for ADU; HELOC vs cash-out refinance; construction or renovation loan (educational); ADU rental income and qualifying; reverse mortgage for ADU (gated); keep your low first-mortgage rate; $200,000 ADU on a $1.2 million home (framework); Pasadena; questions to ask your lender; costs to expect; Pat Collins author page; consolidated FAQ.
+Hub (13): pillar; HELOC for ADU; HELOC vs cash-out refinance; construction or renovation loan (Pat offers renovation financing; programs to be named); ADU rental income and qualifying; reverse mortgage for ADU (gated); keep your low first-mortgage rate; $200,000 ADU on a $1.2 million home (framework); Pasadena; questions to ask your lender; costs to expect; Pat Collins author page; consolidated FAQ.
 
 ## Hub page template
 H1 as the question, 1-3 sentence direct answer, byline with NMLS, visible "Last reviewed" date matching `dateModified`, sections (Who this fits / Who it does not fit / Trade-offs / What to ask a lender / What I see in real ADU financing (placeholder) / Related questions / Sources), one CTA block, disclosure footer, draft banner until approved.

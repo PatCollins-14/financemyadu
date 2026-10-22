@@ -136,7 +136,15 @@
                                                              "name":  "How do construction and renovation loans work for an ADU?",
                                                              "acceptedAnswer":  {
                                                                                     "@type":  "Answer",
-                                                                                    "text":  "These loans are built around the work being done. Fannie Mae describes a renovation loan that can finance adding an ADU when a homeowner buys or refinances a one-unit property, and a construction-to-permanent loan for a new home with an ADU. Not every lender offers them."
+                                                                                    "text":  "These loans are built around the work being done. Fannie Mae describes a renovation loan that can finance adding an ADU when a homeowner buys or refinances a one-unit property, and a construction-to-permanent loan for a new home with an ADU. Which program fits depends on your project and your home."
+                                                                                }
+                                                         },
+                                                         {
+                                                             "@type":  "Question",
+                                                             "name":  "Can I finance a renovation along with my ADU?",
+                                                             "acceptedAnswer":  {
+                                                                                    "@type":  "Answer",
+                                                                                    "text":  "Pat helps homeowners finance renovations as well as ADUs. Whether an ADU and other renovation work can be in one loan depends on the program and the lender, so ask before you plan the budget around it."
                                                                                 }
                                                          },
                                                          {

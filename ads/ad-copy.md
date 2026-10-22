@@ -15,6 +15,7 @@ The ads sell the financing, never a specific rental unit or property sale. No ra
 | T4 | Fund Your Backyard ADU | 22 |
 | T5 | Smart ADU Financing | 19 |
 | T6 | Your ADU, Your Options | 22 |
+| T7 | ADU & Renovation Loans | 22 |
 
 ## Descriptions
 | ID | Text | Characters |
@@ -25,8 +26,9 @@ The ads sell the financing, never a specific rental unit or property sale. No ra
 | D4 | Home equity, refinance and more, explained. | 43 |
 | D5 | Clear options, honest guidance on ADU loans. | 44 |
 | D6 | Pat Collins, NMLS #1628553. Compare ADU options. | 48 |
+| D7 | ADU and home renovation financing, explained. | 45 |
 
-All 12 are inside the reported ranges and pass the banned-phrase check (re-run `run.cmd adcheck` after any edit).
+All 14 are inside the reported ranges and pass the banned-phrase check (re-run `run.cmd adcheck` after any edit).
 
 ## Square-image concept notes
 1. **Backyard unit, daytime.** A small modern backyard unit beside a main house. No people, no price tags, no "rent" or "income" text. Caption area empty.

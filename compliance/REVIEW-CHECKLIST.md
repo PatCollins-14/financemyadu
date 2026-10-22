@@ -10,7 +10,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | `pillar` | Hub: How to finance an ADU in California | pending | | | |
 | `heloc-for-adu` | Hub: Can I use a HELOC to build an ADU? | pending | | | |
 | `heloc-vs-cash-out-refinance` | Hub: HELOC vs cash-out refinance for an ADU | pending | | | |
-| `construction-or-renovation-loan` | Hub: Construction and renovation loans for an ADU (educational) | pending | | | |
+| `construction-or-renovation-loan` | Hub: Construction and renovation loans for an ADU | pending | | | |
 | `rental-income-qualifying` | Hub: Can ADU rental income count toward qualifying? | pending | | | |
 | `reverse-mortgage-for-adu` | Hub: Can a reverse mortgage fund an ADU? (COMPLIANCE-GATE, noindex until approved) | pending | | | |
 | `keep-low-first-mortgage-rate` | Hub: Will financing an ADU affect my current mortgage rate? | pending | | | |
@@ -31,7 +31,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | Form consent and text-message wording | funnel form | Pat asked for only name, email, phone and a plans upload, so there is no consent checkbox; consent is a statement under the button with privacy and terms links. Wording copied from the live site. Compliance may require a checkbox for text messages |
 | Plans upload | funnel form | Visitors can upload existing plans (personal property information). Confirm the privacy policy covers uploaded files and how long they are kept |
 | "FinanceMyADU" trade name | funnel footer | Needs approval as a trade name for E Mortgage Capital |
-| Headline "Finance My ADU & Renovations" | funnel hero | Implies renovation financing; Pat's website lists no renovation or construction loan. Confirm Pat offers it and that the wording is approved |
+| Headline "Finance My ADU & Renovations" | funnel hero | Pat confirmed in chat that he offers renovation financing, but the live website lists no renovation or construction loan. Compliance should approve the wording and the programs named, and the website should be updated to match |
 | "30+ years" and "Licensed in California" | funnel trust strip | Pat's own statements, not on the website |
 | DRE number and label | every footer and byline | Footers now show "DRE #02143449" (confirmed by Pat in chat); the live website says "BRE". Confirm the label |
 | Rental income statements | funnel, `rental-income-qualifying` | Cites Fannie Mae Selling Guide B3-3.8-02 (version dated 09/02/2026); confirm wording and currency |

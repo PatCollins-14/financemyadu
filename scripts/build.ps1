@@ -232,8 +232,8 @@ function Build-Funnel {
   foreach ($ip in $iconSet.PSObject.Properties) { $vars['icon_' + $ip.Name] = [string]$ip.Value }
   $vars['person_dre'] = [string]$idn.person.dre
   $body = Expand-Tokens $tpl $vars
-  $title = 'ADU Financing Options in California | Pat Collins'
-  $desc = 'Compare ways to pay for an ADU in California, from home equity to cash-out refinance, with mortgage professional Pat Collins. See your options.'
+  $title = 'ADU & Renovation Financing in California | Pat Collins'
+  $desc = 'Compare ways to pay for an ADU or home renovation in California, from home equity to renovation loans, with mortgage professional Pat Collins.'
   $canonical = "$funnelBase/"
   $robots = $(if ($cfg['FUNNEL_NOINDEX']) { 'noindex, follow' } else { 'index, follow' })
   $crumbs = $null
@@ -537,6 +537,7 @@ foreach ($r in $rows) { [void]$sm.AppendLine("| $($r[0]) | $($r[1]) | $($r[2]) |
 [void]$sm.AppendLine('')
 [void]$sm.AppendLine('## Stated by Pat in the build brief (not on the website)')
 [void]$sm.AppendLine('- "30+ years in mortgages" and "Licensed in California" in the trust strip (brief section 7). The website says "decades in business, sales, real estate".')
+[void]$sm.AppendLine('- Renovation financing: Pat does offer it (chat 2026-10-23: "I do renovations"). The website lists no renovation or construction loan. Which programs Pat offers is still a placeholder.')
 [void]$sm.AppendLine('- DRE #02143449: confirmed by Pat in chat on 2026-10-23 (the website footer shows the same number with the label "BRE"). Compliance to confirm the label.')
 [void]$sm.AppendLine('- Analytics: reuse Google Tag Manager container GTM-TQ8C7WLM (Pat, chat 2026-10-23; the ID is visible in the website source). GPTBot: allow (Pat, chat 2026-10-23).')
 [void]$sm.AppendLine('')
