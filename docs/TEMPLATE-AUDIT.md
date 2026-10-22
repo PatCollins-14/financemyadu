@@ -48,3 +48,6 @@ None. No canonical, no robots meta, no Open Graph, no JSON-LD, no sitemap, no ro
 
 ## Addendum (2026-10-23): the design template is Casita Works
 Pat confirmed the design to follow is this Casita Works page. After the first build dropped many of its sections, the funnel and hub were rebuilt on its structure and tokens (see DECISIONS D22). The page's JavaScript-generated art (isometric ADUs, hero and closing scenes, icons) is now captured as static SVG in `src/funnel/art/`, so the raw HTML contains everything.
+
+## Addendum (2026-10-23): design direction is now the Samara ADU financing page
+Pat chose https://www.samara.com/adus/financing as the source of style, layout and inspiration (DECISIONS D24). `src/template-original.html` (the Casita Works clone) is kept only as history. Own artwork, own copy, own colours; none of that page's copy, claims, figures, names or images were copied.
