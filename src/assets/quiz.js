@@ -74,6 +74,7 @@
 
   /* ---- step-by-step quiz ---- */
   root.classList.add('js');
+  form.setAttribute('novalidate', ''); /* our own messages replace the browser's; without JS the browser validates */
   var steps = Array.prototype.slice.call(form.querySelectorAll('.qstep'));
   var bar2 = document.getElementById('quizBar');
   var i = 0, started = false;

@@ -6,9 +6,9 @@
 <body data-endpoint="{{form_endpoint}}" data-analytics="{{analytics_id}}">
 <a class="skip" href="#main" style="position:absolute;left:-9999px">Skip to main content</a>
 
-<header class="bar">
+<header class="bar funnel-bar">
   <div class="wrap">
-    <a href="#top" class="logo" aria-label="ADU financing with Pat Collins, home">ADU Financing with Pat Collins</a>
+    <a href="#top" class="logo" aria-label="ADU financing with Pat Collins, home"><span class="logo__sub">ADU financing with </span>Pat Collins</a>
     <span class="bar__id">NMLS #{{person_nmls}} &middot; E Mortgage Capital Inc. NMLS #{{company_nmls}}</span>
     <span style="display:flex;align-items:center;gap:16px">
       <a class="bar__phone" href="{{phone_tel}}" data-event="phone_click">{{phone}}</a>
@@ -37,7 +37,7 @@
       <h2>A few quick questions</h2>
       <p class="sub">Four short steps. Pat reviews your answers personally.</p>
       <div class="quiz-progress" aria-hidden="true"><i id="quizBar"></i></div>
-      <form id="quizForm" method="post" {{form_action_attr}} novalidate>
+      <form id="quizForm" method="post" {{form_action_attr}}>
         <fieldset class="qstep">
           <legend>About your home</legend>
           <div class="field"><label for="homeValue">Estimated home value</label>
@@ -91,7 +91,7 @@
         <p id="quizNote" class="msg" role="alert" style="display:block;color:#b3261e;font-size:.82rem;margin:6px 0" hidden></p>
         <div class="quiz-nav">
           <button type="button" class="btn btn--ghost" id="quizBack" hidden>Back</button>
-          <button type="button" class="btn btn--navy" id="quizNext">Next</button>
+          <button type="button" class="btn btn--navy" id="quizNext" hidden>Next</button>
           <button type="submit" class="btn" id="quizSubmit">See my financing options</button>
         </div>
         <p class="fine">[PAT: confirm no credit check at this step]</p>

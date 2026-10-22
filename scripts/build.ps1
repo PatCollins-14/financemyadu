@@ -341,7 +341,7 @@ function Build-HubPage($p) {
   $header = @"
 <header class="bar">
   <div class="wrap">
-    <a href="$pillarRel" class="logo">Pat Collins &middot; ADU financing guide</a>
+    <a href="$pillarRel" class="logo">Pat Collins<span class="logo__sub"> &middot; ADU financing guide</span></a>
     <nav class="bar__links" aria-label="Guide"><a href="$pillarRel">Guide</a><a href="$faqRel">FAQ</a><a href="$aboutRel">About Pat</a></nav>
     <a class="bar__cta" href="$funnelLink" rel="noopener">See my financing options</a>
   </div>

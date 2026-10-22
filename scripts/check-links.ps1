@@ -18,7 +18,8 @@ foreach ($f in (Get-ChildItem $dist -Recurse -File -Filter '*.html')) {
     $count++
     if ($u -match '^(mailto:|tel:|#|data:|javascript:)') { continue }
     if ($u -match '^https?://') {
-      if ($u.StartsWith($bases[$area] + '/')) {
+      $hubOwned = ($area -eq 'funnel') -or ($u.StartsWith($bases[$area] + '/adu-financing/')) -or ($u.StartsWith($bases[$area] + '/about/pat-collins/'))
+      if ($u.StartsWith($bases[$area] + '/') -and $hubOwned) {
         # same-base absolute link: map to dist file
         $p = $u.Substring($bases[$area].Length).Split('#')[0].Split('?')[0]
         $target = Join-Path $outRoot ($p.TrimStart('/').Replace('/', '\'))
