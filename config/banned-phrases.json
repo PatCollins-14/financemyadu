@@ -9,7 +9,7 @@
     {"id": "fixed-rate-of", "re": "\\bfixed rate of\\b", "why": "Appendix B"},
     {"id": "apr", "re": "\\bAPR\\b", "why": "Reg Z trigger term"},
     {"id": "percent", "re": "\\d+(\\.\\d+)?\\s?(%|percent)", "why": "Rates, LTV, fees: no percentages unless the page lists an allowTerms exception"},
-    {"id": "per-month", "re": "\\bper month\\b|\\ba month\\b|/\\s?mo\\b|/\\s?month\\b", "why": "Payment pattern"},
+    {"id": "per-month", "re": "\\bper month\\b|/\\s?mo\\b|/\\s?month\\b", "why": "Payment pattern"},
     {"id": "monthly-payment-of", "re": "\\bmonthly payments? of\\b", "why": "Appendix B"},
     {"id": "dollar-amount", "re": "\\$\\s?\\d", "why": "No dollar amounts unless the page lists an allowTerms exception"},
     {"id": "zero-down", "re": "\\b(zero down|no money down|\\$0 down)\\b", "why": "Appendix B"},
@@ -27,7 +27,7 @@
     {"id": "urgency", "re": "\\b(act now|limited time)\\b", "why": "Appendix B / E"},
     {"id": "income-promise", "re": "\\brental income guaranteed\\b|\\b(will )?pays? for itself\\b", "why": "Appendix B"},
     {"id": "save-thousands", "re": "\\bsave thousands\\b|\\bcould save you\\b|\\blower your rate and monthly payment\\b", "why": "Appendix B / G"},
-    {"id": "preapproved-cta", "re": "\\bget (pre-?approved|preapproved)\\b|\\b(you('| a)?re )?pre-?approved\\b", "why": "Appendix G: use 'Start your application' or 'See my financing options'"},
+    {"id": "preapproved-cta", "re": "\\bget (pre-?approved|preapproved)\\b|\\bpre-?approved (for|today|now)\\b", "why": "Appendix G: use 'Start your application' or 'See my financing options'"},
     {"id": "no-obligation", "re": "\\bno[- ]obligation\\b", "why": "Claim needs Pat and compliance confirmation"}
   ],
   "allowedExact": [

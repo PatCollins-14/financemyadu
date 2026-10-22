@@ -26,6 +26,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar-h) + 12px)}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
 img,svg{display:block;max-width:100%;height:auto}

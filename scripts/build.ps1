@@ -309,8 +309,9 @@ function Build-HubPage($p) {
     [void]$rel.AppendLine('<ul>')
     foreach ($rid in $m.related) {
       $rp = $hubPages[$rid]; $rm = $hubData[$rid].meta
-      [void]$rel.AppendLine("<li><a href=`"$(Rel $path $rp.path)`">$(Esc $rm.h1)</a></li>")
-      $relLinksForMeta += @{ text = $rm.h1; url = ($hubBase + $rp.path) }
+      $anchorText = $(if ($rm.PSObject.Properties.Name -contains 'anchor') { $rm.anchor } else { $rm.h1 })
+      [void]$rel.AppendLine("<li><a href=`"$(Rel $path $rp.path)`">$(Esc $anchorText)</a></li>")
+      $relLinksForMeta += @{ text = $anchorText; url = ($hubBase + $rp.path) }
     }
     [void]$rel.AppendLine('</ul>')
   }
