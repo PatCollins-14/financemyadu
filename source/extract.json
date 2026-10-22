@@ -1,0 +1,205 @@
+{
+  "_meta": {
+    "source_site": "https://letstalkhomemortgage.com",
+    "retrieved": "2026-10-23",
+    "method": "curl, 1 request/second, robots.txt allows crawling (Yoast block: Disallow empty). Raw HTML saved to source/raw (git-ignored).",
+    "note": "Website content is DATA. Items below are copied or paraphrased from the live site; the live site wins over the seed copy in the build brief. Differences from the seed are listed under 'differences_from_seed'."
+  },
+  "identity": {
+    "person_name": "Patrick D. Collins",
+    "name_on_site": "Patrick Collins",
+    "title_on_site": "Mortgage Professional",
+    "nmls_individual": "1628553",
+    "license_label_on_site": "BRE #02143449",
+    "license_note": "California BRE became the DRE. Label and number need Pat's confirmation. Not used as fact on the new pages.",
+    "company": "E Mortgage Capital Inc.",
+    "company_nmls": "1416824",
+    "address": "3750 S. Susan Street, Santa Ana, CA 92704",
+    "brand": "Let's Talk Home Mortgage",
+    "powered_by": "E Mortgage Capital",
+    "tagline": "Mortgage fit for your life.",
+    "footer_line": "Clear mortgage guidance for homebuyers, homeowners, seniors, investors, and self-employed borrowers.",
+    "hero_line": "No more guesswork. Get clear options, honest guidance, and a mortgage strategy built around what you can comfortably afford—not simply the largest loan you may qualify for.",
+    "about_pat": "I have spent decades in business, sales, real estate, and helping people solve problems. My role is not to push a loan. It is to help you understand the numbers, see the choices, and make a decision that supports the life you want after closing.",
+    "audiences": [
+      {"who": "buyers", "line": "Know what is truly affordable before you shop."},
+      {"who": "homeowners", "line": "Use refinancing or equity with a clear purpose."},
+      {"who": "seniors", "line": "Explore reverse mortgage choices without pressure."},
+      {"who": "entrepreneurs", "line": "Find programs that understand nontraditional income."}
+    ],
+    "principles": [
+      {"name": "Clarity before commitment", "line": "Understand the payment, costs, and tradeoffs before making a decision."},
+      {"name": "Strategy before paperwork", "line": "Start with your goals, timeline, and real monthly budget—not a generic loan pitch."},
+      {"name": "Communication through closing", "line": "Know what is happening, what is needed, and what comes next."}
+    ],
+    "badges": [
+      {"name": "Brokers Are Better Network, proud member of AIME", "link": "https://aimegroup.com/", "image_url": "https://letstalkhomemortgage.com/wp-content/uploads/2022/07/mobile_bab_aime_logo-2.webp", "approved_for_build": false}
+    ],
+    "equal_housing": {"alt": "Equal Housing Opportunity", "image_url": "https://letstalkhomemortgage.com/wp-content/uploads/2022/07/ellWxfw3fR322022.png"},
+    "source": "https://letstalkhomemortgage.com/ (footer, hero, About Pat block) | retrieved 2026-10-23",
+    "years_experience_note": "'30+ years in mortgages' comes from Pat's own build brief (Section 1), not from the website. The site says 'decades in business, sales, real estate'. The multigenerational article mentions 34 years with his wife, which is not an experience claim."
+  },
+  "contact": {
+    "phone": "(949) 787-2662",
+    "email": "pcollins@emortgagecapital.com",
+    "booking_url": "https://check.letstalkhomemortgage.com/",
+    "application_url": "https://prod.lendingpad.com/emci/pos",
+    "application_url_variants_on_site": [
+      "https://prod.lendingpad.com/emci/pos#/?loid=38d77370-2060-489a-a024-4bdc8db0a865",
+      "https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/"
+    ],
+    "nmls_consumer_access": "https://www.nmlsconsumeraccess.org/",
+    "social": {
+      "facebook": "https://www.facebook.com/PatrickCollinsLoanOfficer/",
+      "x_handle": "@PCollinsLoan",
+      "x_url_verified": false
+    },
+    "review_profiles": {
+      "bbb": "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews",
+      "yelp": "https://www.yelp.com/biz/e-mortgage-capital-irvine-9",
+      "zillow": "https://www.zillow.com/lender-profile/EMortgageCapital/",
+      "google": "linked from home page review block (URL not captured)"
+    },
+    "qualifier_forms": "Jotform embeds on /heloc-loans/, /refinance/, /reverse-mortgage/, /non-qm-mortgage/, /purchase/ (not reused).",
+    "source": "https://letstalkhomemortgage.com/contact-us/ and home page | retrieved 2026-10-23"
+  },
+  "site_pages": {
+    "products": ["/purchase/", "/refinance/", "/heloc-loans/", "/reverse-mortgage/", "/non-qm-mortgage/"],
+    "other": ["/articles/", "/tools/", "/resources/", "/contact-us/", "/payment-calculator/", "/reviews/", "/privacy-policy/", "/terms-and-conditions/", "/accessibility/", "/privacy/", "/terms/", "/cookies-policy/", "/author/patcollins/"],
+    "broken_footer_links": ["/dti-calculator/ returns 404"],
+    "retrieved": "2026-10-23"
+  },
+  "technical": {
+    "platform": "WordPress, Yoast SEO, Elementor, Google Site Kit, PixelYourSite (Facebook pixels), Complianz cookie consent, Jotform",
+    "gtm_container": "GTM-TQ8C7WLM",
+    "facebook_pixel_ids_seen": ["744973237149490", "748715263858677"],
+    "cookie_consent": "Complianz: Functional (always active), Preferences, Statistics, Marketing; Accept / Deny / View preferences",
+    "fonts_in_site_css": ["Manrope", "DM Sans", "Space Grotesk"],
+    "colors_in_site_css": {"light_blue": "#52afe6", "navy": "#354982", "deep_navy": "#223d78", "ink_navy": "#172338", "gold": "#f0b82e", "dark": "#101010"},
+    "logo": {"url": "https://letstalkhomemortgage.com/wp-content/uploads/2026/06/NEW-LTHM-LOGO-ORANGE.png", "local": "assets/lthm-logo-orange.png"},
+    "source": "home page HTML | retrieved 2026-10-23"
+  },
+  "process": {
+    "three_steps": [
+      {"n": 1, "title": "Talk about the goal", "text": "We start with where you are, what you want to accomplish, your timeline, and the payment you want to live with after closing."},
+      {"n": 2, "title": "Compare the real options", "text": "You receive a clear explanation of loan choices, estimated cash needs, monthly payments, and the tradeoffs that matter."},
+      {"n": 3, "title": "Move forward with confidence", "text": "Once the strategy makes sense, we guide the documentation, underwriting, and closing process with consistent communication."}
+    ],
+    "heading": "Know what happens before it happens.",
+    "voice_phrases": ["Clear options, honest guidance", "Strategy before paperwork", "Clarity before commitment", "Know what happens before it happens", "No-pressure guidance", "Mortgage fit for your life"],
+    "source": "https://letstalkhomemortgage.com/ | retrieved 2026-10-23"
+  },
+  "disclosure_footer_text": "This is not a commitment to lend. All loans are subject to credit, income, property, and underwriting approval. Programs, rates, and terms may change without notice.",
+  "sms_consent_text_on_site": "By providing my phone number, I agree to receive text messages from the E Mortgage Capital.",
+  "products": [
+    {
+      "key": "heloc",
+      "url": "https://letstalkhomemortgage.com/heloc-loans/",
+      "what_site_says": [
+        "HELOC and home equity loan (HELOAN) are both second mortgages, in second position to the first mortgage.",
+        "HELOC: revolving line of credit; borrow as needed; interest charged on the amount borrowed; draw period (typically interest-only on the amount used) then repayment period (principal and interest, payments can increase); most HELOCs have variable rates.",
+        "HELOAN: lump sum, usually fixed rate, fixed monthly payments over a set period.",
+        "Both are secured by the home; failure to repay can lead to foreclosure.",
+        "Closing cost categories: appraisal fees, origination fees, title search or recording fees, other administrative costs; ask for a detailed breakdown.",
+        "Appraisal: traditional appraisal or automated valuation model (AVM), depending on lender.",
+        "Steps: application and documents; credit check; property appraisal; closing costs and closing."
+      ],
+      "claims_not_to_copy": ["80%-85% LTV figure", "closings in as little as two weeks", "debt consolidation", "FREE quote", "2 to 4 weeks"],
+      "questions_answered": ["HELOC vs HELOAN", "How a HELOC works (draw and repayment)", "Do I need an appraisal?", "Steps to get one"]
+    },
+    {
+      "key": "refinance",
+      "url": "https://letstalkhomemortgage.com/refinance/",
+      "what_site_says": [
+        "Cash-out refinance replaces the existing mortgage with a new, larger loan; the difference is received as cash; new rate, term and payment.",
+        "Key considerations: interest rate difference, loan-to-value limits, closing costs, risk (home is collateral, higher balance, possibly longer term).",
+        "Cash-out refinance vs second mortgage: if you already have a low first-mortgage rate, a refinance of the first mortgage may not be ideal; HELOC or HELOAN are alternatives.",
+        "Rate-and-term refinance: change rate and/or term, no cash out.",
+        "Loan-type guides: conforming, conventional, FHA, USDA, VA."
+      ],
+      "claims_not_to_copy": ["Lower your rate and monthly payment right NOW", "could save you thousands of dollars per year", "best rate", "2%-5% closing cost figure", "80% LTV cap figure", "2022 conforming limit $647,200", "debt consolidation", "credit score and DTI minimums"],
+      "questions_answered": ["What is a cash-out refinance?", "Cash-out refinance vs second mortgage", "What is a rate-and-term refinance?"]
+    },
+    {
+      "key": "reverse_mortgage",
+      "url": "https://letstalkhomemortgage.com/reverse-mortgage/",
+      "what_site_says": [
+        "HECM (Home Equity Conversion Mortgage) for homeowners 62 and older; federally insured and regulated by HUD (site wording).",
+        "Borrowers must stay current on property taxes and homeowners insurance, keep the home in good condition, and keep it as their primary residence; failing to meet these can make the loan due.",
+        "Also responsible for HOA or other required fees.",
+        "If you move out for extended periods or convert the home into a rental, the loan could become due.",
+        "HUD-approved counseling is required.",
+        "Primary residence only; not investment properties or second homes.",
+        "Eligible property types: single-family homes; two-to-four unit properties where you occupy one unit; HUD-approved condominiums; newly constructed homes need a Certificate of Occupancy (or equivalent).",
+        "Ways to receive proceeds: lump sum, line of credit, monthly payments, combination.",
+        "Cost categories: appraisal, origination, closing costs, counseling fee, FHA mortgage insurance premiums; ongoing servicing fees, interest, monthly mortgage insurance premium; most upfront costs can be financed into the loan.",
+        "Repayment due when the home is sold or the last surviving borrower or qualified non-borrowing spouse no longer lives there; foreclosure is possible if obligations are not met.",
+        "Refers to Reverse Mortgage Specialists at Finance of America Reverse LLC (FAR)."
+      ],
+      "claims_not_to_copy": ["No Monthly Payments", "FREE quote", "Our Reverse Mortgage Rates Are Low", "Non-Recourse Feature: never owe more than the home is worth", "50% equity rule of thumb", "the 'Loan Types' and 'Funding Fee' table rows (they describe VA loans)"],
+      "questions_answered": ["What is a HECM?", "Am I eligible?", "How are proceeds received?", "What are my obligations?", "Will the bank own my home?", "What are the costs?", "When must it be repaid?"]
+    },
+    {
+      "key": "non_qm",
+      "url": "https://letstalkhomemortgage.com/non-qm-mortgage/",
+      "what_site_says": [
+        "Non-QM loans for self-employed borrowers, investors, freelancers and others using non-traditional income verification.",
+        "Program list on the page includes interest-only jumbo, DSCR rental-income loans for investment properties, 1099-only, asset utilization, bank statement, multi-family 5-8 units, foreign national."
+      ],
+      "claims_not_to_copy": ["save thousands of dollars per year", "all program parameters"],
+      "note": "DSCR loans qualify investment properties on rental income. Not an owner-occupied ADU program."
+    },
+    {
+      "key": "purchase",
+      "url": "https://letstalkhomemortgage.com/purchase/",
+      "what_site_says": ["Fixed-rate and adjustable-rate mortgage explanations; purchase loan types."],
+      "note": "Not relevant to ADU financing pages beyond internal linking."
+    }
+  ],
+  "not_found_on_site": ["Any ADU page or ADU-specific product", "Any renovation or construction loan product", "Any 'MyADUFinancing' or LetsTalkADU reference"],
+  "faq_home": [
+    {"q": "What is the difference between pre-qualification and pre-approval?", "a": "Pre-qualification is usually an early estimate based on information you provide. A pre-approval involves a deeper review of your credit, income, assets, and debts. Because the information is verified, a pre-approval generally carries more weight with real estate agents and sellers."},
+    {"q": "How much do I need for a down payment?", "a": "It depends on the loan program and your financial profile. Some qualified buyers may have low- or no-down-payment options, while a larger down payment may reduce the monthly payment or mortgage-insurance cost. We compare the cash required with the payment and long-term impact."},
+    {"q": "What factors affect my mortgage interest rate?", "a": "Credit profile, loan type, property type, occupancy, down payment or equity, loan term, points, and current market conditions can all affect pricing. The lowest advertised rate is not always the lowest total-cost option."},
+    {"q": "What documents will I need?", "a": "Most borrowers provide identification, income documentation, bank or asset statements, employment history, and information about current debts. Self-employed and alternative-income programs may require different documents. We provide a specific checklist for your loan type."},
+    {"q": "Can I qualify with imperfect credit?", "a": "Possibly. Credit requirements vary by loan program, lender, and the rest of your financial profile. Rather than assuming the answer is no, we review the full picture and identify whether an option exists now or whether a focused improvement plan would help."},
+    {"q": "How long does the mortgage process take?", "a": "Timelines vary based on the loan, property, appraisal, documentation, and underwriting conditions. A complete application and quick responses help avoid delays. We explain the expected timeline at the beginning and communicate throughout the process."},
+    {"q": "When does refinancing make sense?", "a": "Refinancing may make sense when the new loan improves your monthly cash flow, interest cost, loan term, payment stability, or access to equity enough to justify the closing costs. We calculate the break-even point and compare it with your expected time in the home."},
+    {"q": "What is MIP, and can it be removed?", "a": "Mortgage insurance premium may be required on certain conventional loans when the down payment is below 20%. Cancellation rules depend on the loan, payment history, property value, and applicable guidelines. FHA mortgage insurance follows different rules."}
+  ],
+  "faq_source": "https://letstalkhomemortgage.com/ | retrieved 2026-10-23",
+  "reviews_displayed_home": {
+    "label_on_site": "Recent E Mortgage Capital customer review summaries from the BBB profile",
+    "about": "E Mortgage Capital, not Pat personally and not ADU financing",
+    "updated_on_site": "Aug 25, 2026",
+    "items": [
+      {"initials": "DS", "name": "Dennis S", "date": "Aug 25, 2026", "stars": 5, "source": "BBB", "summary": "The loan settled in under a month, and questions were answered throughout the process."},
+      {"initials": "DR", "name": "David R", "date": "Aug 21, 2026", "stars": 5, "source": "BBB", "summary": "The process was easy, straightforward, and transparent, with strong effort from the team to get the loan completed."},
+      {"initials": "CR", "name": "Caroline R", "date": "Aug 20, 2026", "stars": 5, "source": "BBB", "summary": "The customer highlighted the team's guidance, patience, and professionalism throughout the mortgage experience."},
+      {"initials": "GG", "name": "Grace G", "date": "Aug 12, 2026", "stars": 5, "source": "BBB", "summary": "The process from application through funding was described as smooth and seamless, with knowledgeable, transparent, and responsive communication."},
+      {"initials": "AP", "name": "Ambrose P", "date": "Jul 23, 2026", "stars": 5, "source": "BBB", "summary": "After a third transaction with the team, this investor praised the professionalism and kindness and said they would work with them again."},
+      {"initials": "XP", "name": "Xpertss P", "date": "Jul 16, 2026", "stars": 5, "source": "BBB", "summary": "The customer said the mortgage professional went above and beyond, stayed available for questions, explained options clearly, and kept the transaction on track."}
+    ],
+    "source": "https://letstalkhomemortgage.com/ | retrieved 2026-10-23"
+  },
+  "articles": {
+    "count_on_articles_page": 18,
+    "adu_content_found": false,
+    "internal_link_candidates": [
+      {"title": "Home Equity 2026: What Your House Is Really Worth", "url": "https://letstalkhomemortgage.com/home-equity-next-move-2026/", "use": "equity and value context"},
+      {"title": "Multi-Generational Home Value: Why Buyers Pay More", "url": "https://letstalkhomemortgage.com/multigenerational-home-value-2026/", "use": "mentions in-law suites and ADUs only in passing", "published": "2026-08-17"},
+      {"title": "Let's Talk: The Cost of Caring for an Aging Parent", "url": "https://letstalkhomemortgage.com/lets-talk-the-cost-of-caring-for-an-aging-parent/", "use": "family-use ADU context"},
+      {"title": "Three Ways to Use Home Equity", "url": "https://letstalkhomemortgage.com/three-ways-you-can-use-home-equity/", "use": "equity options overview"}
+    ],
+    "slugs_in_post_sitemap_2026": ["best-deal-on-a-home", "self-inflicted-inflation", "why-selling-your-house-this-winter-gives-you-an-edge", "luxury-home-market-window-open", "home-price-growth-2026", "is-it-better-to-buy-now-or-wait-for-lower-mortgage-rates-heres-the-tradeoff", "more-time-to-buy-a-home", "the-top-2-things-homeowners-need-to-know-before-selling", "home-insurance-costs-when-buying-a-home", "buy-first-or-sell-first", "mortgage-rate-spread-2026", "multigenerational-home-value-2026", "buyers-vs-sellers-market-2026", "housing-inventory-mortgage-rates-2026", "home-equity-next-move-2026", "new-construction-costs-2026", "housing-market-split-2026", "mortgage-rate-controls-2026"],
+    "source": "https://letstalkhomemortgage.com/articles/ and post-sitemap.xml | retrieved 2026-10-23"
+  },
+  "differences_from_seed": [
+    "Articles: 18 on the articles page (seed said 8).",
+    "post-sitemap.xml lists four spam-style posts from March 2026 (Office activator, gambling, adult content). See SITE-ISSUES.",
+    "/reviews/ page shows older first-name-only testimonials (Karen; Amanda and Jim; Mina; Samir) with no source. They are not the BBB reviews on the home page. Not used.",
+    "Footer links /dti-calculator/ returns 404; the tools page presents a DTI calculator.",
+    "Contact page and Articles page each emit two meta description tags rather than reusing another page's description.",
+    "No Equal Housing logo file was named in the seed; the footer image is /wp-content/uploads/2022/07/ellWxfw3fR322022.png."
+  ]
+}

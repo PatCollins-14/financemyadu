@@ -1,0 +1,6 @@
+source/raw/
+source/text/
+dist/
+.env
+.env.*
+*.log

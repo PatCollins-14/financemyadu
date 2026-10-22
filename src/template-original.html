@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casita Works ADU Landing</title>
+<meta name="description" content="Design, permits and construction for your ADU under one roof. Fixed-price quotes, free 3D design and 0% financing available. Check your property's ADU eligibility.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   EDIT ME: brand text lives in the CONFIG block in the <script>
+   at the bottom (name, phone, license, form endpoint, photos).
+   ============================================================ */
+:root{
+  --blue:#007bc3;
+  --blue-dark:#0a5f9a;
+  --blue-deep:#0071c8;
+  --orange:#f27926;
+  --ink:#1c2430;
+  --text:#3c4858;
+  --muted:#6b7686;
+  --line:#dfe6ec;
+  --soft:#f5f9fa;
+  --white:#fff;
+  --radius:10px;
+  --shadow:0 10px 30px rgba(16,40,64,.12);
+  --bar-h:48px;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar-h) + 12px)}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:var(--bar-h)}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--ink);line-height:1.15}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+section{padding:84px 0}
+.eyebrow{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.sec-title{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:700}
+.sec-title em{font-style:normal;color:var(--blue)}
+.sec-sub{margin-top:14px;max-width:680px;font-size:1.08rem;color:var(--muted)}
+.center{text-align:center}.center .sec-sub{margin-inline:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;font-weight:700;font-size:1rem;padding:16px 30px;border-radius:6px;border:0;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;box-shadow:0 6px 18px rgba(0,123,195,.32)}
+.btn:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn--orange{background:var(--orange);box-shadow:0 6px 18px rgba(242,121,38,.35)}
+.btn--orange:hover{background:#d9661a}
+.btn--white{background:#fff;color:var(--blue);box-shadow:none}
+.btn--white:hover{background:#eaf5fc}
+.btn--block{width:100%}
+
+/* ===== top bar ===== */
+.bar{position:fixed;inset:0 0 auto 0;height:var(--bar-h);background:#141a22;color:#fff;z-index:50;display:flex;align-items:center}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;width:min(1280px,100% - 32px)}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.01em;font-size:1.02rem;white-space:nowrap}
+.logo svg{width:30px;height:30px}
+.logo small{display:block;font-weight:500;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-top:-3px}
+.bar__info{font-size:.8rem;font-weight:600;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.bar__info span+span::before{content:"|";margin-right:10px;opacity:.5}
+.bar__info .fin{color:var(--orange)}
+.bar__info a{color:var(--orange)}
+.bar__cta{background:var(--blue);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:0 22px;height:var(--bar-h);display:flex;align-items:center;white-space:nowrap;transition:background .15s}
+.bar__cta:hover{background:var(--blue-dark)}
+.bar .wrap{padding:0}
+.bar .logo{padding-left:0}
+.bar__call{display:none}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:0;min-height:640px;display:flex;align-items:center;color:#fff;overflow:hidden;background:#162231}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%}
+.hero__bg svg{width:100%;height:100%}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,14,22,.78) 0%,rgba(8,14,22,.48) 55%,rgba(8,14,22,.28) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:70px 0}
+.hero h1{color:#fff;font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.hero p.lead{margin-top:22px;font-size:clamp(1.05rem,1.7vw,1.28rem);font-weight:500;max-width:560px;color:#f5f9fa;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hero__pts{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;font-weight:600;font-size:.95rem}
+.hero__pts li{list-style:none;display:flex;align-items:center;gap:8px}
+.hero__pts svg{width:18px;height:18px;color:#7fd0ff;flex:none}
+
+.form-card{background:#fff;color:var(--text);border-radius:12px;padding:30px 30px 26px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.form-card .tiny{font-size:.74rem;font-weight:700;color:var(--blue);text-align:center;line-height:1.45}
+.form-card h2{font-size:1.65rem;text-align:center;color:var(--blue);margin:8px 0 18px}
+.field{margin-bottom:12px}
+.field input,.field select{width:100%;font:inherit;font-size:.95rem;padding:13px 14px;border:1px solid #cfd8e0;border-radius:6px;background:#fff;color:var(--ink);transition:border-color .15s,box-shadow .15s;appearance:none}
+.field select{background:#fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%236b7686' stroke-width='1.6'/></svg>") no-repeat right 14px center}
+.field input::placeholder{color:#8794a3}
+.field input:focus,.field select:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,123,195,.18)}
+.field.err input,.field.err select{border-color:#d93a3a}
+.field .msg{display:none;color:#d93a3a;font-size:.74rem;margin-top:4px}
+.field.err .msg{display:block}
+.form-card .btn{margin-top:6px;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
+.form-card .fine{margin-top:12px;font-size:.72rem;color:var(--muted);text-align:center}
+.form-ok{display:none;text-align:center;padding:26px 6px}
+.form-ok svg{width:54px;height:54px;margin:0 auto 14px;color:#1da463}
+.form-ok h3{font-size:1.5rem;margin-bottom:8px}
+.form-card.sent form{display:none}.form-card.sent .form-ok{display:block}
+.form-card.sent>.tiny,.form-card.sent>h2{display:none}
+
+/* ===== trust strip ===== */
+.strip{background:var(--blue-deep);color:#fff;padding:34px 0}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.strip__item{display:flex;gap:16px;align-items:flex-start;justify-content:center;text-align:left}
+.strip__item svg{width:42px;height:42px;flex:none;color:#cfeaff}
+.strip__item b{display:block;font-size:1.05rem;margin-bottom:2px}
+.strip__item span{font-size:.88rem;opacity:.92;display:block;max-width:250px}
+
+/* ===== careful ===== */
+.careful .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.careful h2{font-size:clamp(2rem,3.8vw,3rem);font-weight:600}
+.careful h3.sub{font-family:Inter,sans-serif;font-size:1.25rem;font-weight:600;color:var(--ink);margin:18px 0 4px}
+.careful .lets{font-style:italic;font-weight:700;color:var(--blue);margin:6px 0 14px}
+.careful p{margin-bottom:14px;font-size:1.04rem}
+.badges{display:grid;gap:16px}
+.badge{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:var(--radius);padding:20px 22px;box-shadow:0 4px 16px rgba(16,40,64,.06)}
+.badge svg{width:46px;height:46px;flex:none;color:var(--blue)}
+.badge b{display:block;color:var(--ink);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.badge span{font-size:.93rem;color:var(--muted)}
+
+/* ===== financing ===== */
+.finance{background:var(--soft)}
+.fin-grid{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.fin-card{background:#fff;border-radius:14px;padding:38px 36px;text-align:center;box-shadow:var(--shadow);border-top:5px solid var(--blue)}
+.fin-card .big{font-family:"Playfair Display",serif;font-weight:700;font-size:4.4rem;color:var(--blue);line-height:1}
+.fin-card .cap{margin-top:8px;font-weight:800;letter-spacing:.12em;font-size:.82rem;color:var(--ink);text-transform:uppercase}
+.fin-card p{margin-top:14px;color:var(--muted)}
+.finance .btn{margin-top:40px}
+
+/* ===== types ===== */
+.types-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.type{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:box-shadow .2s,transform .2s}
+.type:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.type__art{background:linear-gradient(180deg,#f4f9fc,#fff);border-radius:8px;aspect-ratio:1/.92;display:grid;place-items:center}
+.type__art svg{width:100%;height:100%}
+.type h3{font-size:1.35rem;color:var(--blue-dark);font-weight:700}
+.type .tag{font-family:Inter,sans-serif;font-weight:700;font-size:.92rem;color:var(--ink);margin:6px 0 8px;line-height:1.35}
+.type p{font-size:.88rem;color:var(--muted)}
+.best{margin-top:14px;display:flex;background:var(--blue);color:#fff;border-radius:6px;overflow:hidden}
+.best b{font-family:"Playfair Display",serif;font-style:italic;font-size:1.05rem;padding:10px 14px;background:var(--blue-dark);display:flex;align-items:center;white-space:nowrap}
+.best span{font-size:.78rem;font-weight:600;padding:10px 14px;line-height:1.35}
+
+/* ===== why ===== */
+.why{background:linear-gradient(180deg,#fff, var(--soft))}
+.why-grid{margin-top:48px;display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.why-card{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:0 4px 16px rgba(16,40,64,.05)}
+.why-card:nth-child(4){grid-column:2 / span 2}
+.why-card:nth-child(5){grid-column:4 / span 2}
+.ico{width:56px;height:56px;border-radius:14px;background:rgba(0,123,195,.1);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.ico svg{width:30px;height:30px}
+.why-card h3{font-size:1.28rem;margin-bottom:8px}
+.why-card p{font-size:.95rem;color:var(--muted)}
+.why .btn{margin-top:42px}
+
+/* ===== eligibility banner ===== */
+.elig{padding:0}
+.elig__box{position:relative;background:#2f343a;color:#fff;padding:76px 20px;text-align:center;overflow:hidden}
+.elig__box::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 300px at 15% 0,rgba(0,123,195,.45),transparent 60%),radial-gradient(700px 260px at 90% 100%,rgba(242,121,38,.28),transparent 60%)}
+.elig__box>*{position:relative}
+.elig h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.elig p{margin:12px auto 30px;max-width:520px;opacity:.9;font-size:1.08rem}
+
+/* ===== income ===== */
+.income-grid{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.inc{position:relative;border-radius:var(--radius);overflow:hidden;color:#fff;min-height:330px;display:flex;align-items:flex-end;background:#16324a}
+.inc__bg{position:absolute;inset:0}
+.inc__ico{position:absolute;top:30px;left:50%;transform:translateX(-50%);width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;color:#fff}
+.inc__ico svg{width:56px;height:56px}
+.inc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,26,0) 25%,rgba(8,16,26,.9) 100%)}
+.inc__txt{position:relative;z-index:2;padding:24px 22px}
+.inc h3{color:#fff;font-family:Inter,sans-serif;font-size:.9rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.inc p{font-size:.9rem;opacity:.93}
+
+/* ===== steps ===== */
+.steps{background:var(--blue-deep);color:#fff}
+.steps h2{color:#fff}
+.steps .eyebrow{color:#a9dcff}
+.steps-grid{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative}
+.steps-grid::before{content:"";position:absolute;top:27px;left:10%;right:10%;border-top:2px dashed rgba(255,255,255,.4)}
+.step{position:relative;text-align:center;padding:0 6px}
+.step__n{width:56px;height:56px;border-radius:50%;background:#fff;color:var(--blue);font-family:"Playfair Display",serif;font-weight:700;font-size:1.5rem;display:grid;place-items:center;margin:0 auto 18px;position:relative;box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.step small{display:block;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.7rem;color:#a9dcff;margin-bottom:6px}
+.step h3{color:#fff;font-family:Inter,sans-serif;font-size:1.02rem;font-weight:700;margin-bottom:8px;line-height:1.3}
+.step p{font-size:.88rem;opacity:.9}
+
+/* ===== projects ===== */
+.proj-grid{margin-top:46px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proj{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:#cfd9e2;box-shadow:0 4px 16px rgba(16,40,64,.1)}
+.proj svg,.proj img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj:hover svg,.proj:hover img{transform:scale(1.05)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,16,26,.82))}
+.proj__cap{position:absolute;left:18px;right:18px;bottom:14px;z-index:2;color:#fff;display:flex;justify-content:space-between;align-items:flex-end}
+.proj__cap small{display:block;font-weight:800;font-size:.68rem;letter-spacing:.16em;color:#8fd3ff}
+.proj__cap b{font-size:1.02rem;letter-spacing:.02em;text-transform:uppercase}
+.proj__cap .rate{background:rgba(255,255,255,.95);color:var(--ink);font-weight:800;font-size:.82rem;padding:4px 9px;border-radius:99px;display:flex;align-items:center;gap:4px}
+.proj__cap .rate svg{position:static;width:13px;height:13px;color:#f5a623}
+.note{margin-top:16px;font-size:.78rem;color:var(--muted);text-align:center}
+
+/* ===== reviews ===== */
+.reviews{background:var(--soft)}
+.rating{margin-top:18px;display:inline-flex;align-items:center;gap:10px;background:#fff;padding:10px 20px;border-radius:99px;box-shadow:0 4px 14px rgba(16,40,64,.08);font-weight:600;font-size:.95rem;color:var(--ink)}
+.stars{display:inline-flex;gap:2px;color:#f5a623}
+.stars svg{width:18px;height:18px}
+.rev-grid{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border-radius:var(--radius);padding:28px 26px;box-shadow:0 4px 16px rgba(16,40,64,.07);display:flex;flex-direction:column}
+.rev q{display:block;margin:14px 0 20px;quotes:none;font-size:.98rem;color:var(--text);flex:1}
+.rev footer{display:flex;justify-content:space-between;align-items:center;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-top:1px solid var(--line);padding-top:14px}
+.rev footer span{color:var(--muted);font-weight:700}
+
+/* ===== final cta ===== */
+.final{position:relative;color:#fff;text-align:center;padding:110px 0;overflow:hidden;background:#13283b}
+.final__bg{position:absolute;inset:0}
+.final__bg svg,.final__bg img{width:100%;height:100%;object-fit:cover}
+.final::after{content:"";position:absolute;inset:0;background:rgba(8,18,30,.72)}
+.final .wrap{position:relative;z-index:2}
+.final h2{color:#fff;font-size:clamp(2rem,4.2vw,3.3rem)}
+.final p{max-width:640px;margin:18px auto 34px;font-size:1.1rem;opacity:.94}
+
+/* ===== footer ===== */
+footer.site{background:#0e1319;color:#9aa6b4;padding:40px 0 100px;font-size:.84rem}
+footer.site .wrap{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+footer.site .logo{color:#fff}
+footer.site .links a{text-decoration:underline;text-underline-offset:3px}
+footer.site .disc{max-width:720px;font-size:.76rem;opacity:.8}
+
+/* ===== sticky mobile bar ===== */
+.mbar{display:none}
+
+/* ===== reveal ===== */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ===== responsive ===== */
+@media (max-width:1100px){
+  .bar__info{display:none}
+  .bar__call{display:flex;align-items:center;gap:7px;font-weight:800;font-size:.88rem;color:var(--orange);margin-left:auto}
+  .bar__call svg{width:16px;height:16px}
+  .bar .wrap{gap:14px}
+  .bar__cta{margin-left:0}
+}
+@media (max-width:980px){
+  section{padding:64px 0}
+  .hero .wrap{grid-template-columns:1fr;gap:34px;padding:48px 0 56px}
+  .hero{min-height:0}
+  .strip .wrap{grid-template-columns:1fr;gap:22px}
+  .strip__item{justify-content:flex-start;max-width:420px;margin-inline:auto;width:100%}
+  .careful .wrap{grid-template-columns:1fr;gap:34px}
+  .fin-grid{grid-template-columns:1fr}
+  .types-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-card,.why-card:nth-child(4),.why-card:nth-child(5){grid-column:auto}
+  .why-card:nth-child(5){grid-column:1 / -1}
+  .income-grid{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:1fr;gap:26px;max-width:460px;margin-inline:auto}
+  .steps-grid::before{top:0;bottom:0;left:27px;right:auto;border-top:0;border-left:2px dashed rgba(255,255,255,.4)}
+  .step{text-align:left;display:grid;grid-template-columns:56px 1fr;gap:0 18px;padding:0}
+  .step__n{margin:0;grid-row:span 3}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .rev-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  :root{--bar-h:52px}
+  .wrap{width:min(1160px,100% - 32px)}
+  .logo small{display:none}
+  .bar__cta{display:none}
+  .bar__call{font-size:.95rem}
+  .form-card{padding:24px 20px}
+  .type{grid-template-columns:1fr}
+  .type__art{max-width:300px;margin-inline:auto;width:100%}
+  .why-grid,.income-grid,.proj-grid,.rev-grid{grid-template-columns:1fr}
+  .why-card:nth-child(5){grid-column:auto}
+  .inc{min-height:260px}
+  .fin-card .big{font-size:3.5rem}
+  .final{padding:80px 0}
+  .btn{padding:15px 22px;width:100%}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.12);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));gap:10px}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:.88rem;padding:13px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.03em}
+  .mbar a svg{width:18px;height:18px}
+  .mbar .call{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+  .mbar .est{background:var(--blue);color:#fff}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="bar">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Home">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M4 20 20 6l16 14" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 18v16h22V18" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><rect x="16" y="23" width="8" height="11" fill="#007bc3"/></svg>
+      <span><span data-brand="name">Casita Works</span><small>ADU Builders</small></span>
+    </a>
+    <div class="bar__info">
+      <span>CA Lic. #<span data-brand="license">000000</span></span>
+      <span>Licensed, Bonded &amp; Insured</span>
+      <span class="fin">Financing Available</span>
+      <span><a data-phone-link href="tel:+13235550100">&#9990; <span data-brand="phone">(323) 555-0100</span></a></span>
+    </div>
+    <a data-phone-link class="bar__call" href="tel:+13235550100"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.250.2 2.450.6 3.600a1 1 0 0 1-.25 1z"/></svg><span data-brand="phone">(323) 555-0100</span></a>
+    <a href="#estimate" class="bar__cta">Get My Free ADU Estimate</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="estimate">
+  <div class="hero__bg" id="heroBg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <h1>Los Angeles ADU Builders<br>You Can Actually Trust</h1>
+      <p class="lead">From expedited city permits to flawless construction, we handle 100% of your ADU project so you generate passive income or house family members without the typical contractor headaches.</p>
+      <ul class="hero__pts">
+        <li data-i="check">Free 3D design</li>
+        <li data-i="check">Fixed, written price</li>
+        <li data-i="check">0% financing available*</li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="formCard">
+      <p class="tiny">Takes 30 Seconds. No Obligation. A Real Person<br>Not A Call Center — Responds Within 1 Business Day.</p>
+      <h2>Check Your Property's<br>ADU Eligibility</h2>
+      <form id="leadForm" novalidate>
+        <div class="field"><input name="name" type="text" placeholder="Full Name" autocomplete="name" required><span class="msg">Please enter your name.</span></div>
+        <div class="field"><input name="phone" type="tel" placeholder="Phone Number" autocomplete="tel" required><span class="msg">Enter a valid phone number.</span></div>
+        <div class="field"><input name="email" type="email" placeholder="Email Address" autocomplete="email" required><span class="msg">Enter a valid email address.</span></div>
+        <div class="field"><input name="zip" type="text" inputmode="numeric" maxlength="5" placeholder="Zip Code" autocomplete="postal-code" required><span class="msg">Enter a 5-digit zip code.</span></div>
+        <div class="field">
+          <select name="projectType" required>
+            <option value="">Project Type</option>
+            <option>Detached ADU</option>
+            <option>Attached ADU</option>
+            <option>Garage Conversion</option>
+            <option>Junior ADU</option>
+            <option>Not Sure Yet</option>
+          </select><span class="msg">Please choose a project type.</span>
+        </div>
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+        <button class="btn btn--block" type="submit">Get My Free ADU Estimate</button>
+        <p class="fine">Your information is private and never sold.</p>
+      </form>
+      <div class="form-ok" role="status">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg>
+        <h3>Thank you, <span id="okName">friend</span>!</h3>
+        <p>A real member of our team will reach out within 1 business day to review your property's ADU eligibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="strip">
+  <div class="wrap">
+    <div class="strip__item"><span data-i="doc"></span><div><b>We Handle All City Permits &amp; Plans</b><span>No City Hall trips. No confusing zoning paperwork.</span></div></div>
+    <div class="strip__item"><span data-i="lock"></span><div><b>Fixed-Price Guarantee</b><span>Your written quote is your final price. No hidden fees.</span></div></div>
+    <div class="strip__item"><span data-i="calendar"></span><div><b>12 Month, 0% Interest Financing Available</b><span>For up to $150K*</span></div></div>
+  </div>
+</div>
+
+<!-- ============ CAREFUL ============ -->
+<section class="careful">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Thinking About<br>Building an ADU?</h2>
+      <h3 class="sub">You're Right to Be Careful.</h3>
+      <p class="lets">Let's be honest:</p>
+      <p>The construction industry has a reputation problem. Between confusing city zoning laws, contractors who disappear mid-project, and quotes that balloon after the concrete is poured, it's no surprise homeowners hesitate.</p>
+      <p>An ADU is a $150,000+ investment. You deserve a contractor who treats your home with respect and your budget with transparency.</p>
+      <p>That's why every project with <span data-brand="name">Casita Works</span> starts with a fixed, written scope before we break ground, a dedicated project manager from day one, and a team that's licensed, bonded, and insured. Not a subcontractor roulette.</p>
+    </div>
+    <div class="badges rv">
+      <div class="badge"><span data-i="shield"></span><div><b>Fully Licensed &amp; Insured</b><span>CA Lic. #<span data-brand="license">000000</span>. Your property is protected from day one.</span></div></div>
+      <div class="badge"><span data-i="doc"></span><div><b>Iron-Clad Fixed Pricing</b><span>Written scope of work before we break ground. No surprise fees.</span></div></div>
+      <div class="badge"><span data-i="user"></span><div><b>Dedicated Project Manager</b><span>One point of contact. No chasing people down for updates.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINANCING ============ -->
+<section class="finance">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow">Financing</span>
+      <h2 class="sec-title">An ADU Is More Affordable<br>Than You Think.</h2>
+      <p class="sec-sub">Building an ADU doesn't mean draining your savings upfront. Whether you're building for rental income, family, or both, we make the financial side easy for qualified homeowners.</p>
+    </div>
+    <div class="fin-grid">
+      <div class="fin-card rv"><div class="big">100%</div><div class="cap">Financing Available</div><p>Cover the full cost of your project with no large upfront payment required.</p></div>
+      <div class="fin-card rv"><div class="big">0% Interest</div><div class="cap">For 15 Months</div><p>Pay down your project interest-free for over a year before standard financing terms apply.</p></div>
+    </div>
+    <a href="#estimate" class="btn rv"><span data-i="arrow"></span>See If I Qualify for 0% Financing</a>
+  </div>
+</section>
+
+<!-- ============ ADU TYPES ============ -->
+<section class="types">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Your Options</span>
+      <h2 class="sec-title">Maximize Your Space with Attached Garage Conversions and ADUs</h2>
+      <p class="sec-sub">An Accessory Dwelling Unit (ADU) is a self-contained living space built on the same lot as your primary home. Whether attached, detached, or integrated into your existing house, each option offers unique advantages depending on your property, budget, and long-term goals.</p>
+    </div>
+    <div class="types-grid" id="typesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow">Why Us</span>
+      <h2 class="sec-title">Why 115+ LA Homeowners<br>Chose <em data-brand="name">Casita Works</em>.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv"><div class="ico" data-i="stamp"></div><h3>Permit Experts</h3><p>We navigate the notorious Los Angeles permitting process so you don't have to spend hours at City Hall. We submit the plans, handle the revisions, and secure the approvals.</p></div>
+      <div class="why-card rv"><div class="ico" data-i="cube"></div><h3>Free 3D Design Rendering</h3><p>See exactly what your new space will look like before you commit to anything. Make changes before construction starts, not after.</p></div>
+      <div class="why-card rv"><div class="ico" data-i="bolt"></div><h3>Speed to Completion</h3><p>Because we handle design, permits, and construction under one roof, your ADU is finished and generating income faster than working with separate vendors.</p></div>
+      <div class="why-card rv"><div class="ico" data-i="trophy"></div><h3>25+ Years of Local Experience</h3><p>We've been building in LA long enough to know every step of the process and every way it can go wrong if it's not handled right.</p></div>
+      <div class="why-card rv"><div class="ico" data-i="layers"></div><h3>Everything Under One Roof</h3><p>Design, permits, and construction handled by one accountable team. No juggling separate architects, permit expediters, and builders who each blame the other when something slips.</p></div>
+    </div>
+    <a href="#estimate" class="btn rv"><span data-i="arrow"></span>See If I Qualify for 0% Financing</a>
+  </div>
+</section>
+
+<!-- ============ ELIGIBILITY BANNER ============ -->
+<section class="elig">
+  <div class="elig__box">
+    <h2 class="rv">Not sure which type fits your property?</h2>
+    <p class="rv">We'll tell you — for free.</p>
+    <a href="#estimate" class="btn rv"><span data-i="arrow"></span>Check My Property's ADU Eligibility &mdash; <em>It's Free</em></a>
+  </div>
+</section>
+
+<!-- ============ INCOME ============ -->
+<section class="income">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">The Return</span>
+      <h2 class="sec-title">Turn Unused Space Into<br><em>$24,000+ a Year</em> in Passive Income.</h2>
+      <p class="sec-sub">A well-built ADU or garage conversion is one of the smartest real estate investments you can make in Los Angeles. The numbers speak for themselves.</p>
+    </div>
+    <div class="income-grid" id="incomeGrid"></div>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section class="steps">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="sec-title">From First Call to Move-In:<br>Your 5-Step ADU Journey.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step rv"><div class="step__n">1</div><small>Step 1</small><h3>Free Consultation &amp; Eligibility Check</h3><p>We confirm your property qualifies for an ADU and discuss your vision at zero cost to you.</p></div>
+      <div class="step rv"><div class="step__n">2</div><small>Step 2</small><h3>Review Price Proposal</h3><p>See your ADU before signing anything. You receive a written scope of work with a fixed price. No hidden fees.</p></div>
+      <div class="step rv"><div class="step__n">3</div><small>Step 3</small><h3>We Handle All Permits &amp; City Approvals</h3><p>Our team manages the entire LA permitting process. You don't set foot in City Hall.</p></div>
+      <div class="step rv"><div class="step__n">4</div><small>Step 4</small><h3>Construction with a Dedicated Project Manager</h3><p>One point of contact. Regular updates. No surprises.</p></div>
+      <div class="step rv"><div class="step__n">5</div><small>Step 5</small><h3>Move In, or Start Renting</h3><p>Your new space is ready. Start generating income or welcoming family on day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Our Work</span>
+      <h2 class="sec-title">Our ADU Projects</h2>
+      <p class="sec-sub">Explore our latest transformations, where design meets craftsmanship and every detail matters.</p>
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+    <p class="note">Placeholder illustrations — add your real project photos in the CONFIG block.</p>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="sec-title">Don't Just Take<br>Our Word For It.</h2>
+      <div class="rating"><span class="stars" data-stars="5"></span> Rated 4.9/5 by 115+ Los Angeles Homeowners</div>
+    </div>
+    <div class="rev-grid" id="revGrid"></div>
+    <p class="note">Sample testimonials for layout only — replace with real, verifiable customer reviews before launch.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="final__bg" id="finalBg" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="rv">Ready to Unlock Your<br>Property's Hidden Potential?</h2>
+    <p class="rv">Get a free 3D design and a fixed, no-surprise quote from LA's trusted ADU experts. Financing available with 0% interest on qualifying projects.*</p>
+    <a href="#estimate" class="btn btn--orange rv"><span data-i="arrow"></span>Check My Property's ADU Eligibility &mdash; <em>It's Free</em></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M4 20 20 6l16 14" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 18v16h22V18" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><rect x="16" y="23" width="8" height="11" fill="#007bc3"/></svg>
+      <span data-brand="name">Casita Works</span>
+    </a>
+    <div>Copyright &copy; <span id="yr">2026</span> <span data-brand="name">Casita Works</span>. All rights reserved. &nbsp;|&nbsp; <span class="links"><a href="#">Privacy Policy</a></span></div>
+    <p class="disc">*On approved credit, restrictions apply, call for details.</p>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a data-phone-link class="call" href="tel:+13235550100"><span data-i="phone"></span>Call Now</a>
+  <a class="est" href="#estimate">Free Estimate</a>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIG — edit these values; everything else on the page updates.
+   ===================================================================== */
+const CONFIG = {
+  name:    "Casita Works",
+  phone:   "(323) 555-0100",
+  license: "000000",
+  // POST target for the lead form (JSON). Leave "" to run in demo mode.
+  formEndpoint: "",
+  // Real photos (optional). Leave "" to use the built-in illustrations.
+  heroImage:  "",
+  finalImage: "",
+  projects: [
+    { city:"Studio City",     rating:"5.0", img:"" },
+    { city:"Inglewood",       rating:"4.9", img:"" },
+    { city:"Reseda, CA",      rating:"5.0", img:"" },
+    { city:"Woodland Hills",  rating:"4.9", img:"" },
+    { city:"Sherman Oaks",    rating:"5.0", img:"" },
+    { city:"Studio City",     rating:"4.9", img:"" }
+  ]
+};
+
+/* ---------- icons ---------- */
+const S = 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
+const ICONS = {
+  check:`<svg viewBox="0 0 24 24" ${S}><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>`,
+  doc:`<svg viewBox="0 0 24 24" ${S}><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>`,
+  lock:`<svg viewBox="0 0 24 24" ${S}><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></svg>`,
+  calendar:`<svg viewBox="0 0 24 24" ${S}><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4M9 15h2M13 15h2"/></svg>`,
+  shield:`<svg viewBox="0 0 24 24" ${S}><path d="M12 3 5 6v5c0 4.500 3 8 7 10 4-2 7-5.500 7-10V6z"/><path d="m9 12 2.200 2.200L15.500 10"/></svg>`,
+  user:`<svg viewBox="0 0 24 24" ${S}><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>`,
+  stamp:`<svg viewBox="0 0 24 24" ${S}><path d="M9 3h6v6l3 4H6l3-4z"/><path d="M5 17h14v3H5z"/></svg>`,
+  cube:`<svg viewBox="0 0 24 24" ${S}><path d="m12 3 8 4.500v9L12 21l-8-4.500v-9z"/><path d="m4 7.500 8 4.500 8-4.500M12 12v9"/></svg>`,
+  bolt:`<svg viewBox="0 0 24 24" ${S}><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>`,
+  trophy:`<svg viewBox="0 0 24 24" ${S}><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 14v4M8 21h8M9 18h6"/></svg>`,
+  layers:`<svg viewBox="0 0 24 24" ${S}><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 12.500 9 5 9-5M3 16.500l9 5 9-5"/></svg>`,
+  arrow:`<svg viewBox="0 0 24 24" ${S}><circle cx="12" cy="12" r="9.500"/><path d="M8 12h8m-3.500-3.500L16 12l-3.500 3.500"/></svg>`,
+  phone:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.600 10.800a15 15 0 0 0 6.600 6.600l2.200-2.200a1 1 0 0 1 1-.25 11 11 0 0 0 3.600.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.500a1 1 0 0 1 1 1c0 1.250.2 2.450.6 3.600a1 1 0 0 1-.25 1z"/></svg>`,
+  star:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.500 2.900 6 6.600.9-4.800 4.600 1.200 6.500L12 17.300 6.100 20.500l1.200-6.500L2.500 9.400l6.600-.9z"/></svg>`,
+  home:`<svg viewBox="0 0 24 24" ${S}><path d="m3 11 9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>`,
+  trend:`<svg viewBox="0 0 24 24" ${S}><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg>`,
+  key:`<svg viewBox="0 0 24 24" ${S}><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M16 7l3 3M14 9l2 2"/></svg>`,
+  laptop:`<svg viewBox="0 0 24 24" ${S}><rect x="5" y="5" width="14" height="10" rx="1.500"/><path d="M2 19h20"/></svg>`
+};
+document.querySelectorAll('[data-i]').forEach(el=>{
+  const k=el.dataset.i; if(!ICONS[k]) return;
+  if(el.tagName==='LI'){ el.insertAdjacentHTML('afterbegin',ICONS[k]); }
+  else el.innerHTML=ICONS[k];
+});
+document.querySelectorAll('[data-stars]').forEach(el=>{el.innerHTML=ICONS.star.repeat(+el.dataset.stars)});
+
+/* ---------- brand bindings ---------- */
+document.querySelectorAll('[data-brand]').forEach(el=>{el.textContent=CONFIG[el.dataset.brand]});
+const tel='tel:+1'+CONFIG.phone.replace(/\D/g,'');
+document.querySelectorAll('[data-phone-link]').forEach(a=>a.href=tel);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- isometric ADU illustrations ---------- */
+function iso(type){
+  const s=17, cx=150, cy=118;
+  const P=(x,y,z)=>[(x-y)*.866*s+cx,(x+y)*.5*s-z*s+cy].map(n=>n.toFixed(1)).join(',');
+  const poly=(pts,fill,stroke='#8c9aa8',sw=1)=>`<polygon points="${pts.map(p=>P(...p)).join(' ')}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round"/>`;
+  const W={top:'#ffffff',l:'#e7edf2',r:'#d2dbe3',st:'#8c9aa8'};
+  const B={top:'#33a0e6',l:'#0b6cab',r:'#0a5a91',st:'#074a78'};
+  const box=(x,y,w,d,h,c)=>
+    poly([[x,y+d,0],[x+w,y+d,0],[x+w,y+d,h],[x,y+d,h]],c.l,c.st)+
+    poly([[x+w,y,0],[x+w,y+d,0],[x+w,y+d,h],[x+w,y,h]],c.r,c.st)+
+    poly([[x,y,h],[x+w,y,h],[x+w,y+d,h],[x,y+d,h]],c.top,c.st);
+  const winL=(x0,x1,z0,z1,y,f='#bfe4fb')=>poly([[x0,y,z0],[x1,y,z0],[x1,y,z1],[x0,y,z1]],f,'#5c6f82',.8);
+  const winR=(y0,y1,z0,z1,x,f='#a6d6f3')=>poly([[x,y0,z0],[x,y1,z0],[x,y1,z1],[x,y0,z1]],f,'#5c6f82',.8);
+  const door=(x0,x1,y,h,f='#f9fcff')=>poly([[x0,y,0],[x1,y,0],[x1,y,h],[x0,y,h]],f,'#5c6f82',.8);
+  const lawn=(x0,y0,x1,y1)=>poly([[x0,y0,0],[x1,y0,0],[x1,y1,0],[x0,y1,0]],'#e8f3e6','#cfe3cb',1);
+  const tree=(x,y)=>{const [a,b]=P(x,y,0).split(',').map(Number);return `<rect x="${a-1.500}" y="${b-10}" width="3" height="10" fill="#8a6a4a"/><circle cx="${a}" cy="${b-17}" r="9" fill="#7bbf6a"/><circle cx="${a-4}" cy="${b-14}" r="6" fill="#8fd07e"/>`};
+  const stairs=(x,y,z0,n)=>{let o='';for(let i=0;i<n;i++){o+=box(x,y+i*.5,.9,.5,z0*(i+1)/n,{top:'#fff',l:'#e2e9ef',r:'#cdd7df',st:'#8c9aa8'})}return o;};
+  let g='';
+  switch(type){
+    case 'attached':
+      g+=lawn(-1,-1,10,8)+tree(-.5,7.2)+box(0,0,6,5,2.800,W)+winL(.8,2.200,.9,2.200,5)+winL(3.200,4.600,.9,2.200,5)+
+        box(6,1,4,4,2.200,B)+door(6.800,8.200,5,1.900)+winR(2.200,3.800,.9,1.800,10);
+      g=g.replace(/(<polygon[^>]*>)/,'$1'); break;
+    case 'detached':
+      g+=lawn(-1,-1,10,9)+tree(10,0.5)+box(0,0,4.500,3.200,2.500,W)+winL(.6,1.800,.8,2,3.200)+winL(2.600,3.800,.8,2,3.200)+
+        box(3.500,4.600,4.200,3.200,2.100,B)+door(4.400,5.600,7.800,1.800)+winL(6,7.100,.8,1.700,7.800)+winR(5.400,7,.8,1.700,7.700);
+      break;
+    case 'garage':
+      g+=lawn(-1,-1,9,8)+tree(8.300,.2)+box(1,0,6.500,5.500,2.600,W)+
+        poly([[1,5.500,.1],[7.500,5.500,.1],[7.500,5.500,2.600],[1,5.500,2.600]],'#e7edf2','#8c9aa8')+
+        poly([[1.800,5.500,0],[5.800,5.500,0],[5.800,5.500,2],[1.800,5.500,2]],'#33a0e6','#074a78')+
+        [0,1,2,3].map(i=>poly([[1.800,5.500,.5*i],[5.800,5.500,.5*i],[5.800,5.500,.5*i+.08],[1.800,5.500,.5*i+.08]],'#0b6cab','none',0)).join('')+
+        winR(1.500,3.500,.9,1.900,7.500); break;
+    case 'above':
+      g+=lawn(-1,-1,10,8)+tree(-.3,6.800)+box(0,0,6,5,2.300,W)+
+        poly([[.8,5,0],[3.300,5,0],[3.300,5,1.900],[.8,5,1.900]],'#cfd9e2','#5c6f82',.8)+
+        box(.4,.4,5.200,4.200,2.400,{top:'#33a0e6',l:'#0b6cab',r:'#0a5a91',st:'#074a78'}).replace(/<polygon/g,'<polygon transform="translate(0,'+(-2.300*s).toFixed(1)+')"')+
+        '' ;
+      // stairs (right side)
+      g+=stairs(6.200,.6,2.300,5); break;
+    case 'two':
+      g+=lawn(-1,-1,9,8)+tree(8,.4)+box(1,1,5,4,2.200,B)+
+        box(1.500,1.500,4,3,2.200,B).replace(/<polygon/g,'<polygon transform="translate(0,'+(-2.200*s).toFixed(1)+')"').replace(/#0b6cab|#0a5a91/g,m=>m)+
+        door(2,3.100,5,1.800)+winL(3.800,5,.8,1.700,5)+stairs(6.300,1.200,2.200,5); break;
+    case 'jadu':
+      // cutaway house with floor plan
+      g+=lawn(-1,-1,9,8)+
+        poly([[0,0,0],[7,0,0],[7,6,0],[0,6,0]],'#fff','#8c9aa8')+
+        poly([[0,0,0],[3.600,0,0],[3.600,3,0],[0,3,0]],'#cfe9fa','#5c6f82')+
+        poly([[3.600,0,0],[7,0,0],[7,3,0],[3.600,3,0]],'#f6e7d2','#5c6f82')+
+        poly([[0,3,0],[3,3,0],[3,6,0],[0,6,0]],'#e7edf2','#5c6f82')+
+        poly([[3,3,0],[7,3,0],[7,6,0],[3,6,0]],'#e3f3df','#5c6f82')+
+        poly([[3,3,0],[3,6,0],[3,6,.12],[3,3,.12]],'#074a78','#074a78')+
+        // walls
+        poly([[0,6,0],[7,6,0],[7,6,.9],[0,6,.9]],'#33a0e6','#074a78')+
+        poly([[7,0,0],[7,6,0],[7,6,.9],[7,0,.9]],'#0a5a91','#074a78')+
+        poly([[0,0,.9],[7,0,.9],[7,0,0],[0,0,0]],'#0b6cab','#074a78','1').replace(/points="[^"]*"/,'points="'+[[0,0,0],[7,0,0],[7,0,.9],[0,0,.9]].map(p=>P(...p)).join(' ')+'"')+
+        box(.4,3.400,1.200,1,.5,{top:'#fff',l:'#dfe7ee',r:'#cfd9e2',st:'#8c9aa8'})+
+        box(4.200,3.600,2,1.100,.55,{top:'#fff',l:'#dfe7ee',r:'#cfd9e2',st:'#8c9aa8'})+
+        box(1.400,.5,.9,.9,.5,{top:'#bfe4fb',l:'#9ccdee',r:'#8bbfe2',st:'#5c8db1'})+
+        box(4.500,.5,2,.9,.45,{top:'#fff',l:'#dfe7ee',r:'#cfd9e2',st:'#8c9aa8'})+tree(8.200,5.600);
+      break;
+  }
+  return `<svg viewBox="0 0 300 236" role="img" aria-label="${type} illustration" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+
+const TYPES=[
+  {k:'attached', t:'Attached ADU', tag:'More space, connected to your home.', p:'An attached ADU shares a wall with the main house while maintaining a private entrance and full living amenities. It offers a cost-effective way to expand your property.', b:'Homeowners who want to add living space or rental income without using backyard square footage.'},
+  {k:'detached', t:'Detached ADU', tag:'A fully independent unit built in your backyard.', p:'A detached ADU is a standalone home with its own entrance, kitchen, bathroom, and living space. It offers maximum privacy and excellent rental income potential.', b:'Homeowners with available backyard space who want maximum rental income or a fully private family suite.'},
+  {k:'garage', t:'Garage Conversion', tag:'Your most cost-effective path to rental income.', p:'Convert your existing garage into a fully permitted ADU. Since the structure already exists, projects are typically faster and more affordable.', b:'Homeowners with an unused garage who want the quickest and most cost-effective ADU option.'},
+  {k:'above', t:'Above-Garage ADU', tag:'Build up, not out — and keep your parking.', p:'Add a private living space above your garage while preserving your yard and parking. A smart solution for maximizing limited lot space.', b:'Homeowners with a detached garage who want to maximize their property\'s potential.'},
+  {k:'two', t:'Two-Story ADU', tag:'Double the space without expanding your footprint.', p:'A two-story ADU maximizes living space by building vertically, making it ideal for smaller lots while preserving valuable outdoor areas.', b:'Homeowners who need more square footage without sacrificing backyard space.'},
+  {k:'jadu', t:'JADU', tag:'Convert existing space into a functional living unit.', p:'A JADU transforms part of your existing home into a self-contained space with its own entrance and kitchenette. It benefits from California\'s simplified permitting process.', b:'Homeowners who want an affordable ADU using existing interior space.'}
+];
+document.getElementById('typesGrid').innerHTML=TYPES.map(x=>`
+  <article class="type rv">
+    <div class="type__art">${iso(x.k)}</div>
+    <div><h3>${x.t}</h3><p class="tag">${x.tag}</p><p>${x.p}</p>
+      <div class="best"><b>Best for:</b><span>${x.b}</span></div></div>
+  </article>`).join('');
+
+/* ---------- scene helper (hero / final / income / projects) ---------- */
+function scene({sky=['#243b57','#e9a36b'],wall='#f4f1ec',accent='#1f2a36',glow='#ffd89a',ground='#3f5b3a',seed=0}={}){
+  const id='g'+Math.random().toString(36).slice(2,8);
+  return `<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sky[0]}"/><stop offset="1" stop-color="${sky[1]}"/></linearGradient>
+    <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${glow}"/><stop offset="1" stop-color="#fff3d6"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#${id}s)"/>
+  <rect y="330" width="800" height="270" fill="${ground}"/>
+  <rect y="338" width="800" height="262" fill="#d8d4cc" opacity=".0"/>
+  <path d="M0 430 L800 410 L800 600 L0 600Z" fill="#cfcac0"/>
+  <g opacity=".92">
+    <rect x="${120+seed*14}" y="190" width="${520-seed*20}" height="200" fill="${wall}"/>
+    <rect x="${108+seed*14}" y="176" width="${544-seed*20}" height="18" fill="${accent}"/>
+    <rect x="${180+seed*14}" y="226" width="150" height="150" fill="url(#${id}w)"/>
+    <rect x="${180+seed*14}" y="226" width="150" height="150" fill="none" stroke="${accent}" stroke-width="5"/>
+    <path d="M${255+seed*14} 226v150M${180+seed*14} 300h150" stroke="${accent}" stroke-width="4"/>
+    <rect x="${370+seed*14}" y="226" width="90" height="150" fill="url(#${id}w)" stroke="${accent}" stroke-width="5"/>
+    <rect x="${500+seed*14}" y="250" width="100" height="70" fill="${accent}" opacity=".85"/>
+    <rect x="${500+seed*14}" y="250" width="100" height="70" fill="none" stroke="#fff" stroke-opacity=".25"/>
+  </g>
+  <g fill="#2a3b2c"><ellipse cx="90" cy="395" rx="60" ry="42"/><ellipse cx="720" cy="400" rx="70" ry="46"/></g>
+  <g fill="#1c2a1f"><ellipse cx="60" cy="385" rx="42" ry="30"/><ellipse cx="750" cy="388" rx="46" ry="32"/></g>
+  <path d="M0 560 L800 520" stroke="#b9b3a7" stroke-width="2" opacity=".6"/>
+  <g stroke="#b9b3a7" stroke-width="2" opacity=".6"><path d="M200 600 220 420M420 600 430 420M640 600 630 420"/></g>
+</svg>`;
+}
+function setBg(id,url,svg){const el=document.getElementById(id);el.innerHTML=url?`<img src="${url}" alt="" loading="eager">`:svg}
+setBg('heroBg',CONFIG.heroImage,scene({sky:['#1a2b44','#e9a36b'],wall:'#f3efe8',accent:'#20262e',glow:'#ffcf86',ground:'#3d5638'}));
+setBg('finalBg',CONFIG.finalImage,scene({sky:['#10243a','#4f7fa8'],wall:'#eef1f3',accent:'#1b2530',glow:'#ffd89a',ground:'#2f4a35',seed:1}));
+
+/* income cards */
+const INC=[
+  {t:'Generate Rental Income',p:'Offset your mortgage with a steady stream of passive income — $2,000+/month in most LA neighborhoods.',sky:['#183049','#d98a52'],wall:'#f2eee6'},
+  {t:'Keep Family Close',p:'Create a beautiful, private space for aging parents or adult children without sacrificing anyone\'s independence.',sky:['#2a3d52','#f0b27c'],wall:'#ece9e2'},
+  {t:'Boost Property Value',p:'Instantly increase the resale value and square footage of your lot.',sky:['#12304c','#6fa6cf'],wall:'#f4f6f7'},
+  {t:'The Ultimate Home Office',p:'Build the quiet, detached workspace you\'ve always wanted — no commute required.',sky:['#1c2a3a','#b9855e'],wall:'#e9e6df'}
+];
+const INC_ICON=['key','home','trend','laptop'];
+document.getElementById('incomeGrid').innerHTML=INC.map((x,i)=>`
+  <div class="inc rv"><div class="inc__bg" style="background:linear-gradient(160deg,${x.sky[0]},${x.sky[1]})"><span class="inc__ico">${ICONS[INC_ICON[i]]}</span></div>
+  <div class="inc__txt"><h3>${x.t}</h3><p>${x.p}</p></div></div>`).join('');
+
+/* projects */
+const PALETTES=[
+  {sky:['#27425f','#f0b27c'],wall:'#f3efe8'},{sky:['#3b5775','#c7d8e6'],wall:'#e8edf0'},
+  {sky:['#1d3552','#e7956b'],wall:'#efe9df'},{sky:['#294a63','#9cc2dc'],wall:'#f1f3f2'},
+  {sky:['#33263f','#f2a07a'],wall:'#ebe6dd'},{sky:['#20405a','#d6c08a'],wall:'#f4f1ea'}
+];
+document.getElementById('projGrid').innerHTML=CONFIG.projects.map((p,i)=>`
+  <figure class="proj rv">
+    ${p.img?`<img src="${p.img}" alt="ADU project in ${p.city}" loading="lazy">`:scene({...PALETTES[i%6],seed:i%4})}
+    <figcaption class="proj__cap"><div><small>ADU</small><b>${p.city}</b></div><span class="rate">${ICONS.star}${p.rating}</span></figcaption>
+  </figure>`).join('');
+
+/* reviews (sample copy) */
+const REVIEWS=[
+  {q:'Our detached ADU turned out even better than the 3D rendering. Our project manager kept us informed every step of the way and the quality exceeded our expectations.',n:'David M.',s:'Google Review'},
+  {q:'We converted our garage into a beautiful ADU and the process was seamless. They were always responsive and made everything easy, from permits to completion.',n:'Sarah K.',s:'Yelp Review'},
+  {q:'Our new ADU turned out even better than we imagined. Every detail was done right and the project finished on time. Couldn\'t be happier.',n:'Michael R.',s:'Houzz Review'},
+  {q:'Excellent experience! The crew was professional, the workmanship was outstanding, and we were updated throughout the entire project.',n:'Jessica A.',s:'Yelp Review'},
+  {q:'Building an ADU felt overwhelming until we hired this team. They handled everything professionally and the final result is beautiful. We would definitely use them again.',n:'Daniel C.',s:'Google Review'},
+  {q:'From design to final inspection, the entire process was stress-free. Our ADU is now the perfect space for our family. Highly recommended!',n:'Emily T.',s:'Google Review'}
+];
+document.getElementById('revGrid').innerHTML=REVIEWS.map(r=>`
+  <blockquote class="rev rv"><span class="stars">${ICONS.star.repeat(5)}</span><q>"${r.q}"</q>
+  <footer>— ${r.n} <span>${r.s}</span></footer></blockquote>`).join('');
+
+/* ---------- reveal on scroll ---------- */
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'}):null;
+document.querySelectorAll('.rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+
+/* ---------- form ---------- */
+const form=document.getElementById('leadForm'),card=document.getElementById('formCard');
+const qs=new URLSearchParams(location.search);
+['utm_source','utm_medium','utm_campaign'].forEach(k=>{if(form[k])form[k].value=qs.get(k)||''});
+const rules={
+  name:v=>v.trim().length>1,
+  phone:v=>v.replace(/\D/g,'').length>=10,
+  email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+  zip:v=>/^\d{5}$/.test(v),
+  projectType:v=>!!v
+};
+form.addEventListener('input',e=>{const f=e.target.closest('.field');if(f)f.classList.remove('err')});
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  let ok=true;
+  Object.keys(rules).forEach(k=>{
+    const el=form[k],valid=rules[k](el.value);
+    el.closest('.field').classList.toggle('err',!valid);
+    if(!valid&&ok){el.focus();ok=false}
+  });
+  if(!ok)return;
+  const data=Object.fromEntries(new FormData(form));
+  const btn=form.querySelector('button');btn.disabled=true;btn.textContent='Sending…';
+  try{
+    if(CONFIG.formEndpoint){
+      const r=await fetch(CONFIG.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      if(!r.ok)throw new Error('bad response');
+    } else { console.info('[demo mode] lead captured:',data); }
+    document.getElementById('okName').textContent=data.name.trim().split(' ')[0];
+    card.classList.add('sent');
+  }catch(err){
+    btn.disabled=false;btn.textContent='Get My Free ADU Estimate';
+    const fine=form.querySelector('.fine');
+    fine.textContent='Sorry, that did not send. Please call us at '+CONFIG.phone+'.';
+    fine.style.color='#d93a3a';
+  }
+});
+</script>
+</body>
+</html>
