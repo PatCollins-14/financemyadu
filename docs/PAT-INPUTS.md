@@ -14,7 +14,7 @@ Status key: [x] filled from the website (verified live 2026-10-23), [ ] open. Ev
 - [ ] **Compliance contact and process at E Mortgage Capital**, and sign-off in `compliance/REVIEW-CHECKLIST.md`
 - [x] **DRE #02143449**, confirmed by Pat in chat 2026-10-23. The website footer still labels it "BRE", so compliance should confirm the label
 - [ ] **ADU qualifier form or `FORM_ENDPOINT`**; confirm the application link for this campaign (`APPLICATION_URL`)
-- [ ] **"FinanceMyADU" approved as a trade name** for E Mortgage Capital (name and domain supplied by Pat 2026-10-23; approval pending). Also confirm you control financemyadu.com; it currently serves a placeholder
+- [ ] **"FinanceMyADU" approved as a trade name** for E Mortgage Capital (name supplied by Pat 2026-10-23; approval pending). Domain: financemyadu.io (Pat, 2026-10-23). Also confirm you control it; it currently serves a parked page that blocks crawlers
 - [ ] **Which programs you offer** that consider ADU rental income or after-ADU value; whether you offer renovation or construction financing
 - [ ] **Lender of record and required disclosures for reverse mortgages** (site names Finance of America Reverse LLC); confirm whether to show the reverse mortgage section (`SHOW_REVERSE_SECTION`) and verify HECM rules for funding an ADU
 - [ ] **Confirm "no obligation" and "no credit check"** statements, and approved text-message consent wording
@@ -62,7 +62,7 @@ Total placeholders in source: **66** across 18 files (a placeholder in a shared 
 | ads/chatgpt-ads-prep.md | 11 | [PAT: company license numbers and proof] |
 | ads/chatgpt-ads-prep.md | 15 | [PAT: confirm "FinanceMyADU" is an approved trade name for E Mortgage Capital and that compliance approves its use] |
 | ads/chatgpt-ads-prep.md | 32 | [PAT: create an ADU qualifier form, or tell me to use another endpoint] |
-| ads/chatgpt-ads-prep.md | 34 | [PAT: confirm you control financemyadu.com and what is currently on it] |
+| ads/chatgpt-ads-prep.md | 34 | [PAT: confirm you control financemyadu.io] |
 | scripts/build.ps1 | 119 | [PAT: confirm "FinanceMyADU" is an approved trade name for E Mortgage Capital and that compliance approves its use] |
 | scripts/build.ps1 | 178 | [PAT: confirm application link for this campaign] |
 | scripts/build.ps1 | 289 | [PAT: real scenario from my files; numbers as ranges; what went wrong or surprised me; what I would tell a homeowner in this exact situation] |

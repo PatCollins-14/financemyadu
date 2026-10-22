@@ -6,7 +6,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 
 | ID | Page or asset | Status | Approval date | Reviewer | Changes requested |
 |---|---|---|---|---|---|
-| `funnel` | Funnel page, FinanceMyADU.com (noindex) | pending | | | |
+| `funnel` | Funnel page, FinanceMyADU.io (noindex) | pending | | | |
 | `pillar` | Hub: How to finance an ADU in California | pending | | | |
 | `heloc-for-adu` | Hub: Can I use a HELOC to build an ADU? | pending | | | |
 | `heloc-vs-cash-out-refinance` | Hub: HELOC vs cash-out refinance for an ADU | pending | | | |

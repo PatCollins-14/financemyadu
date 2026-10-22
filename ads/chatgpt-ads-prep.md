@@ -31,7 +31,7 @@ See `ads/ad-copy.md` and `ads/ad-copy.csv`. Six titles and six descriptions, cha
 - [ ] Licensee identity is clear: Pat Collins, E Mortgage Capital Inc., both NMLS numbers, Equal Housing Opportunity.
 - [ ] The form posts to a real endpoint (`FORM_ENDPOINT`) and has a consent checkbox. `[PAT: create an ADU qualifier form, or tell me to use another endpoint]`
 - [ ] Consent and cookie handling: analytics stay off until a visitor accepts (`ANALYTICS_ID` is `GTM-TQ8C7WLM`; nothing loads before the visitor presses Accept).
-- [ ] The domain FinanceMyADU.com points at the deployed funnel (DNS is Pat's task; not done here). On 2026-10-23 financemyadu.com answered HTTP 200 and its robots.txt was `User-agent: * / Allow: /` with an `LLM-Policy: /llms.txt` line, so something is already served there. `[PAT: confirm you control financemyadu.com and what is currently on it]` This build's robots.txt replaces it, and this build does not add an `llms.txt`.
+- [ ] The domain FinanceMyADU.io points at the deployed funnel (DNS is Pat's task; not done here). On 2026-10-23 financemyadu.io answered HTTP 200 with a parked robots.txt of `User-agent: * / Disallow: /`, which would block crawlers including OAI-AdsBot. This build's robots.txt must replace it before ads run. `[PAT: confirm you control financemyadu.io]`
 
 ## 4. Campaign tags
 `utm_source=chatgpt`, `utm_medium=cpc`, `utm_campaign=adu-financing`, `utm_content=<ad variant>`. Details in `docs/MEASUREMENT.md`.
