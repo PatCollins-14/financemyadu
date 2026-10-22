@@ -60,3 +60,6 @@ Reason: Pat stated it. `FUNNEL_BASE_URL`, the footer approval placeholder, the c
 
 **D20. Funnel domain is `financemyadu.io` (Pat, chat 2026-10-23). Supersedes the `.com` assumed in D19.**
 Reason: Pat gave the exact domain. Checked live: HTTP 200, robots.txt `User-agent: * / Disallow: /` (a parked blocking file, as the brief predicted). The build's robots.txt must replace it before ads run, or ChatGPT's ad review crawler may be blocked. Domain control is still for Pat to confirm.
+
+**D21. Preview first, go-live later (Pat, chat 2026-10-23).**
+Reason: the project is not live. Domain, DNS, form endpoint, GTM audit, GitHub, hosting, search tools and the ad account are parked in `docs/PAT-INPUTS.md` under "Parked until go-live". Dev builds now produce a local preview: `dist/index.html` (a noindex index of every page with status and open placeholder counts), hub links to the funnel and the hub breadcrumbs point at the local copies, and `run.cmd preview` builds and serves everything at http://localhost:8771/. Production builds are unchanged and still use absolute URLs.

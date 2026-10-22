@@ -10,6 +10,16 @@ Status key: [x] filled from the website (verified live 2026-10-23), [ ] open. Ev
 - [x] Six BBB review summaries (E Mortgage Capital)
 - Differences found vs the seed copy: 18 articles (not 8); four spam-style posts in the post sitemap; the footer links /dti-calculator/ which returns 404. See `docs/SITE-ISSUES.md`.
 
+## Parked until go-live (Pat, 2026-10-23: "set those aside")
+These need accounts, DNS or a live site, so they wait until after the initial preview. Nothing in the preview depends on them.
+- Domain: confirm you control financemyadu.io, point DNS at the deployed funnel, and replace its parked `Disallow: /` robots.txt with this build's
+- `FORM_ENDPOINT` (ADU qualifier form or other endpoint) and the campaign application link (`APPLICATION_URL`)
+- Google Tag Manager: list the tags in container GTM-TQ8C7WLM and confirm the consent bar wording covers them
+- GitHub repo, workflow and hosting (see the chat; the project is already a git repo, nothing pushed)
+- Search Console, Bing Webmaster Tools, the ChatGPT ad account and ad approval (`ads/chatgpt-ads-prep.md`)
+- Hub location decision (subfolder vs subdomain) and pasting `hub/wordpress-ready/` into WordPress
+- Running the production gate (`run.cmd production`), which needs every page APPROVED
+
 ## Still needed (most important first)
 - [ ] **Compliance contact and process at E Mortgage Capital**, and sign-off in `compliance/REVIEW-CHECKLIST.md`
 - [x] **DRE #02143449**, confirmed by Pat in chat 2026-10-23. The website footer still labels it "BRE", so compliance should confirm the label

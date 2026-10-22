@@ -6,6 +6,7 @@ Owner: Pat Collins (Patrick D. Collins), California mortgage professional. Licen
 Static site built by PowerShell 5.1. Run from the project root:
 ```
 run.cmd build            # dev build into dist/ (placeholders highlighted, draft banners on)
+run.cmd preview          # dev build, then serve dist/ at http://localhost:8771/ (dist/index.html lists every page)
 run.cmd preflight-dev    # same checks as preflight, reported as warnings (exit 0)
 run.cmd preflight        # production gate: exits non-zero on ANY failure
 run.cmd production       # production build (only APPROVED pages) then preflight

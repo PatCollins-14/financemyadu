@@ -22,6 +22,12 @@ $skipped = New-Object System.Collections.ArrayList
 function NiceDate([string]$d) { [datetime]::ParseExact($d, 'yyyy-MM-dd', [Globalization.CultureInfo]::InvariantCulture).ToString('MMMM d, yyyy', [Globalization.CultureInfo]::InvariantCulture) }
 function Depth([string]$path) { @($path.Trim('/').Split('/') | Where-Object { $_ -ne '' }).Count }
 function Rel([string]$from, [string]$to) { ('../' * (Depth $from)) + $to.TrimStart('/') }
+# In dev/preview builds, links to pages we build point at the local copy; production keeps absolute URLs.
+function CrumbHref([string]$u, [string]$from) {
+  if ($Production) { return $u }
+  foreach ($p in @('/adu-financing/', '/about/pat-collins/')) { if ($u -eq ($hubBase + $p)) { return (Rel $from $p) } }
+  return $u
+}
 function ImgSize([string]$file) {
   $img = [System.Drawing.Image]::FromFile($file)
   try { return @{ w = $img.Width; h = $img.Height } } finally { $img.Dispose() }
@@ -338,6 +344,7 @@ function Build-HubPage($p) {
   # --- header, breadcrumbs, byline
   $pillarRel = Rel $path '/adu-financing/'; $faqRel = Rel $path '/adu-financing/faq/'; $aboutRel = Rel $path '/about/pat-collins/'
   $funnelLink = "$funnelBase/?utm_source=adu-hub&utm_medium=organic&utm_campaign=hub-cta"
+  if (-not $Production) { $funnelLink = ('../' * ((Depth $path) + 1)) + 'funnel/' }   # preview: link to the local funnel
   $header = @"
 <header class="bar">
   <div class="wrap">
@@ -351,7 +358,7 @@ function Build-HubPage($p) {
   if ($isAuthor) { $crumbList += @{ name = 'About'; url = "$hubBase/about/pat-collins/" }; $crumbList += @{ name = 'Pat Collins'; url = $url } }
   elseif ($p.id -eq 'pillar') { $crumbList += @{ name = 'ADU financing'; url = $url } }
   else { $crumbList += @{ name = 'ADU financing'; url = "$hubBase/adu-financing/" }; $crumbList += @{ name = $m.h1; url = $url } }
-  $crumbHtml = '<nav class="crumbs" aria-label="Breadcrumb">' + (($crumbList | ForEach-Object { if ($_.url -eq $url) { Esc $_.name } else { '<a href="' + $_.url + '">' + (Esc $_.name) + '</a>' } }) -join ' &rsaquo; ') + '</nav>'
+  $crumbHtml = '<nav class="crumbs" aria-label="Breadcrumb">' + (($crumbList | ForEach-Object { if ($_.url -eq $url) { Esc $_.name } else { '<a href="' + (CrumbHref $_.url $path) + '">' + (Esc $_.name) + '</a>' } }) -join ' &rsaquo; ') + '</nav>'
 
   $byline = ''
   if (-not $isAuthor) {
@@ -432,6 +439,39 @@ Sitemap: $hubBase/sitemap.xml
 
 Build-Funnel
 Build-Hub
+
+# ---------- preview index (dev builds only; never part of production) ----------
+function Build-PreviewIndex {
+  $rows = New-Object System.Text.StringBuilder
+  $items = @([pscustomobject]@{ id = 'funnel'; title = 'Funnel page (financemyadu.io, noindex)'; href = 'funnel/'; group = 'Asset A: Funnel' })
+  foreach ($p in $pagesCfg.hub) { $items += [pscustomobject]@{ id = $p.id; title = [string]$hubData[$p.id].meta.h1; href = ('hub' + $p.path); group = 'Asset B: Education hub' } }
+  $lastGroup = ''
+  foreach ($it in $items) {
+    if ($it.group -ne $lastGroup) { [void]$rows.AppendLine("<tr><th colspan=`"3`" style=`"background:#eef3fa;text-align:left;padding:10px`">$($it.group)</th></tr>"); $lastGroup = $it.group }
+    $file = Join-Path $dist (($it.href.Trim('/')).Replace('/', '\') + '\index.html')
+    $ph = 0; if (Test-Path $file) { $ph = ([regex]::Matches((Read-Text $file), '\[PAT:')).Count }
+    $gate = ''; if ($it.id -eq 'reverse-mortgage-for-adu') { $gate = ' <em>(compliance gate: noindex until approved)</em>' }
+    $status = $(if (Test-Approved $approvals $it.id) { 'APPROVED' } else { 'DRAFT' })
+    [void]$rows.AppendLine("<tr><td><a href=`"$($it.href)`">$(Esc $it.title)</a>$gate</td><td>$status</td><td>$ph</td></tr>")
+  }
+  $html = @"
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview: ADU funnel and hub (not live)</title>
+<meta name="robots" content="noindex, nofollow">
+<style>body{font-family:Inter,system-ui,Segoe UI,sans-serif;max-width:900px;margin:32px auto;padding:0 20px;color:#172338;line-height:1.55}
+h1{font-family:Georgia,serif}table{border-collapse:collapse;width:100%;margin:16px 0}td,th{border:1px solid #dbe3ee;padding:9px 12px}
+.note{background:#fff6e0;border:1px solid #e8c26a;border-radius:8px;padding:12px 16px}a{color:#223d78}</style></head><body>
+<h1>Preview: ADU funnel and education hub</h1>
+<p class="note"><strong>Not live.</strong> Local draft build for review. Yellow highlights are <code>[PAT: ...]</code> placeholders waiting for your input. Nothing here is approved by compliance, and the form is not connected.</p>
+<table><thead><tr><th style="text-align:left">Page</th><th>Status</th><th>Open placeholders</th></tr></thead><tbody>
+$($rows.ToString())</tbody></table>
+<p>Flags in this build: reverse mortgage section <strong>$(if ($cfg['SHOW_REVERSE_SECTION']) { 'shown' } else { 'hidden' })</strong>, worked example <strong>$(if ($cfg['SHOW_EXAMPLE']) { 'shown' } else { 'hidden' })</strong>, analytics <strong>$(if ([string]$cfg['ANALYTICS_ID']) { 'configured but off until a visitor accepts' } else { 'not configured' })</strong>. Built $today.</p>
+</body></html>
+"@
+  Write-Text (Join-Path $dist 'index.html') $html
+}
+if (-not $Production) { Build-PreviewIndex }
 
 # ---------- docs/SOURCE-MAP.md (regenerated every build) ----------
 $sm = New-Object System.Text.StringBuilder
