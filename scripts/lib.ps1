@@ -24,7 +24,8 @@ function Get-Config {
     $val = $p.Value
     $envVal = [Environment]::GetEnvironmentVariable($p.Name)
     if ($envVal) {
-      if ($val -is [bool]) { $val = ($envVal -eq 'true') } else { $val = $envVal }
+      if ($envVal -eq 'NONE') { $val = '' }                      # NONE clears a text setting (used by share.ps1)
+      elseif ($val -is [bool]) { $val = ($envVal -eq 'true') } else { $val = $envVal }
     }
     $out[$p.Name] = $val
   }
