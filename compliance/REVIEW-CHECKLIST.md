@@ -31,7 +31,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | Form consent and text-message wording | funnel quiz | Wording copied from the live site; needs approved final text |
 | "MyADUFinancing" trade name | funnel footer | Needs approval as a trade name for E Mortgage Capital |
 | "30+ years" and "Licensed in California" | funnel trust strip | Pat's own statements, not on the website |
-| DRE number and label | every footer | Site shows "BRE #02143449"; needs confirmation |
+| DRE number and label | every footer and byline | Footers now show "DRE #02143449" (confirmed by Pat in chat); the live website says "BRE". Confirm the label |
 | Rental income statements | funnel, `rental-income-qualifying` | Cites Fannie Mae Selling Guide B3-3.8-02 (version dated 09/02/2026); confirm wording and currency |
 | Statements about Pasadena | `pasadena` | Sourced from the City's ADU page read on 2026-10-23 |
 | "No obligation" and "no credit check" | funnel hero and form | Shown only as `[PAT: confirm ...]` placeholders until confirmed |

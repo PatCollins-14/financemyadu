@@ -9,7 +9,7 @@ Financial services is a restricted ad category, and mortgages are reviewed case 
 |---|---|
 | Pat's NMLS record (NMLS #1628553) and a link to NMLS Consumer Access | have: public |
 | E Mortgage Capital Inc. company license (NMLS #1416824) and the state licenses it relies on | `[PAT: company license numbers and proof]` |
-| DRE license number and label (site shows "BRE #02143449") | `[PAT: confirm DRE number and label]` |
+| DRE license number: #02143449 (confirmed by Pat in chat 2026-10-23; the website label says "BRE") | have; compliance to confirm the label |
 | The landing page, live and approved by compliance | built in `dist/funnel/`; needs approval and deployment |
 | **One legal entity everywhere.** The ad account, the landing page and the NMLS company must all say E Mortgage Capital Inc., NMLS #1416824, with Pat as the loan officer | footer and trust strip already say this |
 | "MyADUFinancing" trade-name approval | `[PAT: confirm "MyADUFinancing" is an approved trade name for E Mortgage Capital and that compliance approves its use]` |

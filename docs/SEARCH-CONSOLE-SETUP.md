@@ -13,7 +13,7 @@ I cannot do these; they need your accounts.
 Add the same site and submit the same sitemap. **Unverified:** whether Bing indexing affects ChatGPT visibility. Do it for Bing's own search traffic, not for ChatGPT.
 
 ## ChatGPT search
-OpenAI documents `OAI-SearchBot` as the crawler that surfaces sites in ChatGPT search results. The hub's robots.txt allows it explicitly. `GPTBot` (training) is a separate choice; default is allow (`ALLOW_GPTBOT=true`), which does not affect search inclusion. `[PAT: decide whether to allow GPTBot]`
+OpenAI documents `OAI-SearchBot` as the crawler that surfaces sites in ChatGPT search results. The hub's robots.txt allows it explicitly. `GPTBot` (training) is a separate choice; default is allow (`ALLOW_GPTBOT=true`), which does not affect search inclusion. Decided by Pat on 2026-10-23: allow.
 
 ## Ads
 `OAI-AdsBot` must be able to fetch the funnel page. Its robots.txt allows it explicitly. The funnel is hidden from search with a meta `noindex` tag, not a robots.txt block.

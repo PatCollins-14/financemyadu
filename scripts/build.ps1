@@ -178,7 +178,7 @@ function Build-Funnel {
   $appLine = '[PAT: confirm application link for this campaign]'
   if ([string]$cfg['APPLICATION_URL']) { $appLine = '<a href="' + (Esc ([string]$cfg['APPLICATION_URL'])) + '" data-event="application_link_click" rel="noopener">Ready now? Start your application</a>' }
   $consentBar = ''
-  if ($analytics) { $consentBar = '<div class="consent-bar" id="consentBar" role="region" aria-label="Cookie choices"><span>We would like to use analytics cookies to see which pages help. You can say no.</span><button type="button" class="btn btn--navy" data-consent="granted">Accept</button><button type="button" class="btn btn--ghost" data-consent="denied">Deny</button></div>' }
+  if ($analytics) { $consentBar = '<div class="consent-bar" id="consentBar" role="region" aria-label="Cookie choices"><span>We would like to use Google Tag Manager to measure which pages help. It may set cookies. You can say no.</span><button type="button" class="btn btn--navy" data-consent="granted">Accept</button><button type="button" class="btn btn--ghost" data-consent="denied">Deny</button></div>' }
   $k = $idn.contact; $l = $idn.siteLinks
   $vars = @{
     form_endpoint = (Esc $endpoint); analytics_id = (Esc $analytics)
@@ -461,6 +461,8 @@ foreach ($r in $rows) { [void]$sm.AppendLine("| $($r[0]) | $($r[1]) | $($r[2]) |
 [void]$sm.AppendLine('')
 [void]$sm.AppendLine('## Stated by Pat in the build brief (not on the website)')
 [void]$sm.AppendLine('- "30+ years in mortgages" and "Licensed in California" in the trust strip (brief section 7). The website says "decades in business, sales, real estate".')
+[void]$sm.AppendLine('- DRE #02143449: confirmed by Pat in chat on 2026-10-23 (the website footer shows the same number with the label "BRE"). Compliance to confirm the label.')
+[void]$sm.AppendLine('- Analytics: reuse Google Tag Manager container GTM-TQ8C7WLM (Pat, chat 2026-10-23; the ID is visible in the website source). GPTBot: allow (Pat, chat 2026-10-23).')
 [void]$sm.AppendLine('')
 [void]$sm.AppendLine('## Sources used per page')
 [void]$sm.AppendLine('| Page | Source URL | What it supports | Retrieved |')

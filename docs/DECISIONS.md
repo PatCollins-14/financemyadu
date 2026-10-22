@@ -46,3 +46,14 @@ Reason: brief section 8.2 and 8.3.
 
 **D15. `FORM_ENDPOINT` must be set before production; preflight fails production when it is empty.**
 Reason: never invent an endpoint; an unconnected form must not go live. This check is an addition to the brief's list.
+
+**D16. DRE shown as "DRE #02143449" (Pat, chat 2026-10-23). Supersedes D8.**
+Reason: Pat confirmed the number. The label "DRE" is used instead of the website's "BRE". Compliance should still confirm the label. Source noted in `docs/SOURCE-MAP.md`.
+
+**D17. `ANALYTICS_ID` = `GTM-TQ8C7WLM`, reusing the main site's container (Pat, chat 2026-10-23).**
+Reason: Pat's choice. Tracking is still off until a visitor accepts the consent bar, and the bar now says it uses Google Tag Manager and may set cookies. What tags the container fires is unverified (no access), so it is listed as a pre-launch check in `docs/MEASUREMENT.md`.
+
+**D18. GPTBot allowed (Pat, chat 2026-10-23). Confirms D10.**
+
+**D19. Trade name: Pat's message used "FinanceMyADU" in a question about approval, not an answer. The brief's name "MyADUFinancing" and its domain stay in the build, and the approval placeholder stays.**
+Reason: it is unclear whether "FinanceMyADU" is a new name or a slip. If it is the real name, change `FUNNEL_BASE_URL`, the footer placeholder in `scripts/build.ps1` and the references in `docs/` and `ads/`.

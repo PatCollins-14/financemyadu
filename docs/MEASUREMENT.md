@@ -1,8 +1,8 @@
 # Measurement
 
 ## Analytics (off by default)
-- `ANALYTICS_ID` is empty. When you set it (a `GTM-` container or a GA4 `G-` ID), the funnel shows a small consent bar and loads nothing until a visitor presses Accept. Deny is the default if they ignore it. No cookie or network call happens before Accept.
-- `[PAT: confirm whether to reuse the main site's Google Tag Manager container (GTM-TQ8C7WLM, behind Complianz consent) on the funnel or create a new GA4 property]` Facebook pixels on the main site (two IDs) should not fire on the funnel unless consent covers marketing.
+- `ANALYTICS_ID` is `GTM-TQ8C7WLM`: Pat chose to reuse the main site's Google Tag Manager container (chat, 2026-10-23). The funnel shows a small consent bar and loads nothing until a visitor presses Accept. Deny is the default if they ignore it. No cookie or network call happens before Accept.
+- The container is shared with the main site, which keeps it behind Complianz consent. Before launch, someone with GTM access should open the container and list its tags and triggers. I could not see inside it. If it fires advertising or Facebook pixel tags, the funnel's consent wording must cover them and the tags should be limited to this page where possible. Add the five funnel events (below) as GTM triggers; the funnel pushes them to `dataLayer` after consent.
 - Never put the ID in a file that is committed with secrets. It is a public ID, but it is still set by environment variable or `config/site.json`.
 
 ## Events (sent only after consent)
