@@ -12,7 +12,7 @@ Financial services is a restricted ad category, and mortgages are reviewed case 
 | DRE license number: #02143449 (confirmed by Pat in chat 2026-10-23; the website label says "BRE") | have; compliance to confirm the label |
 | The landing page, live and approved by compliance | built in `dist/funnel/`; needs approval and deployment |
 | **One legal entity everywhere.** The ad account, the landing page and the NMLS company must all say E Mortgage Capital Inc., NMLS #1416824, with Pat as the loan officer | footer and trust strip already say this |
-| "MyADUFinancing" trade-name approval | `[PAT: confirm "MyADUFinancing" is an approved trade name for E Mortgage Capital and that compliance approves its use]` |
+| "FinanceMyADU" trade-name approval | `[PAT: confirm "FinanceMyADU" is an approved trade name for E Mortgage Capital and that compliance approves its use]` |
 | Compliance pre-approval of every ad and the page (E Mortgage Capital may require it) | see `compliance/REVIEW-CHECKLIST.md` row `ads-chatgpt` |
 
 Targeting: United States only.
@@ -30,8 +30,8 @@ See `ads/ad-copy.md` and `ads/ad-copy.csv`. Six titles and six descriptions, cha
 - [ ] No rates, payments, APRs, loan amounts, "preapproved", "guaranteed" or other banned phrases (enforced by `run.cmd preflight`).
 - [ ] Licensee identity is clear: Pat Collins, E Mortgage Capital Inc., both NMLS numbers, Equal Housing Opportunity.
 - [ ] The form posts to a real endpoint (`FORM_ENDPOINT`) and has a consent checkbox. `[PAT: create an ADU qualifier form, or tell me to use another endpoint]`
-- [ ] Consent and cookie handling: analytics stay off until a visitor accepts (`ANALYTICS_ID` empty by default).
-- [ ] The domain MyADUFinancing.com points at the deployed funnel (DNS is Pat's task; not done here). Its current parked robots.txt (`User-agent: * / Disallow: /`) is replaced by this build's robots.txt.
+- [ ] Consent and cookie handling: analytics stay off until a visitor accepts (`ANALYTICS_ID` is `GTM-TQ8C7WLM`; nothing loads before the visitor presses Accept).
+- [ ] The domain FinanceMyADU.com points at the deployed funnel (DNS is Pat's task; not done here). On 2026-10-23 financemyadu.com answered HTTP 200 and its robots.txt was `User-agent: * / Allow: /` with an `LLM-Policy: /llms.txt` line, so something is already served there. `[PAT: confirm you control financemyadu.com and what is currently on it]` This build's robots.txt replaces it, and this build does not add an `llms.txt`.
 
 ## 4. Campaign tags
 `utm_source=chatgpt`, `utm_medium=cpc`, `utm_campaign=adu-financing`, `utm_content=<ad variant>`. Details in `docs/MEASUREMENT.md`.

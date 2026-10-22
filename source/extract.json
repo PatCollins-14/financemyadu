@@ -156,7 +156,7 @@
       "note": "Not relevant to ADU financing pages beyond internal linking."
     }
   ],
-  "not_found_on_site": ["Any ADU page or ADU-specific product", "Any renovation or construction loan product", "Any 'MyADUFinancing' or LetsTalkADU reference"],
+  "not_found_on_site": ["Any ADU page or ADU-specific product", "Any renovation or construction loan product", "Any 'FinanceMyADU', 'MyADUFinancing' or LetsTalkADU reference"],
   "faq_home": [
     {"q": "What is the difference between pre-qualification and pre-approval?", "a": "Pre-qualification is usually an early estimate based on information you provide. A pre-approval involves a deeper review of your credit, income, assets, and debts. Because the information is verified, a pre-approval generally carries more weight with real estate agents and sellers."},
     {"q": "How much do I need for a down payment?", "a": "It depends on the loan program and your financial profile. Some qualified buyers may have low- or no-down-payment options, while a larger down payment may reduce the monthly payment or mortgage-insurance cost. We compare the cash required with the payment and long-term impact."},

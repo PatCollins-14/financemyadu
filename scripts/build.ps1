@@ -116,7 +116,7 @@ $jsonld
 function Get-Footer([string]$assetPrefix, [bool]$isFunnel) {
   $p = $idn.person; $c = $idn.company; $k = $idn.contact; $l = $idn.siteLinks
   $trade = ''
-  if ($isFunnel) { $trade = '<p>[PAT: confirm "MyADUFinancing" is an approved trade name for E Mortgage Capital and that compliance approves its use]</p>' }
+  if ($isFunnel) { $trade = '<p>[PAT: confirm "FinanceMyADU" is an approved trade name for E Mortgage Capital and that compliance approves its use]</p>' }
   return @"
 <footer class="site">
   <div class="wrap">

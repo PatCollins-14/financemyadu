@@ -17,7 +17,7 @@ Reason: the brief prefers the template's system. Site CSS blues (#52afe6, #35498
 **D5. Hub canonical base = `https://letstalkhomemortgage.com` (subfolder) by default; switchable with `HUB_BASE_URL`.**
 Reason: the brief names this the primary plan and asks for a config variable. Open question logged for Pat.
 
-**D6. Funnel base = `https://myadufinancing.com`.**
+**D6. Funnel base = `https://financemyadu.com` (originally `https://myadufinancing.com` from the brief; changed by D19).**
 Reason: domain named in the brief. Trade-name approval is an open `[PAT: ...]`.
 
 **D7. Reverse mortgage card in the funnel comparison is gated by `SHOW_REVERSE_SECTION` (default false) together with the senior section.**
@@ -55,5 +55,5 @@ Reason: Pat's choice. Tracking is still off until a visitor accepts the consent 
 
 **D18. GPTBot allowed (Pat, chat 2026-10-23). Confirms D10.**
 
-**D19. Trade name: Pat's message used "FinanceMyADU" in a question about approval, not an answer. The brief's name "MyADUFinancing" and its domain stay in the build, and the approval placeholder stays.**
-Reason: it is unclear whether "FinanceMyADU" is a new name or a slip. If it is the real name, change `FUNNEL_BASE_URL`, the footer placeholder in `scripts/build.ps1` and the references in `docs/` and `ads/`.
+**D19. Trade name and domain are "FinanceMyADU" (Pat, chat 2026-10-23). Supersedes the brief's "MyADUFinancing". Approval is still pending.**
+Reason: Pat stated it. The domain is assumed to be `financemyadu.com` (not stated explicitly; checked live, it answers 200). `FUNNEL_BASE_URL`, the footer approval placeholder, the checklist and the ads prep were updated. The funnel page itself shows only "ADU financing with Pat Collins" in its header, so the trade name appears only in the footer approval placeholder until Pat confirms approval.

@@ -6,7 +6,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 
 | ID | Page or asset | Status | Approval date | Reviewer | Changes requested |
 |---|---|---|---|---|---|
-| `funnel` | Funnel page, MyADUFinancing.com (noindex) | pending | | | |
+| `funnel` | Funnel page, FinanceMyADU.com (noindex) | pending | | | |
 | `pillar` | Hub: How to finance an ADU in California | pending | | | |
 | `heloc-for-adu` | Hub: Can I use a HELOC to build an ADU? | pending | | | |
 | `heloc-vs-cash-out-refinance` | Hub: HELOC vs cash-out refinance for an ADU | pending | | | |
@@ -29,7 +29,7 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | Worked example | funnel (hidden by `SHOW_EXAMPLE=false`) and `200k-adu-example` | Any rate, payment, APR or term triggers Regulation Z disclosures; the 30% cap and two scenario figures are the only numbers allowed anywhere |
 | BBB reviews | funnel local-proof section | Reviews are about E Mortgage Capital, not ADU loans or Pat personally. One summary mentions a timeline ("under a month"), shown verbatim from the home page |
 | Form consent and text-message wording | funnel quiz | Wording copied from the live site; needs approved final text |
-| "MyADUFinancing" trade name | funnel footer | Needs approval as a trade name for E Mortgage Capital |
+| "FinanceMyADU" trade name | funnel footer | Needs approval as a trade name for E Mortgage Capital |
 | "30+ years" and "Licensed in California" | funnel trust strip | Pat's own statements, not on the website |
 | DRE number and label | every footer and byline | Footers now show "DRE #02143449" (confirmed by Pat in chat); the live website says "BRE". Confirm the label |
 | Rental income statements | funnel, `rental-income-qualifying` | Cites Fannie Mae Selling Guide B3-3.8-02 (version dated 09/02/2026); confirm wording and currency |

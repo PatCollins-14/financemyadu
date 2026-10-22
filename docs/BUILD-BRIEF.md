@@ -6,7 +6,7 @@ Booked consultations from California homeowners who want to finance an ADU, from
 ## Three assets
 | Asset | Purpose | Domain | Indexing |
 |---|---|---|---|
-| A. Funnel | Convert paid traffic into booked consultations. One offer, no site menu. | MyADUFinancing.com (parked today) | `noindex` through meta tag, flag `FUNNEL_NOINDEX=true`. robots.txt allows everything. |
+| A. Funnel | Convert paid traffic into booked consultations. One offer, no site menu. | FinanceMyADU.com (serves a placeholder today; domain control to be confirmed by Pat) | `noindex` through meta tag, flag `FUNNEL_NOINDEX=true`. robots.txt allows everything. |
 | B. Education hub | SEO / GEO / AEO. Pat's name, licenses and expertise (E-E-A-T). | `/adu-financing/` on LetsTalkHomeMortgage.com (subfolder or subdomain via `HUB_BASE_URL`) | Indexable; COMPLIANCE-GATE pages noindex until approved. |
 | C. LetsTalkADU.com | ADU design, construction, permitting | not built | Later |
 
