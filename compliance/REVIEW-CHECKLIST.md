@@ -28,7 +28,8 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | Reverse mortgage content and the lender of record | `reverse-mortgage-for-adu`, funnel senior section and card (hidden by `SHOW_REVERSE_SECTION=false`) | CFPB has penalized misleading reverse mortgage advertising; site names Finance of America Reverse LLC, footer names only E Mortgage Capital |
 | Worked example | funnel (hidden by `SHOW_EXAMPLE=false`) and `200k-adu-example` | Any rate, payment, APR or term triggers Regulation Z disclosures; the 30% cap and two scenario figures are the only numbers allowed anywhere |
 | BBB reviews | funnel local-proof section | Reviews are about E Mortgage Capital, not ADU loans or Pat personally. One summary mentions a timeline ("under a month"), shown verbatim from the home page |
-| Form consent and text-message wording | funnel quiz | Wording copied from the live site; needs approved final text |
+| Form consent and text-message wording | funnel form | Pat asked for only name, email, phone and a plans upload, so there is no consent checkbox; consent is a statement under the button with privacy and terms links. Wording copied from the live site. Compliance may require a checkbox for text messages |
+| Plans upload | funnel form | Visitors can upload existing plans (personal property information). Confirm the privacy policy covers uploaded files and how long they are kept |
 | "FinanceMyADU" trade name | funnel footer | Needs approval as a trade name for E Mortgage Capital |
 | "30+ years" and "Licensed in California" | funnel trust strip | Pat's own statements, not on the website |
 | DRE number and label | every footer and byline | Footers now show "DRE #02143449" (confirmed by Pat in chat); the live website says "BRE". Confirm the label |

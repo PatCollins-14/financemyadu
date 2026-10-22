@@ -6,6 +6,7 @@
   "HUB_BASE_URL": "https://letstalkhomemortgage.com",
   "FUNNEL_BASE_URL": "https://financemyadu.io",
   "FORM_ENDPOINT": "",
+  "UPLOAD_MAX_MB": 20,
   "ANALYTICS_ID": "GTM-TQ8C7WLM",
   "BOOKING_URL": "https://check.letstalkhomemortgage.com/",
   "APPLICATION_URL": "",

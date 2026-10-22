@@ -113,7 +113,7 @@ function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$ro
 <meta property="og:site_name" content="Pat Collins, E Mortgage Capital Inc.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
 <link rel="stylesheet" href="$cssHref">
 $jsonld
 "@
@@ -124,27 +124,23 @@ function Get-Footer([string]$assetPrefix, [bool]$isFunnel) {
   $trade = ''
   if ($isFunnel) { $trade = '<p>[PAT: confirm "FinanceMyADU" is an approved trade name for E Mortgage Capital and that compliance approves its use]</p>' }
   return @"
-<footer class="site">
+<footer class="footer">
   <div class="wrap">
+    <div class="footer-top">
+      <span class="logo" style="font-size:20px">$(Esc $p.shortName)</span>
+      <span>&copy; $($today.Substring(0,4)) $(Esc $p.shortName), NMLS #$($p.nmls) &middot; $(Esc $c.name), NMLS #$($c.nmls)</span>
+    </div>
     <div class="ids">
       <!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved $today -->
-      <p><strong style="color:#fff">$(Esc $p.shortName)</strong>, $(Esc $p.jobTitle) &middot; NMLS #$($p.nmls) &middot; DRE $($p.dre)</p>
-      <p>$(Esc $c.name) &middot; NMLS #$($c.nmls)</p>
-      <p>$(Esc $c.address)</p>
-      <p><a href="$($k.phoneTel)">$(Esc $k.phone)</a> &middot; <a href="mailto:$($k.email)">$(Esc $k.email)</a></p>
-      <p><a href="$($k.nmlsConsumerAccess)" rel="noopener">NMLS Consumer Access</a></p>
+      <p><strong>$(Esc $p.shortName)</strong>, $(Esc $p.jobTitle) &middot; NMLS #$($p.nmls) &middot; DRE $($p.dre)</p>
+      <p>$(Esc $c.name) &middot; NMLS #$($c.nmls) &middot; $(Esc $c.address)</p>
+      <p><a href="$($k.phoneTel)">$(Esc $k.phone)</a> &middot; <a href="mailto:$($k.email)">$(Esc $k.email)</a> &middot; <a href="$($k.nmlsConsumerAccess)" rel="noopener">NMLS Consumer Access</a></p>
       <div class="eho"><img src="${assetPrefix}equal-housing-opportunity.png" alt="Equal Housing Opportunity" width="$($eho.w)" height="$($eho.h)" loading="lazy"><span>Equal Housing Opportunity</span></div>
     </div>
-    <div>
-      <p><strong style="color:#fff">$(Esc $c.brand)</strong><br>Powered by $(Esc $c.poweredBy)</p>
-      <p style="margin-top:10px"><a href="$($l.privacy)" rel="noopener">Privacy Policy</a> &middot; <a href="$($l.terms)" rel="noopener">Terms &amp; Conditions</a> &middot; <a href="$($l.accessibility)" rel="noopener">Accessibility</a></p>
-    </div>
-    <div class="legal">
-      <p>$(Esc $idn.disclosure.standard)</p>
-      <p>$(Esc $idn.disclosure.adu)</p>
-      $trade
-      <p>&copy; $($today.Substring(0,4)) $(Esc $p.shortName), NMLS #$($p.nmls) &middot; $(Esc $c.name), NMLS #$($c.nmls)</p>
-    </div>
+    <p>$(Esc $idn.disclosure.standard)</p>
+    <p>$(Esc $idn.disclosure.adu)</p>
+    $trade
+    <p>$(Esc $c.brand), powered by $(Esc $c.poweredBy). <a href="$($l.privacy)" rel="noopener">Privacy Policy</a> &middot; <a href="$($l.terms)" rel="noopener">Terms &amp; Conditions</a> &middot; <a href="$($l.accessibility)" rel="noopener">Accessibility</a></p>
   </div>
 </footer>
 "@
@@ -184,7 +180,25 @@ function Build-Funnel {
   $appLine = '[PAT: confirm application link for this campaign]'
   if ([string]$cfg['APPLICATION_URL']) { $appLine = '<a href="' + (Esc ([string]$cfg['APPLICATION_URL'])) + '" data-event="application_link_click" rel="noopener">Ready now? Start your application</a>' }
   $consentBar = ''
-  if ($analytics) { $consentBar = '<div class="consent-bar" id="consentBar" role="region" aria-label="Cookie choices"><span>We would like to use Google Tag Manager to measure which pages help. It may set cookies. You can say no.</span><button type="button" class="btn btn--navy" data-consent="granted">Accept</button><button type="button" class="btn btn--ghost" data-consent="denied">Deny</button></div>' }
+  if ($analytics) { $consentBar = '<div class="consent-bar" id="consentBar" role="region" aria-label="Cookie choices"><span>We would like to use Google Tag Manager to measure which pages help. It may set cookies. You can say no.</span><button type="button" class="btn" data-consent="granted">Accept</button><button type="button" class="btn btn--ghost" data-consent="denied">Deny</button></div>' }
+  # comparison table (check = yes, cross = no, text = depends on the program)
+  $yes = '<svg class="yes" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes" role="img"><path d="M4 10.5l4 4 8-9"/></svg>'
+  $no = '<svg class="no" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-label="No" role="img"><path d="M6 6l8 8M14 6l-8 8"/></svg>'
+  $ask = '<span class="ask">Ask</span>'; $var = '<span class="ask">Varies</span>'
+  $cmpRows = @(
+    @('Keeps your current first mortgage in place', @($yes, $yes, $no, $ask)),
+    @('Replaces your current mortgage with a new loan', @($no, $no, $yes, $ask)),
+    @('Lets you borrow in stages as you need the money', @($yes, $no, $no, $ask)),
+    @('Pays you one lump sum', @($no, $yes, $yes, $ask)),
+    @('Rate usually changes over time', @($yes, $var, $var, $ask)),
+    @('Secured by your home', @($yes, $yes, $yes, $yes))
+  )
+  $cmpHtml = New-Object System.Text.StringBuilder
+  foreach ($row in $cmpRows) {
+    [void]$cmpHtml.Append("          <tr><th scope=`"row`">$($row[0])</th>")
+    foreach ($cell in $row[1]) { [void]$cmpHtml.Append("<td>$cell</td>") }
+    [void]$cmpHtml.AppendLine('</tr>')
+  }
   $k = $idn.contact; $l = $idn.siteLinks
   $vars = @{
     form_endpoint = (Esc $endpoint); analytics_id = (Esc $analytics)
@@ -196,6 +210,7 @@ function Build-Funnel {
     reviews_label = (Esc $idn.reviews.label); reviews_note = (Esc $idn.reviews.note); reviews_updated = (Esc $idn.reviews.updatedOnSite); bbb_url = $idn.reviews.bbbProfile
     reviews_html = $rv.ToString(); faq_html = $fq.ToString()
     footer = (Get-Footer 'assets/' $true); consent_bar = $consentBar; application_line = $appLine
+    upload_max_mb = [string]$cfg['UPLOAD_MAX_MB']; eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
   }
   $body = Expand-Tokens $tpl $vars
   $title = 'ADU Financing Options in California | Pat Collins'
@@ -346,11 +361,14 @@ function Build-HubPage($p) {
   $funnelLink = "$funnelBase/?utm_source=adu-hub&utm_medium=organic&utm_campaign=hub-cta"
   if (-not $Production) { $funnelLink = ('../' * ((Depth $path) + 1)) + 'funnel/' }   # preview: link to the local funnel
   $header = @"
-<header class="bar">
+<header class="header">
   <div class="wrap">
-    <a href="$pillarRel" class="logo">Pat Collins<span class="logo__sub"> &middot; ADU financing guide</span></a>
-    <nav class="bar__links" aria-label="Guide"><a href="$pillarRel">Guide</a><a href="$faqRel">FAQ</a><a href="$aboutRel">About Pat</a></nav>
-    <a class="bar__cta" href="$funnelLink" rel="noopener">See my financing options</a>
+    <a class="logo" href="$pillarRel" aria-label="Pat Collins, ADU financing guide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6" fill="#ffd84d"/></svg>
+      Pat Collins
+    </a>
+    <nav class="pill-nav" aria-label="Guide"><a href="$pillarRel">ADU guide</a><a href="$faqRel">FAQ</a><a href="$aboutRel">About Pat</a></nav>
+    <div class="header__right"><a class="btn btn-sm" href="$funnelLink" rel="noopener">See my options</a></div>
   </div>
 </header>
 "@
@@ -374,7 +392,7 @@ function Build-HubPage($p) {
 
   $relBlock = ''
   if ($rel.Length -gt 0 -or $siteLinksHtml) { $relBlock = "<section class=`"related`" aria-labelledby=`"relq`"><h2 id=`"relq`">Related questions</h2>$($rel.ToString())$siteLinksHtml</section>" }
-  $cta = "<aside class=`"cta-block`"><h2>Want to talk through your options?</h2><p>Answer a few questions and Pat will review the choices that fit your home and your project.</p><a class=`"btn`" href=`"$funnelLink`" rel=`"noopener`">See my financing options</a></aside>"
+  $cta = "<aside class=`"cta-block`"><h2>Want to talk through your options?</h2><p>Answer a few questions and Pat will review the choices that fit your home and your project.</p><a class=`"btn btn-white`" href=`"$funnelLink`" rel=`"noopener`">See my financing options</a></aside>"
   $disc = "<p class=`"sources`" style=`"margin-top:28px`">$(Esc $idn.disclosure.standard) $(Esc $idn.disclosure.adu) This page is general education, not a quote or a commitment to lend.</p>"
 
   $articleInner = "$byline`n$tocHtml`n$answerHtml`n$($secHtml.ToString())`n$relBlock`n<section class=`"sources`" aria-labelledby=`"srcs`"><h2 id=`"srcs`">Sources</h2><ol>$($srcHtml.ToString())</ol></section>"

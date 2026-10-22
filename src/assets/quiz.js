@@ -1,10 +1,11 @@
-/* Progressive enhancement only. Without JavaScript the quiz is one normal HTML form with every
-   field visible, posted to FORM_ENDPOINT. All page text is already in the HTML. */
+/* Progressive enhancement only. Without JavaScript the lead form is one normal HTML form
+   (name, email, phone, optional plans upload) posted as multipart/form-data to FORM_ENDPOINT.
+   All page text is already in the HTML. */
 (function () {
-  var root = document.documentElement;
   var body = document.body;
   var endpoint = body.getAttribute('data-endpoint') || '';
   var analyticsId = body.getAttribute('data-analytics') || '';
+  var maxMb = parseFloat(body.getAttribute('data-max-mb')) || 20;
   var consentKey = 'adu_consent';
 
   function getConsent() { try { return localStorage.getItem(consentKey); } catch (e) { return null; } }
@@ -12,6 +13,10 @@
 
   /* ---- analytics: off by default, loads only after explicit consent ---- */
   var queued = [];
+  function sendEvent(name) {
+    if (window.gtag) { window.gtag('event', name, { page: 'adu_funnel' }); }
+    else if (window.dataLayer) { window.dataLayer.push({ event: name, page: 'adu_funnel' }); }
+  }
   function loadAnalytics() {
     if (!analyticsId || window.__aduAnalytics) return;
     window.__aduAnalytics = true;
@@ -28,11 +33,7 @@
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(analyticsId);
     }
     document.head.appendChild(s);
-    queued.splice(0).forEach(function (n) { sendEvent(n); });
-  }
-  function sendEvent(name) {
-    if (window.gtag) { window.gtag('event', name, { page: 'adu_funnel' }); }
-    else if (window.dataLayer) { window.dataLayer.push({ event: name, page: 'adu_funnel' }); }
+    queued.splice(0).forEach(sendEvent);
   }
   function track(name) {
     if (!analyticsId || getConsent() !== 'granted') return;
@@ -55,15 +56,15 @@
     });
   }
 
-  /* ---- click events ---- */
   document.addEventListener('click', function (e) {
     var a = e.target.closest('[data-event]');
     if (a) track(a.getAttribute('data-event'));
   });
 
-  /* ---- UTM capture (values come from the visitor's own URL) ---- */
-  var form = document.getElementById('quizForm');
+  /* ---- lead form ---- */
+  var form = document.getElementById('leadForm');
   if (!form) return;
+  form.setAttribute('novalidate', ''); /* our messages replace the browser's; without JS the browser validates */
   try {
     var q = new URLSearchParams(location.search);
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) {
@@ -72,77 +73,61 @@
     });
   } catch (e) { /* ignore */ }
 
-  /* ---- step-by-step quiz ---- */
-  root.classList.add('js');
-  form.setAttribute('novalidate', ''); /* our own messages replace the browser's; without JS the browser validates */
-  var steps = Array.prototype.slice.call(form.querySelectorAll('.qstep'));
-  var bar2 = document.getElementById('quizBar');
-  var i = 0, started = false;
-  function show(n) {
-    i = n;
-    steps.forEach(function (s, idx) { s.hidden = idx !== n; });
-    if (bar2) bar2.style.width = Math.round(((n + 1) / steps.length) * 100) + '%';
-    var back = document.getElementById('quizBack');
-    var next = document.getElementById('quizNext');
-    var submit = document.getElementById('quizSubmit');
-    if (back) back.hidden = n === 0;
-    if (next) next.hidden = n === steps.length - 1;
-    if (submit) submit.hidden = n !== steps.length - 1;
-    var f = steps[n].querySelector('select,input');
-    if (f && started) f.focus();
+  var started = false;
+  form.addEventListener('focusin', function () { if (!started) { started = true; track('quiz_start'); } });
+  form.addEventListener('input', function (e) { var f = e.target.closest('.field'); if (f) f.classList.remove('err'); });
+
+  var plans = document.getElementById('plans');
+  var hint = document.getElementById('plansHint');
+  var plansErr = document.getElementById('plansErr');
+  var defaultHint = hint ? hint.textContent : '';
+  function plansTooBig() {
+    if (!plans || !plans.files) return false;
+    for (var i = 0; i < plans.files.length; i++) { if (plans.files[i].size > maxMb * 1024 * 1024) return true; }
+    return false;
   }
-  function validate(scope) {
+  if (plans) plans.addEventListener('change', function () {
+    var names = [];
+    for (var i = 0; i < plans.files.length; i++) names.push(plans.files[i].name);
+    if (hint) hint.textContent = names.length ? names.join(', ') : defaultHint;
+    if (plansErr) plansErr.style.display = plansTooBig() ? 'block' : 'none';
+  });
+
+  function validate() {
     var ok = true;
-    scope.querySelectorAll('input,select').forEach(function (el) {
-      var wrap = el.closest('.field') || el.closest('.consent');
-      var bad = false;
-      if (el.type === 'checkbox') { bad = el.required && !el.checked; }
-      else if (el.required) {
-        var v = (el.value || '').trim();
-        bad = !v;
-        if (!bad && el.name === 'phone') bad = v.replace(/\D/g, '').length < 10;
-        if (!bad && el.type === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-      }
+    form.querySelectorAll('input[required]').forEach(function (el) {
+      var v = (el.value || '').trim();
+      var bad = !v;
+      if (!bad && el.name === 'phone') bad = v.replace(/\D/g, '').length < 10;
+      if (!bad && el.type === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      var wrap = el.closest('.field');
       if (wrap) wrap.classList.toggle('err', bad);
       if (bad && ok) { ok = false; el.focus(); }
     });
+    if (plansTooBig()) { ok = false; if (plansErr) plansErr.style.display = 'block'; if (plans) plans.focus(); }
     return ok;
   }
-  if (steps.length) {
-    show(0);
-    form.addEventListener('focusin', function () {
-      if (!started) { started = true; track('quiz_start'); }
-    });
-    var nextBtn = document.getElementById('quizNext');
-    var backBtn = document.getElementById('quizBack');
-    if (nextBtn) nextBtn.addEventListener('click', function () {
-      if (!started) { started = true; track('quiz_start'); }
-      if (validate(steps[i])) show(i + 1);
-    });
-    if (backBtn) backBtn.addEventListener('click', function () { show(i - 1); });
-  }
-  form.addEventListener('input', function (e) {
-    var w = e.target.closest('.field') || e.target.closest('.consent');
-    if (w) w.classList.remove('err');
-  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!validate(form)) return;
-    var note = document.getElementById('quizNote');
+    if (!validate()) return;
+    var note = document.getElementById('leadNote');
     if (!endpoint) {
       if (note) { note.textContent = 'This form is not connected yet, so nothing was sent. Please call or book a time instead.'; note.hidden = false; }
       return;
     }
-    var btn = document.getElementById('quizSubmit');
+    var btn = document.getElementById('leadSubmit');
     if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-    var data = new URLSearchParams(new FormData(form));
-    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
+    fetch(endpoint, { method: 'POST', body: new FormData(form) })
       .then(function (r) { if (!r.ok) throw new Error('bad response'); return r; })
       .then(function () {
         track('quiz_complete');
+        var first = (form.elements.name.value || '').trim().split(' ')[0];
+        var nm = document.getElementById('okName');
+        if (nm && first) nm.textContent = first;
         form.hidden = true;
-        var ok = document.getElementById('quizOk');
-        if (ok) { ok.classList.add('show'); ok.setAttribute('tabindex', '-1'); ok.focus(); }
+        var ok = document.getElementById('leadOk');
+        if (ok) { ok.hidden = false; ok.setAttribute('tabindex', '-1'); ok.focus(); }
       })
       .catch(function () {
         if (btn) { btn.disabled = false; btn.textContent = 'See my financing options'; }
