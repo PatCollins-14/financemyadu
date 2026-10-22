@@ -1,0 +1,24 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gje17ins" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2b44"/><stop offset="1" stop-color="#e9a36b"/></linearGradient>
+    <linearGradient id="gje17inw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf86"/><stop offset="1" stop-color="#fff3d6"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gje17ins)"/>
+  <rect y="330" width="800" height="270" fill="#3d5638"/>
+  <rect y="338" width="800" height="262" fill="#d8d4cc" opacity=".0"/>
+  <path d="M0 430 L800 410 L800 600 L0 600Z" fill="#cfcac0"/>
+  <g opacity=".92">
+    <rect x="120" y="190" width="520" height="200" fill="#f3efe8"/>
+    <rect x="108" y="176" width="544" height="18" fill="#20262e"/>
+    <rect x="180" y="226" width="150" height="150" fill="url(#gje17inw)"/>
+    <rect x="180" y="226" width="150" height="150" fill="none" stroke="#20262e" stroke-width="5"/>
+    <path d="M255 226v150M180 300h150" stroke="#20262e" stroke-width="4"/>
+    <rect x="370" y="226" width="90" height="150" fill="url(#gje17inw)" stroke="#20262e" stroke-width="5"/>
+    <rect x="500" y="250" width="100" height="70" fill="#20262e" opacity=".85"/>
+    <rect x="500" y="250" width="100" height="70" fill="none" stroke="#fff" stroke-opacity=".25"/>
+  </g>
+  <g fill="#2a3b2c"><ellipse cx="90" cy="395" rx="60" ry="42"/><ellipse cx="720" cy="400" rx="70" ry="46"/></g>
+  <g fill="#1c2a1f"><ellipse cx="60" cy="385" rx="42" ry="30"/><ellipse cx="750" cy="388" rx="46" ry="32"/></g>
+  <path d="M0 560 L800 520" stroke="#b9b3a7" stroke-width="2" opacity=".6"/>
+  <g stroke="#b9b3a7" stroke-width="2" opacity=".6"><path d="M200 600 220 420M420 600 430 420M640 600 630 420"/></g>
+</svg>

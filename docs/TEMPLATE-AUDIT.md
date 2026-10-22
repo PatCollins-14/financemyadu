@@ -45,3 +45,6 @@ None. No canonical, no robots meta, no Open Graph, no JSON-LD, no sitemap, no ro
 3. Funnel page = reworked hero + form card, rewritten sections from the build brief.
 4. Hub = a second layout (article layout with byline, answer box, sections, sources, CTA).
 5. Add robots, sitemap, canonical, JSON-LD, noindex flags, compliance footer, preflight, snapshots, WordPress exports.
+
+## Addendum (2026-10-23): the design template is Casita Works
+Pat confirmed the design to follow is this Casita Works page. After the first build dropped many of its sections, the funnel and hub were rebuilt on its structure and tokens (see DECISIONS D22). The page's JavaScript-generated art (isometric ADUs, hero and closing scenes, icons) is now captured as static SVG in `src/funnel/art/`, so the raw HTML contains everything.

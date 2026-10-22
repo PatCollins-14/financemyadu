@@ -113,7 +113,7 @@ function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$ro
 <meta property="og:site_name" content="Pat Collins, E Mortgage Capital Inc.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
 <link rel="stylesheet" href="$cssHref">
 $jsonld
 "@
@@ -124,23 +124,23 @@ function Get-Footer([string]$assetPrefix, [bool]$isFunnel) {
   $trade = ''
   if ($isFunnel) { $trade = '<p>[PAT: confirm "FinanceMyADU" is an approved trade name for E Mortgage Capital and that compliance approves its use]</p>' }
   return @"
-<footer class="footer">
+<footer class="site">
   <div class="wrap">
-    <div class="footer-top">
-      <span class="logo" style="font-size:20px">$(Esc $p.shortName)</span>
-      <span>&copy; $($today.Substring(0,4)) $(Esc $p.shortName), NMLS #$($p.nmls) &middot; $(Esc $c.name), NMLS #$($c.nmls)</span>
-    </div>
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 20 20 6l16 14" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 18v16h22V18" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><rect x="16" y="23" width="8" height="11" fill="#007bc3"/></svg>
+      <span>$(Esc $p.shortName)</span>
+    </a>
     <div class="ids">
       <!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved $today -->
-      <p><strong>$(Esc $p.shortName)</strong>, $(Esc $p.jobTitle) &middot; NMLS #$($p.nmls) &middot; DRE $($p.dre)</p>
+      <p><strong style="color:#fff">$(Esc $p.shortName)</strong>, $(Esc $p.jobTitle) &middot; NMLS #$($p.nmls) &middot; DRE $($p.dre)</p>
       <p>$(Esc $c.name) &middot; NMLS #$($c.nmls) &middot; $(Esc $c.address)</p>
       <p><a href="$($k.phoneTel)">$(Esc $k.phone)</a> &middot; <a href="mailto:$($k.email)">$(Esc $k.email)</a> &middot; <a href="$($k.nmlsConsumerAccess)" rel="noopener">NMLS Consumer Access</a></p>
       <div class="eho"><img src="${assetPrefix}equal-housing-opportunity.png" alt="Equal Housing Opportunity" width="$($eho.w)" height="$($eho.h)" loading="lazy"><span>Equal Housing Opportunity</span></div>
     </div>
-    <p>$(Esc $idn.disclosure.standard)</p>
-    <p>$(Esc $idn.disclosure.adu)</p>
+    <p class="disc">$(Esc $idn.disclosure.standard)</p>
+    <p class="disc">$(Esc $idn.disclosure.adu)</p>
     $trade
-    <p>$(Esc $c.brand), powered by $(Esc $c.poweredBy). <a href="$($l.privacy)" rel="noopener">Privacy Policy</a> &middot; <a href="$($l.terms)" rel="noopener">Terms &amp; Conditions</a> &middot; <a href="$($l.accessibility)" rel="noopener">Accessibility</a></p>
+    <p class="links">&copy; $($today.Substring(0,4)) $(Esc $p.shortName), NMLS #$($p.nmls) &middot; $(Esc $c.name), NMLS #$($c.nmls) &middot; $(Esc $c.brand), powered by $(Esc $c.poweredBy)<br><a href="$($l.privacy)" rel="noopener">Privacy Policy</a> &middot; <a href="$($l.terms)" rel="noopener">Terms &amp; Conditions</a> &middot; <a href="$($l.accessibility)" rel="noopener">Accessibility</a></p>
   </div>
 </footer>
 "@
@@ -212,6 +212,12 @@ function Build-Funnel {
     footer = (Get-Footer 'assets/' $true); consent_bar = $consentBar; application_line = $appLine
     upload_max_mb = [string]$cfg['UPLOAD_MAX_MB']; eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
   }
+  # Casita Works illustrations (isometric ADUs, hero and closing scenes) and icons, captured from the template as static SVG
+  $artDir = Join-Path $root 'src\funnel\art'
+  foreach ($f in (Get-ChildItem $artDir -Filter '*.svg')) { $vars[($f.BaseName -replace '-', '_')] = (Read-Text $f.FullName) }
+  $iconSet = Read-Json (Join-Path $artDir 'icons.json')
+  foreach ($ip in $iconSet.PSObject.Properties) { $vars['icon_' + $ip.Name] = [string]$ip.Value }
+  $vars['person_dre'] = [string]$idn.person.dre
   $body = Expand-Tokens $tpl $vars
   $title = 'ADU Financing Options in California | Pat Collins'
   $desc = 'Compare ways to pay for an ADU in California, from home equity to cash-out refinance, with mortgage professional Pat Collins. See your options.'
@@ -361,14 +367,14 @@ function Build-HubPage($p) {
   $funnelLink = "$funnelBase/?utm_source=adu-hub&utm_medium=organic&utm_campaign=hub-cta"
   if (-not $Production) { $funnelLink = ('../' * ((Depth $path) + 1)) + 'funnel/' }   # preview: link to the local funnel
   $header = @"
-<header class="header">
+<header class="bar">
   <div class="wrap">
-    <a class="logo" href="$pillarRel" aria-label="Pat Collins, ADU financing guide">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6" fill="#ffd84d"/></svg>
-      Pat Collins
+    <a href="$pillarRel" class="logo" aria-label="Pat Collins, ADU financing guide">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 20 20 6l16 14" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 18v16h22V18" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><rect x="16" y="23" width="8" height="11" fill="#007bc3"/></svg>
+      <span>Pat Collins<small>ADU Financing Guide</small></span>
     </a>
-    <nav class="pill-nav" aria-label="Guide"><a href="$pillarRel">ADU guide</a><a href="$faqRel">FAQ</a><a href="$aboutRel">About Pat</a></nav>
-    <div class="header__right"><a class="btn btn-sm" href="$funnelLink" rel="noopener">See my options</a></div>
+    <nav class="bar__links" aria-label="Guide"><a href="$pillarRel">ADU guide</a><a href="$faqRel">FAQ</a><a href="$aboutRel">About Pat</a></nav>
+    <a class="bar__cta" href="$funnelLink" rel="noopener">See my financing options</a>
   </div>
 </header>
 "@
@@ -392,7 +398,7 @@ function Build-HubPage($p) {
 
   $relBlock = ''
   if ($rel.Length -gt 0 -or $siteLinksHtml) { $relBlock = "<section class=`"related`" aria-labelledby=`"relq`"><h2 id=`"relq`">Related questions</h2>$($rel.ToString())$siteLinksHtml</section>" }
-  $cta = "<aside class=`"cta-block`"><h2>Want to talk through your options?</h2><p>Answer a few questions and Pat will review the choices that fit your home and your project.</p><a class=`"btn btn-white`" href=`"$funnelLink`" rel=`"noopener`">See my financing options</a></aside>"
+  $cta = "<aside class=`"cta-block`"><h2>Want to talk through your options?</h2><p>Answer a few questions and Pat will review the choices that fit your home and your project.</p><a class=`"btn btn--white`" href=`"$funnelLink`" rel=`"noopener`">See my financing options</a></aside>"
   $disc = "<p class=`"sources`" style=`"margin-top:28px`">$(Esc $idn.disclosure.standard) $(Esc $idn.disclosure.adu) This page is general education, not a quote or a commitment to lend.</p>"
 
   $articleInner = "$byline`n$tocHtml`n$answerHtml`n$($secHtml.ToString())`n$relBlock`n<section class=`"sources`" aria-labelledby=`"srcs`"><h2 id=`"srcs`">Sources</h2><ol>$($srcHtml.ToString())</ol></section>"
@@ -404,7 +410,7 @@ function Build-HubPage($p) {
   $robots = $(if ($noindex) { 'noindex, follow' } else { 'index, follow' })
   $head = Get-Head $titleTag $desc $url $robots $ld ($assetPrefix + 'site.css') $(if ($isAuthor) { 'profile' } else { 'article' })
 
-  $bodyHtml = $draft + "`n" + $header + "`n" + $mainHtml + "`n" + (Get-Footer $assetPrefix $false)
+  $bodyHtml = $header + "`n" + $draft + "`n" + $mainHtml + "`n" + (Get-Footer $assetPrefix $false)
   if ($gate) { $bodyHtml = "<!-- COMPLIANCE-GATE: $($p.gate) -->`n" + $bodyHtml }
   $page = "<!doctype html>`n<html lang=`"en`">`n<head>`n$head`n</head>`n<body>`n" + (Finish $bodyHtml) + "`n</body>`n</html>`n"
   Write-Text (Join-Path $outDir 'index.html') $page
