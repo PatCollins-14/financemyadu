@@ -182,9 +182,13 @@ function Build-Funnel {
     if ($pf.logo) { return "<img class=`"$cls`" src=`"assets/$($pf.logo)`" alt=`"$(Esc $pf.name)`" height=`"28`" decoding=`"async`">" }
     return "<span class=`"$cls g-wordmark`">$(Esc $pf.name)</span>"
   }
+  $blurNames = @((Read-Json (Join-Path $root 'config\blur-names.json')).names | Sort-Object { $_.Length } -Descending)
   function Format-ReviewText([string]$t) {
     # [[Name]] in a review marks a name to hide: the page gets same-length filler letters, blurred, never the real name
-    [regex]::Replace((Esc $t), '\[\[(.+?)\]\]', { param($m) '<span class="g-blur" aria-hidden="true">' + ('x' * $m.Groups[1].Value.Length) + '</span><span class="vh">[name hidden]</span>' })
+    $hide = { param($m) $n = $m.Groups[1].Value; '<span class="g-blur" aria-hidden="true">' + ('x' * $n.Length) + '</span><span class="vh">[name hidden]</span>' }
+    $out = [regex]::Replace((Esc $t), '\[\[(.+?)\]\]', $hide)
+    foreach ($nm in $blurNames) { $out = [regex]::Replace($out, '(?<![A-Za-z>])(' + [regex]::Escape($nm) + ')(?![A-Za-z])', $hide) }
+    return $out
   }
   $gIdx = 0
   foreach ($r in $rvw.items) {

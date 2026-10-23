@@ -1,0 +1,11 @@
+{
+  "note": "Names that are hidden (blurred filler) wherever they appear in a review's own text (a \"text\" field in src/data/reviews.json). Whole words, capital letters as written. Add any name you find in the reviews; you can also wrap a name in [[double brackets]] inside a review.",
+  "names": [
+    "Susie Lim", "Susie Lin", "Susie", "Neil Augustine", "Neil", "Eric Newport", "Eric", "Jeremiah", "Brandon Laguatan", "Brandon Scott Castro", "Brandon",
+    "Monique Carreno", "Monique", "Mona Sayeah", "Mona", "Nour Abdelaziz", "Nour", "Mario", "Jonathan Zermeno", "Jonathan", "Kent Palmer", "Kent",
+    "John Gearries", "Robert William Augustine", "Robert", "Pamela Jo Simpson", "Pamela Simpson", "Pamela", "Arleen Martinez", "Arleen", "Ben Mokri",
+    "Alex Bozymowski", "Alex Gentile", "Eddie Canvasser", "Eddie", "Christiana", "Vanessa Hatch", "Vanessa", "William Figueroa", "Joey Kubes", "Joey",
+    "Lindsey Johnson", "Lindsey", "Michael Lopez", "Cristina", "Stevie Derksen", "Zach Nathanson", "Zach", "Monica Petway", "Amir Salah", "Amir",
+    "Damien", "Stephanie", "Andrew", "Steven", "Jamal", "Mel", "Nikki"
+  ]
+}
