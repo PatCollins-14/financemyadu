@@ -93,3 +93,6 @@ Compliance note: the brief (section 10, rule 2) asks ADU pages to carry the line
 
 **D30. Footer "More" column simplified (Pat, chat 2026-10-24).**
 The HELOC and Refinance links are replaced by one link, "Mortgages", to the LetsTalkHomeMortgage.com home page (`siteLinks.home`). The column is now "Mortgages" and "Articles". Applies to the funnel and every hub page, since they share `Get-Footer`. No other footer changes.
+
+**D31. "Let's Talk Home Mortgage" breadcrumb is no longer a link (Pat, chat 2026-10-24).**
+On every hub page the first breadcrumb item shows as plain text, with no destination. The other crumbs still link. The page's BreadcrumbList JSON-LD still lists the item with its URL (schema needs it), so the visible text and the structured data still match.

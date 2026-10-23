@@ -392,7 +392,7 @@ function Build-HubPage($p) {
   if ($isAuthor) { $crumbList += @{ name = 'About'; url = "$hubBase/about/pat-collins/" }; $crumbList += @{ name = 'Pat Collins'; url = $url } }
   elseif ($p.id -eq 'pillar') { $crumbList += @{ name = 'ADU financing'; url = $url } }
   else { $crumbList += @{ name = 'ADU financing'; url = "$hubBase/adu-financing/" }; $crumbList += @{ name = $m.h1; url = $url } }
-  $crumbHtml = '<nav class="crumbs" aria-label="Breadcrumb">' + (($crumbList | ForEach-Object { if ($_.url -eq $url) { Esc $_.name } else { '<a href="' + (CrumbHref $_.url $path) + '">' + (Esc $_.name) + '</a>' } }) -join ' &rsaquo; ') + '</nav>'
+  $crumbHtml = '<nav class="crumbs" aria-label="Breadcrumb">' + (($crumbList | ForEach-Object { if ($_.url -eq $url -or $_.url -eq "$hubBase/") { Esc $_.name } else { '<a href="' + (CrumbHref $_.url $path) + '">' + (Esc $_.name) + '</a>' } }) -join ' &rsaquo; ') + '</nav>'
 
   $byline = ''
   if (-not $isAuthor) {
