@@ -175,11 +175,14 @@ function Build-Funnel {
 
   # reviews
   $rv = New-Object System.Text.StringBuilder
-  foreach ($r in $idn.reviews.items) {
-    [void]$rv.AppendLine('      <article class="rev"><span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>')
+  $gr = Read-Json (Join-Path $root 'src\data\google-reviews.json')
+  foreach ($r in $gr.items) {
+    $starGlyphs = ('&#9733;' * [int]$r.stars)
+    [void]$rv.AppendLine("      <article class=`"g-card`"><div class=`"g-top`"><span class=`"stars`" role=`"img`" aria-label=`"$($r.stars) out of 5 stars`">$starGlyphs</span><span class=`"g-src`"><span class=`"g-badge`" aria-hidden=`"true`">G</span>Google</span></div>")
     [void]$rv.AppendLine("        <p>$(Esc $r.summary)</p>")
-    [void]$rv.AppendLine("        <footer>$(Esc $r.name) <span>$(Esc $r.date) &middot; $(Esc $r.source)</span></footer></article>")
+    [void]$rv.AppendLine("        <div class=`"g-author`"><span class=`"g-avatar`" aria-hidden=`"true`">$(Esc $r.initials)</span><div><b>$(Esc $r.name)</b><span>$(Esc $r.when)</span></div></div></article>")
   }
+  Add-Source 'funnel' $gr.profileUrl 'Google rating and three review summaries for E Mortgage Capital, Inc. (seen 2026-10-24)'
   # faq
   $faq = Read-Json (Join-Path $root 'src\funnel\faq.json')
   $fq = New-Object System.Text.StringBuilder
@@ -219,7 +222,7 @@ function Build-Funnel {
     phone = $k.phone; phone_tel = $k.phoneTel; email = $k.email
     booking_url = (Esc ([string]$cfg['BOOKING_URL'])); nmls_url = $k.nmlsConsumerAccess
     privacy_url = $l.privacy; terms_url = $l.terms; site_nonqm = $l.nonqm
-    reviews_label = (Esc $idn.reviews.label); reviews_note = (Esc $idn.reviews.note); reviews_updated = (Esc $idn.reviews.updatedOnSite); bbb_url = $idn.reviews.bbbProfile
+    google_rating = (Esc $gr.rating); google_count = (Esc $gr.count); google_seen = (Esc $gr.seen); google_url = (Esc $gr.profileUrl); google_name = (Esc $gr.profileName)
     reviews_html = $rv.ToString(); faq_html = $fq.ToString()
     footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine
     eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
@@ -529,10 +532,10 @@ $rows = @(
   @('Facebook profile (sameAs)', $idn.social.facebook, 'https://letstalkhomemortgage.com/'),
   @('Footer disclosure text', 'This is not a commitment to lend...', 'https://letstalkhomemortgage.com/'),
   @('About Pat, audiences, principles, process, FAQ answers', 'see source/extract.json', 'https://letstalkhomemortgage.com/'),
-  @('Six BBB review summaries (E Mortgage Capital)', 'initials, dates, stars, displayed summaries', 'https://letstalkhomemortgage.com/'),
   @('Logo, Equal Housing and AIME images', 'assets/ folder', 'https://letstalkhomemortgage.com/')
 )
 foreach ($r in $rows) { [void]$sm.AppendLine("| $($r[0]) | $($r[1]) | $($r[2]) | 2026-10-23 |") }
+[void]$sm.AppendLine('| Google rating and three review summaries (E Mortgage Capital, Inc.) | rating, review count, initials, relative dates, paraphrased summaries (src/data/google-reviews.json) | Google Maps profile, opened in the browser | 2026-10-24 |')
 [void]$sm.AppendLine('')
 [void]$sm.AppendLine('## Stated by Pat in the build brief (not on the website)')
 [void]$sm.AppendLine('- "30+ years in mortgages" and "Licensed in California" in the trust strip (brief section 7). The website says "decades in business, sales, real estate".')

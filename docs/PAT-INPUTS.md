@@ -37,6 +37,7 @@ These need accounts, DNS or a live site, so they wait until after the initial pr
 - [x] **Analytics:** reuse GTM-TQ8C7WLM (Pat, chat 2026-10-23), set as `ANALYTICS_ID`. Still open: confirm which tags that container fires and that the consent bar wording covers them
 - [x] **GPTBot: allow** (Pat, chat 2026-10-23; does not affect ChatGPT search)
 - [ ] Reviews under your own name (source and permission), or confirmation to rely on the E Mortgage Capital reviews only
+- [ ] Google reviews on the funnel: confirm you may show them (the card section has a placeholder), and which ones to feature. Only three were visible to us in Google Maps on 2026-10-24; send more text or screenshots if you want six. Compliance to approve the 4.7 and 3,692 figures, which are for E Mortgage Capital as a whole and will go out of date.
 - [ ] Confirm whether to show the worked example (`SHOW_EXAMPLE`; needs lender-approved disclosures) and supply its numbers
 - [ ] Real profile URLs for structured-data `sameAs` (X, YouTube, LinkedIn, Google Business Profile); confirm the AIME badge may be shown
 - [ ] Wait-time, equity-explanation and process wording marked in pages as `[PAT: ...]`

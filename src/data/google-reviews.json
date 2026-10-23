@@ -1,0 +1,13 @@
+{
+  "profileName": "E Mortgage Capital, Inc.",
+  "profileUrl": "https://www.google.com/maps/place/E+Mortgage+Capital,+Inc./@33.6963047,-117.9140177,17z/data=!3m1!4b1!4m6!3m5!1s0x80dcde94d3ae5b31:0x9fc6e998cb1086f7!8m2!3d33.6963047!4d-117.9140177!16s%2Fg%2F11b90lyjdt",
+  "rating": "4.7",
+  "count": "3,692",
+  "seen": "2026-10-24",
+  "note": "Summaries are written by us from the three most recent reviews Google showed on that date; each is a 5-star review. Loan officers' names are left out. Google shows only relative dates.",
+  "items": [
+    { "name": "Sue M.",      "initials": "SM", "when": "3 months ago", "stars": 5, "summary": "The homeowners said the process went smoothly and described their loan officer as professional and personable." },
+    { "name": "Cynthia M.",  "initials": "CM", "when": "5 months ago", "stars": 5, "summary": "The customer described a wonderful refinance experience, with a loan officer who was professional, knowledgeable and clear about the process." },
+    { "name": "Ken E.",      "initials": "KE", "when": "8 months ago", "stars": 5, "summary": "The customer, a home buyer, said the loan officer took the time to walk them through each step of the process." }
+  ]
+}

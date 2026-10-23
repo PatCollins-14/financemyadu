@@ -249,11 +249,15 @@
       <article class="story"><h3>Pasadena-area ADU story</h3><p>[PAT: real story and written permission]</p></article>
       <article class="story"><h3>Pasadena-area ADU story</h3><p>[PAT: second real story and written permission, optional]</p></article>
     </div>
-    <h3 style="font-size:24px;font-weight:400;margin-bottom:8px">{{reviews_label}}</h3>
-    <p class="lead">{{reviews_note}} Updated on the source site {{reviews_updated}}. <a href="{{bbb_url}}" rel="noopener">Read them on the BBB profile</a>.</p>
-    <!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved 2026-10-23 -->
-    <div class="tile-grid">
+    <div class="g-panel">
+      <div class="g-head">
+        <div class="g-score"><span class="g-badge g-badge--lg" aria-hidden="true">G</span><div><b>{{google_rating}} out of 5</b><span>{{google_count}} Google reviews</span></div></div>
+        <p>See what customers are saying on Google. These reviews are about {{google_name}} as a company, not specific to ADU financing or to Pat alone. Summaries, seen {{google_seen}}. <a href="{{google_url}}" rel="noopener">Read them on Google &rarr;</a> [PAT: confirm you may show these Google reviews, and which ones to feature]</p>
+      </div>
+      <!-- SOURCE: {{google_url}} | retrieved 2026-10-24 -->
+      <div class="g-grid">
 {{reviews_html}}
+      </div>
     </div>
   </div>
 </section>
