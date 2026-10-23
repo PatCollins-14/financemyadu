@@ -108,3 +108,6 @@ Read from the live site (read-only): navy #223d78, sky blue #399cda / #52afe6, g
 - Header gets a thin sky-to-gold line (echoing the live site's header); form card and hub answer box get a gold top/left accent; footer gets a navy top rule and navy links.
 - Placeholder highlights stay yellow but now carry a dashed outline so they cannot be mistaken for brand gold.
 - Fonts unchanged (Hanken Grotesk, with Dancing Script for the "& Renovations" line). The live site itself uses Space Grotesk and DM Sans; if Pat wants those instead, it is a one-line change.
+
+**D34. Booking link set to the RAD CRM calendar (Pat, chat 2026-10-24).**
+Every "Book a call" / "Book a time to talk" link now goes to https://link.theradcrm.com/widget/booking/urhkr4DnMJd8JiUmcmJJ. Set once as `BOOKING_URL` in `config/site.json` (replaces check.letstalkhomemortgage.com); the funnel contact card, the footer on every page and the About Pat page all read it. It can still be overridden with the `BOOKING_URL` environment variable. The "Booking link" row in the identity table still shows the old live-site link, because it records what the live site says. The third-party calendar is Pat's own booking widget; compliance may want to confirm it is listed with the other vendors that see visitor data.
