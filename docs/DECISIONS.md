@@ -114,3 +114,6 @@ Every "Book a call" / "Book a time to talk" link now goes to https://link.therad
 
 **D35. Gold buttons use white text (Pat, chat 2026-10-24).**
 Every gold button (header "See my options", form submit, "Book a call", cookie "Accept", mobile bar "See options", hub buttons) now has white text with a faint warm shadow for legibility. White-on-gold contrast is about 1.9:1, below the 4.5:1 WCAG AA target for text of this size; Pat asked for it knowingly. If compliance or accessibility review objects, the one-line fix is to set `.btn` and `.mbar .est` colour back to `var(--ink)` in `src/assets/site.css`. White buttons on navy bands and the white-outline "Call" buttons are unchanged.
+
+**D36. Privacy Policy link set to https://letstalkhomemortgage.com/privacy/ (Pat, chat 2026-10-24).**
+Replaces `/privacy-policy/` in the footer of the funnel and every hub page and in the form's consent text. Changed in `scripts/make-identity.ps1` and `src/data/identity.json`. With D32 (Terms at `/terms/`) both legal links now match the live site's own footer, which closes SITE-ISSUES item 12 for our pages.
