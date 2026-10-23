@@ -49,6 +49,7 @@ function Copy-Assets([string]$outDir) {
   Copy-Item (Join-Path $root 'src\assets\site.css') $a
   Copy-Item (Join-Path $root 'assets\equal-housing-opportunity.png') $a
   Copy-Item (Join-Path $root 'assets\lthm-logo-orange.png') $a
+  foreach ($lg in 'google','yelp','zillow') { Copy-Item (Join-Path $root "assets\review-$lg.png") $a }
 }
 
 # ---------- JSON-LD ----------
@@ -175,20 +176,26 @@ function Build-Funnel {
 
   # reviews
   $rv = New-Object System.Text.StringBuilder
-  $gr = Read-Json (Join-Path $root 'src\data\google-reviews.json')
+  $rvw = Read-Json (Join-Path $root 'src\data\reviews.json')
+  $plat = @{}; foreach ($pf in $rvw.platforms) { $plat[[string]$pf.id] = $pf }
+  function Get-PlatMark($pf, [string]$cls) {
+    if ($pf.logo) { return "<img class=`"$cls`" src=`"assets/$($pf.logo)`" alt=`"$(Esc $pf.name)`" height=`"28`" decoding=`"async`">" }
+    return "<span class=`"$cls g-wordmark`">$(Esc $pf.name)</span>"
+  }
   $gIdx = 0
-  foreach ($r in $gr.items) {
+  foreach ($r in $rvw.items) {
+    $pf = $plat[[string]$r.p]; $gIdx++
     $starGlyphs = '&#9733;' * 5
-    $gIdx++
-    [void]$rv.AppendLine("      <article class=`"g-card`"><div class=`"g-top`"><span class=`"stars`" role=`"img`" aria-label=`"5 out of 5 stars`">$starGlyphs</span><span class=`"g-src`"><span class=`"g-badge`" aria-hidden=`"true`">G</span>Google</span></div>")
+    [void]$rv.AppendLine("      <article class=`"g-card`" data-platform=`"$($pf.id)`"><div class=`"g-top`"><span class=`"stars`" role=`"img`" aria-label=`"5 out of 5 stars`">$starGlyphs</span><span class=`"g-src`">$(Get-PlatMark $pf 'g-logo')</span></div>")
     [void]$rv.AppendLine("        <p>$(Esc $r.summary)</p>")
-    [void]$rv.AppendLine("        <div class=`"g-author`"><span class=`"g-avatar av$($gIdx % 5)`" aria-hidden=`"true`">$(Esc $r.initials)</span><div><b>$(Esc $r.name)</b><span>$(Esc $r.when)</span></div></div></article>")
+    [void]$rv.AppendLine("        <div class=`"g-author`"><span class=`"g-avatar av$($gIdx % 5)`" aria-hidden=`"true`">$(Esc $r.initials)</span><div><b>$(Esc $r.name)</b><span>$(Esc $r.when) &middot; $(Esc $pf.name)</span></div></div></article>")
   }
   $gp = New-Object System.Text.StringBuilder
-  foreach ($pf in $gr.platforms) {
-    [void]$gp.AppendLine("        <a class=`"g-plat`" href=`"$(Esc $pf.url)`" target=`"_blank`" rel=`"noopener noreferrer`" aria-label=`"Open E Mortgage Capital $(Esc $pf.name) reviews`"><b>$(Esc $pf.name)</b><span>Read reviews &rarr;</span></a>")
+  foreach ($pf in $rvw.platforms) {
+    $score = $(if ($pf.rating) { "<span class=`"g-pscore`"><b>$(Esc $pf.rating)</b> out of 5</span><span class=`"g-pcount`">$(Esc $pf.count) reviews</span>" } else { "<span class=`"g-pcount`">Customer reviews</span>" })
+    [void]$gp.AppendLine("        <a class=`"g-plat`" href=`"$(Esc $pf.url)`" target=`"_blank`" rel=`"noopener noreferrer`" aria-label=`"Open E Mortgage Capital $(Esc $pf.name) reviews`"><span class=`"g-plogo`">$(Get-PlatMark $pf 'g-plogoimg')</span>$score<span class=`"g-plink`">Read reviews &rarr;</span></a>")
   }
-  Add-Source 'funnel' $gr.profileUrl 'Google rating and 15 review summaries for E Mortgage Capital, Inc. (seen 2026-10-24); Yelp, Zillow and BBB profile links from the live site'
+  foreach ($pf in $rvw.platforms) { Add-Source 'funnel' $pf.url "$($pf.name) rating, review count and review summaries for E Mortgage Capital, Inc. (seen $($rvw.seen))" }
   # faq
   $faq = Read-Json (Join-Path $root 'src\funnel\faq.json')
   $fq = New-Object System.Text.StringBuilder
@@ -228,8 +235,8 @@ function Build-Funnel {
     phone = $k.phone; phone_tel = $k.phoneTel; email = $k.email
     booking_url = (Esc ([string]$cfg['BOOKING_URL'])); nmls_url = $k.nmlsConsumerAccess
     privacy_url = $l.privacy; terms_url = $l.terms; site_nonqm = $l.nonqm
-    google_rating = (Esc $gr.rating); google_count = (Esc $gr.count); google_seen = (Esc $gr.seen); google_url = (Esc $gr.profileUrl); google_name = (Esc $gr.profileName)
-    reviews_html = $rv.ToString(); platforms_html = $gp.ToString(); google_items = $gr.items.Count; faq_html = $fq.ToString()
+    reviews_business = (Esc $rvw.business); reviews_seen = (Esc $rvw.seen); reviews_items = $rvw.items.Count
+    reviews_html = $rv.ToString(); platforms_html = $gp.ToString(); faq_html = $fq.ToString()
     footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine
     eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
   }
@@ -541,7 +548,7 @@ $rows = @(
   @('Logo, Equal Housing and AIME images', 'assets/ folder', 'https://letstalkhomemortgage.com/')
 )
 foreach ($r in $rows) { [void]$sm.AppendLine("| $($r[0]) | $($r[1]) | $($r[2]) | 2026-10-23 |") }
-[void]$sm.AppendLine('| Google rating and 15 review summaries (E Mortgage Capital, Inc.) | rating, review count, initials, relative dates, paraphrased summaries (src/data/google-reviews.json) | Google Maps profile, opened in the browser | 2026-10-24 |')
+[void]$sm.AppendLine('| Ratings, review counts and 24 review summaries for E Mortgage Capital, Inc. (Google, Yelp, Zillow, BBB) | initials, dates, paraphrased summaries (src/data/reviews.json); Google 4.7 and 3,692, Yelp 4.7 and 469, Zillow 4.89 and 1,377 | the Google Maps, Yelp and Zillow profile pages opened in the browser on 2026-10-24; BBB summaries from Pat sites review section | 2026-10-24 |')
 [void]$sm.AppendLine('')
 [void]$sm.AppendLine('## Stated by Pat in the build brief (not on the website)')
 [void]$sm.AppendLine('- "30+ years in mortgages" and "Licensed in California" in the trust strip (brief section 7). The website says "decades in business, sales, real estate".')

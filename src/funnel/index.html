@@ -255,29 +255,28 @@
           <span class="g-kicker">Customer experience</span>
           <h3 class="g-title" id="reviews-title">A clear mortgage process should create a <em>better experience.</em></h3>
         </div>
-        <div class="g-score"><span class="g-star" aria-hidden="true">&#9733;</span><div><b>{{google_rating}} out of 5</b><span>{{google_count}} Google reviews of {{google_name}}</span></div></div>
       </div>
       <div class="g-platforms">
-        <div class="g-intro"><h3>See what customers are saying across the web.</h3><p>The links below go to {{google_name}}'s Google, Yelp, Zillow and BBB review pages.</p></div>
-        <div class="g-plat-grid" aria-label="{{google_name}} review profiles">
+        <div class="g-intro"><h3>See what customers are saying across the web.</h3><p>Ratings and review counts for {{reviews_business}} on Google, Yelp, Zillow and BBB. Select a profile to read the reviews there.</p></div>
+        <div class="g-plat-grid" aria-label="{{reviews_business}} review profiles">
 {{platforms_html}}
         </div>
       </div>
       <div class="g-carousel">
         <div class="g-bar">
-          <h3>Selected Google reviews</h3>
+          <h3>Selected customer reviews</h3>
           <div class="g-ctl" hidden>
             <button type="button" class="g-arrow" data-dir="-1" aria-label="Show previous reviews">&larr;</button>
             <button type="button" class="g-arrow" data-dir="1" aria-label="Show next reviews">&rarr;</button>
           </div>
         </div>
-        <!-- SOURCE: {{google_url}} | retrieved 2026-10-24 -->
+        <!-- SOURCE: https://www.yelp.com/biz/e-mortgage-capital-irvine-9 | retrieved 2026-10-24 -->
         <div class="g-track" tabindex="0" role="region" aria-label="Customer reviews, scroll sideways to see more">
 {{reviews_html}}
         </div>
         <div class="g-dots" hidden></div>
       </div>
-      <p class="g-note">These are {{google_items}} of the 5-star reviews of {{google_name}} on Google, summarized by us and seen {{google_seen}}. The {{google_rating}} rating counts every review, not only these. They are about the company as a whole, not specific to ADU financing or to Pat alone. <a href="{{google_url}}" rel="noopener">Read all of them on Google &rarr;</a> [PAT: confirm you may show these Google reviews, and which ones to feature]</p>
+      <p class="g-note">These are {{reviews_items}} of the 5-star reviews of {{reviews_business}} on Google, Yelp, Zillow and BBB, summarized by us and seen {{reviews_seen}}. Ratings and counts cover every review on that site, not only these, and are about the company as a whole, not specific to ADU financing or to Pat alone. [PAT: confirm you may show these reviews, and which ones to feature]</p>
     </div>
   </div>
 </section>

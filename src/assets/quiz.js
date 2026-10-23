@@ -134,11 +134,32 @@
       track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
     }
     function current() { return Math.round(track.scrollLeft / step()); }
+    function buildDots() {
+      if (!dots) return;
+      var pages = Math.ceil(cards.length / perView());
+      var counter = pages > 10;
+      if (counter) { dots.classList.add('g-count'); dots.textContent = ''; return; }
+      dots.classList.remove('g-count');
+      if (dots.children.length === pages) return;
+      dots.textContent = '';
+      for (var p = 0; p < pages; p++) {
+        (function (p) {
+          var d = document.createElement('button');
+          d.type = 'button'; d.className = 'g-dot';
+          d.setAttribute('aria-label', 'Show reviews page ' + (p + 1) + ' of ' + pages);
+          d.addEventListener('click', function () { go(p * perView()); });
+          dots.appendChild(d);
+        })(p);
+      }
+    }
     function sync() {
-      var i = current(), last = cards.length - perView();
+      buildDots();
+      var pv = perView(), pages = Math.ceil(cards.length / pv);
+      var page = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2 ? pages - 1 : Math.min(pages - 1, Math.round(current() / pv));
       if (prev) prev.disabled = track.scrollLeft <= 2;
       if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
-      if (dots) Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle('on', n === Math.min(i, Math.max(0, last))); });
+      if (dots && dots.classList.contains('g-count')) dots.textContent = (page + 1) + ' of ' + pages;
+      else if (dots) Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle('on', n === page); });
     }
     if (ctl) {
       ctl.hidden = false;
@@ -147,18 +168,7 @@
         go(current() + parseInt(b.getAttribute('data-dir'), 10) * perView());
       });
     }
-    if (dots) {
-      dots.hidden = false;
-      for (var n = 0; n < cards.length; n++) {
-        (function (n) {
-          var d = document.createElement('button');
-          d.type = 'button'; d.className = 'g-dot';
-          d.setAttribute('aria-label', 'Show reviews starting at review ' + (n + 1));
-          d.addEventListener('click', function () { go(n); });
-          dots.appendChild(d);
-        })(n);
-      }
-    }
+    if (dots) dots.hidden = false;
     track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
     track.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
