@@ -136,8 +136,7 @@ function Get-Footer([string]$assetPrefix, [bool]$isFunnel, [string]$hubRoot) {
         <li><a href="$hubRoot/adu-financing/questions-to-ask-your-lender/">Questions to ask</a></li>
         <li><a href="$hubRoot/adu-financing/faq/">ADU FAQ</a></li></ul></div>
       <div><h4>More</h4><ul>
-        <li><a href="$($l.heloc)" rel="noopener">HELOC</a></li>
-        <li><a href="$($l.refinance)" rel="noopener">Refinance</a></li>
+        <li><a href="$($l.home)" rel="noopener">Mortgages</a></li>
         <li><a href="$($l.articles)" rel="noopener">Articles</a></li></ul></div>
       <div class="legal">
         <!-- SOURCE: https://letstalkhomemortgage.com/ | retrieved $today -->
