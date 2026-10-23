@@ -29,7 +29,7 @@ See `ads/ad-copy.md` and `ads/ad-copy.csv`. Seven titles and seven descriptions,
 - [ ] The page matches the ad's promise: financing options for an ADU and renovations, nothing more.
 - [ ] No rates, payments, APRs, loan amounts, "preapproved", "guaranteed" or other banned phrases (enforced by `run.cmd preflight`).
 - [ ] Licensee identity is clear: Pat Collins, E Mortgage Capital Inc., both NMLS numbers, Equal Housing Opportunity.
-- [ ] The form posts to a real endpoint (`FORM_ENDPOINT`) and shows the consent statement under the button (name, email, phone and an optional plans upload only; no checkbox). `[PAT: create an ADU qualifier form, or tell me to use another endpoint]`
+- [ ] The form posts to a real endpoint (`FORM_ENDPOINT`) and shows the consent statement under the button (name, email and phone only; no checkbox). `[PAT: create an ADU qualifier form, or tell me to use another endpoint]`
 - [ ] Consent and cookie handling: analytics stay off until a visitor accepts (`ANALYTICS_ID` is `GTM-TQ8C7WLM`; nothing loads before the visitor presses Accept).
 - [ ] The domain FinanceMyADU.io points at the deployed funnel (DNS is Pat's task; not done here). On 2026-10-23 financemyadu.io answered HTTP 200 with a parked robots.txt of `User-agent: * / Disallow: /`, which would block crawlers including OAI-AdsBot. This build's robots.txt must replace it before ads run. `[PAT: confirm you control financemyadu.io]`
 

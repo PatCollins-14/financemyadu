@@ -13,7 +13,7 @@ Status key: [x] filled from the website (verified live 2026-10-23), [ ] open. Ev
 ## Parked until go-live (Pat, 2026-10-23: "set those aside")
 These need accounts, DNS or a live site, so they wait until after the initial preview. Nothing in the preview depends on them.
 - Domain: confirm you control financemyadu.io, point DNS at the deployed funnel, and replace its parked `Disallow: /` robots.txt with this build's
-- `FORM_ENDPOINT` (ADU qualifier form or other endpoint) and the campaign application link (`APPLICATION_URL`). The endpoint must accept a multipart upload (name, email, phone, plans). The page checks each file against `UPLOAD_MAX_MB` (20, my default, in `config/site.json`); set it to the endpoint's real limit. Also decide where uploaded plans are stored and for how long
+- `FORM_ENDPOINT` (ADU qualifier form or other endpoint) and the campaign application link (`APPLICATION_URL`). The endpoint receives a normal form post: name, email, phone and four hidden UTM fields.
 - Google Tag Manager: list the tags in container GTM-TQ8C7WLM and confirm the consent bar wording covers them
 - GitHub repo, workflow and hosting (see the chat; the project is already a git repo, nothing pushed)
 - Search Console, Bing Webmaster Tools, the ChatGPT ad account and ad approval (`ads/chatgpt-ads-prep.md`)
@@ -88,22 +88,22 @@ Total placeholders in source: **70** across 18 files (a placeholder in a shared 
 | src/funnel/faq.json | 24 | [PAT: confirm what you can say about the cost of a first conversation and no-obligation wording] |
 | src/funnel/faq.json | 29 | [PAT: confirm whether your financing works with any licensed builder and what builder or plan information lenders need] |
 | src/funnel/index.html | 42 | [PAT: confirm no-obligation wording] |
-| src/funnel/index.html | 114 | [PAT: which renovation and construction programs you offer] |
-| src/funnel/index.html | 125 | [PAT: verify HECM rules for funding an ADU] |
-| src/funnel/index.html | 191 | [PAT: which renovation programs you offer, so this column can be filled in] |
-| src/funnel/index.html | 203 | [PAT: confirm which programs you offer that consider ADU rental income or after-ADU value] |
-| src/funnel/index.html | 224 | [PAT: verify HECM rules for funding an ADU] |
-| src/funnel/index.html | 224 | [PAT: confirm the lender of record for reverse mortgages and the disclosures required when it is named] |
-| src/funnel/index.html | 236 | [PAT: project cost] |
-| src/funnel/index.html | 237 | [PAT: loan type] |
-| src/funnel/index.html | 238 | [PAT: rate and APR] |
-| src/funnel/index.html | 239 | [PAT: term] |
-| src/funnel/index.html | 240 | [PAT: payment] |
-| src/funnel/index.html | 241 | [PAT: assumptions and Regulation Z disclosures approved by lender] |
-| src/funnel/index.html | 252 | [PAT: real story and written permission] |
-| src/funnel/index.html | 253 | [PAT: second real story and written permission, optional] |
-| src/funnel/index.html | 306 | [PAT: compliance to approve final consent wording] |
-| src/funnel/index.html | 306 | [PAT: confirm no-obligation and no-credit-check wording] |
+| src/funnel/index.html | 55 | [PAT: confirm no-obligation and no-credit-check wording] |
+| src/funnel/index.html | 55 | [PAT: compliance to approve final consent wording] |
+| src/funnel/index.html | 113 | [PAT: which renovation and construction programs you offer] |
+| src/funnel/index.html | 124 | [PAT: verify HECM rules for funding an ADU] |
+| src/funnel/index.html | 190 | [PAT: which renovation programs you offer, so this column can be filled in] |
+| src/funnel/index.html | 202 | [PAT: confirm which programs you offer that consider ADU rental income or after-ADU value] |
+| src/funnel/index.html | 223 | [PAT: confirm the lender of record for reverse mortgages and the disclosures required when it is named] |
+| src/funnel/index.html | 223 | [PAT: verify HECM rules for funding an ADU] |
+| src/funnel/index.html | 235 | [PAT: project cost] |
+| src/funnel/index.html | 236 | [PAT: loan type] |
+| src/funnel/index.html | 237 | [PAT: rate and APR] |
+| src/funnel/index.html | 238 | [PAT: term] |
+| src/funnel/index.html | 239 | [PAT: payment] |
+| src/funnel/index.html | 240 | [PAT: assumptions and Regulation Z disclosures approved by lender] |
+| src/funnel/index.html | 251 | [PAT: real story and written permission] |
+| src/funnel/index.html | 252 | [PAT: second real story and written permission, optional] |
 | src/hub/pages/200k-adu-example.html | 27 | [PAT: how you describe the equity step, with the balance as a range] |
 | src/hub/pages/200k-adu-example.html | 39 | [PAT: answer in words] |
 | src/hub/pages/200k-adu-example.html | 39 | [PAT: answer in words] |

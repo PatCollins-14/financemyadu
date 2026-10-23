@@ -223,7 +223,7 @@ function Build-Funnel {
     reviews_label = (Esc $idn.reviews.label); reviews_note = (Esc $idn.reviews.note); reviews_updated = (Esc $idn.reviews.updatedOnSite); bbb_url = $idn.reviews.bbbProfile
     reviews_html = $rv.ToString(); faq_html = $fq.ToString()
     footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine
-    upload_max_mb = [string]$cfg['UPLOAD_MAX_MB']; eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
+    eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
   }
   # Casita Works illustrations (isometric ADUs, hero and closing scenes) and icons, captured from the template as static SVG
   $artDir = Join-Path $root 'src\funnel\art'

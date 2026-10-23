@@ -1,11 +1,9 @@
 /* Progressive enhancement only. Without JavaScript the lead form is one normal HTML form
-   (name, email, phone, optional plans upload) posted as multipart/form-data to FORM_ENDPOINT.
-   All page text is already in the HTML. */
+   (name, email, phone) posted to FORM_ENDPOINT. All page text is already in the HTML. */
 (function () {
   var body = document.body;
   var endpoint = body.getAttribute('data-endpoint') || '';
   var analyticsId = body.getAttribute('data-analytics') || '';
-  var maxMb = parseFloat(body.getAttribute('data-max-mb')) || 20;
   var consentKey = 'adu_consent';
 
   function getConsent() { try { return localStorage.getItem(consentKey); } catch (e) { return null; } }
@@ -77,22 +75,6 @@
   form.addEventListener('focusin', function () { if (!started) { started = true; track('quiz_start'); } });
   form.addEventListener('input', function (e) { var f = e.target.closest('.field'); if (f) f.classList.remove('err'); });
 
-  var plans = document.getElementById('plans');
-  var hint = document.getElementById('plansHint');
-  var plansErr = document.getElementById('plansErr');
-  var defaultHint = hint ? hint.textContent : '';
-  function plansTooBig() {
-    if (!plans || !plans.files) return false;
-    for (var i = 0; i < plans.files.length; i++) { if (plans.files[i].size > maxMb * 1024 * 1024) return true; }
-    return false;
-  }
-  if (plans) plans.addEventListener('change', function () {
-    var names = [];
-    for (var i = 0; i < plans.files.length; i++) names.push(plans.files[i].name);
-    if (hint) hint.textContent = names.length ? names.join(', ') : defaultHint;
-    if (plansErr) plansErr.style.display = plansTooBig() ? 'block' : 'none';
-  });
-
   function validate() {
     var ok = true;
     form.querySelectorAll('input[required]').forEach(function (el) {
@@ -104,7 +86,6 @@
       if (wrap) wrap.classList.toggle('err', bad);
       if (bad && ok) { ok = false; el.focus(); }
     });
-    if (plansTooBig()) { ok = false; if (plansErr) plansErr.style.display = 'block'; if (plans) plans.focus(); }
     return ok;
   }
 
@@ -118,7 +99,8 @@
     }
     var btn = document.getElementById('leadSubmit');
     if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-    fetch(endpoint, { method: 'POST', body: new FormData(form) })
+    var data = new URLSearchParams(new FormData(form));
+    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
       .then(function (r) { if (!r.ok) throw new Error('bad response'); return r; })
       .then(function () {
         track('quiz_complete');

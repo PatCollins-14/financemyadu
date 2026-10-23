@@ -135,15 +135,15 @@ foreach ($t in $targets) {
     }
     if (-not $cfg['SHOW_EXAMPLE'] -and $html -match 'id="example"') { Add-F 'gate' $name 'worked example present while SHOW_EXAMPLE is false' }
     if (-not [string]$cfg['FORM_ENDPOINT']) { Add-F 'form-endpoint' $name 'FORM_ENDPOINT is not set (the form is not connected)' }
-    # The form is deliberately minimal (Pat, 2026-10-23): name, email, phone and an optional plans upload only.
+    # The form is deliberately minimal (Pat, 2026-10-23/24): name, email and phone only. No file upload.
     $formHtml = [regex]::Match($html, '(?is)<form id="leadForm".*?</form>').Value
     if (-not $formHtml) { Add-F 'form-fields' $name 'lead form (id="leadForm") not found' }
     else {
-      $allowedNames = @('name', 'email', 'phone', 'plans', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content')
+      $allowedNames = @('name', 'email', 'phone', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content')
       foreach ($m in [regex]::Matches($formHtml, '(?i)<(?:input|select|textarea)\b[^>]*\bname="([^"]+)"')) { if ($allowedNames -notcontains $m.Groups[1].Value) { Add-F 'form-fields' $name "unexpected form field '$($m.Groups[1].Value)'" } }
-      foreach ($req in @('name', 'email', 'phone', 'plans')) { if ($formHtml -notmatch "name=`"$req`"") { Add-F 'form-fields' $name "form is missing the '$req' field" } }
+      foreach ($req in @('name', 'email', 'phone')) { if ($formHtml -notmatch "name=`"$req`"") { Add-F 'form-fields' $name "form is missing the '$req' field" } }
       if ($formHtml -match '(?i)<select\b|type="checkbox"') { Add-F 'form-fields' $name 'form contains a select or checkbox' }
-      if ($formHtml -notmatch 'enctype="multipart/form-data"') { Add-F 'form-fields' $name 'form is not multipart/form-data (needed for the plans upload)' }
+      if ($formHtml -match '(?i)type="file"|enctype="multipart') { Add-F 'form-fields' $name 'form has a file upload (removed by Pat, 2026-10-24)' }
     }
     # No checkbox, so consent is a statement under the button with the privacy link.
     if ($html -notmatch 'By providing my phone number, I agree to receive text messages' -or $html -notmatch 'Privacy Policy') { Add-F 'consent' $name 'consent statement or privacy link missing near the form' }
