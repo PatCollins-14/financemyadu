@@ -305,6 +305,7 @@ function Build-HubPage($p) {
   foreach ($s in $hf.sections) {
     # {{rel:/some/path/}} becomes a relative link from this page
     $s.html = [regex]::Replace($s.html, '\{\{rel:([^}]+)\}\}', { param($mm) Rel $path $mm.Groups[1].Value })
+    $s.html = $s.html.Replace('{{booking_url}}', (Esc ([string]$cfg['BOOKING_URL'])))
     if ($stdOrder -contains $s.id) { $std[$s.id] = $s } else { $custom += $s }
   }
   $toc = @()
