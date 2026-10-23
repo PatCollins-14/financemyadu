@@ -177,4 +177,31 @@
     window.addEventListener('resize', sync);
     sync();
   })();
+
+  // platform review widgets: each loads only when the visitor presses its button or has already accepted cookies
+  (function () {
+    var boxes = document.querySelectorAll('.g-widget');
+    if (!boxes.length) return;
+    function loadWidget(box) {
+      var tpl = box.querySelector('template'), slot = box.querySelector('.g-widget-slot');
+      if (!tpl || !slot || box.getAttribute('data-loaded')) return;
+      box.setAttribute('data-loaded', '1');
+      slot.appendChild(tpl.content.cloneNode(true));
+      Array.prototype.forEach.call(slot.querySelectorAll('script'), function (old) {
+        var s = document.createElement('script');
+        Array.prototype.forEach.call(old.attributes, function (a) { s.setAttribute(a.name, a.value); });
+        s.text = old.text;
+        old.parentNode.replaceChild(s, old);
+      });
+      slot.hidden = false;
+      var b = box.querySelector('.g-widget-load'), w = box.querySelector('.g-widget-wait');
+      if (b) b.hidden = true;
+      if (w) w.hidden = true;
+    }
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest('.g-widget-load'); if (!b) return;
+      loadWidget(b.closest('.g-widget'));
+    });
+    if (getConsent() === 'granted') Array.prototype.forEach.call(boxes, loadWidget);
+  })();
 })();

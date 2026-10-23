@@ -1,0 +1,7 @@
+{
+  "note": "Paste each platform's own review widget code into its \"html\" field (as one JSON string; escape double quotes as \\\"). A filled platform shows its real reviews through the platform's widget and its short summary cards are dropped. The widget code loads only after a visitor accepts cookies or presses 'Show reviews'. Leave \"html\" empty to keep the summary cards. Never put API keys or secrets in this file.",
+  "google": { "html": "", "how": "Google has no official embed. Use a Google-reviews widget service connected to the Business Profile, or the Places API through a small server." },
+  "yelp":   { "html": "", "how": "On yelp.com open the review, choose the three-dot menu, then 'Embed review', and paste the code. Repeat for each review you want to show." },
+  "zillow": { "html": "", "how": "Zillow Reviews widget (zillow.com/webtools/widgets/review-widget/) or the Lender Reviews API; sign in as the lender." },
+  "bbb":    { "html": "", "how": "BBB Dynamic Seal, generated from the BBB business account. It shows the seal and rating and links to the BBB profile; it does not show review text." }
+}

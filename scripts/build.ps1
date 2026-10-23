@@ -190,9 +190,19 @@ function Build-Funnel {
     foreach ($nm in $blurNames) { $out = [regex]::Replace($out, '(?<![A-Za-z>])(' + [regex]::Escape($nm) + ')(?![A-Za-z])', $hide) }
     return $out
   }
+  $wcfg = Read-Json (Join-Path $root 'config\review-widgets.json')
+  $widgetOn = @{}; foreach ($wp in 'google','yelp','zillow','bbb') { $widgetOn[$wp] = [bool](([string]$wcfg.$wp.html).Trim()) }
+  $wh = New-Object System.Text.StringBuilder
+  foreach ($pf in $rvw.platforms) {
+    if ($widgetOn[[string]$pf.id]) {
+      [void]$wh.AppendLine("      <div class=`"g-widget`" data-platform=`"$($pf.id)`"><h4>$(Esc $pf.name) reviews</h4><button type=`"button`" class=`"btn btn-ghost g-widget-load`">Show $(Esc $pf.name) reviews</button><p class=`"g-widget-wait`">The $(Esc $pf.name) widget loads from $(Esc $pf.name) when you choose to show it, or after you accept cookies. <a href=`"$(Esc $pf.url)`" target=`"_blank`" rel=`"noopener noreferrer`">Read them on $(Esc $pf.name) &rarr;</a></p><div class=`"g-widget-slot`" hidden></div><template>$($wcfg.($pf.id).html)</template></div>")
+    }
+  }
   $gIdx = 0
   foreach ($r in $rvw.items) {
-    $pf = $plat[[string]$r.p]; $gIdx++
+    $pf = $plat[[string]$r.p]
+    if ($widgetOn[[string]$r.p]) { continue }
+    $gIdx++
     $starGlyphs = '&#9733;' * 5
     [void]$rv.AppendLine("      <article class=`"g-card`" data-platform=`"$($pf.id)`"><div class=`"g-top`"><span class=`"stars`" role=`"img`" aria-label=`"5 out of 5 stars`">$starGlyphs</span><span class=`"g-src`">$(Get-PlatMark $pf 'g-logo')</span></div>")
     if ($r.text) { [void]$rv.AppendLine("        <p class=`"g-quote`">&ldquo;$(Format-ReviewText ([string]$r.text))&rdquo;</p>") }
@@ -247,7 +257,7 @@ function Build-Funnel {
     phone = $k.phone; phone_tel = $k.phoneTel; email = $k.email
     booking_url = (Esc ([string]$cfg['BOOKING_URL'])); nmls_url = $k.nmlsConsumerAccess
     privacy_url = $l.privacy; terms_url = $l.terms; site_nonqm = $l.nonqm
-    reviews_business = (Esc $rvw.business); reviews_seen = (Esc $rvw.seen); reviews_items = $rvw.items.Count
+    reviews_business = (Esc $rvw.business); reviews_seen = (Esc $rvw.seen); reviews_items = $rvw.items.Count; widgets_html = $wh.ToString()
     reviews_html = $rv.ToString(); platforms_html = $gp.ToString(); faq_html = $fq.ToString()
     footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine
     eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()

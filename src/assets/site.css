@@ -383,3 +383,13 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 .g-logo{width:68px;height:18px}
 .g-logo.g-wordmark{font-size:17px;line-height:18px}
 .g-pscore b{font-size:22px}
+
+/* platform review widgets (loaded from each platform only on request or after cookie consent) */
+.g-widgets:empty{display:none}
+.g-widgets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.g-widget{background:#fff;border:1px solid #dbe7f3;border-radius:22px;padding:22px;min-width:0;display:grid;gap:12px;align-content:start}
+.g-widget h4{margin:0;font-size:18px;font-weight:600;color:var(--navy)}
+.g-widget-wait{font-size:13px;color:var(--ink-soft)}
+.g-widget-wait a{color:var(--blue);font-weight:600}
+.g-widget-slot{min-width:0;overflow:auto}
+@media (max-width:1000px){.g-widgets{grid-template-columns:minmax(0,1fr)}}
