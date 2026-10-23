@@ -370,3 +370,16 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 .g-logo[alt="Yelp"]{transform:scale(1.2);transform-origin:right center}
 .g-quote{font-size:16px}
 .g-blur{display:inline-block;filter:blur(5px);user-select:none;pointer-events:none;opacity:.85}
+
+/* star rating on each profile tile (filled to the rating) and smaller, matched logos */
+.g-rate{position:relative;display:inline-block;font-size:19px;letter-spacing:2px;line-height:1;white-space:nowrap}
+.g-rate-bg{color:#d5dbe5}
+.g-rate-fg{position:absolute;left:0;top:0;overflow:hidden;color:#f5a300;white-space:nowrap}
+.g-plat{gap:5px}
+.g-plogo{height:30px}
+.g-plogoimg{width:108px;height:28px}
+.g-plogoimg[alt="Yelp"]{transform:scale(1.2)}
+.g-plogo .g-wordmark{font-size:25px;line-height:28px}
+.g-logo{width:68px;height:18px}
+.g-logo.g-wordmark{font-size:17px;line-height:18px}
+.g-pscore b{font-size:22px}

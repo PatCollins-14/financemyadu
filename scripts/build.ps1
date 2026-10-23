@@ -197,7 +197,10 @@ function Build-Funnel {
   }
   $gp = New-Object System.Text.StringBuilder
   foreach ($pf in $rvw.platforms) {
-    $score = $(if ($pf.rating) { "<span class=`"g-pscore`"><b>$(Esc $pf.rating)</b> out of 5</span><span class=`"g-pcount`">$(Esc $pf.count) reviews</span>" } else { "<span class=`"g-pcount`">Customer reviews</span>" })
+    $score = $(if ($pf.rating) {
+      $pct = [math]::Round(([double]$pf.rating / 5) * 100, 1).ToString([cultureinfo]::InvariantCulture)
+      "<span class=`"g-rate`" role=`"img`" aria-label=`"$(Esc $pf.rating) out of 5 stars`"><span class=`"g-rate-bg`">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class=`"g-rate-fg`" style=`"width:$pct%`">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span><span class=`"g-pscore`"><b>$(Esc $pf.rating)</b> out of 5</span><span class=`"g-pcount`">$(Esc $pf.count) $(Esc $pf.unit)</span>"
+    } else { "<span class=`"g-pcount`">Customer reviews</span>" })
     [void]$gp.AppendLine("        <a class=`"g-plat`" href=`"$(Esc $pf.url)`" target=`"_blank`" rel=`"noopener noreferrer`" aria-label=`"Open E Mortgage Capital $(Esc $pf.name) reviews`"><span class=`"g-plogo`">$(Get-PlatMark $pf 'g-plogoimg')</span>$score<span class=`"g-plink`">Read reviews &rarr;</span></a>")
   }
   foreach ($pf in $rvw.platforms) { Add-Source 'funnel' $pf.url "$($pf.name) rating, review count and review summaries for E Mortgage Capital, Inc. (seen $($rvw.seen))" }
@@ -553,7 +556,7 @@ $rows = @(
   @('Logo, Equal Housing and AIME images', 'assets/ folder', 'https://letstalkhomemortgage.com/')
 )
 foreach ($r in $rows) { [void]$sm.AppendLine("| $($r[0]) | $($r[1]) | $($r[2]) | 2026-10-23 |") }
-[void]$sm.AppendLine('| Ratings, review counts and 24 review summaries for E Mortgage Capital, Inc. (Google, Yelp, Zillow, BBB) | initials, dates, paraphrased summaries (src/data/reviews.json); Google 4.7 and 3,692, Yelp 4.7 and 469, Zillow 4.89 and 1,377 | the Google Maps, Yelp and Zillow profile pages opened in the browser on 2026-10-24; BBB summaries from Pat sites review section | 2026-10-24 |')
+[void]$sm.AppendLine('| Ratings, review counts and 24 review summaries for E Mortgage Capital, Inc. (Google, Yelp, Zillow, BBB) | initials, dates, paraphrased summaries (src/data/reviews.json); Google 4.7 and 3,692, Yelp 4.7 and 469, Zillow 4.89 and 1,377, BBB 4.44 and 248 (from a screenshot Pat supplied) | the Google Maps, Yelp and Zillow profile pages opened in the browser on 2026-10-24; BBB summaries from Pat sites review section | 2026-10-24 |')
 [void]$sm.AppendLine('')
 [void]$sm.AppendLine('## Stated by Pat in the build brief (not on the website)')
 [void]$sm.AppendLine('- "30+ years in mortgages" and "Licensed in California" in the trust strip (brief section 7). The website says "decades in business, sales, real estate".')
