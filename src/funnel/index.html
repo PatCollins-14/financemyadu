@@ -250,14 +250,34 @@
       <article class="story"><h3>Pasadena-area ADU story</h3><p>[PAT: second real story and written permission, optional]</p></article>
     </div>
     <div class="g-panel">
-      <div class="g-head">
-        <div class="g-score"><span class="g-badge g-badge--lg" aria-hidden="true">G</span><div><b>{{google_rating}} out of 5</b><span>{{google_count}} Google reviews</span></div></div>
-        <p>See what customers are saying on Google. These reviews are about {{google_name}} as a company, not specific to ADU financing or to Pat alone. Summaries, seen {{google_seen}}. <a href="{{google_url}}" rel="noopener">Read them on Google &rarr;</a> [PAT: confirm you may show these Google reviews, and which ones to feature]</p>
+      <div class="g-headrow">
+        <div>
+          <span class="g-kicker">Customer experience</span>
+          <h3 class="g-title" id="reviews-title">A clear mortgage process should create a <em>better experience.</em></h3>
+        </div>
+        <div class="g-score"><span class="g-star" aria-hidden="true">&#9733;</span><div><b>{{google_rating}} out of 5</b><span>{{google_count}} Google reviews of {{google_name}}</span></div></div>
       </div>
-      <!-- SOURCE: {{google_url}} | retrieved 2026-10-24 -->
-      <div class="g-grid">
+      <div class="g-platforms">
+        <div class="g-intro"><h3>See what customers are saying across the web.</h3><p>The links below go to {{google_name}}'s Google, Yelp, Zillow and BBB review pages.</p></div>
+        <div class="g-plat-grid" aria-label="{{google_name}} review profiles">
+{{platforms_html}}
+        </div>
+      </div>
+      <div class="g-carousel">
+        <div class="g-bar">
+          <h3>Selected Google reviews</h3>
+          <div class="g-ctl" hidden>
+            <button type="button" class="g-arrow" data-dir="-1" aria-label="Show previous reviews">&larr;</button>
+            <button type="button" class="g-arrow" data-dir="1" aria-label="Show next reviews">&rarr;</button>
+          </div>
+        </div>
+        <!-- SOURCE: {{google_url}} | retrieved 2026-10-24 -->
+        <div class="g-track" tabindex="0" role="region" aria-label="Customer reviews, scroll sideways to see more">
 {{reviews_html}}
+        </div>
+        <div class="g-dots" hidden></div>
       </div>
+      <p class="g-note">These are {{google_items}} of the 5-star reviews of {{google_name}} on Google, summarized by us and seen {{google_seen}}. The {{google_rating}} rating counts every review, not only these. They are about the company as a whole, not specific to ADU financing or to Pat alone. <a href="{{google_url}}" rel="noopener">Read all of them on Google &rarr;</a> [PAT: confirm you may show these Google reviews, and which ones to feature]</p>
     </div>
   </div>
 </section>

@@ -116,4 +116,55 @@
         if (note) { note.textContent = 'Sorry, that did not send. Please call or book a time instead.'; note.hidden = false; }
       });
   });
+
+  // review carousel: arrows, dots, keyboard scroll. Without JS the row still scrolls sideways by touch or trackpad.
+  (function () {
+    var track = document.querySelector('.g-track');
+    if (!track) return;
+    var cards = track.querySelectorAll('.g-card');
+    var ctl = document.querySelector('.g-ctl');
+    var dots = document.querySelector('.g-dots');
+    var prev = ctl && ctl.querySelector('[data-dir="-1"]');
+    var next = ctl && ctl.querySelector('[data-dir="1"]');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function step() { return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth; }
+    function perView() { return Math.max(1, Math.round(track.clientWidth / step())); }
+    function go(i) {
+      i = Math.max(0, Math.min(cards.length - 1, i));
+      track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function current() { return Math.round(track.scrollLeft / step()); }
+    function sync() {
+      var i = current(), last = cards.length - perView();
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      if (dots) Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle('on', n === Math.min(i, Math.max(0, last))); });
+    }
+    if (ctl) {
+      ctl.hidden = false;
+      ctl.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-dir]'); if (!b) return;
+        go(current() + parseInt(b.getAttribute('data-dir'), 10) * perView());
+      });
+    }
+    if (dots) {
+      dots.hidden = false;
+      for (var n = 0; n < cards.length; n++) {
+        (function (n) {
+          var d = document.createElement('button');
+          d.type = 'button'; d.className = 'g-dot';
+          d.setAttribute('aria-label', 'Show reviews starting at review ' + (n + 1));
+          d.addEventListener('click', function () { go(n); });
+          dots.appendChild(d);
+        })(n);
+      }
+    }
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
+    });
+    window.addEventListener('resize', sync);
+    sync();
+  })();
 })();
