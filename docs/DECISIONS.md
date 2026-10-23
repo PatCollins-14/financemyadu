@@ -132,3 +132,6 @@ Cautions: (1) the rating and count belong to E Mortgage Capital as a whole and w
 
 **D39. Booking link changed to Pat's named appointment page (Pat, chat 2026-10-24). Replaces D34's address.**
 Every "Book a call" / "Book a time to talk" link now goes to https://link.theradcrm.com/widget/bookings/appointment-booking-with-pat-collins. Still one setting, `BOOKING_URL` in `config/site.json`.
+
+**D41. Photos of Pat removed again (Pat, chat 2026-10-24: "Looks bad. Undo it").**
+The headshot (hero and About Pat page) and the consultation photo ("Prefer to talk first?" card) added in D40 were reverted; the funnel and hub are back to their previous look, with the About page's "[PAT: ... a headshot with alt text]" placeholder restored. Done with `git revert` of the D40 commit, so it can be brought back. The D40 note about the AI image accounts (Higgsfield and Magnific at 0 credits) and the stock searches (no usable California ADU photos) still stands.
