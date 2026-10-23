@@ -96,3 +96,6 @@ The HELOC and Refinance links are replaced by one link, "Mortgages", to the Lets
 
 **D31. "Let's Talk Home Mortgage" breadcrumb is no longer a link (Pat, chat 2026-10-24).**
 On every hub page the first breadcrumb item shows as plain text, with no destination. The other crumbs still link. The page's BreadcrumbList JSON-LD still lists the item with its URL (schema needs it), so the visible text and the structured data still match.
+
+**D32. Terms & Conditions link set to https://letstalkhomemortgage.com/terms/ (Pat, chat 2026-10-24).**
+Pat confirmed this is the right page. It replaces `/terms-and-conditions/` in the footer of the funnel and every hub page, and in the `terms_url` data used for the form's consent text. Changed in `scripts/make-identity.ps1` and `src/data/identity.json`. Dated compliance snapshots and the raw source extract keep the old URL, because they record what was captured at the time. The Privacy Policy link is unchanged (`/privacy-policy/`); the live site has two versions of that page too (see SITE-ISSUES item 12).

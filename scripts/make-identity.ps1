@@ -63,7 +63,7 @@ $id = [ordered]@{
     multigenArticle = 'https://letstalkhomemortgage.com/multigenerational-home-value-2026/'
     agingParentArticle = 'https://letstalkhomemortgage.com/lets-talk-the-cost-of-caring-for-an-aging-parent/'
     privacy = 'https://letstalkhomemortgage.com/privacy-policy/'
-    terms = 'https://letstalkhomemortgage.com/terms-and-conditions/'
+    terms = 'https://letstalkhomemortgage.com/terms/'
     accessibility = 'https://letstalkhomemortgage.com/accessibility/'
   }
   disclosure = [ordered]@{
