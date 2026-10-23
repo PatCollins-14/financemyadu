@@ -182,12 +182,17 @@ function Build-Funnel {
     if ($pf.logo) { return "<img class=`"$cls`" src=`"assets/$($pf.logo)`" alt=`"$(Esc $pf.name)`" height=`"28`" decoding=`"async`">" }
     return "<span class=`"$cls g-wordmark`">$(Esc $pf.name)</span>"
   }
+  function Format-ReviewText([string]$t) {
+    # [[Name]] in a review marks a name to hide: the page gets same-length filler letters, blurred, never the real name
+    [regex]::Replace((Esc $t), '\[\[(.+?)\]\]', { param($m) '<span class="g-blur" aria-hidden="true">' + ('x' * $m.Groups[1].Value.Length) + '</span><span class="vh">[name hidden]</span>' })
+  }
   $gIdx = 0
   foreach ($r in $rvw.items) {
     $pf = $plat[[string]$r.p]; $gIdx++
     $starGlyphs = '&#9733;' * 5
     [void]$rv.AppendLine("      <article class=`"g-card`" data-platform=`"$($pf.id)`"><div class=`"g-top`"><span class=`"stars`" role=`"img`" aria-label=`"5 out of 5 stars`">$starGlyphs</span><span class=`"g-src`">$(Get-PlatMark $pf 'g-logo')</span></div>")
-    [void]$rv.AppendLine("        <p>$(Esc $r.summary)</p>")
+    if ($r.text) { [void]$rv.AppendLine("        <p class=`"g-quote`">&ldquo;$(Format-ReviewText ([string]$r.text))&rdquo;</p>") }
+    else { [void]$rv.AppendLine("        <p>$(Esc $r.summary)</p>") }
     [void]$rv.AppendLine("        <div class=`"g-author`"><span class=`"g-avatar av$($gIdx % 5)`" aria-hidden=`"true`">$(Esc $r.initials)</span><div><b>$(Esc $r.name)</b><span>$(Esc $r.when) &middot; $(Esc $pf.name)</span></div></div></article>")
   }
   $gp = New-Object System.Text.StringBuilder
