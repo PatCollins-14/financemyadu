@@ -47,6 +47,8 @@ function Copy-Assets([string]$outDir) {
   $a = Join-Path $outDir 'assets'
   New-Item -ItemType Directory -Force -Path $a | Out-Null
   Copy-Item (Join-Path $root 'src\assets\site.css') $a
+  Copy-Item (Join-Path $root 'assets\pat-collins.png') $a
+  Copy-Item (Join-Path $root 'assets\pat-consult.jpg') $a
   Copy-Item (Join-Path $root 'assets\equal-housing-opportunity.png') $a
   Copy-Item (Join-Path $root 'assets\lthm-logo-orange.png') $a
 }
@@ -538,7 +540,8 @@ $rows = @(
   @('Facebook profile (sameAs)', $idn.social.facebook, 'https://letstalkhomemortgage.com/'),
   @('Footer disclosure text', 'This is not a commitment to lend...', 'https://letstalkhomemortgage.com/'),
   @('About Pat, audiences, principles, process, FAQ answers', 'see source/extract.json', 'https://letstalkhomemortgage.com/'),
-  @('Logo, Equal Housing and AIME images', 'assets/ folder', 'https://letstalkhomemortgage.com/')
+  @('Logo, Equal Housing and AIME images', 'assets/ folder', 'https://letstalkhomemortgage.com/'),
+  @('Photos of Pat Collins (headshot, consultation photo)', 'assets/pat-collins.png and assets/pat-consult.jpg, resized from the live site images Pat-Collins-Picture.png and PC-HERO.png', 'https://letstalkhomemortgage.com/')
 )
 foreach ($r in $rows) { [void]$sm.AppendLine("| $($r[0]) | $($r[1]) | $($r[2]) | 2026-10-23 |") }
 [void]$sm.AppendLine('| Google rating and 15 review summaries (E Mortgage Capital, Inc.) | rating, review count, initials, relative dates, paraphrased summaries (src/data/google-reviews.json) | Google Maps profile, opened in the browser | 2026-10-24 |')
