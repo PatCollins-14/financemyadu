@@ -358,3 +358,13 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 @media (max-width:640px){.g-plat-grid{grid-template-columns:1fr 1fr}}
 .g-platforms{grid-template-columns:minmax(0,1fr)}
 .g-dots.g-count{font-size:13px;font-weight:600;color:var(--ink-soft)}
+
+/* review logos: every mark sits in the same-size box so they read as one set */
+.g-plogo{height:38px}
+.g-plogoimg{width:132px;height:36px;max-width:100%;object-fit:contain;object-position:left center}
+.g-wordmark{color:#808080}
+.g-plogo .g-wordmark{font-size:32px;display:block;line-height:36px}
+.g-logo{width:84px;height:22px;object-fit:contain;object-position:right center}
+.g-logo.g-wordmark{width:auto;font-size:21px;line-height:22px;text-align:right}
+.g-plogoimg[alt="Yelp"]{transform:scale(1.22);transform-origin:left center}
+.g-logo[alt="Yelp"]{transform:scale(1.2);transform-origin:right center}

@@ -146,3 +146,6 @@ Files: `src/funnel/art/tile-compare.svg`, `tile-rent.svg`, `tile-questions.svg`,
 - Logos: the Google, Yelp and Zillow wordmarks are cropped from the images on Pat's own site (the "1915+ Reviews" style counts under them were cut off because they disagree with the live numbers). The BBB image shows "Accredited Business" and "A+ rating", which we cannot verify, so it is not used.
 - The "page" dots are now per screen; with 10 or more screens (phones) the dots become a "1 of 24" counter.
 - Data: `src/data/reviews.json` (replaces `google-reviews.json`).
+
+**D44. Review logos matched in size (Pat, chat 2026-10-24).**
+The Google, Yelp, Zillow and BBB marks now each sit in the same box (132 by 36 px on the profile tiles, 84 by 22 px on the review cards), left-aligned on the tiles and right-aligned on the cards. The Yelp mark is scaled up about 20% inside its box because its word is small next to the Google and Zillow marks; the BBB text mark was matched to the logos' grey (#808080) and height. CSS only (`src/assets/site.css`, end of file).
