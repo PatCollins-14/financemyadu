@@ -264,7 +264,6 @@ Allow: /
   Add-Source 'funnel' 'https://letstalkhomemortgage.com/' 'Identifiers, About, process, FAQ answers, reviews, footer disclosure'
   Add-Source 'funnel' 'https://letstalkhomemortgage.com/heloc-loans/' 'HELOC and home equity loan explanation'
   Add-Source 'funnel' 'https://letstalkhomemortgage.com/refinance/' 'Cash-out refinance explanation, low first-mortgage rate note'
-  Add-Source 'funnel' 'https://letstalkhomemortgage.com/non-qm-mortgage/' 'DSCR described for investment properties'
   if ($cfg['SHOW_REVERSE_SECTION']) { Add-Source 'funnel' 'https://letstalkhomemortgage.com/reverse-mortgage/' 'HECM obligations, counseling' }
   Add-Source 'funnel' $srcs.'fnma-adu'.url 'ADU definition and renovation loan option'
   Add-Source 'funnel' $srcs.'fnma-b3-3-8-02'.url 'ADU rental income rules'
