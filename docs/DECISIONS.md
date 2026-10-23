@@ -99,3 +99,12 @@ On every hub page the first breadcrumb item shows as plain text, with no destina
 
 **D32. Terms & Conditions link set to https://letstalkhomemortgage.com/terms/ (Pat, chat 2026-10-24).**
 Pat confirmed this is the right page. It replaces `/terms-and-conditions/` in the footer of the funnel and every hub page, and in the `terms_url` data used for the form's consent text. Changed in `scripts/make-identity.ps1` and `src/data/identity.json`. Dated compliance snapshots and the raw source extract keep the old URL, because they record what was captured at the time. The Privacy Policy link is unchanged (`/privacy-policy/`); the live site has two versions of that page too (see SITE-ISSUES item 12).
+
+**D33. Colours changed to the Let's Talk Home Mortgage brand, still light mode (Pat, chat 2026-10-24).**
+Read from the live site (read-only): navy #223d78, sky blue #399cda / #52afe6, gold #f0b82e to #dfa529 with dark ink text, deep ink #101827. Applied to `src/assets/site.css` only, as tokens, so the funnel and all hub pages change together. Page background stays white; the old cream tint is now a light sky tint (#f1f6fc).
+- Buttons: gold gradient with dark text and 12 px corners (as on the live site's "Get Preapproved"). Ghost buttons are white with a navy label.
+- Headline "&" is sky blue (#1f86cf, large text). Links are #1a6fb0 (5.3:1 on white).
+- Large bands (options band, comparison highlight column, hub call-to-action) use a lighter navy (#2c4d95, white text 8:1) with a soft sky glow, instead of black or deep blue, so the page stays bright.
+- Header gets a thin sky-to-gold line (echoing the live site's header); form card and hub answer box get a gold top/left accent; footer gets a navy top rule and navy links.
+- Placeholder highlights stay yellow but now carry a dashed outline so they cannot be mistaken for brand gold.
+- Fonts unchanged (Hanken Grotesk, with Dancing Script for the "& Renovations" line). The live site itself uses Space Grotesk and DM Sans; if Pat wants those instead, it is a one-line change.
