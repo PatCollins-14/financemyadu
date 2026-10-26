@@ -1,0 +1,246 @@
+<!-- =====================================================================================
+  REVIEWS SECTION: copy everything from here to the end of this file and paste it where you want the section.
+  One block = styles + markup + script. No libraries, no build step. Works in WordPress (Custom HTML block,
+  Elementor HTML widget), Webflow/Wix embeds, or any plain HTML page.
+  To change the content, edit ONLY the JSON in the <script type="application/json" class="rv-data"> block.
+  To use it on another page, paste the whole block again and change that JSON. The CSS is namespaced
+  (.rv, .rv-*) so it will not clash with your theme. A page can hold several copies.
+====================================================================================== -->
+<style>
+.rv{--rv-navy:#223d78;--rv-band:#2c4d95;--rv-blue:#1a6fb0;--rv-sky:#399cda;--rv-gold:#f0b82e;--rv-gold2:#dfa529;--rv-star:#f5a300;
+  --rv-ink:#101827;--rv-soft:#4a566b;--rv-line:#d3e2f2;--rv-tint:#f1f6fc;--rv-card:#ffffff;
+  font-family:inherit;color:var(--rv-ink);line-height:1.5;box-sizing:border-box}
+.rv *,.rv *::before,.rv *::after{box-sizing:border-box}
+.rv{background:radial-gradient(circle at 10% 0%,rgba(82,175,230,.22),rgba(82,175,230,0) 38%),var(--rv-tint);border:1px solid var(--rv-line);
+  border-radius:28px;padding:clamp(22px,3.5vw,48px);display:grid;gap:clamp(28px,3.5vw,44px);max-width:1240px;margin:0 auto}
+.rv>*{min-width:0}
+.rv-kicker{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:#946600;margin:0 0 14px}
+.rv-kicker::before{content:"";width:34px;height:2px;background:var(--rv-gold)}
+.rv-title{margin:0;font-size:clamp(30px,3.8vw,48px);font-weight:300;line-height:1.06;letter-spacing:-.035em;max-width:15em}
+.rv-title em{font-style:normal;color:#1f86cf}
+.rv-intro h3{margin:0 0 6px;font-size:20px;font-weight:500;color:var(--rv-navy)}
+.rv-intro p{margin:0;font-size:15px;color:var(--rv-soft)}
+.rv-plats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.rv-plat{display:grid;gap:5px;justify-items:start;align-content:start;padding:16px 18px 14px;background:var(--rv-card);border:1px solid var(--rv-line);border-radius:18px;
+  text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;min-width:0}
+.rv-plat:hover{transform:translateY(-2px);border-color:var(--rv-sky);box-shadow:0 12px 24px -16px rgba(34,61,120,.5)}
+.rv-plogo-box{display:flex;align-items:center;height:30px}
+.rv-plogo{display:block;width:108px;height:28px;max-width:100%;object-fit:contain;object-position:left center}
+.rv-wm{font-weight:800;letter-spacing:-.04em;color:#808080;font-size:25px;line-height:28px}
+.rv-rate{position:relative;display:inline-block;font-size:19px;letter-spacing:2px;line-height:1;white-space:nowrap}
+.rv-rate .bg{color:#d5dbe5}.rv-rate .fg{position:absolute;left:0;top:0;overflow:hidden;color:var(--rv-star);white-space:nowrap}
+.rv-score{font-size:13px;color:var(--rv-soft)}.rv-score b{font-size:22px;font-weight:600;letter-spacing:-.03em;color:var(--rv-navy);margin-right:3px}
+.rv-count{font-size:13px;color:var(--rv-soft)}
+.rv-link{margin-top:4px;font-size:12px;font-weight:600;color:var(--rv-blue)}
+.rv-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.rv-bar h3{margin:0;font-size:20px;font-weight:500;color:var(--rv-navy)}
+.rv-ctl{display:flex;gap:8px}.rv-ctl[hidden]{display:none}
+.rv-arrow{width:44px;height:44px;border-radius:50%;border:1px solid #c3d2e6;background:#fff;color:var(--rv-navy);font:600 18px/1 inherit;cursor:pointer;padding:0}
+.rv-arrow:hover:not(:disabled){background:var(--rv-navy);color:#fff;border-color:var(--rv-navy)}.rv-arrow:disabled{opacity:.35;cursor:default}
+.rv-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 22px;margin:0 -2px;scrollbar-width:thin;scrollbar-color:#b9c9de transparent;align-items:stretch}
+.rv-card{flex:0 0 calc((100% - 36px) / 3);scroll-snap-align:start;background:var(--rv-card);border:1px solid #dbe7f3;border-radius:22px;padding:24px;display:flex;flex-direction:column;
+  gap:16px;min-width:0;min-height:260px;box-shadow:0 14px 30px -22px rgba(34,61,120,.45)}
+.rv-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rv-stars{letter-spacing:2px;font-size:16px;color:#e0a000}
+.rv-src img{display:block;height:18px;width:68px;object-fit:contain;object-position:right center}
+.rv-src .rv-wm{font-size:17px;line-height:18px}
+.rv-text{margin:0;font-size:16px;line-height:1.55;flex:1 1 auto}
+.rv-author{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:4px}
+.rv-avatar{flex:none;width:42px;height:42px;border-radius:50%;background:var(--rv-navy);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600}
+.rv-avatar.a1{background:#1a6fb0}.rv-avatar.a2{background:#4a5aa8}.rv-avatar.a3{background:#8a6200}.rv-avatar.a4{background:#2a7a96}
+.rv-author b{display:block;font-size:15px;font-weight:600;color:var(--rv-navy)}.rv-author span.m{font-size:13px;color:var(--rv-soft)}
+.rv-dots{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.rv-dots[hidden]{display:none}
+.rv-dot{width:10px;height:10px;padding:0;border-radius:50%;border:0;background:#c3d2e6;cursor:pointer}.rv-dot.on{background:var(--rv-navy);width:26px;border-radius:6px}
+.rv-dots.count{font-size:13px;font-weight:600;color:var(--rv-soft)}
+.rv-blur{display:inline-block;filter:blur(5px);user-select:none;pointer-events:none;opacity:.85}
+.rv-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.rv-embeds:empty{display:none}.rv-embeds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.rv-embed{background:var(--rv-card);border:1px solid #dbe7f3;border-radius:22px;padding:22px;display:grid;gap:12px;align-content:start;min-width:0}
+.rv-embed h4{margin:0;font-size:18px;color:var(--rv-navy)}.rv-embed p{margin:0;font-size:13px;color:var(--rv-soft)}
+.rv-btn{justify-self:start;font:600 15px/1 inherit;border-radius:12px;padding:13px 20px;border:1px solid #c3d2e6;background:#fff;color:var(--rv-navy);cursor:pointer}
+.rv-slot{min-width:0;overflow:auto}
+.rv-note{margin:0;font-size:13px;color:var(--rv-soft);max-width:92ch}.rv-note a{color:var(--rv-blue);font-weight:600}
+.rv :focus-visible{outline:2px solid var(--rv-sky);outline-offset:2px}
+@media (max-width:1000px){.rv-card{flex-basis:calc((100% - 18px) / 2)}.rv-embeds{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.rv-card{flex-basis:84%}.rv-plats{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.rv *{transition:none!important}}
+</style>
+
+<section class="rv" aria-labelledby="rv-title-1">
+  <div class="rv-head"></div>
+  <div class="rv-intro"></div>
+  <div class="rv-carousel">
+    <div class="rv-bar"><h3>Selected customer reviews</h3>
+      <div class="rv-ctl" hidden>
+        <button type="button" class="rv-arrow" data-dir="-1" aria-label="Show previous reviews">&larr;</button>
+        <button type="button" class="rv-arrow" data-dir="1" aria-label="Show next reviews">&rarr;</button>
+      </div>
+    </div>
+    <div class="rv-track" tabindex="0" role="region" aria-label="Customer reviews, scroll sideways to see more"></div>
+    <div class="rv-dots" hidden></div>
+  </div>
+  <div class="rv-embeds"></div>
+  <p class="rv-note"></p>
+
+  <!-- ===================== EDIT THIS JSON ONLY ===================== -->
+  <script type="application/json" class="rv-data">
+  {
+    "kicker": "Customer experience",
+    "title": "A clear mortgage process should create a <em>better experience.</em>",
+    "intro": "See what customers are saying across the web.",
+    "introSub": "Ratings and review counts for E Mortgage Capital, Inc. on Google, Yelp, Zillow and BBB. Select a profile to read the reviews there.",
+    "note": "These are selected 5-star reviews of E Mortgage Capital, Inc. Ratings and counts cover every review on each site, not only these, and are about the company as a whole. Seen 2026-10-24.",
+    "hideNames": ["Susie Lim", "Neil Augustine", "Brandon", "Monique"],
+    "platforms": [
+      { "id": "google", "name": "Google", "rating": 4.7,  "count": "3,692", "unit": "reviews", "url": "https://www.google.com/maps/place/E+Mortgage+Capital,+Inc./", "logo": "", "logoScale": 1 },
+      { "id": "yelp",   "name": "Yelp",   "rating": 4.7,  "count": "469",   "unit": "reviews", "url": "https://www.yelp.com/biz/e-mortgage-capital-irvine-9", "logo": "", "logoScale": 1.2 },
+      { "id": "zillow", "name": "Zillow", "rating": 4.89, "count": "1,377", "unit": "reviews", "url": "https://www.zillow.com/lender-profile/EMortgageCapital/", "logo": "", "logoScale": 1 },
+      { "id": "bbb",    "name": "BBB",    "rating": 4.44, "count": "248",   "unit": "customer reviews", "url": "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews", "logo": "", "logoScale": 1 }
+    ],
+    "reviews": [
+      { "p": "google", "name": "Donnell C.",  "date": "3 months ago", "stars": 5, "verbatim": false, "text": "The customer said their loan officer laid out plenty of options for a cash-out refinance so they could decide, and stayed responsive throughout." },
+      { "p": "yelp",   "name": "Javier D.",   "date": "Sep 2026",     "stars": 5, "verbatim": false, "text": "First-time buyers said a clear call at the start explained the whole process, and their loan officer answered every question." },
+      { "p": "zillow", "name": "Anne S.",     "date": "Oct 2026",     "stars": 5, "verbatim": false, "text": "The customer said their loan officer made sure they knew what was happening and what was needed on a HELOC." },
+      { "p": "bbb",    "name": "David R.",    "date": "Aug 2026",     "stars": 5, "verbatim": false, "text": "The process was easy, straightforward and transparent, with strong effort from the team to get the loan completed." },
+      { "p": "google", "name": "Cynthia M.",  "date": "5 months ago", "stars": 5, "verbatim": false, "text": "The customer described a wonderful refinance experience, with a loan officer who was professional, knowledgeable and clear about the process." },
+      { "p": "yelp",   "name": "Kyle B.",     "date": "Oct 2026",     "stars": 5, "verbatim": false, "text": "The customer called the HELOC process extremely simple and said they would recommend their loan officer." }
+    ],
+    "embeds": []
+  }
+  </script>
+  <!-- ===================== END OF EDITABLE JSON ===================== -->
+</section>
+
+<script>
+(function () {
+  var roots = document.querySelectorAll('.rv:not([data-rv-ready])');
+  Array.prototype.forEach.call(roots, function (root, idx) {
+    root.setAttribute('data-rv-ready', '1');
+    var D; try { D = JSON.parse(root.querySelector('.rv-data').textContent); } catch (e) { return; }
+    var uid = 'rv-' + (idx + 1) + '-' + Math.floor(Math.random() * 1e6);
+    function el(tag, cls, txt) { var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
+    function esc(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    var plat = {}; (D.platforms || []).forEach(function (p) { plat[p.id] = p; });
+
+    /* ---- text with hidden names. [[8]] = hide 8 letters. [[Name]] also works. Names in "hideNames" hide automatically. ---- */
+    var names = (D.hideNames || []).slice().sort(function (a, b) { return b.length - a.length; });
+    var nameRe = names.length ? new RegExp('(^|[^A-Za-z])(' + names.map(esc).join('|') + ')(?![A-Za-z])', 'g') : null;
+    function hidden(len) {
+      var f = document.createDocumentFragment();
+      var b = el('span', 'rv-blur', new Array(Math.max(3, len) + 1).join('x')); b.setAttribute('aria-hidden', 'true');
+      f.appendChild(b); f.appendChild(el('span', 'rv-vh', '[name hidden]')); return f;
+    }
+    function withNames(str, out) {
+      if (!nameRe) { out.appendChild(document.createTextNode(str)); return; }
+      var last = 0, m; nameRe.lastIndex = 0;
+      while ((m = nameRe.exec(str))) {
+        var start = m.index + m[1].length;
+        out.appendChild(document.createTextNode(str.slice(last, start))); out.appendChild(hidden(m[2].length));
+        last = start + m[2].length;
+      }
+      out.appendChild(document.createTextNode(str.slice(last)));
+    }
+    function richText(str, host) {
+      var re = /\[\[(.+?)\]\]/g, last = 0, m;
+      while ((m = re.exec(str))) {
+        withNames(str.slice(last, m.index), host);
+        host.appendChild(hidden(/^\d+$/.test(m[1]) ? parseInt(m[1], 10) : m[1].length));
+        last = m.index + m[0].length;
+      }
+      withNames(str.slice(last), host);
+    }
+
+    function stars(n) { return new Array((n || 5) + 1).join('★'); }
+    function rateRow(r) {
+      var w = el('span', 'rv-rate'); w.setAttribute('role', 'img'); w.setAttribute('aria-label', r + ' out of 5 stars');
+      w.appendChild(el('span', 'bg', stars(5)));
+      var fg = el('span', 'fg', stars(5)); fg.style.width = Math.max(0, Math.min(100, r / 5 * 100)) + '%'; w.appendChild(fg); return w;
+    }
+    function mark(p, cls, small) {
+      if (p.logo) { var i = el('img', cls); i.src = p.logo; i.alt = p.name; i.decoding = 'async'; if (p.logoScale && p.logoScale !== 1) { i.style.transform = 'scale(' + p.logoScale + ')'; i.style.transformOrigin = small ? 'right center' : 'left center'; } return i; }
+      return el('span', 'rv-wm', p.name);
+    }
+
+    /* ---- header ---- */
+    var head = root.querySelector('.rv-head');
+    head.appendChild(el('span', 'rv-kicker', D.kicker || ''));
+    var h = el('h2', 'rv-title'); h.id = 'rv-title-1'; h.innerHTML = D.title || ''; head.appendChild(h);
+    root.setAttribute('aria-labelledby', h.id = uid + '-t');
+
+    /* ---- platform tiles ---- */
+    var intro = root.querySelector('.rv-intro');
+    intro.appendChild(el('h3', '', D.intro || '')); intro.appendChild(el('p', '', D.introSub || ''));
+    var grid = el('div', 'rv-plats'); intro.appendChild(grid);
+    (D.platforms || []).forEach(function (p) {
+      var a = el('a', 'rv-plat'); a.href = p.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.setAttribute('aria-label', 'Open ' + p.name + ' reviews');
+      var box = el('span', 'rv-plogo-box'); box.appendChild(mark(p, 'rv-plogo', false)); a.appendChild(box);
+      if (p.rating) {
+        a.appendChild(rateRow(p.rating));
+        var sc = el('span', 'rv-score'); sc.appendChild(el('b', '', String(p.rating))); sc.appendChild(document.createTextNode('out of 5')); a.appendChild(sc);
+        a.appendChild(el('span', 'rv-count', p.count + ' ' + (p.unit || 'reviews')));
+      } else { a.appendChild(el('span', 'rv-count', 'Customer reviews')); }
+      a.appendChild(el('span', 'rv-link', 'Read reviews →')); grid.appendChild(a);
+    });
+
+    /* ---- review cards ---- */
+    var track = root.querySelector('.rv-track');
+    (D.reviews || []).forEach(function (r, i) {
+      var p = plat[r.p] || { name: r.p || '', logo: '' };
+      var c = el('article', 'rv-card'), top = el('div', 'rv-top');
+      var st = el('span', 'rv-stars', stars(r.stars)); st.setAttribute('role', 'img'); st.setAttribute('aria-label', (r.stars || 5) + ' out of 5 stars'); top.appendChild(st);
+      var src = el('span', 'rv-src'); src.appendChild(mark(p, '', true)); top.appendChild(src); c.appendChild(top);
+      var t = el('p', 'rv-text'); if (r.verbatim) t.appendChild(document.createTextNode('“'));
+      richText(r.text || '', t); if (r.verbatim) t.appendChild(document.createTextNode('”')); c.appendChild(t);
+      var au = el('div', 'rv-author'), initials = (r.name || '?').replace(/[^A-Za-z ]/g, '').split(' ').filter(Boolean).map(function (w) { return w[0].toUpperCase(); }).join('').slice(0, 2);
+      var av = el('span', 'rv-avatar a' + (i % 5), initials || '?'); av.setAttribute('aria-hidden', 'true'); au.appendChild(av);
+      var who = el('div'); who.appendChild(el('b', '', r.name || '')); who.appendChild(el('span', 'm', (r.date ? r.date + ' · ' : '') + p.name)); au.appendChild(who);
+      c.appendChild(au); track.appendChild(c);
+    });
+
+    /* ---- optional platform widgets (code you paste from each platform) load only on a click ---- */
+    var emb = root.querySelector('.rv-embeds');
+    (D.embeds || []).forEach(function (e) {
+      var box = el('div', 'rv-embed'); box.appendChild(el('h4', '', e.name + ' reviews'));
+      var btn = el('button', 'rv-btn', 'Show ' + e.name + ' reviews'); btn.type = 'button';
+      var wait = el('p', '', 'This widget loads from ' + e.name + ' when you choose to show it.'); var slot = el('div', 'rv-slot'); slot.hidden = true;
+      var tpl = document.createElement('template'); tpl.innerHTML = e.html || '';
+      btn.addEventListener('click', function () {
+        slot.appendChild(tpl.content.cloneNode(true));
+        Array.prototype.forEach.call(slot.querySelectorAll('script'), function (o) { var s = document.createElement('script'); Array.prototype.forEach.call(o.attributes, function (a) { s.setAttribute(a.name, a.value); }); s.text = o.text; o.parentNode.replaceChild(s, o); });
+        slot.hidden = false; btn.hidden = true; wait.hidden = true;
+      });
+      box.appendChild(btn); box.appendChild(wait); box.appendChild(slot); emb.appendChild(box);
+    });
+    root.querySelector('.rv-note').textContent = D.note || '';
+    if (!D.note) root.querySelector('.rv-note').hidden = true;
+
+    /* ---- carousel: arrows, dots (or "1 of 24"), keyboard, swipe ---- */
+    var cards = track.children, ctl = root.querySelector('.rv-ctl'), dots = root.querySelector('.rv-dots');
+    var prev = ctl.querySelector('[data-dir="-1"]'), next = ctl.querySelector('[data-dir="1"]');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!cards.length) { root.querySelector('.rv-carousel').hidden = true; return; }
+    function step() { return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth; }
+    function per() { return Math.max(1, Math.round(track.clientWidth / step())); }
+    function go(i) { i = Math.max(0, Math.min(cards.length - 1, i)); track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); }
+    function cur() { return Math.round(track.scrollLeft / step()); }
+    function build() {
+      var pages = Math.ceil(cards.length / per());
+      if (pages > 10) { dots.classList.add('count'); dots.textContent = ''; return; }
+      dots.classList.remove('count'); if (dots.children.length === pages) return; dots.textContent = '';
+      for (var p = 0; p < pages; p++) (function (p) { var d = el('button', 'rv-dot'); d.type = 'button'; d.setAttribute('aria-label', 'Show reviews page ' + (p + 1) + ' of ' + pages); d.addEventListener('click', function () { go(p * per()); }); dots.appendChild(d); })(p);
+    }
+    function sync() {
+      build(); var pv = per(), pages = Math.ceil(cards.length / pv), atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      var page = atEnd ? pages - 1 : Math.min(pages - 1, Math.round(cur() / pv));
+      prev.disabled = track.scrollLeft <= 2; next.disabled = atEnd;
+      if (dots.classList.contains('count')) dots.textContent = (page + 1) + ' of ' + pages;
+      else Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle('on', n === page); });
+    }
+    ctl.hidden = false; dots.hidden = false;
+    ctl.addEventListener('click', function (e) { var b = e.target.closest('[data-dir]'); if (b) go(cur() + parseInt(b.getAttribute('data-dir'), 10) * per()); });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+    track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { e.preventDefault(); go(cur() + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur() - 1); } });
+    window.addEventListener('resize', sync); sync();
+  });
+})();
+</script>
