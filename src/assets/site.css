@@ -66,11 +66,13 @@ p{margin:0}
 
 /* hero */
 .hero .wrap{display:grid;grid-template-columns:1fr minmax(0,440px);align-items:start;gap:32px 48px;grid-template-rows:auto 1fr;grid-template-areas:"title form" "copy form"}
-.hero h1{grid-area:title;font-size:clamp(40px,5.4vw,80px);line-height:1;letter-spacing:-.045em}
+.hero h1{grid-area:title;font-family:"Space Grotesk","Hanken Grotesk",Arial,sans-serif;font-size:clamp(42px,6vw,92px);line-height:.96;letter-spacing:-.05em;font-weight:600;text-align:right;margin:0}
 /* two-line headline: title line, then a highlighted cursive line */
-.hero h1 .h1-title{display:block;white-space:nowrap}
-.hero h1 .h1-script{display:block;white-space:nowrap;font-family:"Dancing Script","Brush Script MT",cursive;font-weight:700;font-size:.7em;letter-spacing:.01em;line-height:1.1;margin-top:.14em;padding-left:.05em;color:var(--ink)}
-.hero h1 .h1-script .amp{color:#1f86cf;font-size:1.2em;margin-right:.04em}
+.hero h1 .h1-title{display:block;white-space:nowrap;color:var(--navy)}
+.hero h1 .h1-title b{font-weight:700;background:linear-gradient(100deg,#1a6fb0 0%,#399cda 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero h1 .h1-curve{display:block;width:min(100%,520px);margin:-.1em 0 0 auto}
+.hero h1 .h1-curve svg{display:block;width:100%;height:auto;overflow:visible}
+.hero h1 .ren-text{font-family:"Dancing Script","Brush Script MT",cursive;font-weight:700}
 .hero-copy{grid-area:copy;display:grid;gap:36px;min-width:0;padding-bottom:8px}
 .dash-list{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:19px}
 .dash-list li{display:flex;gap:14px}
@@ -318,7 +320,6 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 @media (max-width:640px){
   body{font-size:16.5px}
   .hero h1{font-size:clamp(32px,10.2vw,54px)}
-  .hero h1 .h1-script{font-size:.82em}
   .features,.form-grid,.tiles,.tile-grid{grid-template-columns:1fr}
   .g-plat-grid{grid-template-columns:1fr 1fr}
   .g-card{flex-basis:84%}
