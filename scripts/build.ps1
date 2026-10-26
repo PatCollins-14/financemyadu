@@ -25,7 +25,7 @@ function Rel([string]$from, [string]$to) { ('../' * (Depth $from)) + $to.TrimSta
 # In dev/preview builds, links to pages we build point at the local copy; production keeps absolute URLs.
 function CrumbHref([string]$u, [string]$from) {
   if ($Production) { return $u }
-  foreach ($p in @('/adu-financing/', '/about/pat-collins/')) { if ($u -eq ($hubBase + $p)) { return (Rel $from $p) } }
+  foreach ($p in @('/adu-financing/')) { if ($u -eq ($hubBase + $p)) { return (Rel $from $p) } }
   return $u
 }
 function ImgSize([string]$file) {
@@ -69,11 +69,11 @@ function New-Graph([string]$base, [string]$pageUrl, [string]$pageType, [string]$
     sameAs = @($idn.social.sameAs)
   }
   if ($withAuthorUrl) { $person['url'] = "$hubBase/about/pat-collins/" }
-  $site = [ordered]@{ '@type' = 'WebSite'; '@id' = "$base/#website"; url = "$base/"; name = $(if ($base -eq $funnelBase) { 'ADU Financing with Pat Collins' } else { "Let's Talk Home Mortgage: ADU financing guide" }); publisher = [ordered]@{ '@id' = $orgId } }
+  $site = [ordered]@{ '@type' = 'WebSite'; '@id' = "$base/#website"; url = "$base/"; name = $(if ($base -eq $funnelBase) { 'FinanceMyADU: ADU and renovation financing' } else { "Let's Talk Home Mortgage: ADU financing guide" }); publisher = [ordered]@{ '@id' = $orgId } }
   $page = [ordered]@{ '@type' = $pageType; '@id' = "$pageUrl#page"; url = $pageUrl; name = $name; description = $desc; isPartOf = [ordered]@{ '@id' = "$base/#website" } }
   if ($pageType -eq 'Article') {
     $page['headline'] = $headline
-    $page['author'] = [ordered]@{ '@id' = $personId }
+    $page['author'] = [ordered]@{ '@id' = $orgId }
     $page['publisher'] = [ordered]@{ '@id' = $orgId }
     $page['datePublished'] = $datePub
     $page['dateModified'] = $dateMod
@@ -83,7 +83,7 @@ function New-Graph([string]$base, [string]$pageUrl, [string]$pageType, [string]$
     $page['dateModified'] = $dateMod
   }
   $graph = New-Object System.Collections.ArrayList
-  [void]$graph.Add($org); [void]$graph.Add($person); [void]$graph.Add($site); [void]$graph.Add($page)
+  [void]$graph.Add($org); [void]$graph.Add($site); [void]$graph.Add($page)
   if ($crumbs) {
     $items = @(); $pos = 1
     foreach ($c in $crumbs) { $items += [ordered]@{ '@type' = 'ListItem'; position = $pos; name = $c.name; item = $c.url }; $pos++ }
@@ -111,7 +111,7 @@ function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$ro
 <meta property="og:description" content="$d">
 <meta property="og:url" content="$canonical">
 <meta property="og:type" content="$ogType">
-<meta property="og:site_name" content="Pat Collins, E Mortgage Capital Inc.">
+<meta property="og:site_name" content="E Mortgage Capital Inc.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
@@ -129,7 +129,6 @@ function Get-Footer([string]$assetPrefix, [bool]$isFunnel, [string]$hubRoot) {
   <div class="wrap">
     <div class="footer-grid">
       <div><h4>$(Esc $p.shortName)</h4><ul>
-        <li><a href="$hubRoot/about/pat-collins/">About Pat</a></li>
         <li><a href="$($l.contact)" rel="noopener">Contact</a></li>
         <li><a href="$(Esc ([string]$cfg['BOOKING_URL']))" rel="noopener">Book a call</a></li></ul></div>
       <div><h4>Learn</h4><ul>
@@ -269,8 +268,8 @@ function Build-Funnel {
   foreach ($ip in $iconSet.PSObject.Properties) { $vars['icon_' + $ip.Name] = [string]$ip.Value }
   $vars['person_dre'] = [string]$idn.person.dre
   $body = Expand-Tokens $tpl $vars
-  $title = 'ADU & Renovation Financing in California | Pat Collins'
-  $desc = 'Compare ways to pay for an ADU or home renovation in California, from home equity to renovation loans, with mortgage professional Pat Collins.'
+  $title = 'ADU & Renovation Financing in California | FinanceMyADU'
+  $desc = 'Compare ways to pay for an ADU or home renovation in California, from home equity to renovation loans, with a licensed loan officer at E Mortgage Capital.'
   $canonical = "$funnelBase/"
   $robots = $(if ($cfg['FUNNEL_NOINDEX']) { 'noindex, follow' } else { 'index, follow' })
   $crumbs = $null
@@ -396,7 +395,7 @@ function Build-HubPage($p) {
   }
   $siteLinksHtml = ''
   if ($m.PSObject.Properties.Name -contains 'siteLinks' -and $m.siteLinks) {
-    $siteLinksHtml = '<p>On Pat''s main site:</p><ul>'
+    $siteLinksHtml = '<p>On our main site:</p><ul>'
     foreach ($sl in $m.siteLinks) { $siteLinksHtml += "<li><a href=`"$($sl.url)`" rel=`"noopener`">$(Esc $sl.text)</a></li>"; $relLinksForMeta += @{ text = $sl.text; url = $sl.url } }
     $siteLinksHtml += '</ul>'
   }
@@ -412,33 +411,28 @@ function Build-HubPage($p) {
     Add-Source $p.id $so.url $so.supports
   }
   # always cite Pat's own identity source
-  Add-Source $p.id 'https://letstalkhomemortgage.com/' 'Identifiers, About Pat, footer disclosure'
+  Add-Source $p.id 'https://letstalkhomemortgage.com/' 'Identifiers, footer disclosure'
 
   # --- header, breadcrumbs, byline
-  $pillarRel = Rel $path '/adu-financing/'; $faqRel = Rel $path '/adu-financing/faq/'; $aboutRel = Rel $path '/about/pat-collins/'
+  $pillarRel = Rel $path '/adu-financing/'; $faqRel = Rel $path '/adu-financing/faq/'
   $funnelLink = "$funnelBase/?utm_source=adu-hub&utm_medium=organic&utm_campaign=hub-cta"
   if (-not $Production) { $funnelLink = ('../' * ((Depth $path) + 1)) + 'funnel/' }   # preview: link to the local funnel
   $header = @"
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="$pillarRel" aria-label="Pat Collins, ADU financing guide">Pat Collins</a>
-    <nav class="pill-nav" aria-label="Guide"><a href="$pillarRel">ADU guide</a><a href="$faqRel">FAQ</a><a href="$aboutRel">About Pat</a></nav>
+    <a class="logo" href="$pillarRel" aria-label="Let's Talk Home Mortgage, ADU financing guide">Let's Talk Home Mortgage</a>
+    <nav class="pill-nav" aria-label="Guide"><a href="$pillarRel">ADU guide</a><a href="$faqRel">FAQ</a></nav>
     <div class="header__right"><a class="btn btn-sm" href="$funnelLink" rel="noopener">See my options</a></div>
   </div>
 </header>
 "@
   $crumbList = @(@{ name = "Let's Talk Home Mortgage"; url = "$hubBase/" })
-  if ($isAuthor) { $crumbList += @{ name = 'About'; url = "$hubBase/about/pat-collins/" }; $crumbList += @{ name = 'Pat Collins'; url = $url } }
-  elseif ($p.id -eq 'pillar') { $crumbList += @{ name = 'ADU financing'; url = $url } }
+  if ($p.id -eq 'pillar') { $crumbList += @{ name = 'ADU financing'; url = $url } }
   else { $crumbList += @{ name = 'ADU financing'; url = "$hubBase/adu-financing/" }; $crumbList += @{ name = $m.h1; url = $url } }
   $crumbHtml = '<nav class="crumbs" aria-label="Breadcrumb">' + (($crumbList | ForEach-Object { if ($_.url -eq $url -or $_.url -eq "$hubBase/") { Esc $_.name } else { '<a href="' + (CrumbHref $_.url $path) + '">' + (Esc $_.name) + '</a>' } }) -join ' &rsaquo; ') + '</nav>'
 
   $byline = ''
-  if (-not $isAuthor) {
-    $byline = "<div class=`"byline`"><span>By <a href=`"$aboutRel`"><b>Pat Collins</b></a></span><span>NMLS #$($idn.person.nmls) &middot; DRE $($idn.person.dre)</span><span>Last reviewed: $(NiceDate $dateMod)</span></div>"
-  } else {
-    $byline = "<div class=`"byline`"><span>NMLS #$($idn.person.nmls) &middot; DRE $($idn.person.dre)</span><span>Last reviewed: $(NiceDate $dateMod)</span></div>"
-  }
+  $byline = "<div class=`"byline`"><span>Last reviewed: $(NiceDate $dateMod)</span></div>"
   $draft = ''
   if (-not $approved) { $draft = '<div class="draft-banner" role="note">DRAFT: not yet reviewed by compliance</div>' }
   $tocHtml = ''
@@ -447,7 +441,7 @@ function Build-HubPage($p) {
 
   $relBlock = ''
   if ($rel.Length -gt 0 -or $siteLinksHtml) { $relBlock = "<section class=`"related`" aria-labelledby=`"relq`"><h2 id=`"relq`">Related questions</h2>$($rel.ToString())$siteLinksHtml</section>" }
-  $cta = "<aside class=`"cta-block`"><h2>Want to talk through your options?</h2><p>Answer a few questions and Pat will review the choices that fit your home and your project.</p><a class=`"btn btn-white`" href=`"$funnelLink`" rel=`"noopener`">See my financing options</a></aside>"
+  $cta = "<aside class=`"cta-block`"><h2>Want to talk through your options?</h2><p>Answer a few questions and we will review the choices that fit your home and your project.</p><a class=`"btn btn-white`" href=`"$funnelLink`" rel=`"noopener`">See my financing options</a></aside>"
   $disc = "<p class=`"sources`" style=`"margin-top:28px`">$(Esc $idn.disclosure.standard) $(Esc $idn.disclosure.adu) This page is general education, not a quote or a commitment to lend.</p>"
 
   $articleInner = "$byline`n$tocHtml`n$answerHtml`n$($secHtml.ToString())`n$relBlock`n<section class=`"sources`" aria-labelledby=`"srcs`"><h2 id=`"srcs`">Sources</h2><ol>$($srcHtml.ToString())</ol></section>"

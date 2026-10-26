@@ -19,7 +19,6 @@ How to review: open the dated snapshot in `compliance/snapshots/<date>/` (made w
 | `questions-to-ask-lender` | Hub: Questions to ask your lender | pending | | | |
 | `costs-to-expect` | Hub: Costs to expect | pending | | | |
 | `faq` | Hub: Consolidated FAQ | pending | | | |
-| `about-pat` | Hub: Pat Collins author page | pending | | | |
 | `ads-chatgpt` | ChatGPT ad copy variants (`ads/ad-copy.md`) | pending | | | |
 
 ## High-risk items to review closely

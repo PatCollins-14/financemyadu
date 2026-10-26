@@ -12,8 +12,7 @@
     {"id": "pasadena", "path": "/adu-financing/pasadena/", "file": "pasadena.html"},
     {"id": "questions-to-ask-lender", "path": "/adu-financing/questions-to-ask-your-lender/", "file": "questions-to-ask-lender.html"},
     {"id": "costs-to-expect", "path": "/adu-financing/costs-to-expect/", "file": "costs-to-expect.html"},
-    {"id": "faq", "path": "/adu-financing/faq/", "file": "faq.html"},
-    {"id": "about-pat", "path": "/about/pat-collins/", "file": "about-pat.html", "kind": "author"}
+    {"id": "faq", "path": "/adu-financing/faq/", "file": "faq.html"}
   ],
   "funnel": {"id": "funnel", "path": "/"},
   "ads": {"id": "ads-chatgpt"}

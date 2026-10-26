@@ -30,27 +30,6 @@
                                                      }
                                   },
                                   {
-                                      "@type":  "Person",
-                                      "@id":  "https://letstalkhomemortgage.com/#pat",
-                                      "name":  "Pat Collins",
-                                      "alternateName":  "Patrick D. Collins",
-                                      "jobTitle":  "Mortgage Professional",
-                                      "identifier":  {
-                                                         "@type":  "PropertyValue",
-                                                         "propertyID":  "NMLS ID",
-                                                         "value":  "1628553"
-                                                     },
-                                      "worksFor":  {
-                                                       "@id":  "https://letstalkhomemortgage.com/#org"
-                                                   },
-                                      "telephone":  "(949) 787-2662",
-                                      "email":  "pcollins@emortgagecapital.com",
-                                      "sameAs":  [
-                                                     "https://www.facebook.com/PatrickCollinsLoanOfficer/"
-                                                 ],
-                                      "url":  "https://letstalkhomemortgage.com/about/pat-collins/"
-                                  },
-                                  {
                                       "@type":  "WebSite",
                                       "@id":  "https://letstalkhomemortgage.com/#website",
                                       "url":  "https://letstalkhomemortgage.com/",
@@ -70,7 +49,7 @@
                                                    },
                                       "headline":  "ADU financing: frequently asked questions",
                                       "author":  {
-                                                     "@id":  "https://letstalkhomemortgage.com/#pat"
+                                                     "@id":  "https://letstalkhomemortgage.com/#org"
                                                  },
                                       "publisher":  {
                                                         "@id":  "https://letstalkhomemortgage.com/#org"
@@ -144,7 +123,7 @@
                                                              "name":  "Can I finance a renovation along with my ADU?",
                                                              "acceptedAnswer":  {
                                                                                     "@type":  "Answer",
-                                                                                    "text":  "Pat helps homeowners finance renovations as well as ADUs. Whether an ADU and other renovation work can be in one loan depends on the program and the lender, so ask before you plan the budget around it."
+                                                                                    "text":  "We help homeowners finance renovations as well as ADUs. Whether an ADU and other renovation work can be in one loan depends on the program and the lender, so ask before you plan the budget around it."
                                                                                 }
                                                          },
                                                          {

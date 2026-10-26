@@ -30,27 +30,6 @@
                                                      }
                                   },
                                   {
-                                      "@type":  "Person",
-                                      "@id":  "https://letstalkhomemortgage.com/#pat",
-                                      "name":  "Pat Collins",
-                                      "alternateName":  "Patrick D. Collins",
-                                      "jobTitle":  "Mortgage Professional",
-                                      "identifier":  {
-                                                         "@type":  "PropertyValue",
-                                                         "propertyID":  "NMLS ID",
-                                                         "value":  "1628553"
-                                                     },
-                                      "worksFor":  {
-                                                       "@id":  "https://letstalkhomemortgage.com/#org"
-                                                   },
-                                      "telephone":  "(949) 787-2662",
-                                      "email":  "pcollins@emortgagecapital.com",
-                                      "sameAs":  [
-                                                     "https://www.facebook.com/PatrickCollinsLoanOfficer/"
-                                                 ],
-                                      "url":  "https://letstalkhomemortgage.com/about/pat-collins/"
-                                  },
-                                  {
                                       "@type":  "WebSite",
                                       "@id":  "https://letstalkhomemortgage.com/#website",
                                       "url":  "https://letstalkhomemortgage.com/",
@@ -70,7 +49,7 @@
                                                    },
                                       "headline":  "HELOC vs. cash-out refinance for an ADU: which is better?",
                                       "author":  {
-                                                     "@id":  "https://letstalkhomemortgage.com/#pat"
+                                                     "@id":  "https://letstalkhomemortgage.com/#org"
                                                  },
                                       "publisher":  {
                                                         "@id":  "https://letstalkhomemortgage.com/#org"
@@ -127,11 +106,11 @@
                               "url":  "https://letstalkhomemortgage.com/adu-financing/questions-to-ask-your-lender/"
                           },
                           {
-                              "text":  "Refinance on Pat\u0027s site",
+                              "text":  "Refinance on our site",
                               "url":  "https://letstalkhomemortgage.com/refinance/"
                           },
                           {
-                              "text":  "HELOC and home equity loans on Pat\u0027s site",
+                              "text":  "HELOC and home equity loans on our site",
                               "url":  "https://letstalkhomemortgage.com/heloc-loans/"
                           }
                       ]

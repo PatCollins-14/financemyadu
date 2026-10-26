@@ -45,17 +45,17 @@
   "lthm-heloc": {
     "title": "HELOC and Home Equity Loans (Let's Talk Home Mortgage)",
     "url": "https://letstalkhomemortgage.com/heloc-loans/", "accessed": "2026-10-23", "pageDate": "n/a",
-    "supports": "Pat's own explanation: HELOC vs home equity loan, second position, draw and repayment periods, closing cost categories, appraisal or automated valuation."
+    "supports": "Our own explanation: HELOC vs home equity loan, second position, draw and repayment periods, closing cost categories, appraisal or automated valuation."
   },
   "lthm-refinance": {
     "title": "Refinance (Let's Talk Home Mortgage)",
     "url": "https://letstalkhomemortgage.com/refinance/", "accessed": "2026-10-23", "pageDate": "n/a",
-    "supports": "Pat's own explanation: cash-out refinance replaces the existing mortgage with a new larger loan; considerations; if you already have a low first-mortgage rate a refinance may not be ideal and a HELOC or home equity loan are alternatives."
+    "supports": "Our own explanation: cash-out refinance replaces the existing mortgage with a new larger loan; considerations; if you already have a low first-mortgage rate a refinance may not be ideal and a HELOC or home equity loan are alternatives."
   },
   "lthm-reverse": {
     "title": "Reverse Mortgage (Let's Talk Home Mortgage)",
     "url": "https://letstalkhomemortgage.com/reverse-mortgage/", "accessed": "2026-10-23", "pageDate": "n/a",
-    "supports": "Pat's own explanation: HECM for 62+, obligations, counseling, eligible property types, cost categories, repayment events, existing mortgage paid off first."
+    "supports": "Our own explanation: HECM for 62+, obligations, counseling, eligible property types, cost categories, repayment events, existing mortgage paid off first."
   },
   "lthm-nonqm": {
     "title": "Non-QM Mortgage (Let's Talk Home Mortgage)",
@@ -65,6 +65,6 @@
   "lthm-home": {
     "title": "Let's Talk Home Mortgage home page",
     "url": "https://letstalkhomemortgage.com/", "accessed": "2026-10-23", "pageDate": "n/a",
-    "supports": "About Pat, process, FAQ answers (documents, factors affecting rate, timelines vary, pre-qualification vs pre-approval), identifiers."
+    "supports": "About us, process, FAQ answers (documents, factors affecting rate, timelines vary, pre-qualification vs pre-approval), identifiers."
   }
 }
