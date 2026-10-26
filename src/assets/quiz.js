@@ -174,6 +174,15 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
     });
+    var showAll = document.querySelector('.g-show-all');
+    if (showAll) {
+      showAll.addEventListener('click', function () {
+        var panel = showAll.closest('.g-carousel'), on = panel.classList.toggle('g-expanded');
+        showAll.setAttribute('aria-pressed', String(on));
+        showAll.textContent = on ? 'Back to review carousel' : 'Show all ' + cards.length + ' review cards';
+        if (!on) { track.scrollLeft = 0; sync(); }
+      });
+    }
     window.addEventListener('resize', sync);
     sync();
   })();

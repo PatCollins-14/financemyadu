@@ -251,18 +251,18 @@
       <div class="g-headrow">
         <div>
           <span class="g-kicker">Customer experience</span>
-          <h3 class="g-title" id="reviews-title">A clear mortgage process should create a <em>better experience.</em></h3>
+          <h3 class="g-title" id="reviews-title">{{reviews_title}}</h3>
         </div>
       </div>
       <div class="g-platforms">
-        <div class="g-intro"><h3>See what customers are saying across the web.</h3><p>Ratings and review counts for {{reviews_business}} on Google, Yelp, Zillow and BBB. Select a profile to read the reviews there.</p></div>
+        <div class="g-intro"><h3>{{reviews_intro}}</h3><p>{{reviews_intro_sub}}</p></div>
         <div class="g-plat-grid" aria-label="{{reviews_business}} review profiles">
 {{platforms_html}}
         </div>
       </div>
       <div class="g-carousel">
         <div class="g-bar">
-          <h3>Selected customer reviews</h3>
+          <h3>{{reviews_bar}}</h3>
           <div class="g-ctl" hidden>
             <button type="button" class="g-arrow" data-dir="-1" aria-label="Show previous reviews">&larr;</button>
             <button type="button" class="g-arrow" data-dir="1" aria-label="Show next reviews">&rarr;</button>
@@ -273,9 +273,10 @@
 {{reviews_html}}
         </div>
         <div class="g-dots" hidden></div>
+        <button type="button" class="g-show-all" aria-pressed="false">Show all {{reviews_items}} review cards</button>
       </div>
       <div class="g-widgets">{{widgets_html}}</div>
-      <p class="g-note">These are {{reviews_items}} of the 5-star reviews of {{reviews_business}} on Google, Yelp, Zillow and BBB, summarized by us and seen {{reviews_seen}}. Ratings and counts cover every review on that site, not only these, and are about the company as a whole, not specific to ADU financing. [PAT: paste each platform's review widget code into config/review-widgets.json, and confirm you may show these reviews]</p>
+      <p class="g-note">{{reviews_note}} [PAT: paste each platform's review widget code into config/review-widgets.json, and confirm you may show these reviews]</p>
     </div>
   </div>
 </section>

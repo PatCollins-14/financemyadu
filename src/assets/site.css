@@ -393,3 +393,17 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 .g-widget-wait a{color:var(--blue);font-weight:600}
 .g-widget-slot{min-width:0;overflow:auto}
 @media (max-width:1000px){.g-widgets{grid-template-columns:minmax(0,1fr)}}
+
+/* reviews: cards without star ratings, excerpt note, source link, and "show all" */
+.g-unrated{font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.g-excerpt-note{font-size:12px;color:var(--ink-soft);margin:-10px 0 0}
+.g-source{font-size:13px;font-weight:600;color:var(--blue);text-decoration:underline;text-underline-offset:3px;align-self:start}
+.g-show-all{display:block;margin:6px auto 0;padding:10px 17px;border:1px solid #c3d2e6;border-radius:12px;background:#fff;color:var(--navy);font:600 13px/1.4 var(--font);cursor:pointer}
+.g-show-all:hover{border-color:var(--blue);color:var(--blue)}
+.g-expanded .g-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;scroll-snap-type:none;gap:18px}
+.g-expanded .g-card{width:auto;flex:none;min-height:220px}
+.g-expanded .g-ctl,.g-expanded .g-dots{display:none}
+@media (max-width:1000px){.g-expanded .g-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.g-expanded .g-track{grid-template-columns:minmax(0,1fr)}}
+.g-track{position:relative}
+.g-card{position:relative}
