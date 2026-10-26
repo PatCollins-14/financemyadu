@@ -119,6 +119,26 @@
 
   // review carousel: arrows, dots, keyboard scroll. Without JS the row still scrolls sideways by touch or trackpad.
   (function () {
+    /* reviews: shuffle on every page load while spreading the sources evenly (only when the data asks for it) */
+    (function () {
+      var tr = document.querySelector('.g-track');
+      if (!tr || tr.getAttribute('data-order') !== 'random-balanced') return;
+      var kids = Array.prototype.slice.call(tr.children), groups = {};
+      kids.forEach(function (c) { var k = c.getAttribute('data-platform') || ''; (groups[k] = groups[k] || []).push(c); });
+      function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+      var keys = Object.keys(groups).sort(function (a, b) { return groups[a].length - groups[b].length; });
+      if (!keys.length) return;
+      var order = shuffle(groups[keys[0]].slice());
+      for (var k = 1; k < keys.length; k++) {
+        var added = shuffle(groups[keys[k]].slice()), gaps = order.length + 1, base = Math.floor(added.length / gaps), extra = added.length % gaps, counts = [], idx = [];
+        for (var g = 0; g < gaps; g++) { counts.push(base); idx.push(g); }
+        shuffle(idx); for (var x = 0; x < extra; x++) counts[idx[x]]++;
+        var next = [], cur = 0;
+        for (var gap = 0; gap < gaps; gap++) { for (var z = 0; z < counts[gap]; z++) next.push(added[cur++]); if (gap < order.length) next.push(order[gap]); }
+        order = next;
+      }
+      order.forEach(function (c) { tr.appendChild(c); });
+    })();
     var track = document.querySelector('.g-track');
     if (!track) return;
     var cards = track.querySelectorAll('.g-card');

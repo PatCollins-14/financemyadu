@@ -210,7 +210,8 @@ function Build-Funnel {
     if ($r.text) { [void]$rv.AppendLine("        <p class=`"g-quote`">&ldquo;$(Format-ReviewText ([string]$r.text))&rdquo;</p>") }
     else { [void]$rv.AppendLine("        <p>$(Esc $r.summary)</p>") }
     if ($r.excerpt) { [void]$rv.AppendLine("        <span class=`"g-excerpt-note`">Exact excerpt; the full review continues at the source.</span>") }
-    if ($r.sourceUrl -and ([string]$r.sourceUrl).StartsWith('https://')) { [void]$rv.AppendLine("        <a class=`"g-source`" href=`"$(Esc $r.sourceUrl)`" target=`"_blank`" rel=`"noopener noreferrer`">View review on $(Esc $pf.name) &rarr;</a>") }
+    if ($r.context) { [void]$rv.AppendLine("        <span class=`"g-review-context`">Reviewed: $(Format-ReviewText ([string]$r.context))</span>") }
+    if ($r.sourceUrl -and ([string]$r.sourceUrl).StartsWith('https://')) { $slabel = $(if ($r.sourceLabel) { "View source: $(Esc $r.sourceLabel)" } else { "View reviews on $(Esc $pf.name)" }); [void]$rv.AppendLine("        <a class=`"g-source`" href=`"$(Esc $r.sourceUrl)`" target=`"_blank`" rel=`"noopener noreferrer`">$slabel &rarr;</a>") }
     $rmeta = $(if ($rwhen) { "$(Esc $rwhen) &middot; $(Esc $pf.name)" } else { Esc $pf.name })
     [void]$rv.AppendLine("        <div class=`"g-author`"><span class=`"g-avatar av$($gIdx % 5)`" aria-hidden=`"true`">$(Esc $rinit)</span><div><b>$(Esc $r.name)</b><span>$rmeta</span></div></div></article>")
   }
@@ -262,7 +263,7 @@ function Build-Funnel {
     phone = $k.phone; phone_tel = $k.phoneTel; email = $k.email
     booking_url = (Esc ([string]$cfg['BOOKING_URL'])); nmls_url = $k.nmlsConsumerAccess
     privacy_url = $l.privacy; terms_url = $l.terms; site_nonqm = $l.nonqm
-    reviews_business = (Esc $rvw.business); reviews_seen = (Esc $rvw.seen); reviews_items = $rvw.items.Count; reviews_title = [string]$rvw.title; reviews_intro = (Esc $rvw.intro); reviews_intro_sub = (Esc $rvw.introSub); reviews_note = (Esc $rvw.note); reviews_bar = "$($rvw.items.Count) customer quotes and excerpts"; widgets_html = $wh.ToString()
+    reviews_business = (Esc $rvw.business); reviews_seen = (Esc $rvw.seen); reviews_items = $rvw.items.Count; reviews_title = [string]$rvw.title; reviews_intro = (Esc $rvw.intro); reviews_intro_sub = (Esc $rvw.introSub); reviews_note = (Esc $rvw.note); reviews_bar = 'Customer Reviews'; reviews_order = [string]$rvw.reviewOrder; widgets_html = $wh.ToString()
     reviews_html = $rv.ToString(); platforms_html = $gp.ToString(); faq_html = $fq.ToString()
     footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine
     eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()

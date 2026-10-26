@@ -407,3 +407,4 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 @media (max-width:640px){.g-expanded .g-track{grid-template-columns:minmax(0,1fr)}}
 .g-track{position:relative}
 .g-card{position:relative}
+.g-review-context{font-size:12px;color:var(--ink-soft);margin:-10px 0 0;line-height:1.45}

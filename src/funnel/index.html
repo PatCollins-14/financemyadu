@@ -269,11 +269,10 @@
           </div>
         </div>
         <!-- SOURCE: https://www.yelp.com/biz/e-mortgage-capital-irvine-9 | retrieved 2026-10-24 -->
-        <div class="g-track" tabindex="0" role="region" aria-label="Customer reviews, scroll sideways to see more">
+        <div class="g-track" data-order="{{reviews_order}}" tabindex="0" role="region" aria-label="Customer reviews, scroll sideways to see more">
 {{reviews_html}}
         </div>
         <div class="g-dots" hidden></div>
-        <button type="button" class="g-show-all" aria-pressed="false">Show all {{reviews_items}} review cards</button>
       </div>
       <div class="g-widgets">{{widgets_html}}</div>
       <p class="g-note">{{reviews_note}} [PAT: paste each platform's review widget code into config/review-widgets.json, and confirm you may show these reviews]</p>

@@ -4,8 +4,8 @@
     "kicker":  "Customer experience",
     "title":  "In their own words: \u003cem\u003ecustomer experiences.\u003c/em\u003e",
     "intro":  "Explore customer feedback about E Mortgage Capital.",
-    "introSub":  "32 source-checked customer quotations and short excerpts below. Select a review profile to explore additional reviews on the original site.",
-    "note":  "A selected set of 32 customer reviews and exact, labeled excerpts from the publicly available BBB and Birdeye profiles for E Mortgage Capital, Inc. The complete profiles include additional feedback, positive and negative. These reviews concern the company or other loan officers, not necessarily any one loan officer. Review ratings and counts are not displayed here because they change; follow the source to see the latest. Compiled October 27, 2026.",
+    "introSub":  "Selected review entries from BBB, Birdeye and Google. Google customer comments are from E Mortgage Capital-affiliated loan officers; select any review to read its source.",
+    "note":  "Selected customer reviews and exact labeled excerpts from BBB, Birdeye, and Google (shown on Birdeye-affiliated loan officer profiles). Google cards identify the specific officer listing; they do not come from the main E Mortgage Capital Google profile. These are experiences with E Mortgage Capital or individual affiliated loan officers. Source profiles also contain additional feedback, including critical reviews. Star ratings and site review counts are omitted because they change. Checked October 27, 2026.",
     "platforms":  [
                       {
                           "id":  "google",
@@ -341,6 +341,139 @@
                       "excerpt":  false,
                       "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=14",
                       "text":  "One of the best agent have ever seen \u0026 worked with"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Michael",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  false,
+                      "sourceUrl":  "https://reviews.birdeye.com/joe-mercuri-e-mortgage-capital-inc-178048981081514",
+                      "text":  "Joe was easy to work with and explained everything to make it easier.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Joe Mercuri - E Mortgage Capital, Inc."
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Randy Chase",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/joe-mercuri-e-mortgage-capital-inc-178048981081514",
+                      "text":  "Very communicative all along the process",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Joe Mercuri - E Mortgage Capital, Inc."
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Aneta A",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/lauren-gustin-e-mortgage-capital-mortgage-and-real-estate-services-178048981076498",
+                      "text":  "Lauren is organized and efficient.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Lauren Gustin - E Mortgage Capital Mortgage and Real Estate Services"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Escape Pilates",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/lauren-gustin-e-mortgage-capital-mortgage-and-real-estate-services-178048981076498",
+                      "text":  "She made my home refinance so smooth and stress free.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Lauren Gustin - E Mortgage Capital Mortgage and Real Estate Services"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Elizabeth Gomez22",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-i-chris-mejia-178048981290764",
+                      "text":  "Christian was incredibly helpful throughout our home buying process.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Chris Mejia - E Mortgage Capital"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Sarah Speakman",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-i-chris-mejia-178048981290764",
+                      "text":  "Chris was always available to answer our questions",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Chris Mejia - E Mortgage Capital"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Jason",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  false,
+                      "sourceUrl":  "https://reviews.birdeye.com/wayne-ostrander-e-mortgage-capital-171655924522280",
+                      "text":  "Good dude. Very helpful. A smooth experience.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Wayne Ostrander - E Mortgage Capital"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Janill Bobbitt",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/wayne-ostrander-e-mortgage-capital-171655924522280",
+                      "text":  "I appreciate Wayne’s constant communication",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Wayne Ostrander - E Mortgage Capital"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Cortney S",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/elisabeth-cone-senior-loan-officer-nmls-id-2273403-e-mortgage-capital-inc-nmls-id1416824-171663531749958",
+                      "text":  "Elizabeth was fantastic to work with.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Elisabeth Cone - E Mortgage Capital, Inc."
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Anonymous",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/elisabeth-cone-senior-loan-officer-nmls-id-2273403-e-mortgage-capital-inc-nmls-id1416824-171663531749958",
+                      "text":  "She kept her word and kept us informed the whole time!!",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "Elisabeth Cone - E Mortgage Capital, Inc."
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "Erica Webber",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-william-youngblood-2107268-molalla-oregon-170379547785289",
+                      "text":  "He explained every step and gave frequent updates.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "William Youngblood - E-Mortgage Capital"
+                  },
+                  {
+                      "p":  "google",
+                      "name":  "grant farley",
+                      "date":  "",
+                      "verbatim":  true,
+                      "excerpt":  true,
+                      "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-william-youngblood-2107268-molalla-oregon-170379547785289",
+                      "text":  "Working with William was a wonderful experience.",
+                      "sourceLabel":  "Google review (displayed on Birdeye)",
+                      "context":  "William Youngblood - E-Mortgage Capital"
                   }
-              ]
+              ],
+    "reviewOrder":  "random-balanced"
 }
