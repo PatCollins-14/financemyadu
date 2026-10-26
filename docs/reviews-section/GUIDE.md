@@ -98,3 +98,14 @@ Do this before the section goes live and each time you update it:
 | A theme's style changes the look | Raise specificity by prefixing `.rv` rules with your page wrapper, or set `font-family` and sizes on `.rv`. |
 | Reviews do not appear in search results | The cards are drawn by script, so search engines may not read them as page text. That is fine. Do not add review markup for your own business; Google generally does not use self-published reviews for rich results. |
 | Arrows or dots do nothing in a preview | Some builders block scripts in editor previews. Check on the published page. |
+
+## 9. What changed in this version (matches the funnel's reviews)
+
+- **44 reviews** are already in the JSON: 6 BBB, 26 Birdeye and 12 Google reviews that Birdeye shows on individual officers' listings. All are shown as supplied, in quotation marks, each with a source link.
+- **Staff names are already hidden.** Where a review names an employee, the JSON holds `[[8]]`-style markers (the number is the letters hidden), so the real names are not in the page code. Add a marker the same way for any new name.
+- **Heading** is a fixed "Customer Reviews" (edit the `<h3>` in the markup if you want other words). No review counts or numbers are shown.
+- **Shuffled order:** `"reviewOrder": "random-balanced"` mixes the reviews on every page load and spreads BBB, Birdeye and Google evenly. Set it to `""` to keep the order you wrote.
+- **No stars:** `"stars": null` shows "Customer review" instead of stars. Put a number from 1 to 5 to show stars. Platform tiles show "View the current rating and reviews" when `rating` is `null`.
+- **Source links:** `sourceUrl` adds the link under each card. `sourceLabel` (optional) changes its wording, for example "Google review (displayed on Birdeye)".
+- The old "Show all" button and the "Exact excerpt" and "Reviewed:" lines are gone.
+- `"verbatim": true` adds the quotation marks; keep it only for exact wording.

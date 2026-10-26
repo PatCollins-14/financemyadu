@@ -5,6 +5,7 @@
   To change the content, edit ONLY the JSON in the <script type="application/json" class="rv-data"> block.
   To use it on another page, paste the whole block again and change that JSON. The CSS is namespaced
   (.rv, .rv-*) so it will not clash with your theme. A page can hold several copies.
+  Review order is shuffled on every page load ("reviewOrder": "random-balanced"); set it to "" to keep the order you wrote.
 ====================================================================================== -->
 <style>
 .rv{--rv-navy:#223d78;--rv-band:#2c4d95;--rv-blue:#1a6fb0;--rv-sky:#399cda;--rv-gold:#f0b82e;--rv-gold2:#dfa529;--rv-star:#f5a300;
@@ -20,7 +21,7 @@
 .rv-title em{font-style:normal;color:#1f86cf}
 .rv-intro h3{margin:0 0 6px;font-size:20px;font-weight:500;color:var(--rv-navy)}
 .rv-intro p{margin:0;font-size:15px;color:var(--rv-soft)}
-.rv-plats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.rv-plats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:16px}
 .rv-plat{display:grid;gap:5px;justify-items:start;align-content:start;padding:16px 18px 14px;background:var(--rv-card);border:1px solid var(--rv-line);border-radius:18px;
   text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;min-width:0}
 .rv-plat:hover{transform:translateY(-2px);border-color:var(--rv-sky);box-shadow:0 12px 24px -16px rgba(34,61,120,.5)}
@@ -42,6 +43,7 @@
   gap:16px;min-width:0;min-height:260px;box-shadow:0 14px 30px -22px rgba(34,61,120,.45)}
 .rv-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .rv-stars{letter-spacing:2px;font-size:16px;color:#e0a000}
+.rv-unrated{font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--rv-soft);font-weight:700}.rv-source{font-size:13px;font-weight:600;color:var(--rv-blue);text-decoration:underline;text-underline-offset:3px;align-self:start}
 .rv-src img{display:block;height:18px;width:68px;object-fit:contain;object-position:right center}
 .rv-src .rv-wm{font-size:17px;line-height:18px}
 .rv-text{margin:0;font-size:16px;line-height:1.55;flex:1 1 auto}
@@ -63,6 +65,7 @@
 .rv :focus-visible{outline:2px solid var(--rv-sky);outline-offset:2px}
 @media (max-width:1000px){.rv-card{flex-basis:calc((100% - 18px) / 2)}.rv-embeds{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:640px){.rv-card{flex-basis:84%}.rv-plats{grid-template-columns:1fr 1fr}}
+@media (max-width:380px){.rv-plats{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.rv *{transition:none!important}}
 </style>
 
@@ -70,7 +73,7 @@
   <div class="rv-head"></div>
   <div class="rv-intro"></div>
   <div class="rv-carousel">
-    <div class="rv-bar"><h3>Selected customer reviews</h3>
+    <div class="rv-bar"><h3>Customer Reviews</h3>
       <div class="rv-ctl" hidden>
         <button type="button" class="rv-arrow" data-dir="-1" aria-label="Show previous reviews">&larr;</button>
         <button type="button" class="rv-arrow" data-dir="1" aria-label="Show next reviews">&rarr;</button>
@@ -84,29 +87,482 @@
 
   <!-- ===================== EDIT THIS JSON ONLY ===================== -->
   <script type="application/json" class="rv-data">
-  {
-    "kicker": "Customer experience",
-    "title": "A clear mortgage process should create a <em>better experience.</em>",
-    "intro": "See what customers are saying across the web.",
-    "introSub": "Ratings and review counts for E Mortgage Capital, Inc. on Google, Yelp, Zillow and BBB. Select a profile to read the reviews there.",
-    "note": "These are selected 5-star reviews of E Mortgage Capital, Inc. Ratings and counts cover every review on each site, not only these, and are about the company as a whole. Seen 2026-10-24.",
-    "hideNames": ["Susie Lim", "Neil Augustine", "Brandon", "Monique"],
-    "platforms": [
-      { "id": "google", "name": "Google", "rating": 4.7,  "count": "3,692", "unit": "reviews", "url": "https://www.google.com/maps/place/E+Mortgage+Capital,+Inc./", "logo": "", "logoScale": 1 },
-      { "id": "yelp",   "name": "Yelp",   "rating": 4.7,  "count": "469",   "unit": "reviews", "url": "https://www.yelp.com/biz/e-mortgage-capital-irvine-9", "logo": "", "logoScale": 1.2 },
-      { "id": "zillow", "name": "Zillow", "rating": 4.89, "count": "1,377", "unit": "reviews", "url": "https://www.zillow.com/lender-profile/EMortgageCapital/", "logo": "", "logoScale": 1 },
-      { "id": "bbb",    "name": "BBB",    "rating": 4.44, "count": "248",   "unit": "customer reviews", "url": "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews", "logo": "", "logoScale": 1 }
-    ],
-    "reviews": [
-      { "p": "google", "name": "Donnell C.",  "date": "3 months ago", "stars": 5, "verbatim": false, "text": "The customer said their loan officer laid out plenty of options for a cash-out refinance so they could decide, and stayed responsive throughout." },
-      { "p": "yelp",   "name": "Javier D.",   "date": "Sep 2026",     "stars": 5, "verbatim": false, "text": "First-time buyers said a clear call at the start explained the whole process, and their loan officer answered every question." },
-      { "p": "zillow", "name": "Anne S.",     "date": "Oct 2026",     "stars": 5, "verbatim": false, "text": "The customer said their loan officer made sure they knew what was happening and what was needed on a HELOC." },
-      { "p": "bbb",    "name": "David R.",    "date": "Aug 2026",     "stars": 5, "verbatim": false, "text": "The process was easy, straightforward and transparent, with strong effort from the team to get the loan completed." },
-      { "p": "google", "name": "Cynthia M.",  "date": "5 months ago", "stars": 5, "verbatim": false, "text": "The customer described a wonderful refinance experience, with a loan officer who was professional, knowledgeable and clear about the process." },
-      { "p": "yelp",   "name": "Kyle B.",     "date": "Oct 2026",     "stars": 5, "verbatim": false, "text": "The customer called the HELOC process extremely simple and said they would recommend their loan officer." }
-    ],
-    "embeds": []
-  }
+{
+    "kicker":  "Customer experience",
+    "title":  "In their own words: <em>customer experiences.</em>",
+    "intro":  "Explore customer feedback about E Mortgage Capital.",
+    "introSub":  "Selected review entries from BBB, Birdeye and Google. Google customer comments are from E Mortgage Capital-affiliated loan officers; select any review to read its source.",
+    "note":  "Selected customer reviews and exact labeled excerpts from BBB, Birdeye, and Google (shown on Birdeye-affiliated loan officer profiles). Google cards identify the specific officer listing; they do not come from the main E Mortgage Capital Google profile. These are experiences with E Mortgage Capital or individual affiliated loan officers. Source profiles also contain additional feedback, including critical reviews. Star ratings and site review counts are omitted because they change. Checked October 27, 2026.",
+    "hideNames":  [
+
+                  ],
+    "platforms":  [
+                      {
+                          "id":  "google",
+                          "name":  "Google",
+                          "rating":  null,
+                          "count":  "",
+                          "unit":  "reviews",
+                          "url":  "https://www.google.com/maps/place/E+Mortgage+Capital,+Inc./",
+                          "logo":  "",
+                          "logoScale":  1
+                      },
+                      {
+                          "id":  "yelp",
+                          "name":  "Yelp",
+                          "rating":  null,
+                          "count":  "",
+                          "unit":  "reviews",
+                          "url":  "https://www.yelp.com/biz/e-mortgage-capital-irvine-9",
+                          "logo":  "",
+                          "logoScale":  1
+                      },
+                      {
+                          "id":  "zillow",
+                          "name":  "Zillow",
+                          "rating":  null,
+                          "count":  "",
+                          "unit":  "reviews",
+                          "url":  "https://www.zillow.com/lender-profile/EMortgageCapital/",
+                          "logo":  "",
+                          "logoScale":  1
+                      },
+                      {
+                          "id":  "bbb",
+                          "name":  "BBB",
+                          "rating":  null,
+                          "count":  "",
+                          "unit":  "reviews",
+                          "url":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews",
+                          "logo":  "",
+                          "logoScale":  1
+                      },
+                      {
+                          "id":  "birdeye",
+                          "name":  "Birdeye",
+                          "rating":  null,
+                          "count":  "",
+                          "unit":  "reviews",
+                          "url":  "https://birdeye.com/e-mortgage-capital-160141345538449",
+                          "logo":  "",
+                          "logoScale":  1
+                      }
+                  ],
+    "reviews":  [
+                    {
+                        "p":  "bbb",
+                        "name":  "Dennis S",
+                        "date":  "Aug 25, 2026",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews",
+                        "text":  "Settled in less than 30 days, answered all my questions."
+                    },
+                    {
+                        "p":  "bbb",
+                        "name":  "David R",
+                        "date":  "Aug 21, 2026",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews",
+                        "text":  "Great company. Made the process very easy"
+                    },
+                    {
+                        "p":  "bbb",
+                        "name":  "Jennifer C",
+                        "date":  "May 12, 2026",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews?page=2",
+                        "text":  "Professional, helpful and knowledgeable person. Very honest and assisted us with every step of the process"
+                    },
+                    {
+                        "p":  "bbb",
+                        "name":  "Katy B",
+                        "date":  "Mar 27, 2026",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews?page=3",
+                        "text":  "Remarkable customer service! Great communication and exceeds expectations. Great experience with my first home purchase. Thank you!!"
+                    },
+                    {
+                        "p":  "bbb",
+                        "name":  "Abi E",
+                        "date":  "Feb 6, 2026",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews?page=4",
+                        "text":  "All around excellent service. Our experience was thorough, proactive and quickly closed."
+                    },
+                    {
+                        "p":  "bbb",
+                        "name":  "Larry C",
+                        "date":  "Jan 29, 2026",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://www.bbb.org/us/ca/santa-ana/profile/mortgage-lenders/e-mortgage-capital-1126-172012613/customer-reviews?page=4",
+                        "text":  "Outstanding professional experience."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Jose D.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449",
+                        "text":  "Great and easy process. Everything done in a timely manner."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Dieu L.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449",
+                        "text":  "Honest. Reliable. Seamless"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Poppi M.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449",
+                        "text":  "[[16]] is friendly, knowledgeable, and gets the job done right."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Wendy L.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=2",
+                        "text":  "Best experience ever. [[5]] is amazing"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Lloyd S.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=2",
+                        "text":  "She was very helpful in this whole process"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Ursula R.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=2",
+                        "text":  "Efficient, patient, friendly and reliable 😁"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Kerry B.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=3",
+                        "text":  "This the best mortgage broker I ever use. These guys are very honest very insightful and very knowledgeable."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Daniel L.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=4",
+                        "text":  "[[6]] and [[21]] were very polite and were ready to help me"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Robert B.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=4",
+                        "text":  "He was excellent."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Steven H.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=5",
+                        "text":  "[[5]] was brilliant! Best I’ve ever used! Highly recommended."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Gerald D.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=5",
+                        "text":  "Easy to work with. Ethical. Good communicator."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Amber F.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=6",
+                        "text":  "[[5]] did a great job helping us obtain a HELOC. I would recommend her and her team any day!"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Francisco M.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=6",
+                        "text":  "Really good great job."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Arunachala K.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=7",
+                        "text":  "Excellent service"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Mehrzad M.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=7",
+                        "text":  "Excellent job smooth and easy"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Fitri Yani B.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=7",
+                        "text":  "Early Closing, Fast Respond"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Luis N.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=8",
+                        "text":  "We are very satisfied with the service we received."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Anthony J H.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=8",
+                        "text":  "[[7]] was amazing!"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Jeffrey M.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=9",
+                        "text":  "Everything went very smooth. No issues."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Mark W S.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=9",
+                        "text":  "[[18]] and [[14]] made our mortgage experience simple, fast & very professional."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Jeremy S.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=10",
+                        "text":  "[[6]] is amazing! I highly recommend him if you’re looking to refi or purchase!"
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Joseph A.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=11",
+                        "text":  "[[11]] and his team was patient and honest throughout the loan process. 5 stars was well earned."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "JR J.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=12",
+                        "text":  "Answered all my questions and was in touch with me throughout the whole process."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Lilia H.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=13",
+                        "text":  "Very thorough, honest and reliable."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Tim L.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=13",
+                        "text":  "[[2]], was thorough, knowledgeable, and very helpful. A very positive experience."
+                    },
+                    {
+                        "p":  "birdeye",
+                        "name":  "Amin T.",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://birdeye.com/e-mortgage-capital-160141345538449?page=14",
+                        "text":  "One of the best agent have ever seen & worked with"
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Michael",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/joe-mercuri-e-mortgage-capital-inc-178048981081514",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "[[3]] was easy to work with and explained everything to make it easier."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Randy Chase",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/joe-mercuri-e-mortgage-capital-inc-178048981081514",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "Very communicative all along the process"
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Aneta A",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/lauren-gustin-e-mortgage-capital-mortgage-and-real-estate-services-178048981076498",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "[[6]] is organized and efficient."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Escape Pilates",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/lauren-gustin-e-mortgage-capital-mortgage-and-real-estate-services-178048981076498",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "She made my home refinance so smooth and stress free."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Elizabeth Gomez22",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-i-chris-mejia-178048981290764",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "Christian was incredibly helpful throughout our home buying process."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Sarah Speakman",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-i-chris-mejia-178048981290764",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "[[5]] was always available to answer our questions"
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Jason",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/wayne-ostrander-e-mortgage-capital-171655924522280",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "Good dude. Very helpful. A smooth experience."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Janill Bobbitt",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/wayne-ostrander-e-mortgage-capital-171655924522280",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "I appreciate [[5]]’s constant communication"
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Cortney S",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/elisabeth-cone-senior-loan-officer-nmls-id-2273403-e-mortgage-capital-inc-nmls-id1416824-171663531749958",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "[[9]] was fantastic to work with."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Anonymous",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/elisabeth-cone-senior-loan-officer-nmls-id-2273403-e-mortgage-capital-inc-nmls-id1416824-171663531749958",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "She kept her word and kept us informed the whole time!!"
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "Erica Webber",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-william-youngblood-2107268-molalla-oregon-170379547785289",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "He explained every step and gave frequent updates."
+                    },
+                    {
+                        "p":  "google",
+                        "name":  "grant farley",
+                        "date":  "",
+                        "stars":  null,
+                        "verbatim":  true,
+                        "sourceUrl":  "https://reviews.birdeye.com/e-mortgage-capital-william-youngblood-2107268-molalla-oregon-170379547785289",
+                        "sourceLabel":  "Google review (displayed on Birdeye)",
+                        "text":  "Working with [[7]] was a wonderful experience."
+                    }
+                ],
+    "embeds":  [
+
+               ],
+    "reviewOrder":  "random-balanced"
+}
   </script>
   <!-- ===================== END OF EDITABLE JSON ===================== -->
 </section>
@@ -178,19 +634,59 @@
         a.appendChild(rateRow(p.rating));
         var sc = el('span', 'rv-score'); sc.appendChild(el('b', '', String(p.rating))); sc.appendChild(document.createTextNode('out of 5')); a.appendChild(sc);
         a.appendChild(el('span', 'rv-count', p.count + ' ' + (p.unit || 'reviews')));
-      } else { a.appendChild(el('span', 'rv-count', 'Customer reviews')); }
+      } else { a.appendChild(el('span', 'rv-count', 'View the current rating and reviews')); }
       a.appendChild(el('span', 'rv-link', 'Read reviews →')); grid.appendChild(a);
     });
 
     /* ---- review cards ---- */
     var track = root.querySelector('.rv-track');
-    (D.reviews || []).forEach(function (r, i) {
+    // Shuffle on every page load, while spreading platform sources throughout the list.
+    // Data remains unchanged. Review wording and its reviewer/source remain together.
+    function mixedReviewOrder(reviews) {
+      var groups = {}, order = [];
+      reviews.forEach(function (review) { (groups[review.p] = groups[review.p] || []).push(review); });
+      function shuffle(items) {
+        for (var i = items.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
+        }
+        return items;
+      }
+      var keys = Object.keys(groups).sort(function (a, b) { return groups[a].length - groups[b].length; });
+      if (!keys.length) return order;
+      order = shuffle(groups[keys[0]].slice());
+      for (var k = 1; k < keys.length; k++) {
+        var added = shuffle(groups[keys[k]].slice());
+        // Spread the new source evenly into all gaps in the existing mixed sequence.
+        // This avoids the majority platform accumulating at the end of the carousel.
+        var nGaps = order.length + 1;
+        var base = Math.floor(added.length / nGaps), extra = added.length % nGaps;
+        var counts = Array(nGaps).fill(base);
+        var gapIndexes = shuffle(Array.from({length:nGaps}, function (_, i) { return i; }));
+        for (var x = 0; x < extra; x++) counts[gapIndexes[x]]++;
+        var next = [], cursor = 0;
+        for (var gap = 0; gap < nGaps; gap++) {
+          for (var z = 0; z < counts[gap]; z++) next.push(added[cursor++]);
+          if (gap < order.length) next.push(order[gap]);
+        }
+        order = next;
+      }
+      return order;
+    }
+    var shownReviews = D.reviewOrder === 'random-balanced' ? mixedReviewOrder(D.reviews || []) : (D.reviews || []);
+    shownReviews.forEach(function (r, i) {
       var p = plat[r.p] || { name: r.p || '', logo: '' };
       var c = el('article', 'rv-card'), top = el('div', 'rv-top');
-      var st = el('span', 'rv-stars', stars(r.stars)); st.setAttribute('role', 'img'); st.setAttribute('aria-label', (r.stars || 5) + ' out of 5 stars'); top.appendChild(st);
+      if (Number.isInteger(r.stars) && r.stars >= 1 && r.stars <= 5) {
+         var st = el('span', 'rv-stars', stars(r.stars)); st.setAttribute('role', 'img'); st.setAttribute('aria-label', r.stars + ' out of 5 stars'); top.appendChild(st);
+       } else { top.appendChild(el('span', 'rv-unrated', 'Customer review')); }
       var src = el('span', 'rv-src'); src.appendChild(mark(p, '', true)); top.appendChild(src); c.appendChild(top);
       var t = el('p', 'rv-text'); if (r.verbatim) t.appendChild(document.createTextNode('“'));
       richText(r.text || '', t); if (r.verbatim) t.appendChild(document.createTextNode('”')); c.appendChild(t);
+       if (r.sourceUrl && /^https:\/\//.test(r.sourceUrl)) {
+         var link = el('a', 'rv-source', r.sourceLabel ? 'View source: ' + r.sourceLabel + ' →' : 'View reviews on ' + p.name + ' →');
+         link.href = r.sourceUrl; link.target = '_blank'; link.rel = 'noopener noreferrer'; c.appendChild(link);
+       }
       var au = el('div', 'rv-author'), initials = (r.name || '?').replace(/[^A-Za-z ]/g, '').split(' ').filter(Boolean).map(function (w) { return w[0].toUpperCase(); }).join('').slice(0, 2);
       var av = el('span', 'rv-avatar a' + (i % 5), initials || '?'); av.setAttribute('aria-hidden', 'true'); au.appendChild(av);
       var who = el('div'); who.appendChild(el('b', '', r.name || '')); who.appendChild(el('span', 'm', (r.date ? r.date + ' · ' : '') + p.name)); au.appendChild(who);
