@@ -1,0 +1,351 @@
+<title>Funnel Questions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: a sticky section list beside one long column of questions, with a bottom bar that holds progress and Submit.
+   Palette is the Let's Talk Home Mortgage brand (navy, sky, gold) so the form feels like the funnel it writes for. */
+:root{
+  --bg:#f4f7fc; --surface:#ffffff; --ink:#101827; --soft:#4a566b; --line:#d9e2ef;
+  --navy:#223d78; --sky:#1a6fb0; --gold:#f0b82e; --gold-2:#dfa529; --ok:#1f7a4d; --warn-bg:#fff6dc; --warn-line:#e8c26a;
+  --btn-bg:#223d78; --btn-fg:#ffffff; --chip-bg:#e8f0fa; --chip-fg:#1d4e89; --field-bg:#ffffff;
+  --font:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1424; --surface:#141d33; --ink:#eaf0fb; --soft:#a9b6ce; --line:#28344f;
+  --navy:#9cc3f2; --sky:#7fb4f0; --ok:#6fd09a; --warn-bg:#3a2f12; --warn-line:#7a6226;
+  --btn-bg:#f0b82e; --btn-fg:#14203a; --chip-bg:#1d2b48; --chip-fg:#a9cdf7; --field-bg:#0f172a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1424; --surface:#141d33; --ink:#eaf0fb; --soft:#a9b6ce; --line:#28344f;
+  --navy:#9cc3f2; --sky:#7fb4f0; --ok:#6fd09a; --warn-bg:#3a2f12; --warn-line:#7a6226;
+  --btn-bg:#f0b82e; --btn-fg:#14203a; --chip-bg:#1d2b48; --chip-fg:#a9cdf7; --field-bg:#0f172a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 96px}
+.page{max-width:1120px;margin:0 auto}
+header.top{padding-block:40px 24px;display:grid;gap:10px;max-width:760px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+h1{margin:0;font-size:clamp(30px,5vw,46px);font-weight:300;letter-spacing:-.035em;line-height:1.06;text-wrap:balance}
+.lede{margin:0;color:var(--soft);max-width:62ch}
+.how{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--soft);margin:4px 0 0;padding:0;list-style:none}
+.how li::before{content:"\2013";margin-right:8px;color:var(--gold-2)}
+.grid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;align-items:start}
+nav.sections{position:sticky;top:16px;display:grid;gap:2px;font-size:14px}
+nav.sections a{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;border-radius:8px;color:var(--soft);text-decoration:none}
+nav.sections a:hover,nav.sections a:focus-visible{background:var(--chip-bg);color:var(--ink)}
+nav.sections a b{font-weight:600;color:var(--navy)}
+nav.sections a span{font-variant-numeric:tabular-nums;font-size:12px}
+nav.sections a.done span{color:var(--ok)}
+section.sec{padding-block:8px 28px;scroll-margin-top:12px}
+section.sec>h2{margin:0 0 4px;font-size:24px;font-weight:500;letter-spacing:-.02em;color:var(--navy)}
+section.sec>p.intro{margin:0 0 18px;color:var(--soft);max-width:64ch}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;margin:0 0 14px;min-width:0}
+.q legend,.q .qhead{padding:0;display:grid;gap:6px;margin-bottom:12px;width:100%}
+.q .qid{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--sky)}
+.q .qtext{font-size:17px;font-weight:600;line-height:1.35}
+.q .help{font-size:14px;color:var(--soft)}
+.where{display:flex;flex-wrap:wrap;gap:6px}
+.where span{font-size:12px;background:var(--chip-bg);color:var(--chip-fg);padding:3px 9px;border-radius:999px}
+.opts{display:grid;gap:8px;margin:0 0 12px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--field-bg)}
+.opt:hover{border-color:var(--sky)}
+.opt input{margin-top:3px;accent-color:var(--navy);flex:none}
+.opt span{min-width:0}
+label.lbl{display:block;font-size:13px;font-weight:600;margin:4px 0 6px;color:var(--soft)}
+textarea,input[type=text],input[type=url]{width:100%;font:400 16px/1.45 var(--font);color:var(--ink);background:var(--field-bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+textarea{min-height:92px;resize:vertical}
+textarea:focus,input:focus,.opt:focus-within,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.skip{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--soft);margin-top:10px}
+.skip input{accent-color:var(--navy)}
+.q.answered{border-color:var(--ok)}
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:12px;padding:12px 14px;font-size:14px;margin:0 0 14px}
+.sc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.sc-grid .full{grid-column:1/-1}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));z-index:20}
+.bar .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.prog{flex:1 1 220px;min-width:0}
+.prog b{font-variant-numeric:tabular-nums}
+.meter{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;width:0;background:var(--gold);transition:width .2s ease}
+button{font:600 15px/1 var(--font);border-radius:10px;padding:13px 20px;cursor:pointer;border:1px solid transparent}
+button.primary{background:var(--btn-bg);color:var(--btn-fg)}
+button.ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+button:disabled{opacity:.55;cursor:default}
+.status{font-size:14px;color:var(--soft);min-height:1.4em}
+.done-box{background:var(--surface);border:1px solid var(--ok);border-radius:16px;padding:22px;margin:0 0 20px;display:grid;gap:10px}
+.done-box[hidden]{display:none}
+.done-box h2{margin:0;font-size:22px;font-weight:600;color:var(--ok)}
+.done-box textarea{min-height:160px}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}nav.sections{position:static;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;padding-bottom:4px}.sc-grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="page">
+  <header class="top">
+    <div class="kicker">FinanceMyADU funnel and ADU guide</div>
+    <h1>Questions to finish the writing</h1>
+    <p class="lede">Every yellow note left on the pages, turned into plain questions. Answer what you can. Anything you skip keeps its yellow note, or gets safe general wording if you tick &ldquo;Skip, decide for me&rdquo;.</p>
+    <ul class="how">
+      <li>No numbers, rates or payments are needed</li>
+      <li>Your answers save on this device as you type</li>
+      <li>Press Submit when you are done, or copy the text and paste it to me</li>
+    </ul>
+  </header>
+  <div id="doneBox" class="done-box" hidden>
+    <h2 id="doneTitle">Submitted</h2>
+    <p id="doneText" style="margin:0"></p>
+    <label class="lbl" for="summaryOut">Text version of your answers</label>
+    <textarea id="summaryOut" readonly></textarea>
+    <div><button type="button" class="ghost" id="copyBtn2">Copy this text</button></div>
+  </div>
+  <div class="grid">
+    <nav class="sections" id="nav" aria-label="Sections"></nav>
+    <main id="form"></main>
+  </div>
+</div>
+<div class="bar">
+  <div class="in">
+    <div class="prog" aria-live="polite"><b id="count">0 of 0</b> answered or skipped<div class="meter"><i id="meter"></i></div></div>
+    <span class="status" id="status" role="status"></span>
+    <button type="button" class="ghost" id="copyBtn">Copy my answers</button>
+    <button type="button" class="primary" id="submitBtn">Submit answers</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var P = {
+    funnel: 'Funnel page', pillar: 'ADU financing guide', heloc: 'HELOC page', refi: 'HELOC vs refinance page',
+    reno: 'Renovation loans page', rent: 'Rental income page', rev: 'Reverse mortgage page', keep: 'Keep your mortgage rate page',
+    ex: '$200,000 example page', pas: 'Pasadena page', ask: 'Questions to ask page', cost: 'Costs page', faq: 'FAQ page'
+  };
+  var SEC = [
+    { id: 'A', title: 'Your loan programs', intro: 'These decide what the options band, the comparison table and the renovation page can say. Name only programs you actually offer.', qs: [
+      { id: 'A1', q: 'Which renovation or construction loan programs do you offer?', help: 'Tick all that apply. Then say in one line each what we can say about them.', where: [P.funnel, P.reno, P.pillar], type: 'check',
+        opts: ['FHA 203(k) renovation loan', 'Fannie Mae HomeStyle renovation loan', 'Freddie Mac CHOICERenovation loan', 'Construction-to-permanent loan', 'Home equity loan or HELOC used for the work', 'Cash-out refinance used for the work', 'Other (type it below)'], text: 'One line on each program you ticked, and any program not listed' },
+      { id: 'A2', q: 'Which of those can combine an ADU with other renovation work, and what must the homeowner show?', help: 'For example plans, a contractor bid, permits, an appraisal of the finished home.', where: [P.funnel, P.reno], type: 'long' },
+      { id: 'A3', q: 'When a renovation program is used, what happens to the homeowner’s current first mortgage?', where: [P.funnel, P.keep, P.reno], type: 'radio',
+        opts: ['It is replaced by the new loan', 'It stays in place and the new loan is a second loan', 'It depends on the program'], text: 'Explain in your own words (optional)' },
+      { id: 'A4', q: 'How do draws and inspections work on the programs you offer?', help: 'Plain words: who inspects, when money is released, what the homeowner does.', where: [P.reno], type: 'long' },
+      { id: 'A5', q: 'Does any program you offer fit an owner-occupied home that has an ADU?', where: [P.rent], type: 'radio', opts: ['Yes', 'No', 'It depends'], text: 'Which program, and in what situation' },
+      { id: 'A6', q: 'Which programs consider ADU rental income or the home’s value after the ADU is built, and when?', help: 'Say “none” if none do. The pages will say it depends on the lender.', where: [P.funnel, P.rent], type: 'long' },
+      { id: 'A7', q: 'Does your financing work with any licensed builder?', where: [P.funnel], type: 'radio', opts: ['Yes, any licensed builder', 'Only approved builders', 'It depends on the program'], text: 'What builder or plan information do lenders need?' }
+    ]},
+    { id: 'B', title: 'How you work', intro: 'Short wording for the process, the first call and the cost sections. Keep it in your own voice.', qs: [
+      { id: 'B1', q: 'How do you describe the timeline for ADU financing, in words?', help: 'No promises and no numbers needed. For example: “Timelines vary with the program and the project. We give you an estimate at the start.”', where: [P.funnel, P.ask], type: 'long' },
+      { id: 'B2', q: 'Which no-obligation wording may we use?', help: 'Tick what is true and approved for you.', where: [P.funnel], type: 'check',
+        opts: ['No obligation to move forward', 'The first conversation is free', 'No credit check to get started', 'None of these'], text: 'Exact words you want, and anything you charge for the first conversation' },
+      { id: 'B3', q: 'Should clients bring their latest mortgage statement to the first call?', where: [P.keep], type: 'radio', opts: ['Yes', 'No'] },
+      { id: 'B4', q: 'Should the costs page mention insurance as a cost category?', where: [P.cost], type: 'radio', opts: ['Yes', 'No'], text: 'If yes, how do you describe it (for example builder’s risk or homeowner’s insurance)?' },
+      { id: 'B5', q: 'How do you explain the limits on a HELOC for an ADU project?', help: 'Plain words, no numbers.', where: [P.heloc], type: 'long' },
+      { id: 'B6', q: 'How do you walk a client through HELOC versus cash-out refinance for an ADU?', where: [P.refi], type: 'long' },
+      { id: 'B7', q: 'How does your process work for a Pasadena project?', where: [P.pas], type: 'long' }
+    ]},
+    { id: 'C', title: 'The $200,000 example', intro: 'This page stays hidden until it is filled in. It shows how someone might pay for a $200,000 ADU on a $1.2 million home, with no rates or payments.', qs: [
+      { id: 'C1', q: 'How would a lender look at this homeowner?', help: 'In words: what the lender checks, in what order.', where: [P.ex], type: 'long' },
+      { id: 'C2', q: 'How do you describe the equity step? Give the mortgage balance as a range and state your assumptions.', where: [P.ex], type: 'long' },
+      { id: 'C3', q: 'Which cost categories should the page list?', help: 'Names only, no figures.', where: [P.ex, P.cost], type: 'long' },
+      { id: 'C4', q: 'May the page show a row with rates, payments or loan terms?', help: 'Recommended: no. Only choose yes if your lender approves the required disclosures.', where: [P.ex], type: 'radio', opts: ['No, leave it out', 'Yes, the required disclosures are approved'] }
+    ]},
+    { id: 'D', title: 'Real stories', intro: 'Ten pages have a box for a real example. One story can appear on several pages. Change names and details, and give numbers as ranges. Up to three stories.', qs: [] },
+    { id: 'E', title: 'Reverse mortgage page', intro: 'The reverse mortgage page is hidden for now because it needs extra disclosures.', qs: [
+      { id: 'E1', q: 'What should happen to the reverse mortgage page?', where: [P.rev], type: 'radio', opts: ['Keep it hidden for now', 'Publish it once the details below are filled in', 'Remove it'] },
+      { id: 'E2', q: 'Who is the lender of record for reverse mortgages, and what disclosures are required when it is named?', where: [P.rev], type: 'long' },
+      { id: 'E3', q: 'What do you know about funding an ADU with a reverse mortgage?', help: 'Who may live in the ADU, and whether renting it changes the loan.', where: [P.rev], type: 'radio', opts: ['I will describe it below', 'Please check the official HUD sources and show me'], text: 'Your notes' }
+    ]},
+    { id: 'F', title: 'California and Pasadena facts', intro: 'The state housing department’s site blocked automated reading, so no California ADU law facts are on the pages yet.', qs: [
+      { id: 'F1', q: 'How should we handle California ADU law?', where: [P.pas, P.pillar], type: 'radio', opts: ['I will send official links or PDFs', 'Try to read the state pages again', 'Leave state law out'], text: 'Links or notes' },
+      { id: 'F2', q: 'Is there a city of Pasadena ADU financing or assistance program to mention?', where: [P.pas], type: 'radio', opts: ['No, leave it out', 'Check the city’s page and mention it only if it is open'], text: 'Anything you know about it' }
+    ]},
+    { id: 'G', title: 'Brand, wording and links', intro: 'These are compliance and setup items. Choose what is true today.', qs: [
+      { id: 'G1', q: 'What is the status of the name “FinanceMyADU”?', where: [P.funnel], type: 'radio', opts: ['Approved by E Mortgage Capital compliance', 'Still pending', 'Not approved, use a different name'], text: 'Approval date, or the other name to use' },
+      { id: 'G2', q: 'Which consent wording goes next to the form?', help: 'Current wording: “I agree that E Mortgage Capital Inc. and its loan officers may contact me about my request by phone, email or text.”', where: [P.funnel], type: 'radio', opts: ['Use the current wording for now', 'Compliance gave me approved wording'], text: 'Paste the approved wording here' },
+      { id: 'G3', q: 'Which application link should the campaign use?', where: [P.funnel], type: 'radio', opts: ['I will paste a link below', 'No application link for now'], text: 'Application link', short: true },
+      { id: 'G4', q: 'What about showing customer reviews?', help: 'The pages show short summaries of 5-star reviews from Google, Yelp, Zillow and BBB.', where: [P.funnel], type: 'check',
+        opts: ['I have permission to show these reviews', 'I am asking for permission', 'I will send the platforms’ own widget codes later', 'Show no reviews'], text: 'Notes (which reviews to feature or drop)' }
+    ]}
+  ];
+  var PAGES = ['HELOC page', 'HELOC vs refinance page', 'Renovation loans page', 'Costs page', 'Rental income page', 'Reverse mortgage page', 'Keep your mortgage rate page', 'Pasadena page', 'Questions to ask page', 'ADU financing guide', 'Funnel page story'];
+  var DQ = SEC[3].qs;
+  for (var s = 1; s <= 3; s++) {
+    DQ.push({ id: 'D' + s, scenario: s, q: 'Story ' + s + (s > 1 ? ' (optional)' : ''), type: 'scenario' });
+  }
+
+  var KEY = 'funnel_questions_v1', state = {}, byId = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* ignore */ } }
+  function ent(id) { return state[id] || (state[id] = { c: [], t: '', skip: false }); }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  var form = document.getElementById('form'), nav = document.getElementById('nav');
+  var allQs = [];
+
+  function whereHtml(w) { return w && w.length ? '<div class="where" aria-label="Appears on">' + w.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' : ''; }
+
+  function qHtml(q) {
+    byId[q.id] = q; allQs.push(q);
+    if (q.type === 'scenario') {
+      var id = q.id, e = ent(id);
+      var fields = [
+        ['where', 'The project (city, ADU type, rough size)', true], ['numbers', 'Numbers as ranges (home value, mortgage balance, budget, loan type)', true],
+        ['chose', 'What the homeowner chose, and why', false], ['wrong', 'What went wrong or surprised you', false], ['tell', 'What you would tell a homeowner in this exact situation', false]
+      ];
+      var h = '<fieldset class="q" id="q-' + id + '"><legend><span class="qid">' + id + '</span><span class="qtext">' + esc(q.q) + '</span>' +
+        '<span class="help">Anonymous is fine. Change names and small details.</span></legend><div class="sc-grid">';
+      fields.forEach(function (f) {
+        h += '<div class="' + (f[2] ? '' : 'full') + '"><label class="lbl" for="' + id + '_' + f[0] + '">' + f[1] + '</label>' +
+          (f[2] ? '<input type="text" id="' + id + '_' + f[0] + '" data-q="' + id + '" data-f="' + f[0] + '">' : '<textarea id="' + id + '_' + f[0] + '" data-q="' + id + '" data-f="' + f[0] + '"></textarea>') + '</div>';
+      });
+      h += '</div><p class="lbl" style="margin-top:14px">Which pages should it appear on?</p><div class="opts">';
+      PAGES.forEach(function (p, i) { h += '<label class="opt"><input type="checkbox" data-q="' + id + '" data-pg="' + i + '"><span>' + esc(p) + '</span></label>'; });
+      h += '</div><p class="lbl">Permission</p><div class="opts">';
+      ['Anonymous with details changed, no permission needed', 'I have the homeowner’s written permission', 'Not sure'].forEach(function (p, i) {
+        h += '<label class="opt"><input type="radio" name="' + id + '_perm" data-q="' + id + '" data-perm="' + i + '"><span>' + esc(p) + '</span></label>';
+      });
+      h += '</div><label class="skip"><input type="checkbox" data-q="' + id + '" data-skip="1"> Skip, I do not have this story</label></fieldset>';
+      return h;
+    }
+    var h2 = '<fieldset class="q" id="q-' + q.id + '"><legend><span class="qid">' + q.id + '</span><span class="qtext">' + esc(q.q) + '</span>' +
+      (q.help ? '<span class="help">' + esc(q.help) + '</span>' : '') + whereHtml(q.where) + '</legend>';
+    if (q.opts) {
+      h2 += '<div class="opts">';
+      q.opts.forEach(function (o, i) {
+        var t = q.type === 'check' ? 'checkbox' : 'radio';
+        h2 += '<label class="opt"><input type="' + t + '" name="' + q.id + '"' + ' data-q="' + q.id + '" data-o="' + i + '"><span>' + esc(o) + '</span></label>';
+      });
+      h2 += '</div>';
+    }
+    if (q.type === 'long') {
+      h2 += '<textarea id="' + q.id + '_t" data-q="' + q.id + '" data-t="1" aria-label="Your answer to ' + q.id + '"></textarea>';
+    } else if (q.text) {
+      h2 += '<label class="lbl" for="' + q.id + '_t">' + esc(q.text) + '</label>' +
+        (q.short ? '<input type="url" id="' + q.id + '_t" data-q="' + q.id + '" data-t="1">' : '<textarea id="' + q.id + '_t" data-q="' + q.id + '" data-t="1"></textarea>');
+    }
+    h2 += '<label class="skip"><input type="checkbox" data-q="' + q.id + '" data-skip="1"> Skip, decide for me</label></fieldset>';
+    return h2;
+  }
+
+  var html = '', navHtml = '';
+  SEC.forEach(function (sec) {
+    html += '<section class="sec" id="s-' + sec.id + '"><h2>' + sec.id + '. ' + esc(sec.title) + '</h2><p class="intro">' + esc(sec.intro) + '</p>';
+    sec.qs.forEach(function (q) { html += qHtml(q); });
+    html += '</section>';
+    navHtml += '<a href="#s-' + sec.id + '" data-s="' + sec.id + '"><b>' + sec.id + '</b> ' + esc(sec.title) + '<span></span></a>';
+  });
+  form.innerHTML = html; nav.innerHTML = navHtml;
+
+  function isAnswered(q) {
+    var e = state[q.id]; if (!e) return false;
+    if (e.skip) return true;
+    if (q.type === 'scenario') { return !!((e.f && Object.keys(e.f).some(function (k) { return (e.f[k] || '').trim(); })) || (e.pg && e.pg.length)); }
+    return (e.c && e.c.length) || (e.t && e.t.trim());
+  }
+  function refresh() {
+    var n = 0;
+    allQs.forEach(function (q) {
+      var a = isAnswered(q); if (a) n++;
+      var el = document.getElementById('q-' + q.id); if (el) el.classList.toggle('answered', !!a);
+    });
+    document.getElementById('count').textContent = n + ' of ' + allQs.length;
+    document.getElementById('meter').style.width = (allQs.length ? (100 * n / allQs.length) : 0) + '%';
+    SEC.forEach(function (sec) {
+      var tot = sec.qs.length, d = sec.qs.filter(isAnswered).length;
+      var a = nav.querySelector('[data-s="' + sec.id + '"]'); a.querySelector('span').textContent = d + '/' + tot; a.classList.toggle('done', d === tot);
+    });
+  }
+  function restore() {
+    allQs.forEach(function (q) {
+      var e = state[q.id]; if (!e) return;
+      var sk = form.querySelector('[data-q="' + q.id + '"][data-skip]'); if (sk) sk.checked = !!e.skip;
+      if (q.type === 'scenario') {
+        Object.keys(e.f || {}).forEach(function (k) { var el = document.getElementById(q.id + '_' + k); if (el) el.value = e.f[k]; });
+        (e.pg || []).forEach(function (i) { var el = form.querySelector('[data-q="' + q.id + '"][data-pg="' + i + '"]'); if (el) el.checked = true; });
+        if (e.perm != null) { var pe = form.querySelector('[data-q="' + q.id + '"][data-perm="' + e.perm + '"]'); if (pe) pe.checked = true; }
+        return;
+      }
+      (e.c || []).forEach(function (i) { var el = form.querySelector('[data-q="' + q.id + '"][data-o="' + i + '"]'); if (el) el.checked = true; });
+      var t = document.getElementById(q.id + '_t'); if (t && e.t) t.value = e.t;
+    });
+  }
+  restore(); refresh();
+
+  var timer = null;
+  function onChange(ev) {
+    var el = ev.target, id = el.getAttribute('data-q'); if (!id) return;
+    var e = ent(id), q = byId[id];
+    if (el.hasAttribute('data-skip')) { e.skip = el.checked; }
+    else if (el.hasAttribute('data-o')) { e.c = Array.prototype.map.call(form.querySelectorAll('[data-q="' + id + '"][data-o]:checked'), function (x) { return +x.getAttribute('data-o'); }); }
+    else if (el.hasAttribute('data-t')) { e.t = el.value; }
+    else if (el.hasAttribute('data-f')) { e.f = e.f || {}; e.f[el.getAttribute('data-f')] = el.value; }
+    else if (el.hasAttribute('data-pg')) { e.pg = Array.prototype.map.call(form.querySelectorAll('[data-q="' + id + '"][data-pg]:checked'), function (x) { return +x.getAttribute('data-pg'); }); }
+    else if (el.hasAttribute('data-perm')) { e.perm = +el.getAttribute('data-perm'); }
+    if (q && q.type !== 'scenario' && !el.hasAttribute('data-skip') && (e.c.length || e.t.trim())) { e.skip = false; var sk = form.querySelector('[data-q="' + id + '"][data-skip]'); if (sk) sk.checked = false; }
+    clearTimeout(timer); timer = setTimeout(function () { save(); refresh(); }, 150);
+  }
+  form.addEventListener('input', onChange); form.addEventListener('change', onChange);
+
+  function summary() {
+    var out = ['FinanceMyADU funnel questions: answers', ''];
+    SEC.forEach(function (sec) {
+      out.push('## ' + sec.id + '. ' + sec.title);
+      sec.qs.forEach(function (q) {
+        var e = state[q.id] || {};
+        if (q.type === 'scenario') {
+          var f = e.f || {}, parts = [];
+          if (e.skip) { out.push(q.id + ' ' + q.q + ': skipped'); return; }
+          var lab = { where: 'Project', numbers: 'Numbers', chose: 'Chose and why', wrong: 'What went wrong', tell: 'What I would tell a homeowner' };
+          Object.keys(lab).forEach(function (k) { if ((f[k] || '').trim()) parts.push('  - ' + lab[k] + ': ' + f[k].trim()); });
+          if (e.pg && e.pg.length) parts.push('  - Show on: ' + e.pg.map(function (i) { return PAGES[i]; }).join(', '));
+          if (e.perm != null) parts.push('  - Permission: ' + ['Anonymous, details changed', 'Written permission', 'Not sure'][e.perm]);
+          out.push(q.id + ' ' + q.q + (parts.length ? ':' : ': no answer')); parts.forEach(function (p) { out.push(p); }); return;
+        }
+        var ans = [];
+        if (e.skip) ans.push('SKIP, decide for me');
+        (e.c || []).forEach(function (i) { ans.push(q.opts[i]); });
+        if ((e.t || '').trim()) ans.push((q.opts ? 'Note: ' : '') + e.t.trim());
+        out.push(q.id + ' ' + q.q + ': ' + (ans.length ? ans.join(' | ') : 'no answer'));
+      });
+      out.push('');
+    });
+    return out.join('\n');
+  }
+  function payload() {
+    var a = {}; allQs.forEach(function (q) { if (isAnswered(q)) a[q.id] = state[q.id]; });
+    return { submittedAt: new Date().toISOString(), answered: Object.keys(a).length, total: allQs.length, answers: a, text: summary() };
+  }
+  var statusEl = document.getElementById('status');
+  function copyText(txt, after) {
+    function fallback() { var box = document.getElementById('summaryOut'); document.getElementById('doneBox').hidden = false; box.value = txt; box.focus(); box.select(); after(false); }
+    try { navigator.clipboard.writeText(txt).then(function () { after(true); }, fallback); } catch (e) { fallback(); }
+  }
+  function copyAnswers() {
+    copyText(summary(), function (ok) { statusEl.textContent = ok ? 'Copied. Paste it into the chat with me.' : 'Select and copy the text box at the top.'; });
+  }
+  document.getElementById('copyBtn').addEventListener('click', copyAnswers);
+  document.getElementById('copyBtn2').addEventListener('click', copyAnswers);
+
+  var busy = false;
+  document.getElementById('submitBtn').addEventListener('click', function () {
+    if (busy) return; busy = true;
+    var btn = this, p = payload();
+    btn.disabled = true; statusEl.textContent = 'Submitting';
+    var shown = function (saved) {
+      var box = document.getElementById('doneBox'); box.hidden = false;
+      document.getElementById('doneTitle').textContent = saved ? 'Submitted' : 'Not saved to the page';
+      document.getElementById('doneText').textContent = saved
+        ? p.answered + ' of ' + p.total + ' answered or skipped. Tell me in the chat that you submitted and I will read it.'
+        : 'This view could not save your answers. Copy the text below and paste it into the chat with me.';
+      document.getElementById('summaryOut').value = p.text;
+      box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      statusEl.textContent = saved ? 'Submitted' : '';
+      busy = false; btn.disabled = false;
+    };
+    var getDb = (window.claude && window.claude.use) ? window.claude.use('db') : Promise.resolve(null);
+    getDb.then(function (db) {
+      if (!db) { shown(false); return; }
+      return db.doc('submissions/latest').set(p).then(function () { shown(true); });
+    }).catch(function () { shown(false); });
+  });
+  if (!window.claude || !window.claude.use) { document.getElementById('submitBtn').title = 'Saving needs the published page; Copy my answers works anywhere.'; }
+})();
+</script>
