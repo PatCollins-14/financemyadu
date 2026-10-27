@@ -1,8 +1,8 @@
 # Go-live: financemyadu.io on GitHub Pages
 
-**Status (2026-10-28):** the DRAFT site is deployed on GitHub Pages from https://github.com/PatCollins-14/financemyadu (public). GitHub already serves it for `financemyadu.io`. The domain still points at its old parked server, so visitors do not see it yet.
+**Status (2026-10-28):** LIVE. The DRAFT site is served at https://financemyadu.io/ from https://github.com/PatCollins-14/financemyadu (public). DNS: one A record (185.199.108.153) on the root and a `www` CNAME to `patcollins-14.github.io`. The HTTPS certificate is approved (covers the root and www, expires 2027-01-26 and renews on its own) and Enforce HTTPS is on: http and www redirect to https://financemyadu.io/.
 
-## 1. Point the domain at GitHub (you, at the domain registrar or DNS host)
+## 1. DNS (done). Reference: the records you need
 
 Open the DNS settings for `financemyadu.io` and make these records. Delete the old records first: the apex `A` record `2.57.91.91` and the `www` record that aliases it.
 
@@ -20,7 +20,7 @@ Open the DNS settings for `financemyadu.io` and make these records. Delete the o
 
 DNS can take from a few minutes to a day. Check with `nslookup financemyadu.io`: it should list the 185.199.x.153 addresses.
 
-## 2. Turn on HTTPS (after DNS has updated)
+## 2. HTTPS (done)
 
 GitHub issues the certificate on its own once DNS points at it (often within an hour). Then in the repo: Settings, Pages, tick **Enforce HTTPS**. Ask Claude to do it with the API once the certificate is ready.
 
