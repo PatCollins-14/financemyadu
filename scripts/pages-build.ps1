@@ -19,6 +19,8 @@ foreach ($f in (Get-ChildItem (Join-Path $out 'hub') -Recurse -Filter '*.html'))
   Write-Text $f.FullName $h
 }
 Copy-Item (Join-Path $src 'funnel\robots.txt') (Join-Path $out 'robots.txt')
+Copy-Item (Join-Path $root 'assets\favicon.ico') (Join-Path $out 'favicon.ico')
+Copy-Item (Join-Path $root 'assets\favicon.svg') (Join-Path $out 'favicon.svg')
 Write-Text (Join-Path $out 'index.html') '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FinanceMyADU</title><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=funnel/"></head><body><p>Opening the <a href="funnel/">FinanceMyADU page</a>.</p></body></html>'
 Write-Text (Join-Path $out '404.html') '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found</title><meta name="robots" content="noindex"></head><body style="font-family:system-ui,sans-serif;padding:32px"><h1>Page not found</h1><p><a href="/funnel/">Go to the FinanceMyADU page</a>.</p></body></html>'
 Write-Text (Join-Path $out 'CNAME') 'financemyadu.io'

@@ -47,6 +47,7 @@ function Copy-Assets([string]$outDir) {
   $a = Join-Path $outDir 'assets'
   New-Item -ItemType Directory -Force -Path $a | Out-Null
   Copy-Item (Join-Path $root 'src\assets\site.css') $a
+  foreach ($ic in 'favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png') { Copy-Item (Join-Path $root "assets\$ic") $a }
   Copy-Item (Join-Path $root 'assets\equal-housing-opportunity.png') $a
   Copy-Item (Join-Path $root 'assets\lthm-logo-orange.png') $a
   foreach ($lg in 'google','yelp','zillow') { Copy-Item (Join-Path $root "assets\review-$lg.png") $a }
@@ -100,6 +101,7 @@ function New-Graph([string]$base, [string]$pageUrl, [string]$pageType, [string]$
 
 function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$robots, [string]$jsonld, [string]$cssHref, [string]$ogType) {
   $t = Esc $title; $d = Esc $desc
+  $iconBase = $cssHref -replace 'site\.css$', ''
   return @"
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,6 +114,10 @@ function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$ro
 <meta property="og:url" content="$canonical">
 <meta property="og:type" content="$ogType">
 <meta property="og:site_name" content="E Mortgage Capital Inc.">
+<link rel="icon" href="${iconBase}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${iconBase}favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="${iconBase}apple-touch-icon.png">
+<meta name="theme-color" content="#223d78">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
