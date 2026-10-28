@@ -210,3 +210,6 @@ Design: a navy rounded square (the brand navy, with a slight gradient) holding a
 
 **D61. Form connected to the GoHighLevel webhook (Pat, chat 2026-10-29).**
 `FORM_ENDPOINT` in `config/site.json` is now the inbound webhook URL Pat supplied from his GHL workflow. The live funnel form posts there (see D60 for the fields). The URL is in the public repository and in the page source by design; if it is abused, regenerate the URL in GHL and change the value here. No test lead was sent by Claude, so the contact, the "ADU Lead" tag and the email are untested end to end. The draft-site warnings still apply: yellow notes visible, compliance not approved.
+
+**D62. GHL form flow tested end to end (Pat, chat 2026-10-29).**
+Claude sent two labelled test posts to the webhook (a sample capture, then a run of the published workflow, execution id 4vtOk8aFg0XYBD2bgCWe). Pat confirmed in GHL that the contact was created with the right fields, the "ADU Lead" tag was added and the confirmation email step ran; the test contact was to be deleted. Not yet checked: a submission made through the live page itself (browser, no-cors, spam trap, UTM capture), so one real page submission is still the final check.
