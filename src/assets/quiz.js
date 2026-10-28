@@ -71,6 +71,11 @@
     });
   } catch (e) { /* ignore */ }
 
+  var trapEl = document.createElement('input');
+  trapEl.type = 'text'; trapEl.name = 'website'; trapEl.tabIndex = -1; trapEl.autocomplete = 'off'; trapEl.setAttribute('data-trap', '1'); trapEl.setAttribute('aria-hidden', 'true');
+  trapEl.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+  form.appendChild(trapEl);
+
   var started = false;
   form.addEventListener('focusin', function () { if (!started) { started = true; track('quiz_start'); } });
   form.addEventListener('input', function (e) { var f = e.target.closest('.field'); if (f) f.classList.remove('err'); });
@@ -100,8 +105,24 @@
     var btn = document.getElementById('leadSubmit');
     if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
     var data = new URLSearchParams(new FormData(form));
-    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
-      .then(function (r) { if (!r.ok) throw new Error('bad response'); return r; })
+    /* Extra fields a CRM (GoHighLevel inbound webhook) can map: split name, where the lead came from, when, and the consent shown. */
+    var full = (form.elements.name.value || '').trim().replace(/\s+/g, ' '), parts = full.split(' ');
+    data.set('full_name', full);
+    data.set('first_name', parts[0] || '');
+    data.set('last_name', parts.slice(1).join(' '));
+    data.set('source', 'FinanceMyADU funnel');
+    data.set('page_url', location.href.split('#')[0]);
+    data.set('referrer', document.referrer || '');
+    data.set('submitted_at', new Date().toISOString());
+    var cn = form.querySelector('.form-note');
+    data.set('consent_given', 'yes');
+    data.set('consent_text', cn ? cn.textContent.replace(/\s+/g, ' ').replace(/\s*\[PAT:[^\]]*\]/g, '').trim() : '');
+    /* Spam trap: a hidden field a person never sees. If a bot filled it, pretend success and send nothing. */
+    var trap = form.querySelector('[data-trap]');
+    var botted = !!(trap && trap.value);
+    var req = botted ? Promise.resolve() : fetch(endpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data });
+    /* mode no-cors: the CRM does not need to answer the browser. A reply cannot be read, so success means the request left the page. */
+    req
       .then(function () {
         track('quiz_complete');
         var first = (form.elements.name.value || '').trim().split(' ')[0];
