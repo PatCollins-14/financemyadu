@@ -216,3 +216,6 @@ Claude sent two labelled test posts to the webhook (a sample capture, then a run
 
 **D63. Headline curve inverted (Pat, chat 2026-10-29).**
 The curved "& Renovations" under "Finance My ADU" now arches up in the middle (it used to dip like a smile), and the blue-to-gold swash under it arches the same way. Only the two SVG paths and the viewBox height in `src/funnel/index.html` changed. Checked at desktop and 375 px with no sideways scroll.
+
+**D64. Identity strip under the hero removed (Pat, chat 2026-10-29).**
+The strip with "E Mortgage Capital Inc. NMLS #1416824", "Check licenses on NMLS Consumer Access" and the Equal Housing logo is gone from the funnel. The same identifiers, the NMLS Consumer Access link and the Equal Housing logo are still in the footer, which preflight checks. Compliance may want the licensing and Equal Housing information visible higher on the page for lending advertising; if so it can be restored from git (`src/funnel/index.html`, section 2).
