@@ -153,7 +153,7 @@ function Get-Footer([string]$assetPrefix, [bool]$isFunnel, [string]$hubRoot) {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; $($today.Substring(0,4)) $(Esc $p.shortName), $(Esc $p.jobTitle), NMLS #$($p.nmls) &middot; DRE $($p.dre) &middot; $(Esc $c.name), NMLS #$($c.nmls) &middot; $(Esc $c.address) &middot; <a href="$($k.phoneTel)">$(Esc $k.phone)</a> &middot; <a href="mailto:$($k.email)">$(Esc $k.email)</a> &middot; <a href="$($k.nmlsConsumerAccess)" rel="noopener">NMLS Consumer Access</a> &middot; $(Esc $c.brand), powered by $(Esc $c.poweredBy)</span>
+      <span>&copy; $($today.Substring(0,4)) $(Esc $p.shortName), $(Esc $p.jobTitle), NMLS #$($p.nmls) &middot; DRE $($p.dre) &middot; $(Esc $c.name), NMLS #$($c.nmls) &middot; $(Esc $c.address) &middot; <a href="$($k.nmlsConsumerAccess)" rel="noopener">NMLS Consumer Access</a></span>
       <span><a href="$($l.privacy)" rel="noopener">Privacy Policy</a> &middot; <a href="$($l.terms)" rel="noopener">Terms &amp; Conditions</a> &middot; <a href="$($l.accessibility)" rel="noopener">Accessibility</a></span>
     </div>
   </div>
