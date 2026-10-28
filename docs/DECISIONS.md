@@ -213,3 +213,6 @@ Design: a navy rounded square (the brand navy, with a slight gradient) holding a
 
 **D62. GHL form flow tested end to end (Pat, chat 2026-10-29).**
 Claude sent two labelled test posts to the webhook (a sample capture, then a run of the published workflow, execution id 4vtOk8aFg0XYBD2bgCWe). Pat confirmed in GHL that the contact was created with the right fields, the "ADU Lead" tag was added and the confirmation email step ran; the test contact was to be deleted. Not yet checked: a submission made through the live page itself (browser, no-cors, spam trap, UTM capture), so one real page submission is still the final check.
+
+**D63. Headline curve inverted (Pat, chat 2026-10-29).**
+The curved "& Renovations" under "Finance My ADU" now arches up in the middle (it used to dip like a smile), and the blue-to-gold swash under it arches the same way. Only the two SVG paths and the viewBox height in `src/funnel/index.html` changed. Checked at desktop and 375 px with no sideways scroll.
