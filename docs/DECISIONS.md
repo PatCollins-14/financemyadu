@@ -225,3 +225,6 @@ The three lines in the footer's right-hand column (Pat Collins, Mortgage Profess
 
 **D66. Phone, email and "powered by" removed from the footer line (Pat, chat 2026-10-29).**
 The bottom footer line no longer shows "(949) 787-2662", "pcollins@emortgagecapital.com" or "Let's Talk Home Mortgage, powered by E Mortgage Capital". It now reads: (c) 2026 Pat Collins, Mortgage Professional, NMLS #1628553, DRE #02143449, E Mortgage Capital Inc., NMLS #1416824, the address, and the NMLS Consumer Access link. The phone number is still in the page header and the Call buttons; the email is no longer shown anywhere on the funnel, but the Contact link in the footer still opens the contact page.
+
+**D67. Bottom footer lines centered (Pat, chat 2026-10-29).**
+The two lines at the very bottom (the copyright and licensing line, and the Privacy Policy, Terms & Conditions and Accessibility links) now sit one above the other, centered on the page, instead of one at each side. Text is centered too when the first line wraps. CSS only (`.footer-bottom` in `src/assets/site.css`). Checked at 1280 px and 375 px: both lines centered, no sideways scroll.
