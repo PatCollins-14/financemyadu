@@ -240,3 +240,6 @@ Pat asked for a simpler, faster, more compact page anyone can understand. The fu
 
 **D71. Hero tagline block removed (Pat, chat 2026-10-31).**
 Removed "Clear options, honest guidance.", the "See my financing options" link and the "[PAT: confirm no-obligation wording]" note under the hero bullets. The no-obligation question is still open in the note under the form ("confirm no-obligation and no-credit-check wording").
+
+**D72. Compact hero (Pat, chat 2026-10-31).**
+The hero had a large empty area under the bullets because the form set the height. Now the headline and bullets are centered vertically beside the form, the bullets line up under the right-aligned headline, the hero band has less top and bottom padding, and the form is tighter (smaller heading on one line, smaller gaps, slimmer fields and button). Desktop hero is about 650 px tall and fits above the fold at 1280 x 800. On phones the order is headline, bullets, then the form. No text or form fields changed. Checked at 1280 px and 375 px, no sideways scroll.

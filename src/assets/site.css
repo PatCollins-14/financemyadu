@@ -365,3 +365,21 @@ p,li,dd,dt,blockquote,figcaption,summary,.g-card p,.answer,.form-note,.fine,.not
 .proof .g-plat-grid .g-plat{flex:1 1 160px;min-width:0}
 .pay-card .big{font-size:clamp(26px,2.4vw,36px);line-height:1.08}
 @media (max-width:640px){.proof .g-plat-grid .g-plat{flex-basis:calc(50% - 6px);padding:14px}.proof .g-plat .g-pcount{display:none}}
+
+/* Compact hero (D72): headline and bullets sit centered beside the form, less empty space */
+.band.hero{padding-block:clamp(28px,4vw,56px)}
+.hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,420px);grid-template-rows:1fr auto auto 1fr;grid-template-areas:". form" "title form" "copy form" ". form";gap:20px clamp(32px,4vw,56px)}
+.hero-copy{justify-self:end;padding-bottom:0}
+.hero .dash-list{font-size:18px;gap:8px}
+.hero-form{padding:clamp(20px,2.4vw,28px)}
+.hero-form h2{font-size:clamp(24px,2.3vw,30px);margin-bottom:4px}
+.hero-form .sub{margin-bottom:12px;font-size:14px}
+.hero-form form{gap:10px}
+.hero-form .field{gap:4px}
+.hero-form .field input[type=text],.hero-form .field input[type=email],.hero-form .field input[type=tel]{padding:10px 13px}
+.hero-form .btn{padding-block:14px;margin-top:4px}
+.hero-form .form-note{margin-top:4px;font-size:11.5px}
+@media (max-width:1000px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"title" "copy" "form";gap:20px}
+  .hero-copy{justify-self:start}
+}
