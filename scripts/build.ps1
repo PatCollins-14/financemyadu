@@ -318,6 +318,7 @@ Allow: /
 "@ + "`n")
   Add-Source 'funnel' 'https://letstalkhomemortgage.com/' 'Identifiers, About, process, FAQ answers, reviews, footer disclosure'
   Add-Source 'funnel' 'https://letstalkhomemortgage.com/heloc-loans/' 'HELOC and home equity loan explanation'
+  Add-Source 'funnel' 'https://letstalkadu.com/' "Let's Talk ADU builder band: designs, permits and builds ADUs and remodels in Southern California; CSLB #1138550 (retrieved 2026-10-31; prices, financing, review-count and timeline claims not used)"
   Add-Source 'funnel' 'https://letstalkhomemortgage.com/refinance/' 'Cash-out refinance explanation, low first-mortgage rate note'
   if ($cfg['SHOW_REVERSE_SECTION']) { Add-Source 'funnel' 'https://letstalkhomemortgage.com/reverse-mortgage/' 'HECM obligations, counseling' }
   Add-Source 'funnel' $srcs.'fnma-adu'.url 'ADU definition and renovation loan option'

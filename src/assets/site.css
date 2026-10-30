@@ -399,3 +399,14 @@ p,li,dd,dt,blockquote,figcaption,summary,.g-card p,.answer,.form-note,.fine,.not
   .hero .wrap{grid-template-columns:auto minmax(0,420px);justify-content:center;column-gap:clamp(48px,6vw,96px)}
   .hero-left{justify-self:start}
 }
+
+/* Let's Talk ADU builder band (D76) */
+.builder{padding-block:clamp(32px,4vw,56px)}
+.builder-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;background:var(--cream);border:1px solid #d3e2f2;border-left:5px solid var(--gold);border-radius:22px;padding:clamp(22px,3vw,36px)}
+.builder-copy{display:grid;gap:8px;max-width:640px;min-width:0}
+.builder-copy .tag{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#946600}
+.builder-copy h2{font-size:clamp(26px,3vw,38px);color:var(--navy);letter-spacing:-.03em}
+.builder-copy p{color:var(--ink-soft)}
+.builder-copy .fine{font-size:12px}
+.builder-btn{flex:0 0 auto}
+@media (max-width:640px){.builder-btn{width:100%;text-align:center}}
