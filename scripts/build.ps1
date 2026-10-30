@@ -172,7 +172,37 @@ function Join-Orphans([string]$html) {
   }
   return ($parts -join '')
 }
-function Finish([string]$html) { $html = Join-Orphans $html; if ($Production) { return $html } else { return (Mark-Placeholders $html) } }
+# No visible notes (Pat, 2026-10-31): [PAT: ...] placeholders never reach a built page. They stay in the source files and
+# docs/PAT-INPUTS.md, and preflight counts them there. Blocks left empty by the removal are dropped too.
+function Remove-Placeholders([string]$html) {
+  $parts = [regex]::Split($html, '(?is)(<script\b.*?</script>|<style\b.*?</style>|<template\b.*?</template>)')
+  for ($i = 0; $i -lt $parts.Length; $i += 2) {
+    $s = $parts[$i]
+    $s = [regex]::Replace($s, '[ \t]*\[PAT:[^\]]*\]', '')
+    $s = [regex]::Replace($s, '<br>\s*(?=</p>)', '')
+    # "What I see in real ADU financing" boxes that only held a note, and their table-of-contents links
+    if ([regex]::IsMatch($s, '(?is)<div class="real">\s*<h2 id="real">.*?</h2>\s*(?:<p>\s*</p>\s*)*</div>')) {
+      $s = [regex]::Replace($s, '(?is)<div class="real">\s*<h2 id="real">.*?</h2>\s*(?:<p>\s*</p>\s*)*</div>', '')
+      $s = [regex]::Replace($s, '<li><a href="#real">[^<]*</a></li>', '')
+    }
+    # table rows whose answer cells are all empty, then tables with no rows left
+    $s = [regex]::Replace($s, '(?is)<tr>\s*(?:<th[^>]*>(?:(?!</th>|<tr\b).)*</th>\s*)?(?:<td[^>]*>\s*</td>\s*)+</tr>', '')
+    $s = [regex]::Replace($s, '(?is)<div class="table-wrap">\s*<table>(?:(?!<td).)*?<tbody>\s*</tbody>\s*</table>\s*</div>', '')
+    # empty paragraphs, list items and lists
+    for ($k = 0; $k -lt 2; $k++) {
+      $s = [regex]::Replace($s, '(?is)<(p|li|span|small|em|strong)\b[^>]*>\s*</\1>', '')
+      $s = [regex]::Replace($s, '(?is)<(ul|ol)\b[^>]*>\s*</\1>', '')
+    }
+    # section headings left with nothing under them, and their table-of-contents links
+    foreach ($hm in @([regex]::Matches($s, '(?is)<h2 id="([^"]+)">(?:(?!</h2>).)*</h2>\s*(?=<h2\b|</article>|</main>|</section>)'))) {
+      $s = $s.Replace($hm.Value, '')
+      $s = [regex]::Replace($s, '<li><a href="#' + [regex]::Escape($hm.Groups[1].Value) + '">[^<]*</a></li>', '')
+    }
+    $parts[$i] = $s
+  }
+  return ($parts -join '')
+}
+function Finish([string]$html) { return (Join-Orphans (Remove-Placeholders $html)) }
 
 # =========================================================
 # ASSET A: FUNNEL
@@ -454,7 +484,7 @@ function Build-HubPage($p) {
   $byline = ''
   $byline = "<div class=`"byline`"><span>Last reviewed: $(NiceDate $dateMod)</span></div>"
   $draft = ''
-  if (-not $approved) { $draft = '<div class="draft-banner" role="note">DRAFT: not yet reviewed by compliance</div>' }
+  # no yellow DRAFT banner on pages (Pat, 2026-10-31); unapproved pages are still kept out of the production build
   $tocHtml = ''
   if ($toc.Count -ge 4) { $tocHtml = '<nav class="toc" aria-label="On this page"><strong>On this page</strong><ul>' + (($toc | ForEach-Object { '<li><a href="#' + $_.id + '">' + (Esc $_.text) + '</a></li>' }) -join '') + '</ul></nav>' }
   $answerHtml = "<div class=`"answer`"><b>Short answer</b>$(Esc $m.answer)</div>"
@@ -550,7 +580,7 @@ function Build-PreviewIndex {
 h1{font-family:Georgia,serif}table{border-collapse:collapse;width:100%;margin:16px 0}td,th{border:1px solid #dbe3ee;padding:9px 12px}
 .note{background:#fff6e0;border:1px solid #e8c26a;border-radius:8px;padding:12px 16px}a{color:#223d78}</style></head><body>
 <h1>Preview: ADU funnel and education hub</h1>
-<p class="note"><strong>Not live.</strong> Local draft build for review. Yellow highlights are <code>[PAT: ...]</code> placeholders waiting for your input. Nothing here is approved by compliance, and the form is not connected.</p>
+<p class="note"><strong>Not live.</strong> Local draft build for review. Notes still waiting for your input are listed in docs/PAT-INPUTS.md and are not shown on the pages. Nothing here is approved by compliance, and the form is not connected.</p>
 <table><thead><tr><th style="text-align:left">Page</th><th>Status</th><th>Open placeholders</th></tr></thead><tbody>
 $($rows.ToString())</tbody></table>
 <p>Flags in this build: reverse mortgage section <strong>$(if ($cfg['SHOW_REVERSE_SECTION']) { 'shown' } else { 'hidden' })</strong>, worked example <strong>$(if ($cfg['SHOW_EXAMPLE']) { 'shown' } else { 'hidden' })</strong>, analytics <strong>$(if ([string]$cfg['ANALYTICS_ID']) { 'configured but off until a visitor accepts' } else { 'not configured' })</strong>. Built $today.</p>

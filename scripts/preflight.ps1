@@ -17,12 +17,12 @@ function Norm([string]$s) { ([regex]::Replace([System.Net.WebUtility]::HtmlDecod
 
 # ---- build the list of pages to check ----
 $targets = @()
-$targets += [pscustomobject]@{ id = 'funnel'; kind = 'funnel'; path = '/'; file = (Join-Path $dist 'funnel\index.html'); allow = @(); gate = $false; base = ([string]$cfg['FUNNEL_BASE_URL']).TrimEnd('/') }
+$targets += [pscustomobject]@{ id = 'funnel'; kind = 'funnel'; src = @((Join-Path $root 'src\funnel\index.html'), (Join-Path $root 'src\funnel\faq.json')); path = '/'; file = (Join-Path $dist 'funnel\index.html'); allow = @(); gate = $false; base = ([string]$cfg['FUNNEL_BASE_URL']).TrimEnd('/') }
 foreach ($p in $pagesCfg.hub) {
   $hf = Read-HubFile (Join-Path $root ('src\hub\pages\' + $p.file))
   $allow = @(); if ($hf.meta.PSObject.Properties.Name -contains 'allowTerms') { $allow = @($hf.meta.allowTerms) }
   $gate = [bool]($p.PSObject.Properties.Name -contains 'gate' -and $p.gate)
-  $targets += [pscustomobject]@{ id = $p.id; kind = 'hub'; path = $p.path; file = (Join-Path (Join-Path $dist 'hub') (($p.path.Trim('/')).Replace('/', '\') + '\index.html')); allow = $allow; gate = $gate; base = ([string]$cfg['HUB_BASE_URL']).TrimEnd('/'); meta = $hf.meta }
+  $targets += [pscustomobject]@{ id = $p.id; kind = 'hub'; src = @((Join-Path $root ('src\hub\pages\' + $p.file))); path = $p.path; file = (Join-Path (Join-Path $dist 'hub') (($p.path.Trim('/')).Replace('/', '\') + '\index.html')); allow = $allow; gate = $gate; base = ([string]$cfg['HUB_BASE_URL']).TrimEnd('/'); meta = $hf.meta }
 }
 $sourceMap = ''; $smPath = Join-Path $root 'docs\SOURCE-MAP.md'
 if (Test-Path $smPath) { $sourceMap = Read-Text $smPath }
@@ -39,7 +39,9 @@ foreach ($t in $targets) {
   $text = Get-VisibleText $bodyHtml
 
   # 1. placeholders
-  $phCount = ([regex]::Matches($html, '\[PAT:')).Count
+  # Notes are stripped from built pages (Pat, 2026-10-31), so they are counted in the page's source files
+  $phCount = 0; foreach ($sf in $t.src) { if (Test-Path $sf) { $phCount += ([regex]::Matches((Read-Text $sf), '\[PAT:')).Count } }
+  if (([regex]::Matches($html, '\[PAT:')).Count -gt 0) { Add-F 'placeholder-visible' $name 'a [PAT: ...] note is visible on the built page' }
   if ($phCount -gt 0) { Add-F 'placeholder' $name "$phCount [PAT: ...] placeholder(s) remain" }
 
   # 2. banned phrases (intake <select> options, placeholders and required disclosure sentences are excluded)
@@ -122,12 +124,8 @@ foreach ($t in $targets) {
     if ($sourceMap -notmatch [regex]::Escape($sc.Groups[1].Value)) { Add-F 'source-map' $name "SOURCE comment URL not in docs/SOURCE-MAP.md: $($sc.Groups[1].Value)" }
   }
 
-  # draft banner must match approval state
-  $hasDraft = $html -match 'DRAFT: not yet reviewed by compliance'
-  if ($t.kind -eq 'hub') {
-    if ($approved -and $hasDraft) { Add-F 'draft-banner' $name 'approved page still shows the DRAFT banner' }
-    if (-not $approved -and -not $hasDraft) { Add-F 'draft-banner' $name 'unapproved page is missing the DRAFT banner' }
-  }
+  # The yellow DRAFT banner was removed from pages (Pat, 2026-10-31); approval is still enforced by check 11 and the production build
+  if ($html -match 'DRAFT: not yet reviewed by compliance') { Add-F 'draft-banner' $name 'page still shows the DRAFT banner' }
   # funnel-specific
   if ($t.kind -eq 'funnel') {
     if (-not $cfg['SHOW_REVERSE_SECTION']) {
