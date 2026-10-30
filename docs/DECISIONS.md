@@ -270,3 +270,6 @@ Pat supplied the program details (line size, CLTV, credit score, draw and repaym
 
 **D81. "Email us" link removed from the "Prefer to talk first?" card (Pat, chat 2026-10-31).**
 The card now has only "Book a call" and the phone button; its line reads "Book a time or call us directly." The application-link note that shared that line was already hidden (D79) and is still tracked in the source.
+
+**D82. Footer licensing line on one line (Pat, chat 2026-10-31).**
+The copyright and licensing line (Pat Collins, NMLS, DRE, E Mortgage Capital, NMLS, address, NMLS Consumer Access) wrapped because it was capped at 960 px. The cap is removed, so it fits on one line on screens about 1100 px and wider (checked at 1100, 1280, 1366 and 1536 px); on phones it still wraps. Applies to every page.
