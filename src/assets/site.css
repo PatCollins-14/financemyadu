@@ -115,38 +115,8 @@ p{margin:0}
 .paths .fine{font-size:13px;opacity:.92;margin-top:28px;max-width:900px}
 .paths .fine a{color:#fff}
 
-/* cream band: big intro + sketch-style feature grid */
-.benefits{background:var(--cream)}
-.intro{font-size:clamp(30px,4vw,52px);font-weight:300;line-height:1.1;letter-spacing:-.035em;max-width:900px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:64px 48px;margin-top:clamp(56px,7vw,96px)}
-.feature{display:grid;gap:18px;align-content:start;max-width:300px}
-.feature svg{width:120px;height:96px}
-.feature p{font-size:15px}
-.center-cta{display:flex;justify-content:center;margin-top:clamp(56px,7vw,96px)}
 
-/* comparison with a black highlighted column */
-.compare h2{font-size:clamp(36px,5vw,64px);margin-bottom:14px}
-.compare .lead{color:var(--ink-soft);max-width:60ch;margin-bottom:40px}
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.compare table{border-collapse:collapse;width:100%;min-width:860px;font-size:15px}
-.compare th,.compare td{padding:20px 14px;text-align:center;border-bottom:1px solid var(--line)}
-.compare th{font-weight:500;font-size:14px;vertical-align:bottom}
-.compare th:first-child,.compare td:first-child{text-align:left;width:26%;font-weight:400}
-.compare thead th{border-bottom:0}
-.col-ours{background:var(--navy-band);color:#fff;font-size:13px}
-.compare thead .col-ours{border-radius:14px 14px 0 0}
-.compare tbody tr:last-child .col-ours{border-radius:0 0 14px 14px}
-.compare td.col-ours{border-bottom-color:#4a66a8;font-weight:400;line-height:1.35}
-.yes,.no{width:18px;height:18px;display:inline-block;vertical-align:middle}
-.no{opacity:.35}
-.ask{font-size:13px;color:var(--ink-soft)}
-.compare .fine{color:var(--ink-soft);font-size:13px;text-align:center;margin:28px auto 0;max-width:900px}
 
-/* how lenders look at an ADU */
-.angle{background:var(--cream)}
-.angle .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,96px);align-items:start}
-.angle h2{font-size:clamp(36px,5vw,64px)}
-.angle-body{display:grid;gap:18px;min-width:0}
 .callout{background:var(--paper);border-radius:16px;padding:18px 22px;font-weight:500}
 .callout--warn{background:var(--warn-bg);border:1px solid var(--warn-line)}
 .src{font-size:13px;color:var(--ink-soft)}
@@ -155,19 +125,11 @@ p{margin:0}
 /* proof and reviews */
 .proof h2{font-size:clamp(36px,5vw,64px);margin-bottom:12px}
 .proof .lead{color:var(--ink-soft);max-width:62ch;margin-bottom:32px;font-size:15px}
-.tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 /* reviews: styled after the review section on letstalkhomemortgage.com (kicker, title with blue italic, platform tiles, sideways carousel), in light mode */
 .g-panel{background:radial-gradient(circle at 10% 0%,rgba(82,175,230,.22),rgba(82,175,230,0) 38%),var(--cream);border:1px solid #d3e2f2;border-radius:28px;padding:clamp(22px,3.5vw,48px);display:grid;gap:clamp(28px,3.5vw,44px)}
 .g-panel>*{min-width:0}
 .g-carousel{min-width:0}
-.g-headrow{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
-.g-kicker{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:#946600;margin-bottom:14px}
-.g-kicker::before{content:"";width:34px;height:2px;background:var(--gold)}
-.g-title{font-size:clamp(30px,3.8vw,48px);font-weight:300;line-height:1.06;letter-spacing:-.035em;max-width:15em}
-.g-title em{font-style:normal;color:#1f86cf}
 .g-platforms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px 40px;align-items:center}
-.g-intro h3{font-size:20px;font-weight:500;letter-spacing:-.015em;margin-bottom:6px;color:var(--navy)}
-.g-intro p{font-size:15px;color:var(--ink-soft)}
 .g-plat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .g-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
 .g-bar h3{font-size:20px;font-weight:500;letter-spacing:-.015em;color:var(--navy)}
@@ -193,8 +155,6 @@ p{margin:0}
 .g-dot.on{background:var(--navy);width:26px;border-radius:6px}
 .g-note{font-size:13px;color:var(--ink-soft);max-width:92ch}
 .g-note a{color:var(--blue);font-weight:600}
-.story{border:1px dashed #a9bbd3;border-radius:18px;padding:24px}
-.story h3{font-size:22px;font-weight:400;margin-bottom:6px;letter-spacing:-.02em}
 
 /* faq */
 .faq-sec h2{font-size:clamp(36px,5vw,64px);margin-bottom:32px}
@@ -235,19 +195,6 @@ details.faq .ans{padding:0 0 22px;color:var(--ink-soft);max-width:72ch}
 .success h3{font-size:36px}
 .success p{color:var(--ink-soft)}
 
-/* photo-style tiles */
-.tiles-band{background:var(--cream-2)}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:48px 72px}
-.ptile{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;text-decoration:none;color:#fff;display:block;background:var(--navy-band);box-shadow:0 18px 34px -24px rgba(34,61,120,.55);transition:transform .25s ease,box-shadow .25s ease}
-.ptile .bg{position:absolute;inset:0;transition:transform .45s ease}
-.ptile .bg svg{width:100%;height:100%;display:block}
-.ptile span{position:absolute;left:22px;top:22px;right:22px;z-index:2;font-size:19px;font-weight:600;line-height:1.25;letter-spacing:-.015em}
-.ptile span em{display:block;font-style:normal;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:6px}
-.ptile--navy{background:radial-gradient(circle at 15% 0%,rgba(82,175,230,.4),rgba(82,175,230,0) 50%),var(--navy-band)}
-.ptile--sky{color:var(--navy);background:linear-gradient(170deg,#eaf3fc,#d6e8f8)}
-.ptile--gold{color:var(--navy);background:linear-gradient(170deg,#fdf4da,#f8e3a8)}
-.ptile:hover,.ptile:focus-visible{transform:translateY(-5px);box-shadow:0 26px 40px -22px rgba(34,61,120,.6)}
-.ptile:hover .bg{transform:scale(1.035)}
 
 /* footer: large-type link columns, disclosures on the right */
 .footer{background:var(--cream-2);padding-block:56px 40px;border-top:3px solid var(--navy)}
@@ -306,11 +253,9 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 .cta-block p{color:#d6e0f0;margin:0 0 8px}
 
 @media (max-width:1000px){
-  .hero .wrap,.apply .wrap,.angle .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero .wrap,.apply .wrap{grid-template-columns:minmax(0,1fr)}
   .hero .wrap{grid-template-rows:none;grid-template-areas:"title" "form" "copy"}
   .hero h1{font-size:clamp(40px,8vw,76px)}
-  .features{grid-template-columns:1fr 1fr}
-  .tiles,.tile-grid{grid-template-columns:1fr 1fr}
   .g-platforms{grid-template-columns:minmax(0,1fr)}
   .g-card{flex-basis:calc((100% - 18px) / 2)}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -321,17 +266,10 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 @media (max-width:640px){
   body{font-size:16.5px}
   .hero h1{font-size:clamp(32px,10.2vw,54px)}
-  .features,.form-grid,.tiles,.tile-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
   .g-plat-grid{grid-template-columns:1fr 1fr}
   .g-card{flex-basis:84%}
 
-  .feature{max-width:none;grid-template-columns:96px 1fr;align-items:center}
-  .feature svg{width:96px;height:76px}
-  .tiles{grid-template-columns:1fr 1fr;gap:12px}
-  .ptile{aspect-ratio:3/4.5;border-radius:20px}
-  .ptile .bg{inset:auto 0 0 0;height:74%}
-  .ptile span{font-size:15px;left:14px;top:14px;right:12px}
-  .ptile span em{font-size:10px;letter-spacing:.1em;margin-bottom:4px}
   .dash-list,.tagline{font-size:17px}
   .answer{font-size:18px;padding:20px}
   .footer-grid{grid-template-columns:1fr}
@@ -400,13 +338,6 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 .g-unrated{font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
 .g-excerpt-note{font-size:12px;color:var(--ink-soft);margin:-10px 0 0}
 .g-source{font-size:13px;font-weight:600;color:var(--blue);text-decoration:underline;text-underline-offset:3px;align-self:start}
-.g-show-all{display:block;margin:6px auto 0;padding:10px 17px;border:1px solid #c3d2e6;border-radius:12px;background:#fff;color:var(--navy);font:600 13px/1.4 var(--font);cursor:pointer}
-.g-show-all:hover{border-color:var(--blue);color:var(--blue)}
-.g-expanded .g-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;scroll-snap-type:none;gap:18px}
-.g-expanded .g-card{width:auto;flex:none;min-height:220px}
-.g-expanded .g-ctl,.g-expanded .g-dots{display:none}
-@media (max-width:1000px){.g-expanded .g-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.g-expanded .g-track{grid-template-columns:minmax(0,1fr)}}
 .g-track{position:relative}
 .g-card{position:relative}
 .g-review-context{font-size:12px;color:var(--ink-soft);margin:-10px 0 0;line-height:1.45}
@@ -416,5 +347,21 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 
 /* No orphans (house rule): headings and short labels balance their lines, body text avoids a lone last word.
    The build also joins the last two words with a no-break space for browsers without text-wrap support. */
-h1,h2,h3,h4,.name,.big,.tag,.g-title,.g-bar h3,.ptile span,.btn,.kicker,.g-kicker,.hero-form h2,.contact-card h3,.intro,.footer h4{text-wrap:balance}
+h1,h2,h3,h4,.name,.big,.tag,.g-bar h2,.btn,.kicker,.hero-form h2,.contact-card h3,.footer h4{text-wrap:balance}
 p,li,dd,dt,blockquote,figcaption,summary,.g-card p,.answer,.form-note,.fine,.note,.g-note,.footer-bottom span{text-wrap:pretty}
+
+/* Compact funnel (D70): tighter bands and headings so the page reads fast */
+.band{padding-block:clamp(48px,6vw,88px)}
+.paths h2,.apply h2,.faq-sec h2{font-size:clamp(32px,4vw,52px)}
+.paths-head{margin-bottom:28px}
+.pay-card{gap:18px}
+.faq-sec{border-top:1px solid var(--line)}
+.faq-sec h2{margin-bottom:20px}
+.g-bar h2{font-size:clamp(28px,3.4vw,42px);margin:0;color:var(--navy)}
+.g-carousel .g-bar{margin-bottom:20px}
+.proof .g-plat-grid{margin-top:22px}
+.hero-copy{gap:24px}
+.proof .g-plat-grid{display:flex;flex-wrap:wrap;gap:12px}
+.proof .g-plat-grid .g-plat{flex:1 1 160px;min-width:0}
+.pay-card .big{font-size:clamp(26px,2.4vw,36px);line-height:1.08}
+@media (max-width:640px){.proof .g-plat-grid .g-plat{flex-basis:calc(50% - 6px);padding:14px}.proof .g-plat .g-pcount{display:none}}

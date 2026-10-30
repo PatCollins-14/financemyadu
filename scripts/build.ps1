@@ -190,7 +190,7 @@ function Build-Funnel {
   $rvw = Read-Json (Join-Path $root 'src\data\reviews.json')
   $plat = @{}; foreach ($pf in $rvw.platforms) { $plat[[string]$pf.id] = $pf }
   function Get-PlatMark($pf, [string]$cls) {
-    if ($pf.logo) { return "<img class=`"$cls`" src=`"assets/$($pf.logo)`" alt=`"$(Esc $pf.name)`" height=`"28`" decoding=`"async`">" }
+    if ($pf.logo) { return "<img class=`"$cls`" src=`"assets/$($pf.logo)`" alt=`"$(Esc $pf.name)`" height=`"28`" loading=`"lazy`" decoding=`"async`">" }
     return "<span class=`"$cls g-wordmark`">$(Esc $pf.name)</span>"
   }
   $blurNames = @((Read-Json (Join-Path $root 'config\blur-names.json')).names | Sort-Object { $_.Length } -Descending)

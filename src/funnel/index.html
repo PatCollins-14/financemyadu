@@ -11,8 +11,8 @@
     <a class="logo" href="#top" aria-label="FinanceMyADU, back to top">FinanceMyADU</a>
     <nav class="pill-nav" aria-label="Page sections">
       <a href="#paths">Options</a>
-      <a href="#compare">Compare</a>
-      <a href="#lenders">Rental income</a>
+      <a href="#how">How it works</a>
+      <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header__right">
@@ -31,20 +31,18 @@
     <h1 id="hero-title"><span class="h1-title">Finance My <b>ADU</b></span><span class="h1-curve" aria-hidden="true"><svg viewBox="0 0 560 175" focusable="false"><defs><linearGradient id="ren-gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f0b82e"/><stop offset="1" stop-color="#d98f00"/></linearGradient><linearGradient id="ren-swash" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#399cda" stop-opacity="0"/><stop offset=".5" stop-color="#399cda"/><stop offset="1" stop-color="#f0b82e"/></linearGradient><path id="ren-arc" d="M24,118 C170,38 400,38 538,110"/></defs><text class="ren-text" font-size="74" text-anchor="middle"><textPath href="#ren-arc" startOffset="50%"><tspan fill="#1f86cf">&amp;</tspan><tspan dx="10" fill="url(#ren-gold)">Renovations</tspan></textPath></text><path d="M50,148 C200,84 400,80 548,140" fill="none" stroke="url(#ren-swash)" stroke-width="4" stroke-linecap="round"/></svg></span><span class="vh">&amp; Renovations</span></h1>
     <div class="hero-copy">
       <ul class="dash-list">
-        <li>Compare HELOCs, home equity loans, cash-out refinancing and renovation loans side by side</li>
-        <li>Understand what happens to your current first mortgage</li>
-        <li>See how lenders treat ADU rental income</li>
-        <li>Talk your plans through with a licensed loan officer before you commit</li>
+        <li>Compare HELOC, cash-out refinance and renovation loans</li>
+        <li>Know what happens to your current mortgage</li>
+        <li>Talk it through with a licensed loan officer first</li>
       </ul>
       <div class="tagline">
         <p>Clear options, honest guidance.</p>
-        <a class="link-arrow" href="#apply">See my financing options &rarr;</a>
         <p class="hero__note">[PAT: confirm no-obligation wording]</p>
       </div>
     </div>
     <div class="form-card hero-form" id="apply">
       <h2>See your financing options</h2>
-      <p class="sub">Send your details and we will reach out about next steps.</p>
+      <p class="sub">Leave your details. We will reach out to talk through your options.</p>
       <form id="leadForm" method="post" {{form_action_attr}}>
         <div class="field"><label for="fullName">Full name</label><input id="fullName" name="name" type="text" autocomplete="name" required><span class="msg">Enter your name.</span></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><span class="msg">Enter an email like name@example.com.</span></div>
@@ -57,18 +55,18 @@
       <div class="success" id="leadOk" role="status" hidden>
         <h3>Thanks, <span id="okName">there</span>.</h3>
         <p>We will review your details and reach out about next steps. If you would rather talk now, call <a href="{{phone_tel}}">{{phone}}</a>.</p>
-        <a class="link-arrow" href="#compare">Back to comparing options &rarr;</a>
+        <a class="link-arrow" href="#paths">Back to the options &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 3. WHICH OPTION FITS YOU (blue band) ===== -->
+<!-- ===== 2. WHICH OPTION FITS YOU (blue band) ===== -->
 <section class="band paths" id="paths" aria-labelledby="paths-title">
   <div class="wrap">
     <div class="paths-head">
       <h2 id="paths-title">Which option fits you?</h2>
-      <p>There is no single ADU loan. These are the main ways homeowners pay for an ADU. The right one depends on your equity, your current mortgage, your age and your goal.</p>
+      <p>There are three main ways to pay for an ADU or a renovation. The right one depends on your equity, your current mortgage and your goal.</p>
     </div>
     <div class="pay-cards">
       <!-- SOURCE: https://letstalkhomemortgage.com/heloc-loans/ | retrieved 2026-10-23 -->
@@ -76,8 +74,8 @@
         <div><span class="tag">Second loan</span><p class="name">ADU &amp; Renovation HELOC Program</p></div>
         <p class="big">Finance home repairs using HELOC, Renovations, &amp; ADU</p>
         <div class="terms">
-          <div><b>How it works</b><p>You borrow against your equity. A HELOC lets you draw money as you need it. A home equity loan gives you one lump sum.</p></div>
-          <div><b>Main trade-off</b><p>It is a second loan secured by your home. HELOC rates usually change over time, and you must repay what you borrow.</p></div>
+          <div><b>How it works</b><p>Borrow against your home&rsquo;s equity, as you need it or as one lump sum. Your first mortgage stays in place.</p></div>
+          <div><b>Keep in mind</b><p>It is a second loan on your home. HELOC rates usually change over time.</p></div>
         </div>
         <a class="btn pay-apply" href="https://flow.avenfoundry.com/?t=31bce19d-e4f9-4cee-b881-65fc4daaead0" target="_blank" rel="noopener" data-event="application_link_click">Apply</a>
       </article>
@@ -86,8 +84,8 @@
         <div><span class="tag">New first mortgage</span><p class="name">Cash-out refinance</p></div>
         <p class="big">Your first mortgage is replaced.</p>
         <div class="terms">
-          <div><b>How it works</b><p>A new, larger mortgage pays off your current one and you receive the difference in cash, with a new rate, term and payment.</p></div>
-          <div><b>Main trade-off</b><p>If you already have a low first-mortgage rate, replacing that loan may not be ideal. There are closing costs, and your balance resets higher.</p></div>
+          <div><b>How it works</b><p>A new, larger mortgage pays off your current one. You get the difference in cash.</p></div>
+          <div><b>Keep in mind</b><p>May not be ideal if your current rate is low. There are closing costs.</p></div>
         </div>
         <a class="btn pay-apply" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-event="application_link_click">Apply</a>
       </article>
@@ -96,7 +94,7 @@
         <div><span class="tag">Renovations and builds</span><p class="name">Renovation or construction loan</p></div>
         <p class="big">Built around the work being done.</p>
         <div class="terms">
-          <div><b>How it works</b><p>We help homeowners finance renovations. These loans are built around the work being done, and Fannie Mae describes one that can finance a new ADU when a homeowner buys or refinances a one-unit home.</p></div>
+          <div><b>How it works</b><p>The loan is based on your project. Some programs can fund a new ADU when you buy or refinance.</p></div>
           <p>[PAT: which renovation and construction programs you offer]</p>
         </div>
         <a class="btn pay-apply" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-event="application_link_click">Apply</a>
@@ -114,86 +112,35 @@
       </article>
       <!--/IF-->
     </div>
-    <p class="fine">Sources: <a href="https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/accessory-dwelling-units" rel="noopener">Fannie Mae, Accessory Dwelling Units</a> &middot; <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/" rel="noopener">CFPB, What is a HELOC?</a> (read 2026-10-23). This is general education, not a quote or a commitment to lend.</p>
+    <p class="fine">General education, not a quote or a commitment to lend. Sources: <a href="https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/accessory-dwelling-units" rel="noopener">Fannie Mae</a> &middot; <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/" rel="noopener">CFPB</a> (read 2026-10-23).</p>
   </div>
 </section>
 
-<!-- ===== 4. BENEFITS ===== -->
-<section class="band benefits" id="benefits" aria-labelledby="benefits-title">
+<!-- ===== 3. HOW IT WORKS ===== -->
+<section class="band apply" id="how" aria-labelledby="how-title">
   <div class="wrap">
-    <h2 class="intro" id="benefits-title">There is no single ADU loan. That is why it helps to compare your options with someone who explains the trade-offs plainly, before you commit to anything.</h2>
-    <div class="features">
-      <div class="feature">
-        <svg viewBox="0 0 120 96" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="22" width="50" height="60" rx="6" fill="#fff"/><rect x="50" y="14" width="56" height="60" rx="6" fill="#ffd84d"/><path d="M62 34h32M62 46h32M62 58h20"/></svg>
-        <p>Compare second loans and refinancing side by side, so you see what each one asks of you.</p>
-      </div>
-      <div class="feature">
-        <svg viewBox="0 0 120 96" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 50 60 16l42 34v34H18z" fill="#fff"/><path d="M48 84V62h24v22"/><circle cx="86" cy="30" r="14" fill="#ffd84d"/><path d="M80 30l5 5 9-10" stroke-width="2.4"/></svg>
-        <p>Understand what happens to your current first mortgage before you decide.</p>
-      </div>
-      <div class="feature">
-        <svg viewBox="0 0 120 96" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 78V46l30-24 30 24v32z" fill="#fff"/><circle cx="86" cy="62" r="22" fill="#ffd84d"/><path d="M86 50v24M79 58c0-5 14-5 14 0s-14 4-14 9 14 5 14 0"/></svg>
-        <p>Learn how lenders look at ADU rental income, including when it may not count.</p>
-      </div>
-      <div class="feature">
-        <svg viewBox="0 0 120 96" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 80V50l18-14 18 14v30z" fill="#fff"/><path d="M42 80V40l20-16 20 16v40z" fill="#ffd84d"/><path d="M80 80V50l18-14 18 14v30z" fill="#fff"/><path d="M4 80h112M56 80V64h12v16"/></svg>
-        <p>Built around your real situation: your equity, your current mortgage, your timeline and your goal.</p>
-      </div>
-      <div class="feature">
-        <svg viewBox="0 0 120 96" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 8h44l18 18v62H30z" fill="#fff"/><path d="M74 8v18h18"/><circle cx="62" cy="58" r="16" fill="#ffd84d"/><path d="M55 66l1.5-6 11-11 4.5 4.5-11 11z"/></svg>
-        <p>Bring your ADU plans to the conversation and we will look at them with you.</p>
-      </div>
-      <div class="feature">
-        <svg viewBox="0 0 120 96" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 8h44l18 18v62H30z" fill="#fff"/><path d="M74 8v18h18"/><path d="M42 40h36M42 52h36M42 64h20"/><circle cx="84" cy="72" r="16" fill="#ffd84d"/><path d="M77 72l5 5 9-10" stroke-width="2.4"/></svg>
-        <p>Clear costs. Ask any lender for a Loan Estimate so you can compare offers on the same page.</p>
-      </div>
+    <div class="apply-copy">
+      <h2 id="how-title">How it works</h2>
+      <ol class="steps">
+        <li><div><b>Send your details</b><span>Just your name, email and phone.</span></div></li>
+        <li><div><b>Compare your options</b><span>We walk you through each choice and its trade-offs.</span></div></li>
+        <li><div><b>Choose and close</b><span>Once it makes sense, we guide the paperwork to closing.</span></div></li>
+      </ol>
     </div>
-    <div class="center-cta"><a class="btn" href="#apply">See my financing options</a></div>
-  </div>
-</section>
 
-<!-- ===== 5. COMPARISON ===== -->
-<section class="band compare" id="compare" aria-labelledby="compare-title">
-  <div class="wrap">
-    <h2 id="compare-title">How the options stack up</h2>
-    <p class="lead">A quick look at how these loans are generally described. Programs and lenders differ. "Varies" and "Ask" mean the answer depends on the program.</p>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col"><span class="vh">Feature</span></th>
-            <th scope="col" class="col-ours">Ask your<br>lender</th>
-            <th scope="col">HELOC</th>
-            <th scope="col">Home equity<br>loan</th>
-            <th scope="col">Cash-out<br>refinance</th>
-            <th scope="col">Renovation or<br>construction loan</th>
-          </tr>
-        </thead>
-        <tbody id="compare-body">
-{{compare_rows}}
-        </tbody>
-      </table>
-    </div>
-    <div class="center-cta"><a class="btn" href="#apply">See my financing options</a></div>
-    <p class="fine">Based on the CFPB's HELOC pages and our HELOC and refinance guides; the renovation column follows Fannie Mae's ADU page. [PAT: which renovation programs you offer, so this column can be filled in]</p>
-  </div>
-</section>
-
-<!-- ===== 6. HOW LENDERS LOOK AT AN ADU ===== -->
-<section class="band angle" id="lenders" aria-labelledby="angle-title">
-  <div class="wrap">
-    <h2 id="angle-title">How lenders look at an ADU</h2>
-    <div class="angle-body">
-      <p>Some programs may consider projected rental income or the value of your property after the ADU is built. Some do not. The answer depends on the loan program, not on the ADU alone.</p>
-      <p>For example, Fannie Mae's published guide allows rental income from one <em>existing</em> ADU in certain purchase and limited cash-out refinance loans, and limits how much of your qualifying income it can be. An ADU that is not built yet is a different question to ask your lender.</p>
-      <p class="src">Source: <a href="https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property" rel="noopener">Fannie Mae Selling Guide, B3-3.8-02</a>, read 2026-10-23. Lenders set their own rules and may differ.</p>
+    <div class="form-card contact-card">
+      <h3>Prefer to talk first?</h3>
+      <p class="sub">Book a time, call or email us directly.</p>
+      <a class="btn" href="{{booking_url}}" data-event="consult_booked" rel="noopener">Book a call</a>
+      <a class="btn btn-ghost" href="{{phone_tel}}" data-event="phone_click">Call {{phone}}</a>
+      <p class="alt"><a href="mailto:{{email}}">Email us</a><br>{{application_line}}</p>
     </div>
   </div>
 </section>
 
 <!--IF:SHOW_REVERSE_SECTION-->
 <!-- COMPLIANCE-GATE: reverse-mortgage -->
-<!-- ===== 7. SENIOR PATH (62+) ===== -->
+<!-- ===== 4. SENIOR PATH (62+) ===== -->
 <section class="band" id="seniors">
   <div class="narrow">
     <h2>Using a reverse mortgage to help fund an ADU</h2>
@@ -212,7 +159,7 @@
 <!--/IF-->
 
 <!--IF:SHOW_EXAMPLE-->
-<!-- ===== 8. WORKED EXAMPLE (component only, hidden by default) ===== -->
+<!-- ===== 5. WORKED EXAMPLE (component only, hidden by default) ===== -->
 <section class="band angle" id="example">
   <div class="narrow">
     <h2>A worked example</h2>
@@ -229,30 +176,13 @@
 </section>
 <!--/IF-->
 
-<!-- ===== 9. PROOF ===== -->
-<section class="band proof" aria-labelledby="proof-title">
+<!-- ===== 6. PROOF ===== -->
+<section class="band proof" id="reviews" aria-labelledby="reviews-title">
   <div class="wrap">
-    <h2 id="proof-title">What homeowners say</h2>
-    <div class="tile-grid" style="margin-bottom:40px">
-      <article class="story"><h3>Pasadena-area ADU story</h3><p>[PAT: real story and written permission]</p></article>
-      <article class="story"><h3>Pasadena-area ADU story</h3><p>[PAT: second real story and written permission, optional]</p></article>
-    </div>
     <div class="g-panel">
-      <div class="g-headrow">
-        <div>
-          <span class="g-kicker">Customer experience</span>
-          <h3 class="g-title" id="reviews-title">{{reviews_title}}</h3>
-        </div>
-      </div>
-      <div class="g-platforms">
-        <div class="g-intro"><h3>{{reviews_intro}}</h3><p>{{reviews_intro_sub}}</p></div>
-        <div class="g-plat-grid" aria-label="{{reviews_business}} review profiles">
-{{platforms_html}}
-        </div>
-      </div>
       <div class="g-carousel">
         <div class="g-bar">
-          <h3>{{reviews_bar}}</h3>
+          <h2 id="reviews-title">Customer Reviews</h2>
           <div class="g-ctl" hidden>
             <button type="button" class="g-arrow" data-dir="-1" aria-label="Show previous reviews">&larr;</button>
             <button type="button" class="g-arrow" data-dir="1" aria-label="Show next reviews">&rarr;</button>
@@ -264,57 +194,25 @@
         </div>
         <div class="g-dots" hidden></div>
       </div>
+      <div class="g-plat-grid" aria-label="{{reviews_business}} review profiles">
+{{platforms_html}}
+      </div>
       <div class="g-widgets">{{widgets_html}}</div>
-      <p class="g-note">{{reviews_note}} [PAT: paste each platform's review widget code into config/review-widgets.json, and confirm you may show these reviews]</p>
+      <p class="g-note">{{reviews_note}} [PAT: confirm you may show these reviews]</p>
     </div>
   </div>
 </section>
 
-<!-- ===== 10. FAQ ===== -->
-<section class="band faq-sec" id="faq" style="border-top:1px solid var(--line)" aria-labelledby="faq-title">
+<!-- ===== 7. FAQ ===== -->
+<section class="band faq-sec" id="faq" aria-labelledby="faq-title">
   <div class="narrow">
-    <h2 id="faq-title">Common questions about financing an ADU</h2>
+    <h2 id="faq-title">Common questions</h2>
     <div>
 {{faq_html}}
     </div>
   </div>
 </section>
 
-<!-- ===== 11. FORM ===== -->
-<section class="band apply" id="how" aria-labelledby="how-title">
-  <div class="wrap">
-    <div class="apply-copy">
-      <h2 id="how-title">How it works</h2>
-      <p>Clear options, honest guidance, in three steps.</p>
-      <ol class="steps">
-        <li><div><b>Send your details</b><span>Your name, email and phone in the form at the top of the page.</span></div></li>
-        <li><div><b>Get a side-by-side options review</b><span>We explain the real choices, what each asks of you, and the trade-offs that matter.</span></div></li>
-        <li><div><b>Choose and close</b><span>Once the strategy makes sense, We guide the paperwork and closing with steady communication.</span></div></li>
-      </ol>
-    </div>
-
-    <div class="form-card contact-card">
-      <h3>Prefer to talk first?</h3>
-      <p class="sub">Book a time, call or email us directly.</p>
-      <a class="btn" href="{{booking_url}}" data-event="consult_booked" rel="noopener">Book a call</a>
-      <a class="btn btn-ghost" href="{{phone_tel}}" data-event="phone_click">Call {{phone}}</a>
-      <p class="alt"><a href="mailto:{{email}}">Email us</a><br>{{application_line}}</p>
-      <a class="link-arrow" href="#apply">Or send your details above &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 12. TILES ===== -->
-<div class="tiles-band">
-  <div class="wrap">
-    <nav class="tiles" aria-label="Jump to">
-      <a class="ptile ptile--navy" href="#compare"><div class="bg" aria-hidden="true">{{tile_compare}}</div><span><em>Know your options.</em>Compare the loans &rarr;</span></a>
-      <a class="ptile ptile--sky" href="#lenders"><div class="bg" aria-hidden="true">{{tile_rent}}</div><span><em>Planning on rent?</em>How lenders see ADUs &rarr;</span></a>
-      <a class="ptile ptile--gold" href="#faq"><div class="bg" aria-hidden="true">{{tile_questions}}</div><span><em>Still wondering?</em>Read the questions &rarr;</span></a>
-      <a class="ptile ptile--navy" href="#apply"><div class="bg" aria-hidden="true">{{tile_ready}}</div><span><em>Ready when you are.</em>Send my details &rarr;</span></a>
-    </nav>
-  </div>
-</div>
 </main>
 
 {{footer}}
