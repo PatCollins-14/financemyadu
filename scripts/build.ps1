@@ -223,7 +223,7 @@ function Build-Funnel {
     [void]$rv.AppendLine("      <article class=`"g-card`" data-platform=`"$($pf.id)`"><div class=`"g-top`">$starHtml<span class=`"g-src`">$(Get-PlatMark $pf 'g-logo')</span></div>")
     if ($r.text) { [void]$rv.AppendLine("        <p class=`"g-quote`">&ldquo;$(Format-ReviewText ([string]$r.text))&rdquo;</p>") }
     else { [void]$rv.AppendLine("        <p>$(Esc $r.summary)</p>") }
-    if ($r.sourceUrl -and ([string]$r.sourceUrl).StartsWith('https://')) { $slabel = $(if ($r.sourceLabel) { "View source: $(Esc $r.sourceLabel)" } else { "View reviews on $(Esc $pf.name)" }); [void]$rv.AppendLine("        <a class=`"g-source`" href=`"$(Esc $r.sourceUrl)`" target=`"_blank`" rel=`"noopener noreferrer`">$slabel &rarr;</a>") }
+    if ($r.sourceUrl -and ([string]$r.sourceUrl).StartsWith('https://')) { $slabel = $(if ($r.sourceLabel -like "See *") { Esc $r.sourceLabel } elseif ($r.sourceLabel) { "View source: $(Esc $r.sourceLabel)" } else { "View reviews on $(Esc $pf.name)" }); [void]$rv.AppendLine("        <a class=`"g-source`" href=`"$(Esc $r.sourceUrl)`" target=`"_blank`" rel=`"noopener noreferrer`">$slabel &rarr;</a>") }
     $rmeta = $(if ($rwhen) { "$(Esc $rwhen) &middot; $(Esc $pf.name)" } else { Esc $pf.name })
     [void]$rv.AppendLine("        <div class=`"g-author`"><span class=`"g-avatar av$($gIdx % 5)`" aria-hidden=`"true`">$(Esc $rinit)</span><div><b>$(Esc $r.name)</b><span>$rmeta</span></div></div></article>")
   }
