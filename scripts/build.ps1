@@ -161,7 +161,16 @@ function Get-Footer([string]$assetPrefix, [bool]$isFunnel, [string]$hubRoot) {
 "@
 }
 
-function Finish([string]$html) { if ($Production) { return $html } else { return (Mark-Placeholders $html) } }
+# No orphans: join the last two words of every heading, paragraph, list item, link and button with a no-break space,
+# so a line never ends with one word left alone (fallback for browsers without CSS text-wrap). Skips script, style and svg.
+function Join-Orphans([string]$html) {
+  $parts = [regex]::Split($html, '(?is)(<script\b.*?</script>|<style\b.*?</style>|<svg\b.*?</svg>|<template\b.*?</template>)')
+  for ($i = 0; $i -lt $parts.Length; $i += 2) {
+    $parts[$i] = [regex]::Replace($parts[$i], '(?<=[^\s<>])[ ]+((?:&#?\w+;|[^\s<>&]){1,16})(\s*</(?:h[1-6]|p|li|a|button|figcaption|blockquote|summary|label|dd|dt|th|td|em|b|strong)>)', '&nbsp;$1$2')
+  }
+  return ($parts -join '')
+}
+function Finish([string]$html) { $html = Join-Orphans $html; if ($Production) { return $html } else { return (Mark-Placeholders $html) } }
 
 # =========================================================
 # ASSET A: FUNNEL

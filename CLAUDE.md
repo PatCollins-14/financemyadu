@@ -33,5 +33,8 @@ Config flags live in `config/site.json` and can be overridden with environment v
 ## Voice
 Plain, about 7th to 8th grade reading level, short sentences, no hype or fear. "Clear options, honest guidance." "Strategy before paperwork." Say "you" and "your home". State trade-offs. Never promise outcomes.
 
+## Typography
+No single-word orphans anywhere (Pat, 2026-10-31): no heading, card title, label, button, paragraph or list item may end with one word alone on its last line, at any screen width. Enforced three ways, keep all three: CSS `text-wrap:balance` on headings and short labels and `text-wrap:pretty` on body text (end of `src/assets/site.css`); `Join-Orphans` in `scripts/build.ps1`, which joins the last two words of every text block with a no-break space; and checking new copy at 1280 px and 375 px. New text-bearing classes go into those CSS selector lists. If a line still strands a word, rewrite or shorten the copy rather than adding manual breaks.
+
 ## Layout
 `config/` flags and banned phrases | `src/data/` identity and sources | `src/funnel/` funnel template | `src/hub/pages/` hub content | `src/assets/` css and js | `scripts/` build, preflight, snapshot, ad check | `dist/` output (git-ignored) | `hub/wordpress-ready/` WordPress exports | `ads/` ad prep | `measurement/` question panel and scorecard | `compliance/` checklist and snapshots | `docs/` memory and reports.

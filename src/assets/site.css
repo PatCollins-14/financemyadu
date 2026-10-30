@@ -413,3 +413,8 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 /* option cards: Apply button pinned to the bottom of each card */
 .pay-card{display:flex;flex-direction:column}
 .pay-card .pay-apply{margin-top:auto;align-self:flex-start;min-width:140px}
+
+/* No orphans (house rule): headings and short labels balance their lines, body text avoids a lone last word.
+   The build also joins the last two words with a no-break space for browsers without text-wrap support. */
+h1,h2,h3,h4,.name,.big,.tag,.g-title,.g-bar h3,.ptile span,.btn,.kicker,.g-kicker,.hero-form h2,.contact-card h3,.intro,.footer h4{text-wrap:balance}
+p,li,dd,dt,blockquote,figcaption,summary,.g-card p,.answer,.form-note,.fine,.note,.g-note,.footer-bottom span{text-wrap:pretty}
