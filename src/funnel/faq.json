@@ -6,8 +6,18 @@
   },
   {
     "q": "Can I finance a renovation along with my ADU?",
-    "a": "We help homeowners finance renovations as well as ADUs. Whether both can go in one loan depends on the program. [PAT: which of your programs can combine an ADU with other renovation work, and what they need]",
-    "source": "https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/accessory-dwelling-units"
+    "a": "Yes. Our ADU & Renovation HELOC can pay for an ADU, a renovation or home repairs. Other loans have their own rules, so we check which one fits your project.",
+    "source": ""
+  },
+  {
+    "q": "Who can qualify for the ADU & Renovation HELOC?",
+    "a": "Owners of a primary home or an investment property. Salaried, self-employed and retired borrowers can all qualify with documented income. Approval depends on your credit, income, debts and the equity in your home, and you keep some equity after the line is set up. We review your numbers with you before you apply.",
+    "source": ""
+  },
+  {
+    "q": "Do I need an appraisal?",
+    "a": "Not for the ADU & Renovation HELOC. Your home's value is checked with an automated valuation instead of an in-person appraisal, and underwriting is automated too. Other loans, such as a cash-out refinance, may need an appraisal.",
+    "source": ""
   },
   {
     "q": "Can rental income from an ADU help me qualify?",
@@ -16,12 +26,12 @@
   },
   {
     "q": "How long does it take?",
-    "a": "It depends on the loan, the property, the appraisal and your documents. Quick replies help avoid delays. We give you an expected timeline at the start and keep you updated. [PAT: typical timelines for the ADU financing options you offer]",
+    "a": "It depends on the loan, the property and your documents. The ADU & Renovation HELOC is applied for online and skips the appraisal visit. For every loan, quick replies help avoid delays, and we give you an expected timeline at the start. [PAT: typical timelines for the ADU financing options you offer]",
     "source": "https://letstalkhomemortgage.com/"
   },
   {
     "q": "What documents will I need?",
-    "a": "Usually ID, proof of income, bank statements and details about your current debts. Self-employed borrowers may need different documents. We give you a checklist for your loan type.",
-    "source": "https://letstalkhomemortgage.com/"
+    "a": "It depends on the loan. For the ADU & Renovation HELOC, you can show income with W-2s, 1099s, tax returns, tax transcripts or bank and asset statements. We give you a checklist for your loan type.",
+    "source": ""
   }
 ]
