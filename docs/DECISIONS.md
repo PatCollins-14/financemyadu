@@ -258,3 +258,6 @@ Pat asked to offer Let's Talk ADU (https://letstalkadu.com/) in the funnel so vi
 
 **D77. Google review cards link to the company Google profile (Pat, chat 2026-10-31).**
 Pat chose to point the 12 Google review cards to Google instead of the Birdeye pages. Each Google card's link now opens the exact E Mortgage Capital Google Business Profile (same link as the Google tile, D76) and reads "See E Mortgage Capital on Google", not "View source", because these reviews were left on individual loan officers' Google listings and will not be found on the company profile. The reviews note still says Google reviews come from individual loan officers' listings. Done in `src/data/reviews.json` and in the copy-and-paste block (`docs/reviews-section/reviews-section.html` and `demo.html`, checked: 44 cards render, Google links correct). BBB and Birdeye cards are unchanged.
+
+**D78. Google link is Pat's share link (Pat, chat 2026-10-31).**
+Pat supplied https://share.google/Ok0GtUXwuiD1oyTWP as the Google reviews link. It replaces the Maps place link from D76/D77 on the Google tile and on all 12 Google review cards, in the funnel and in the copy-and-paste reviews block. Checked: the link opens on Google (HTTP 200).
