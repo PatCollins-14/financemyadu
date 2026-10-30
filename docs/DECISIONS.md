@@ -246,3 +246,6 @@ The hero had a large empty area under the bullets because the form set the heigh
 
 **D73. Stylesheet and script links carry a version stamp (Pat, chat 2026-10-31).**
 Pat still saw the old hero (headline at the top, form heading on two lines) after D72 went live, because the browser kept a saved copy of the old `site.css`. The build now adds `?v=<stamp>` to the `site.css` link on every page and to `quiz.js` on the funnel. The stamp comes from the two files' contents, so it changes whenever either file changes and browsers fetch the new version right away. The hero centering itself is unchanged from D72 (on the live page at 1280 x 800, the headline and bullets are centered beside the form).
+
+**D74. Hero bullets left-aligned with the headline (Pat, chat 2026-10-31).**
+The headline and the three bullets are now one block, so the bullets start exactly where "Finance My ADU" starts, a single straight left edge (checked: both at 227 px at 1366 px wide). The block stays centered top to bottom beside the form. Phone layout unchanged: headline, bullets, then the form.
