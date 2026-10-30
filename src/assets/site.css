@@ -393,3 +393,9 @@ p,li,dd,dt,blockquote,figcaption,summary,.g-card p,.answer,.form-note,.fine,.not
   .hero .wrap{grid-template-rows:none;grid-template-areas:"left" "form"}
   .hero-left{justify-self:stretch}
 }
+
+/* Hero balanced (D75): headline block and form centered as one pair, equal space on both sides */
+@media (min-width:1001px){
+  .hero .wrap{grid-template-columns:auto minmax(0,420px);justify-content:center;column-gap:clamp(48px,6vw,96px)}
+  .hero-left{justify-self:start}
+}

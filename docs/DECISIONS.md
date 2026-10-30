@@ -249,3 +249,6 @@ Pat still saw the old hero (headline at the top, form heading on two lines) afte
 
 **D74. Hero bullets left-aligned with the headline (Pat, chat 2026-10-31).**
 The headline and the three bullets are now one block, so the bullets start exactly where "Finance My ADU" starts, a single straight left edge (checked: both at 227 px at 1366 px wide). The block stays centered top to bottom beside the form. Phone layout unchanged: headline, bullets, then the form.
+
+**D75. Hero balanced on the page (Pat, chat 2026-10-31).**
+The hero leaned right: the form sat at the far right edge and the empty space was all on the left. On screens wider than 1000 px the headline block and the form are now centered together as one pair, with a fixed gap between them, so the space to their left and right is equal (measured at 1100, 1280, 1366, 1536 and 1920 px: the two sides differ only by the scrollbar width). Phone layout unchanged.
