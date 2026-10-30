@@ -243,3 +243,6 @@ Removed "Clear options, honest guidance.", the "See my financing options" link a
 
 **D72. Compact hero (Pat, chat 2026-10-31).**
 The hero had a large empty area under the bullets because the form set the height. Now the headline and bullets are centered vertically beside the form, the bullets line up under the right-aligned headline, the hero band has less top and bottom padding, and the form is tighter (smaller heading on one line, smaller gaps, slimmer fields and button). Desktop hero is about 650 px tall and fits above the fold at 1280 x 800. On phones the order is headline, bullets, then the form. No text or form fields changed. Checked at 1280 px and 375 px, no sideways scroll.
+
+**D73. Stylesheet and script links carry a version stamp (Pat, chat 2026-10-31).**
+Pat still saw the old hero (headline at the top, form heading on two lines) after D72 went live, because the browser kept a saved copy of the old `site.css`. The build now adds `?v=<stamp>` to the `site.css` link on every page and to `quiz.js` on the funnel. The stamp comes from the two files' contents, so it changes whenever either file changes and browsers fetch the new version right away. The hero centering itself is unchanged from D72 (on the live page at 1280 x 800, the headline and bullets are centered beside the form).

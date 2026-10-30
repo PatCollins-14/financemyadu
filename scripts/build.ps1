@@ -99,6 +99,8 @@ function New-Graph([string]$base, [string]$pageUrl, [string]$pageType, [string]$
   return '<script type="application/ld+json">' + ($obj | ConvertTo-Json -Depth 12 -Compress) + '</script>'
 }
 
+# Version stamp for site.css and quiz.js, so browsers fetch the new files after every change instead of a saved old copy
+$AssetVer = ((Get-FileHash (Join-Path $root 'src\assets\site.css') -Algorithm MD5).Hash + (Get-FileHash (Join-Path $root 'src\assets\quiz.js') -Algorithm MD5).Hash).Substring(0, 10).ToLower()
 function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$robots, [string]$jsonld, [string]$cssHref, [string]$ogType) {
   $t = Esc $title; $d = Esc $desc
   $iconBase = $cssHref -replace 'site\.css$', ''
@@ -121,7 +123,7 @@ function Get-Head([string]$title, [string]$desc, [string]$canonical, [string]$ro
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="$cssHref">
+<link rel="stylesheet" href="$($cssHref)?v=$AssetVer">
 $jsonld
 "@
 }
@@ -275,7 +277,7 @@ function Build-Funnel {
     privacy_url = $l.privacy; terms_url = $l.terms; site_nonqm = $l.nonqm
     reviews_business = (Esc $rvw.business); reviews_seen = (Esc $rvw.seen); reviews_items = $rvw.items.Count; reviews_title = [string]$rvw.title; reviews_intro = (Esc $rvw.intro); reviews_intro_sub = (Esc $rvw.introSub); reviews_note = (Esc $rvw.note); reviews_bar = 'Customer Reviews'; reviews_order = [string]$rvw.reviewOrder; widgets_html = $wh.ToString()
     reviews_html = $rv.ToString(); platforms_html = $gp.ToString(); faq_html = $fq.ToString()
-    footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine
+    footer = (Get-Footer 'assets/' $true $(if ($Production) { $hubBase } else { '../hub' })); consent_bar = $consentBar; application_line = $appLine; asset_ver = $AssetVer
     eho_w = $eho.w; eho_h = $eho.h; compare_rows = $cmpHtml.ToString()
   }
   # Casita Works illustrations (isometric ADUs, hero and closing scenes) and icons, captured from the template as static SVG
