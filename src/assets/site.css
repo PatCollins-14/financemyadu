@@ -410,3 +410,6 @@ mark.pat{background:#ffe48a;color:#3b2a00;padding:1px 4px;border-radius:3px;font
 .g-track{position:relative}
 .g-card{position:relative}
 .g-review-context{font-size:12px;color:var(--ink-soft);margin:-10px 0 0;line-height:1.45}
+/* option cards: Apply button pinned to the bottom of each card */
+.pay-card{display:flex;flex-direction:column}
+.pay-card .pay-apply{margin-top:auto;align-self:flex-start;min-width:140px}
