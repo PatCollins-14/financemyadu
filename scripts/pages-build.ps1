@@ -25,5 +25,19 @@ Write-Text (Join-Path $out 'index.html') '<!doctype html><html lang="en"><head><
 Write-Text (Join-Path $out '404.html') '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found</title><meta name="robots" content="noindex"></head><body style="font-family:system-ui,sans-serif;padding:32px"><h1>Page not found</h1><p><a href="/funnel/">Go to the FinanceMyADU page</a>.</p></body></html>'
 Write-Text (Join-Path $out 'CNAME') 'financemyadu.io'
 Write-Text (Join-Path $out '.nojekyll') ''
+
+# Off switch (Pat, 2026-11-05: spam was coming in through the form). With SITE_OFFLINE true in config/site.json, every
+# page is replaced by a short "back soon" page with no form and no scripts. Set it to false and push to bring the site back.
+$cfg = Get-Config
+if ($cfg['SITE_OFFLINE']) {
+  $hold = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FinanceMyADU</title><meta name="robots" content="noindex, nofollow"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f6f9fd;color:#223d78;font-family:system-ui,-apple-system,Segoe UI,sans-serif;text-align:center;padding:24px}h1{font-size:clamp(28px,5vw,44px);margin:0 0 10px}p{margin:0;color:#4a5b78;font-size:17px}</style></head><body><main><h1>FinanceMyADU</h1><p>This page is being updated. Please check back&nbsp;soon.</p></main></body></html>'
+  foreach ($f in (Get-ChildItem $out -Recurse -File)) {
+    if ($f.Extension -eq '.html') { Write-Text $f.FullName $hold }
+    elseif ($f.Extension -in @('.js', '.json', '.xml', '.css')) { Remove-Item $f.FullName -Force }
+  }
+  Write-Text (Join-Path $out 'index.html') $hold
+  Write-Text (Join-Path $out '404.html') $hold
+  Write-Host 'SITE_OFFLINE: every page replaced by the holding page'
+}
 $n = (Get-ChildItem $out -Recurse -File | Measure-Object).Count
 Write-Host "dist-pages ready: $n files"

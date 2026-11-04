@@ -1,5 +1,6 @@
 {
   "_comment": "Flags and URLs. Any key can be overridden by an environment variable of the same name. No secrets belong in this file.",
+  "SITE_OFFLINE": true,
   "FUNNEL_NOINDEX": true,
   "SHOW_REVERSE_SECTION": false,
   "SHOW_EXAMPLE": false,

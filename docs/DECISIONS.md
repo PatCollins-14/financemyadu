@@ -273,3 +273,6 @@ The card now has only "Book a call" and the phone button; its line reads "Book a
 
 **D82. Footer licensing line on one line (Pat, chat 2026-10-31).**
 The copyright and licensing line (Pat Collins, NMLS, DRE, E Mortgage Capital, NMLS, address, NMLS Consumer Access) wrapped because it was capped at 960 px. The cap is removed, so it fits on one line on screens about 1100 px and wider (checked at 1100, 1280, 1366 and 1536 px); on phones it still wraps. Applies to every page.
+
+**D83. Site taken offline (Pat, chat 2026-11-05).**
+Pat reported spam coming in and asked to turn the page off until he updates it. New flag `SITE_OFFLINE` in `config/site.json` (now true): `scripts/pages-build.ps1` replaces every page on financemyadu.io (/, /funnel/, every /hub/ page and the 404 page) with a short "This page is being updated. Please check back soon." page, noindex, with no form and no scripts, and removes the script, style and data files from the deploy. GitHub Pages, the custom domain and HTTPS stay set up. To bring the site back: set `SITE_OFFLINE` to false and push. Note: the GoHighLevel webhook can still receive direct posts from anyone who saved its address (it is in this public repo and in earlier copies of the page), so Pat should turn off or replace that webhook trigger in GoHighLevel to fully stop spam.
