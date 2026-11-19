@@ -42,6 +42,42 @@ These need accounts, DNS or a live site, so they wait until after the initial pr
 - [ ] Real profile URLs for structured-data `sameAs` (X, YouTube, LinkedIn, Google Business Profile); confirm the AIME badge may be shown
 - [ ] Wait-time, equity-explanation and process wording marked in pages as `[PAT: ...]`
 
+## New landing page: After-Renovation HELOC (`landing/`, built 2026-11-20)
+Source: the program deck Pat was referred to ("ARV HELOC-Deck 7_2025.pdf", 20 pages, broker-facing). The page shows none of the source company's names, logos, website, contacts or partner lines (build check in `landing/build.mjs`).
+
+### Needed before it goes live
+- [ ] **Compliance sign-off** at E Mortgage Capital for the whole page, especially the two hypothetical examples (they show home values, a mortgage balance and project budgets as assumptions, with no rate, payment or term) and the consent wording.
+- [ ] **Confirm Pat can offer this program** through E Mortgage Capital as the broker of record (the deck is written for wholesale partners), and whether the lender must be named in a disclosure.
+- [ ] **GoHighLevel:** a webhook (or workflow trigger) for this page's leads. Leads arrive with `form_name` "FinanceMyADU - After-Renovation HELOC landing". Put the URL in the host's environment as `GHL_WEBHOOK_URL`, never in the repo. The old funnel webhook is public in this repo; a new one is safer.
+- [ ] **Cloudflare Turnstile:** a site key and secret for financemyadu.io, set as `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY`. Until both are set the spam check is off (the honeypot still runs).
+- [ ] **Hosting:** the page needs `landing/server.js` running (Node), because GitHub Pages can't run the lead endpoint or the spam check. Hostinger Node web app, the same setup as letstalkadu.com, is the likely fit. Decide the host, then DNS.
+- [ ] **Consent wording:** compliance to approve the text/call consent line (now names Pat Collins and E Mortgage Capital Inc.).
+- [ ] **Page name:** "After-Renovation HELOC" is a plain description used in place of the deck's product name. Confirm it is fine to use, or give the name you want.
+- [ ] Optional: a headshot of Pat and a line about him for the form card; real ADU projects done with this program (with permission) to replace or sit beside the hypothetical examples.
+
+### Kept off the page on purpose (numbers and claims from the deck)
+| From the deck | Why it is not on the page |
+|---|---|
+| Borrow up to 95% of after-renovation value; max 125% of as-is value; standard HELOC at 80% / 85% CLTV | Percentages are blocked (preflight `percent`); LTV limits change and read as an offer |
+| Max loan $500,000 up to 95% CLTV, $750,000 up to 65% CLTV; average loan size $300K | Loan amounts as offers are Regulation Z / banned-phrase territory |
+| Interest-only payments for a 10-year draw period, then 20-year amortization | HELOC payment terms are Reg Z trigger terms (need full disclosures) |
+| Rates = Prime plus a FICO/CLTV adjustment | Rate talk without disclosures; covered one to one |
+| Project supervision fee of $149 a month after closing | Dollar figure and a per-month cost. The FAQ says supervision has its own fee and Pat goes over every cost up front. Disclose it in the first call |
+| Borrower-paid compensation up to 4% | Broker compensation, not for the consumer page |
+| Credit score 640+, DTI 43% (45% at 720+), full documentation, FNMA income calculation | Score and DTI minimums are not shown (compliance rules, Appendix G). The page says "solid credit" and "fully documented income" |
+| Not for jobs under $50K | Dollar figure. The page says "small fix-up jobs. This is built for bigger projects" |
+| "11x more borrowing power on average" and the $5K vs $160K chart | Unverified average and a numeric performance claim. The page keeps the chart as bars with no labels, inside a labeled hypothetical |
+| Scenario 1 results ($16,250 vs $302,500 max loan) | Loan amounts. Kept as bar heights only, the inputs are shown as assumptions |
+| Scenario 2: 5% down, first lien $475,000, max $142,500 | Down payment is a trigger term; the max is a loan amount. Kept as assumptions plus a bar |
+| "Only HELOC based on ARV on the market" | Unverifiable superlative |
+| "Close fast", "quicker process", "get them in the property fast" | Speed claims are flagged by compliance ("fast" wording) |
+| "Can refi down the road", "frees up cash to invest elsewhere" | Future refinance and investment talk invite promises the page can't make |
+| "Can exceed FNMA loan limit, jumbo renovation" | Loan-size claim |
+| Realtor and contractor pitches ("makes your client a cash buyer", "cut out the bank") | Aimed at partners, not homeowners. Could become separate partner pages later |
+
+### Numbers that are on the page (need compliance sign-off)
+Inside the two cards labeled "Hypothetical example", as assumptions only: example 1 home value $725,000, first mortgage balance $600,000, project budget about $250,000, value after $950,000; example 2 purchase price and value $500,000, project $100,000, value after $650,000. These match the deck's own scenarios. No rate, APR, payment, term or loan amount is stated. The build allows dollar figures only inside those two cards.
+
 ## Where each placeholder appears
 Generated by `scripts/pat-scan.ps1` (run `powershell -File scripts\pat-scan.ps1`).
 
