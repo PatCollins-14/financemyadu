@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Build Your ADU, Keep Your First Mortgage | FinanceMyADU</title>
-<meta name="description" content="A home equity line based on what your home will be worth after the ADU is built, not what it is worth today. Your first mortgage stays in place.">
+<title>Keep the Rate, Build the ADU | FinanceMyADU</title>
+<meta name="description" content="A home equity line based on what your home will be worth after the ADU is built, not what it is worth today. No refinance. Your first mortgage stays in place.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -12,136 +12,146 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<script id="page-config" type="application/json">
-{
-  "leadEndpoint": "/api/lead",
-  "leadConfigEndpoint": "/api/lead-config",
-  "bookingUrl": "https://link.theradcrm.com/widget/bookings/appointment-booking-with-pat-collins",
-  "analyticsId": "GTM-TQ8C7WLM",
-  "formName": "FinanceMyADU - After-Renovation HELOC landing",
-  "utmDefaults": {"utm_source": "", "utm_medium": "", "utm_campaign": "adu-after-renovation-heloc"}
-}
-</script>
+<script id="page-config" type="application/json">{"analyticsId": "GTM-TQ8C7WLM"}</script>
 <style>
 :root{
-  --navy:#223d78;--navy-deep:#182d5c;--navy-2:#2c5299;
-  --orange:#e89915;--orange-hover:#f2a826;--orange-ink:#8a5600;--orange-soft:#fff3da;
+  --navy:#223d78;--navy-deep:#182d5c;--navy-ink:#13244b;--navy-2:#2c5299;
+  --orange:#e89915;--orange-hover:#f2a826;--orange-ink:#8a5600;--orange-soft:#fff3da;--orange-glow:#f6c86e;
   --sky:#eaf4fd;--mist:#f2f4f6;--paper:#fbfaf7;--ink:#1c2630;--muted:#5f6b77;--line:#dbe3ea;
-  --green:#1f7a4d;--green-soft:#e6f4ec;--red:#b42318;
+  --green:#1f7a4d;--green-soft:#e6f4ec;--red-ink:#a33a2b;--red-soft:#fdeceA;
+  --on-navy:#cfdaf0;--on-navy-2:#9fb0d0;
   --radius:18px;--shadow:0 1px 2px rgba(28,38,48,.05),0 10px 30px rgba(34,61,120,.08);
   --serif:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}
 a{color:var(--navy-2)}
-h1,h2,h3,h4{font-family:var(--serif);color:var(--navy-deep);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
-p,li,label,dd,dt,summary,figcaption,.btn,button{text-wrap:pretty}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--navy-deep);line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.015em}
+p,li,dd,dt,summary,figcaption,blockquote,.btn,td,th{text-wrap:pretty}
 p{margin:0 0 14px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:8px 14px;border-radius:10px;z-index:99}
 .skip:focus{left:12px}
+.nw{white-space:nowrap}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 16px/1.2 var(--sans);padding:15px 24px;border-radius:12px;border:0;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s,box-shadow .15s;text-align:center}
-.btn-primary{background:var(--orange);color:var(--navy-deep);box-shadow:0 6px 16px rgba(232,153,21,.28)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 17px/1.2 var(--sans);padding:17px 28px;border-radius:12px;border:0;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s,box-shadow .15s;text-align:center}
+.btn-primary{background:var(--orange);color:var(--navy-deep);box-shadow:0 8px 22px rgba(232,153,21,.32)}
 .btn-primary:hover{background:var(--orange-hover);transform:translateY(-1px)}
-.btn-sm{padding:11px 18px;font-size:15px}
-.btn-block{width:100%}
-.btn[disabled]{opacity:.6;cursor:not-allowed;transform:none}
-.btn:focus-visible,button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--navy-2);outline-offset:2px}
+.btn-primary svg{flex:none;transition:transform .15s}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-sm{padding:10px 16px;font-size:15px;gap:6px}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--orange-glow);outline-offset:3px}
+.cta-note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.cta-note svg{display:inline-block;vertical-align:-2px;margin-right:4px}
 
 /* header */
-.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{font-family:var(--sans);font-size:22px;font-weight:600;color:var(--navy-deep);letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.top{position:sticky;top:0;z-index:40;background:rgba(19,36,75,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.logo{font-size:22px;font-weight:600;color:#fff;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
 .logo b{font-weight:700;color:var(--orange)}
 
 /* hero */
-.hero{background:linear-gradient(180deg,var(--sky) 0%,var(--paper) 100%);padding:48px 0 64px}
-.hero .wrap{display:grid;grid-template-columns:1fr minmax(0,460px);grid-template-areas:"copy form" "checks form";gap:0 56px;align-items:start}
-.hero-copy{grid-area:copy}
-.hero-checks{grid-area:checks}
-.hero-form{grid-area:form}
-.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none}
-.hero h1{font-size:clamp(36px,5vw,58px);margin:18px 0 16px}
-.hero h1 em{font-style:normal;color:var(--navy-2);background:linear-gradient(transparent 62%,rgba(232,153,21,.35) 62%)}
-.lead{font-size:19px;color:var(--muted);max-width:560px;margin:0 0 24px}
-.checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.checks li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
-.checks svg{flex:none;margin-top:3px}
+.hero{background:radial-gradient(1200px 520px at 85% 10%,rgba(44,82,153,.55),transparent 60%),linear-gradient(180deg,var(--navy-ink),var(--navy-deep));color:#fff;padding:56px 0 120px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px}
+.kicker b{background:var(--orange);color:var(--navy-deep);font-size:11px;letter-spacing:.06em;padding:2px 7px;border-radius:6px}
+.hero h1{color:#fff;font-size:clamp(42px,6vw,72px);line-height:1.02;margin:20px 0 18px;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--orange-glow)}
+.hero .lead{font-size:20px;color:var(--on-navy);max-width:560px;margin:0 0 28px}
+.hero .lead strong{color:#fff;font-weight:600}
+.hero .cta-note{color:var(--on-navy-2)}
+.hero-visual{position:relative}
+.house-card{background:linear-gradient(180deg,#fff,var(--sky));border-radius:24px;padding:26px 26px 22px;box-shadow:0 30px 70px rgba(5,14,36,.45);position:relative}
+.house-card img{width:100%;height:auto;max-height:300px;object-fit:contain}
+.tag{position:absolute;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy-deep);box-shadow:0 10px 24px rgba(24,45,92,.16);white-space:nowrap}
+.tag i{width:10px;height:10px;border-radius:50%;flex:none}
+.tag.t1{left:-14px;top:22%}
+.tag.t1 i{background:var(--line)}
+.tag.t2{right:-14px;top:8%}
+.tag.t2 i{background:var(--orange)}
+.value-strip{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.value-strip div{font-size:13px;color:var(--muted);line-height:1.35}
+.value-strip strong{display:block;font:700 15px/1.25 var(--serif);color:var(--navy-deep)}
+.value-strip .after strong{color:var(--orange-ink)}
+.value-strip svg{color:var(--orange)}
 
-/* form card */
-.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 20px 50px rgba(34,61,120,.12)}
-.card h2{font-size:24px;margin-bottom:6px}
-.card .sub{color:var(--muted);font-size:15px;margin:0 0 18px}
-.field{margin-bottom:14px}
-.field>label{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
-input[type=text],input[type=email],input[type=tel]{width:100%;font:500 17px var(--sans);padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
-input:focus{border-color:var(--navy-2);outline:none;box-shadow:0 0 0 3px rgba(44,82,153,.15)}
-input[aria-invalid=true]{border-color:#c8372d;background:#fff6f5}
-.err{display:block;color:var(--red);font-size:14px;margin-top:4px}
-.err:empty{display:none}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.5;color:var(--muted);margin:4px 0 6px;cursor:pointer}
-.consent input{flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:var(--navy)}
-.consent a{color:var(--muted)}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.ts-box{max-width:100%;overflow:hidden}
-.ts-box:has(iframe){margin:10px 0}
-.form-foot{font-size:13px;color:var(--muted);margin:12px 0 0;text-align:center}
-.success{text-align:center;padding:8px 0}
-.success[hidden],form[hidden]{display:none}
-.success:focus{outline:none}
-.success .tick{width:56px;height:56px;border-radius:50%;background:var(--green-soft);display:grid;place-items:center;margin:0 auto 14px}
-.success h2{margin-bottom:8px}
-.success p{color:var(--muted)}
+/* proof strip */
+.strip{position:relative;z-index:2;margin-top:-64px}
+.strip ul{list-style:none;margin:0;padding:8px;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(24,45,92,.14)}
+.strip li{display:flex;gap:12px;align-items:center;padding:16px 18px;font-weight:600;font-size:15.5px;color:var(--navy-deep);line-height:1.35}
+.strip li+li{border-left:1px solid var(--line)}
+.strip .ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--orange-soft)}
 
 /* bands */
-section.band{padding:80px 0}
+section.band{padding:88px 0}
 .band.white{background:#fff}
 .band.mist{background:var(--mist)}
-.band.navy{background:var(--navy);color:#fff}
-.head{max-width:740px;margin:0 auto 44px;text-align:center}
-.eyebrow{display:inline-block;font-weight:700;color:var(--orange-ink);text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:10px}
-.head h2{font-size:clamp(30px,3.6vw,42px)}
-.head p{color:var(--muted);font-size:18px;margin:14px 0 0}
+.band.sky{background:var(--sky)}
+.head{max-width:760px;margin:0 auto 44px;text-align:center}
+.head.left{margin-left:0;text-align:left}
+.eyebrow{display:inline-block;font-weight:700;color:var(--orange-ink);text-transform:uppercase;letter-spacing:.09em;font-size:13px;margin-bottom:10px}
+.head h2{font-size:clamp(32px,4vw,46px)}
+.head p{color:var(--muted);font-size:18.5px;margin:16px 0 0}
+.mid-cta{margin:44px auto 0;text-align:center}
 
-/* problem cards */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.tile{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-.tile .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--sky);margin-bottom:18px}
-.tile:nth-child(2) .ic{background:var(--orange-soft)}
-.tile:nth-child(3) .ic{background:var(--green-soft)}
-.tile h3{font-size:21px;margin-bottom:10px}
-.tile p{color:var(--muted);margin:0}
-.answer{max-width:820px;margin:40px auto 0;background:var(--navy-deep);color:#fff;border-radius:var(--radius);padding:26px 30px;display:flex;gap:18px;align-items:flex-start}
-.answer svg{flex:none;margin-top:2px}
-.answer p{margin:0;font-size:18px;color:#dfe7f6}
-.answer strong{color:#fff}
+/* problem */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.who{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px;box-shadow:var(--shadow)}
+.who-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.who-top .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--sky);flex:none}
+.who:nth-child(2) .who-top .ic{background:var(--orange-soft)}
+.who-top span{display:block;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange-ink)}
+.who h3{font-size:24px}
+.who ul{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px}
+.who li{display:flex;gap:12px;align-items:flex-start}
+.who li svg{flex:none;margin-top:4px}
+.who .fix{margin:0;padding:14px 16px;border-radius:12px;background:var(--green-soft);color:#174d33;font-weight:600}
 
-/* how it works */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.defn{background:var(--sky);border-radius:var(--radius);padding:30px}
-.defn h3{font-size:24px;margin-bottom:12px}
-.defn p{color:#34414e}
-.defn ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
-.defn li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
-.defn li svg{flex:none;margin-top:3px}
-.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:18px}
-.steps li{position:relative;padding:0 0 0 62px;counter-increment:s}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:12px;background:var(--orange);color:var(--navy-deep);font:800 18px/42px var(--serif);text-align:center}
-.steps h3{font-size:19px;margin:0 0 4px;padding-top:9px}
-.steps p{color:var(--muted);margin:0}
+/* toolkit */
+.kit{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);max-width:960px;margin:0 auto}
+.kit table{width:100%;border-collapse:collapse}
+.kit th,.kit td{padding:18px 20px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+.kit thead th{background:var(--mist);font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.kit thead th:not(:first-child),.kit td:not(:first-child){text-align:center;width:24%}
+.kit td:first-child{font-weight:600;color:var(--navy-deep)}
+.kit td:first-child small{display:block;font-weight:500;color:var(--muted);font-size:14px}
+.kit tr:last-child td{border-bottom:0}
+.kit tr.new td{background:var(--orange-soft)}
+.kit tr.new td:first-child{color:var(--navy-ink)}
+.kit .newtag{display:inline-block;background:var(--navy-deep);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:6px;margin-right:8px;vertical-align:2px}
+.kit .yes,.kit .no{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%}
+.kit .yes{background:var(--green-soft)}
+.kit .no{background:#f6e5e2}
+.kit-note{font-size:13.5px;color:var(--muted);text-align:center;max-width:820px;margin:16px auto 0}
+
+/* what it is */
+.what{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.what .big{font:700 clamp(22px,2.4vw,28px)/1.3 var(--serif);color:var(--navy-deep);margin:0 0 18px;text-wrap:balance}
+.what .big em{font-style:normal;color:var(--orange-ink)}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.points li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.points li svg{flex:none;margin-top:3px}
+.points li span b{color:var(--navy-deep)}
+.teams{display:grid;gap:14px}
+.team{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow)}
+.team h3{font-size:19px;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.team h3 i{font:800 13px/26px var(--serif);width:26px;height:26px;border-radius:8px;text-align:center;font-style:normal;background:var(--navy-deep);color:#fff;flex:none}
+.team.reno h3 i{background:var(--orange);color:var(--navy-deep)}
+.team ul{margin:0;padding:0 0 0 18px;color:#3c4854;display:grid;gap:4px}
+.plus{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-weight:700;color:var(--navy-deep);font-size:15px;background:var(--sky);border-radius:14px;padding:14px}
+.plus span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.plus b{color:var(--orange-ink);font-size:18px}
 
 /* examples */
 .examples{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
 .ex{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
-.ex-head{background:var(--navy);color:#fff;padding:18px 24px}
-.ex-head span{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#f6c86e}
+.ex-head{background:var(--navy-deep);color:#fff;padding:18px 24px}
+.ex-head span{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-glow)}
 .ex-head h3{color:#fff;font-size:21px;margin-top:4px}
 .ex-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:18px;flex:1}
 .assume{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -162,26 +172,38 @@ section.band{padding:80px 0}
 .outcome svg{flex:none;margin-top:2px}
 .fine{font-size:13.5px;color:var(--muted);max-width:820px;margin:26px auto 0;text-align:center}
 
-/* mid CTA */
-.mid-cta{margin:40px auto 0;text-align:center}
-
-/* ADU types */
-.types{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.type{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px 18px;text-align:center;box-shadow:var(--shadow)}
-.type img{width:100%;height:110px;object-fit:contain;margin-bottom:10px}
-.type h3{font-size:16px}
-.cover{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
-.list-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+/* fit */
+.types{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:28px}
+.type{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 12px 16px;text-align:center}
+.type img{width:100%;height:96px;object-fit:contain;margin-bottom:8px}
+.type h3{font-size:15px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.list-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 24px}
 .list-card h3{font-size:20px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .list-card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .list-card li{display:flex;gap:10px;align-items:flex-start}
 .list-card li svg{flex:none;margin-top:4px}
 .list-card.no{background:#fffaf2;border-color:#f0dfbf}
+.list-card.navy{background:var(--navy-deep);border-color:var(--navy-deep);color:var(--on-navy)}
+.list-card.navy h3{color:#fff}
 
-/* fit */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.reasons{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.reasons span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600;font-size:15px;color:var(--navy-deep)}
+/* steps */
+.steps-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:22px;position:relative}
+.steps li{position:relative;padding:0 0 0 64px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:14px;background:var(--navy-deep);color:#fff;font:800 18px/44px var(--serif);text-align:center}
+.steps li:last-child::before{background:var(--orange);color:var(--navy-deep)}
+.steps h3{font-size:19px;margin:0 0 4px;padding-top:10px}
+.steps p{color:var(--muted);margin:0}
+.needs{display:grid;gap:16px}
+
+/* contractor */
+.contractor{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--shadow)}
+.contractor h2{font-size:clamp(28px,3.2vw,38px);margin-bottom:12px}
+.contractor p{color:var(--muted);margin:0}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.c-item{display:flex;gap:12px;align-items:flex-start;background:var(--mist);border-radius:14px;padding:14px 16px;font-weight:600;color:var(--navy-deep);line-height:1.4}
+.c-item svg{flex:none;margin-top:2px}
 
 /* reviews */
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -194,7 +216,7 @@ section.band{padding:80px 0}
 .reviews-note{font-size:13px;color:var(--muted);text-align:center;max-width:760px;margin:22px auto 0}
 
 /* faq */
-.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq{max-width:840px;margin:0 auto;display:grid;gap:12px}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 22px}
 .faq summary{cursor:pointer;list-style:none;font:700 18px/1.35 var(--serif);color:var(--navy-deep);padding:18px 34px 18px 0;position:relative}
 .faq summary::-webkit-details-marker{display:none}
@@ -202,13 +224,17 @@ section.band{padding:80px 0}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{color:#3c4854;margin:0 0 18px}
 
-/* final cta */
-.final{text-align:center}
-.final h2{color:#fff;font-size:clamp(30px,3.8vw,44px)}
-.final p{color:#cfdaf0;font-size:19px;max-width:620px;margin:14px auto 26px}
+/* final */
+.final{background:radial-gradient(900px 420px at 15% 0%,rgba(44,82,153,.6),transparent 60%),var(--navy-deep);color:#fff;padding:88px 0;text-align:center}
+.final .eyebrow{color:var(--orange-glow)}
+.final h2{color:#fff;font-size:clamp(32px,4.2vw,50px);max-width:820px;margin:0 auto}
+.final h2 em{font-style:normal;color:var(--orange-glow)}
+.qs{list-style:none;padding:0;margin:30px auto 34px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px}
+.qs li{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 16px;font-weight:600;font-size:15.5px;color:#fff}
+.final .cta-note{color:var(--on-navy-2)}
 
 /* footer */
-footer{background:var(--navy-deep);color:#c7d2e8;padding:48px 0 28px;font-size:15px}
+footer{background:var(--navy-ink);color:#c7d2e8;padding:48px 0 28px;font-size:15px;border-top:1px solid rgba(255,255,255,.08)}
 footer a{color:#fff;text-underline-offset:3px}
 footer a:hover{color:var(--orange-hover)}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px}
@@ -216,56 +242,80 @@ footer a:hover{color:var(--orange-hover)}
 .foot-logo b{font-weight:700;color:var(--orange)}
 .lic{list-style:none;margin:0;padding:0;display:grid;gap:4px;line-height:1.5}
 .lic strong{color:#fff;font-weight:600}
-.nw{white-space:nowrap}
 footer .eho{display:flex;align-items:center;gap:12px;flex:none;font-size:13px;font-weight:600;color:#fff;line-height:1.3}
 footer .eho img{width:44px;height:auto;flex:none}
-.disclose{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:22px;font-size:13px;color:#9fb0d0;display:grid;gap:8px}
+.disclose{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:22px;font-size:13px;color:var(--on-navy-2);display:grid;gap:8px}
 .disclose p{margin:0;max-width:900px}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:22px;padding-top:18px;display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-size:13px;color:#9fb0d0}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:22px;padding-top:18px;display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-size:13px;color:var(--on-navy-2)}
 .foot-bottom a{color:#c7d2e8}
 
+/* mobile sticky CTA */
+.sticky-cta{display:none}
+
 /* consent bar */
-.cookie{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(24,45,92,.18);padding:12px 14px;display:flex;gap:12px;align-items:center;font-size:14px}
+.cookie{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(24,45,92,.22);padding:12px 14px;display:flex;gap:12px;align-items:center;font-size:14px}
 .cookie[hidden]{display:none}
 .cookie p{margin:0;flex:1;color:var(--muted)}
 .cookie button{font:600 14px var(--sans);border-radius:10px;padding:9px 14px;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--navy)}
 .cookie button.ok{background:var(--navy);border-color:var(--navy);color:#fff}
 
 /* responsive */
-@media (max-width:1000px){
+@media (max-width:1040px){
   .types{grid-template-columns:repeat(3,1fr)}
-  .examples{grid-template-columns:1fr}
+  .examples,.three{grid-template-columns:1fr}
+  .strip ul{grid-template-columns:1fr 1fr}
+  .strip li:nth-child(3){border-left:0}
+  .strip li:nth-child(n+3){border-top:1px solid var(--line)}
 }
 @media (max-width:960px){
-  .hero{padding:28px 0 52px}
-  .hero .wrap{grid-template-columns:1fr;grid-template-areas:"copy" "form" "checks";gap:0}
-  .hero-form{margin:4px 0 28px}
-  .split,.cover,.fit{grid-template-columns:1fr;gap:28px}
-  .grid3,.reviews{grid-template-columns:1fr}
-  section.band{padding:60px 0}
+  .hero{padding:36px 0 104px}
+  .hero .wrap,.what,.steps-wrap,.two,.contractor{grid-template-columns:1fr}
+  .hero .wrap{gap:36px}
+  .reviews{grid-template-columns:1fr}
+  .contractor{padding:30px 24px;gap:24px}
+  section.band{padding:64px 0}
+  .final{padding:64px 0}
 }
-@media (max-width:600px){
+@media (max-width:640px){
   body{font-size:16px}
   .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-  .top .wrap{height:60px}
+  .top .wrap{height:58px}
   .logo{font-size:20px}
-  .top .btn-sm{padding:9px 13px;font-size:14px}
-  .lead{font-size:17px}
-  .card{padding:22px 18px}
+  .top .btn-sm{padding:9px 12px;font-size:14px}
+  .top .btn-sm svg{display:none}
+  .hero .lead{font-size:17.5px}
+  .hero .btn{width:100%}
+  .house-card{padding:18px 16px 16px}
+  .tag{font-size:12.5px;padding:6px 10px}
+  .tag.t1{left:10px;top:10px}
+  .tag.t2{right:10px;top:10px}
+  .house-card{padding-top:52px}
+  .value-strip{grid-template-columns:1fr;text-align:center}
+  .value-strip svg{transform:rotate(90deg);margin:0 auto}
+  .strip ul{grid-template-columns:1fr}
+  .strip li+li{border-left:0;border-top:1px solid var(--line)}
+  .strip li{padding:13px 12px}
+  .who{padding:24px 20px}
+  .kit th,.kit td{padding:14px 10px}
+  .kit thead th{font-size:11px;letter-spacing:.02em}
+  .kit td:first-child small{font-size:13px}
+  .kit thead th:not(:first-child),.kit td:not(:first-child){width:23%}
   .types{grid-template-columns:repeat(2,1fr)}
   .types .type:last-child{grid-column:1 / -1}
-  .assume{grid-template-columns:1fr 1fr}
   .assume dd{font-size:17px}
   .bars{height:190px}
   .ex-body{padding:18px}
-  .answer{padding:22px 20px;flex-direction:column;gap:10px}
-  .defn,.list-card{padding:22px 20px}
-  footer{padding-top:40px}
+  .list-card{padding:22px 20px}
+  .c-grid{grid-template-columns:1fr}
+  footer{padding-top:40px;padding-bottom:96px}
   .foot-top{flex-direction:column;gap:24px}
   .foot-bottom{flex-direction:column}
-  .cookie{flex-wrap:wrap}
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(19,36,75,.96);backdrop-filter:blur(8px);transform:translateY(110%);transition:transform .25s}
+  .sticky-cta.on{transform:none}
+  .sticky-cta .btn{width:100%;padding:14px 18px}
+  .cookie{flex-wrap:wrap;bottom:84px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn svg,.sticky-cta{transition:none}}
 </style>
 </head>
 <body>
@@ -274,131 +324,141 @@ footer .eho img{width:44px;height:auto;flex:none}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="FinanceMyADU, back to top">FinanceMy<b>ADU</b></a>
-    <a class="btn btn-primary btn-sm" href="#get-started" data-cta="header">Get&nbsp;Pre-qualified</a>
+    <a class="btn btn-primary btn-sm" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="header">Get Pre-qualified<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </header>
 
 <main id="main">
 <a id="top"></a>
 
-<!-- HERO -->
+<!-- 1. HERO: deck cover + "Keep the Rate & Renovate" -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
-    <div class="hero-copy">
-      <span class="pill"><i></i>ADU and renovation&nbsp;financing</span>
-      <h1 id="hero-title">Build the ADU. <em>Keep the mortgage you already&nbsp;have.</em></h1>
-      <p class="lead">Most home equity lines only let you borrow against what your home is worth today. This one is based on what your home will be worth after the ADU is built. Your first mortgage stays exactly where it&nbsp;is.</p>
+    <div>
+      <span class="kicker"><b>NEW</b>A new way to pay for an&nbsp;ADU</span>
+      <h1 id="hero-title">Keep the rate. <em>Build the&nbsp;ADU.</em></h1>
+      <p class="lead">A home equity line based on what your home will be worth <strong>after</strong> the ADU is built, not what it's worth today. No refinance. Your first mortgage stays exactly where it&nbsp;is.</p>
+      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="hero">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="cta-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Opens Pat Collins' secure online application. Pre-qualifying is not a loan&nbsp;approval.</p>
     </div>
-
-    <div class="hero-form" id="get-started">
-      <div class="card">
-        <form id="lead" novalidate>
-          <h2>See if your project&nbsp;qualifies</h2>
-          <p class="sub">Leave your details. Pat will call you to go over your home, your project and your&nbsp;numbers.</p>
-          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err"><span class="err" id="f-name-err"></span></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err"><span class="err" id="f-email-err"></span></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-phone-err"><span class="err" id="f-phone-err"></span></div>
-          <div class="hp" aria-hidden="true"><label for="f-company">Company website</label><input id="f-company" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
-          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="gclid"><input type="hidden" name="fbclid">
-          <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" name="consent" aria-describedby="f-consent-err"><span>I agree that Pat Collins and E Mortgage Capital Inc. may call and text me at the number I entered, including with automated technology, and email me about my project and financing. Consent is not a condition of any loan. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. See the <a href="https://letstalkhomemortgage.com/privacy/" target="_blank" rel="noopener">Privacy&nbsp;Policy</a>.</span></label>
-          <span class="err" id="f-consent-err"></span>
-          <div class="ts-box" id="f-ts"></div>
-          <button class="btn btn-primary btn-block" type="submit" id="f-submit" style="margin-top:10px">Get&nbsp;Pre-qualified</button>
-          <span class="err" id="f-err" role="alert"></span>
-          <p class="form-foot">Pre-qualifying is a conversation, not a loan&nbsp;approval.</p>
-        </form>
-        <div class="success" id="f-ok" role="status" tabindex="-1" hidden>
-          <div class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-          <h2>Got it, <span id="f-okname">thanks</span>.</h2>
-          <p>Pat will reach out to go over your home and your project. Want to skip the phone tag? Pick a time that works for&nbsp;you.</p>
-          <a class="btn btn-primary btn-block" id="f-book" href="#" target="_blank" rel="noopener">Book a time with&nbsp;Pat</a>
+    <div class="hero-visual">
+      <div class="house-card">
+        <img src="art/art-detached.svg" alt="A home with a new detached ADU in the backyard" width="300" height="236">
+        <span class="tag t1"><i></i>Your home&nbsp;today</span>
+        <span class="tag t2"><i></i>The new&nbsp;ADU</span>
+        <div class="value-strip">
+          <div>A regular line looks at<strong>Today's&nbsp;value</strong></div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div class="after">This line looks at<strong>The finished&nbsp;value</strong></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <ul class="checks hero-checks">
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your first mortgage stays in place. No&nbsp;refinance.</li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Borrow against the value after the build, not before&nbsp;it.</li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No draw-by-draw inspections. No construction&nbsp;consultant.</li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Works for ADUs, remodels, additions and&nbsp;more.</li>
+<div class="strip">
+  <div class="wrap">
+    <ul>
+      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>No refinance of your first&nbsp;mortgage</li>
+      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Based on the after-renovation&nbsp;value</li>
+      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 8l6 6"/></svg></span>No draw inspections or&nbsp;consultant</li>
+      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>ADUs, remodels, additions and&nbsp;more</li>
     </ul>
   </div>
-</section>
+</div>
 
-<!-- PROBLEM -->
-<section class="band white" aria-labelledby="problem-title">
+<!-- 2. TODAY'S MARKET ISSUES (deck p6) -->
+<section class="band" aria-labelledby="problem-title">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">The&nbsp;problem</span>
-      <h2 id="problem-title">Here's where most ADU plans&nbsp;stall</h2>
-      <p>You want the ADU. You have a contractor in mind. Then the financing hits one of these&nbsp;walls.</p>
+      <span class="eyebrow">Today's&nbsp;market</span>
+      <h2 id="problem-title">Why so many ADU plans are stuck right&nbsp;now</h2>
+      <p>Rates moved. Prices moved. The way most people pay for a big project didn't. Here's who gets stuck, and how this line gets them&nbsp;moving.</p>
     </div>
-    <div class="grid3">
-      <div class="tile">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223d78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3>You don't want to give up your&nbsp;rate</h3>
-        <p>A cash-out refinance pays for the build, but it replaces the first mortgage you worked hard to get. For a lot of homeowners, that's a&nbsp;dealbreaker.</p>
+    <div class="two">
+      <div class="who">
+        <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223d78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><div><span>You already&nbsp;own</span><h3>Avoid the&nbsp;refinance</h3></div></div>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>You want to build, and you want to keep the low rate on your first&nbsp;mortgage.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Your equity today doesn't cover the budget for the&nbsp;ADU.</li>
+        </ul>
+        <p class="fix">The fix: a second line based on the finished value. Your first mortgage stays&nbsp;put.</p>
       </div>
-      <div class="tile">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20V14"/><path d="M11 20V9"/><path d="M16 20v-3"/><path d="M16 11l4-4M20 7h-3M20 7v3"/></svg></div>
-        <h3>Your equity today doesn't cover&nbsp;it</h3>
-        <p>A regular home equity line is capped by what your home is worth right now. The project costs more than that cap leaves you. So the plan&nbsp;sits.</p>
+      <div class="who">
+        <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h4v4"/><path d="M19 7l-7 7-3-3-6 6"/></svg></span><div><span>You're&nbsp;buying</span><h3>Win the house, then&nbsp;build</h3></div></div>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>It's a competitive market and you need a clean offer to get the&nbsp;house.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>You want the ADU or the remodel, but with little down there's no equity to borrow&nbsp;yet.</li>
+        </ul>
+        <p class="fix">The fix: buy the home, then set up the line soon after closing. No waiting&nbsp;period.</p>
       </div>
-      <div class="tile">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
-        <h3>You just bought, or you're about&nbsp;to</h3>
-        <p>You found a home with room for an ADU, but you put little down. There's barely any equity yet, so a regular equity line has nothing to give&nbsp;you.</p>
-      </div>
-    </div>
-    <div class="answer">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>
-      <p><strong>The fix: borrow against the finished&nbsp;home.</strong> This home equity line is sized on your home's value after the ADU is built. Same house, same first mortgage, a much bigger budget to work&nbsp;with.</p>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="band" aria-labelledby="how-title">
+<!-- 3. NEW TOOL IN THE KIT (deck p3) -->
+<section class="band white" aria-labelledby="kit-title">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">How it&nbsp;works</span>
-      <h2 id="how-title">A regular home equity line, plus one extra&nbsp;review</h2>
-      <p>If you've ever had a HELOC, most of this will feel familiar. The difference is that the project gets reviewed too, and your home is appraised as if the work were already&nbsp;done.</p>
+      <span class="eyebrow">A new tool in the&nbsp;kit</span>
+      <h2 id="kit-title">How it stacks up against the usual ways to pay for a&nbsp;build</h2>
+      <p>Every option has a place. This is the only one on this list that does both of these&nbsp;things.</p>
     </div>
-    <div class="split">
-      <div class="defn">
-        <h3>What this&nbsp;is</h3>
-        <p>An After-Renovation HELOC is a home equity line of credit that sits behind your first mortgage. It is sized on your home's <strong>after-renovation&nbsp;value</strong>: what the appraiser says your home will be worth once the ADU or remodel is&nbsp;finished.</p>
-        <ul>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Second loan. Your first mortgage is not&nbsp;touched.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your income, credit and assets are reviewed the usual&nbsp;way.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A separate team reviews only the project: plans, bid and&nbsp;contractor.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No standard draw schedule and no draw&nbsp;inspections.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>One final inspection to confirm the work is&nbsp;done.</li>
+    <div class="kit">
+      <table>
+        <thead><tr><th scope="col">Option</th><th scope="col">Keeps your first mortgage</th><th scope="col">Based on value after the work</th></tr></thead>
+        <tbody>
+          <tr><td>Renovation mortgages<small>FHA 203(k), Fannie Mae HomeStyle and&nbsp;similar</small></td><td><span class="no" aria-label="No"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td></tr>
+          <tr><td>Cash-out refinance<small>Replaces your first mortgage with a new&nbsp;one</small></td><td><span class="no" aria-label="No"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td><span class="no" aria-label="No"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td></tr>
+          <tr><td>Standard HELOC or home equity loan<small>A second loan on today's&nbsp;value</small></td><td><span class="yes" aria-label="Yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no" aria-label="No"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td></tr>
+          <tr class="new"><td><span class="newtag">NEW</span>After&#8209;Renovation HELOC<small>A second loan on the finished&nbsp;value</small></td><td><span class="yes" aria-label="Yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="kit-note">Construction loans, hard money and personal loans are also out there. Each has its own trade-offs. Pat walks you through which one fits your&nbsp;project.</p>
+  </div>
+</section>
+
+<!-- 4. WHAT IT IS + TWO-PARTY SETUP (deck p4, p5, p2) -->
+<section class="band" aria-labelledby="what-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">What it&nbsp;is</span>
+      <h2 id="what-title">A HELOC you already understand, sized on the finished&nbsp;home</h2>
+    </div>
+    <div class="what">
+      <div>
+        <p class="big">You borrow against your home's <em>after-renovation&nbsp;value</em>: what the appraiser says it will be worth once the ADU is&nbsp;done.</p>
+        <ul class="points">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Second&nbsp;lien.</b> It sits behind your first mortgage. No&nbsp;refinance.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>A line of&nbsp;credit.</b> It works like the HELOCs you've heard&nbsp;of.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>No standard&nbsp;draws.</b> No draw-by-draw inspections and no construction&nbsp;consultant.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>One final&nbsp;inspection</b> to confirm the work is done, with project supervision after&nbsp;closing.</span></li>
         </ul>
       </div>
-      <ol class="steps">
-        <li><h3>Talk it through with&nbsp;Pat</h3><p>Tell Pat about your home, your first mortgage and the ADU you want. You'll know quickly if this program fits or if another loan makes more&nbsp;sense.</p></li>
-        <li><h3>Your contractor sends the project&nbsp;details</h3><p>A detailed cost estimate, the plans or drawings, a copy of their license and insurance, and a short contractor&nbsp;questionnaire.</p></li>
-        <li><h3>The project gets&nbsp;reviewed</h3><p>A renovation team checks that the budget, scope and contractor make sense. They look at the project only, not your&nbsp;finances.</p></li>
-        <li><h3>Your home is appraised "as&nbsp;finished"</h3><p>The appraiser values your home as if the ADU were already built. That after-renovation value is what the line is based&nbsp;on.</p></li>
-        <li><h3>Your line closes and the build&nbsp;starts</h3><p>Your first mortgage stays put. There's project supervision after closing and one final inspection when the work is&nbsp;complete.</p></li>
-      </ol>
+      <div class="teams">
+        <div class="team"><h3><i>1</i>The&nbsp;lender</h3><ul><li>Takes your application and issues the&nbsp;approval</li><li>Reviews your income, assets and&nbsp;credit</li><li>Closes and funds your line of&nbsp;credit</li></ul></div>
+        <div class="team reno"><h3><i>2</i>The renovation&nbsp;team</h3><ul><li>Reviews only the project: budget, plans and&nbsp;contractor</li><li>Supervises the project after&nbsp;closing</li></ul></div>
+        <div class="plus"><span>Regular HELOC&nbsp;process</span><b>+</b><span>Renovation&nbsp;review</span><b>+</b><span>As-finished&nbsp;appraisal</span></div>
+      </div>
+    </div>
+    <div class="mid-cta">
+      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="what">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- EXAMPLES -->
+<!-- 5. BORROWING POWER + SCENARIOS (deck p11, p15, p16) -->
 <section class="band white" aria-labelledby="ex-title">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">See it in&nbsp;numbers</span>
-      <h2 id="ex-title">Same house. Two very different&nbsp;answers.</h2>
-      <p>Here's how the math changes when the line is based on the finished home instead of today's value. Two hypothetical examples, worked the way the program works&nbsp;them.</p>
+      <span class="eyebrow">More borrowing&nbsp;power</span>
+      <h2 id="ex-title">Same house. Same mortgage. A very different&nbsp;budget.</h2>
+      <p>Two hypothetical examples, worked the way the program works them. Watch what happens when the line looks at the finished&nbsp;home.</p>
     </div>
     <div class="examples">
       <article class="ex" data-scenario>
-        <div class="ex-head"><span>Hypothetical example&nbsp;1</span><h3>Homeowner who wants to keep their first&nbsp;mortgage</h3></div>
+        <div class="ex-head"><span>Hypothetical example&nbsp;1</span><h3>Homeowner with a low first-mortgage&nbsp;rate</h3></div>
         <div class="ex-body">
           <dl class="assume">
             <div><dt>Home value&nbsp;today</dt><dd>$725,000</dd></div>
@@ -414,14 +474,14 @@ footer .eho img{width:44px;height:auto;flex:none}
             </div>
             <div class="bar-labels" aria-hidden="true">
               <div>Standard equity line<small>based on today's&nbsp;value</small></div>
-              <div>After-Renovation HELOC<small>based on the finished&nbsp;value</small></div>
+              <div>After&#8209;Renovation HELOC<small>based on the finished&nbsp;value</small></div>
             </div>
           </div>
-          <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A regular equity line on today's value leaves only a sliver for the build. Based on the finished value, the same homeowner can cover the whole ADU budget and keep the first mortgage they&nbsp;have.</span></p>
+          <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>On today's value, a regular equity line leaves only a sliver for the build. On the finished value, the same homeowner can cover the whole ADU budget and keep the first mortgage they&nbsp;have.</span></p>
         </div>
       </article>
       <article class="ex" data-scenario>
-        <div class="ex-head"><span>Hypothetical example&nbsp;2</span><h3>Buyer who wants to build right after&nbsp;closing</h3></div>
+        <div class="ex-head"><span>Hypothetical example&nbsp;2</span><h3>Buyer who wants to build after&nbsp;closing</h3></div>
         <div class="ex-body">
           <dl class="assume">
             <div><dt>Purchase price and value&nbsp;today</dt><dd>$500,000</dd></div>
@@ -433,24 +493,23 @@ footer .eho img{width:44px;height:auto;flex:none}
               <div class="bar big"><i style="height:100%"></i></div>
               <div class="budget" style="bottom:70.2%"><span>Project&nbsp;budget</span></div>
             </div>
-            <div class="bar-labels one" aria-hidden="true"><div>After-Renovation HELOC<small>based on the finished&nbsp;value</small></div></div>
+            <div class="bar-labels one" aria-hidden="true"><div>After&#8209;Renovation HELOC<small>based on the finished&nbsp;value</small></div></div>
           </div>
-          <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>No waiting period after the purchase. The line can be set up soon after closing and cover the full project, so the buyer finances the whole&nbsp;build.</span></p>
+          <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>No waiting period after the purchase. The line can cover the full project, so the buyer finances the whole&nbsp;build.</span></p>
         </div>
       </article>
     </div>
     <p class="fine">Hypothetical examples for illustration only. They are not an offer, a quote or a commitment to lend. Home values, balances and budgets are assumptions. What you can borrow depends on your credit, income, debts, the appraisal of your finished home and the project&nbsp;review.</p>
-    <div class="mid-cta"><a class="btn btn-primary" href="#get-started" data-cta="examples">Get&nbsp;Pre-qualified</a></div>
   </div>
 </section>
 
-<!-- WHAT IT COVERS -->
-<section class="band mist" aria-labelledby="cover-title">
+<!-- 6. GUIDELINES + ELIGIBLE / INELIGIBLE (deck p7-p10) -->
+<section class="band mist" aria-labelledby="fit-title">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">What it pays&nbsp;for</span>
-      <h2 id="cover-title">Built for ADUs. Works for the rest of the house&nbsp;too.</h2>
-      <p>Every common type of ADU is on the table, and so is the remodel you've been putting&nbsp;off.</p>
+      <span class="eyebrow">Is it a&nbsp;fit?</span>
+      <h2 id="fit-title">Built for ADUs and big&nbsp;renovations</h2>
+      <p>Every common type of ADU qualifies, and so does the rest of the project&nbsp;list.</p>
     </div>
     <div class="types">
       <div class="type"><img src="art/art-garage.svg" alt="" width="300" height="236" loading="lazy"><h3>Garage&nbsp;conversion</h3></div>
@@ -459,97 +518,103 @@ footer .eho img{width:44px;height:auto;flex:none}
       <div class="type"><img src="art/art-above.svg" alt="" width="300" height="236" loading="lazy"><h3>ADU above the&nbsp;garage</h3></div>
       <div class="type"><img src="art/art-jadu.svg" alt="" width="300" height="236" loading="lazy"><h3>Junior ADU&nbsp;(JADU)</h3></div>
     </div>
-    <div class="cover">
-      <div class="list-card">
-        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Also&nbsp;covered</h3>
+    <div class="three">
+      <div class="list-card navy">
+        <h3>Who&nbsp;qualifies</h3>
         <ul>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Kitchens and&nbsp;bathrooms</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your primary home or a second&nbsp;home</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A single-family home or a two&#8209;unit&nbsp;property</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A strong credit&nbsp;profile</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fully documented&nbsp;income</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your line is the lesser of two limits, one on today's value and one on the finished&nbsp;value</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>What it pays&nbsp;for</h3>
+        <ul>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Accessory dwelling units&nbsp;(ADUs)</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Additions and&nbsp;extensions</li>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Kitchens and&nbsp;bathrooms</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Interior and exterior&nbsp;remodels</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Roofing and&nbsp;siding</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Decks, porches and outdoor&nbsp;living</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Pools</li>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Roofing, siding, decks and&nbsp;porches</li>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Pools and outdoor&nbsp;improvements</li>
         </ul>
       </div>
       <div class="list-card no">
         <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Not the right tool&nbsp;for</h3>
         <ul>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Tearing the house down and&nbsp;rebuilding</li>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Teardowns and&nbsp;rebuilds</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Projects already underway (case by&nbsp;case)</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Finishing new construction (case by&nbsp;case)</li>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Health and safety repairs needed to close on a&nbsp;purchase</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Small fix-up jobs. This is built for bigger&nbsp;projects.</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Health and safety repairs required to close on a&nbsp;purchase</li>
+          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Investment&nbsp;properties</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHO IT'S FOR -->
-<section class="band white" aria-labelledby="fit-title">
+<!-- 7. HOW IT WORKS + WHAT WE NEED (deck p13) -->
+<section class="band white" aria-labelledby="how-title">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Who it's&nbsp;for</span>
-      <h2 id="fit-title">Improve the home you have instead of&nbsp;moving</h2>
-      <p>If you like where you live and you like your first mortgage, this is the program to look&nbsp;at.</p>
+      <span class="eyebrow">How it&nbsp;works</span>
+      <h2 id="how-title">From application to building in five&nbsp;steps</h2>
     </div>
-    <div class="fit">
-      <div class="list-card">
-        <h3>A good fit&nbsp;if</h3>
-        <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>You live in the home, or it's your second&nbsp;home</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>It's a single-family home or a two&#8209;unit&nbsp;property</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>You have solid credit and can document your income with standard&nbsp;paperwork</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>You have a real project with a licensed, insured&nbsp;contractor</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>You're buying a home and want to build soon after&nbsp;closing</li>
-        </ul>
-      </div>
-      <div class="list-card">
-        <h3>Why homeowners are doing&nbsp;it</h3>
-        <div class="reasons">
-          <span>Growing&nbsp;family</span>
-          <span>Working from home for&nbsp;good</span>
-          <span>Running out of&nbsp;space</span>
-          <span>Adding value before you&nbsp;sell</span>
-          <span>Too little equity last time you&nbsp;checked</span>
-          <span>Keeping your first&nbsp;mortgage</span>
+    <div class="steps-wrap">
+      <ol class="steps">
+        <li><h3>Start your&nbsp;application</h3><p>Click Get Pre-qualified and fill out the secure online application. Pat follows up to go over your home, your first mortgage and the ADU you&nbsp;want.</p></li>
+        <li><h3>Your contractor sends the project&nbsp;details</h3><p>The cost estimate, the plans or drawings, their license and insurance, and a short&nbsp;questionnaire.</p></li>
+        <li><h3>The project gets&nbsp;reviewed</h3><p>The renovation team checks the budget, scope and contractor. A feasibility review, not a second look at your&nbsp;finances.</p></li>
+        <li><h3>Your home is appraised as&nbsp;finished</h3><p>The appraiser values your home as if the ADU were already built. That's the value your line is based&nbsp;on.</p></li>
+        <li><h3>Close and&nbsp;build</h3><p>Your line closes, your first mortgage stays put, and the work starts. One final inspection when it's&nbsp;done.</p></li>
+      </ol>
+      <div class="needs">
+        <div class="list-card">
+          <h3>What you'll&nbsp;need</h3>
+          <ul>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Income documents, such as pay stubs, W-2s or tax&nbsp;returns</li>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Bank and asset&nbsp;statements</li>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Permission to check your&nbsp;credit</li>
+          </ul>
         </div>
-        <p style="margin:18px 0 0;color:var(--muted)">Moving means a new purchase, new closing costs and a new mortgage. Building means you stay put and add space and value to the home you already&nbsp;own.</p>
+        <div class="list-card">
+          <h3>What your contractor&nbsp;sends</h3>
+          <ul>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A detailed cost&nbsp;estimate</li>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Plans or drawings for the&nbsp;project</li>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A copy of their license and&nbsp;insurance</li>
+            <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A short contractor&nbsp;questionnaire</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU'LL NEED -->
-<section class="band" aria-labelledby="need-title">
+<!-- 8. FOR YOUR CONTRACTOR (deck p20) -->
+<section class="band sky" aria-labelledby="pro-title">
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">What you'll&nbsp;need</span>
-      <h2 id="need-title">Two short lists, and Pat walks you through&nbsp;both</h2>
-    </div>
-    <div class="cover" style="margin-top:0">
-      <div class="list-card">
-        <h3>From&nbsp;you</h3>
-        <ul>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Income documents, such as pay stubs, W-2s or tax&nbsp;returns</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Bank and asset&nbsp;statements</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Permission to check your&nbsp;credit</li>
-        </ul>
+    <div class="contractor">
+      <div>
+        <span class="eyebrow">Bring your&nbsp;contractor</span>
+        <h2 id="pro-title">Your builder will like this one&nbsp;too</h2>
+        <p>They work directly with you, and you pay for the project like a cash buyer would. No bank consultant in the middle and no draw inspections to schedule&nbsp;around.</p>
       </div>
-      <div class="list-card">
-        <h3>From your&nbsp;contractor</h3>
-        <ul>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A detailed cost&nbsp;estimate</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Plans or drawings for the&nbsp;project</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A copy of their license and&nbsp;insurance</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A short contractor&nbsp;questionnaire</li>
-        </ul>
+      <div class="c-grid">
+        <div class="c-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No consultant or draw&nbsp;inspections</div>
+        <div class="c-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fewer calls from the lender and&nbsp;underwriter</div>
+        <div class="c-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A budget based on the finished&nbsp;value</div>
+        <div class="c-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Room to plan ahead instead of rushing the&nbsp;job</div>
+        <div class="c-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No cost to the&nbsp;contractor</div>
+        <div class="c-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Less hassle, fewer&nbsp;middlemen</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
+<!-- 9. REVIEWS -->
 <section class="band white" aria-labelledby="rev-title">
   <div class="wrap">
     <div class="head">
@@ -568,7 +633,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- 10. FAQ -->
 <section class="band" aria-labelledby="faq-title">
   <div class="wrap">
     <div class="head">
@@ -578,23 +643,32 @@ footer .eho img{width:44px;height:auto;flex:none}
     <div class="faq">
       <details><summary>Will I lose my first&nbsp;mortgage?</summary><p>No. This is a second loan that sits behind your first mortgage. There's no refinance, so your first mortgage, its rate and its payment stay exactly as they&nbsp;are.</p></details>
       <details><summary>How is this different from a regular&nbsp;HELOC?</summary><p>A regular HELOC is based on what your home is worth today. This one is based on what your home will be worth after the project is finished. To get there, it adds two things: a review of the project, and an appraisal of your home "as&nbsp;finished."</p></details>
+      <details><summary>What happens when I click Get&nbsp;Pre-qualified?</summary><p>It opens Pat Collins' secure online application with E Mortgage Capital. Fill it out and Pat follows up to go over your home, your project and your options. Starting an application is not a loan&nbsp;approval.</p></details>
       <details><summary>Can I use my own&nbsp;contractor?</summary><p>Yes. Your contractor gets reviewed: their license and insurance, a short questionnaire, the cost estimate and the plans. If they check out, they build&nbsp;it.</p></details>
       <details><summary>Are there draw inspections or a construction&nbsp;consultant?</summary><p>No standard draw schedule, no draw-by-draw inspections and no construction consultant. There is project supervision after closing, which comes with its own fee, and one final inspection to confirm the work is done. Pat goes over every cost with you up&nbsp;front.</p></details>
-      <details><summary>Can I finance a remodel along with my&nbsp;ADU?</summary><p>Yes. Kitchens, bathrooms, additions, roofing, decks, pools and other improvements are eligible, on their own or alongside the&nbsp;ADU.</p></details>
-      <details><summary>Who&nbsp;qualifies?</summary><p>Owners of a primary home or a second home, on a single-family or two&#8209;unit property. You'll need a solid credit profile and fully documented income. Investment properties don't qualify for this program. If yours is a rental, Pat can walk you through other&nbsp;options.</p></details>
-      <details><summary>I'm buying a home. Can I use this right after&nbsp;closing?</summary><p>Yes. There's no waiting period after the purchase. You can buy the home, then set up the line based on its finished value and start the&nbsp;project.</p></details>
+      <details><summary>I'm buying a home. Can I use this right after&nbsp;closing?</summary><p>Yes. There's no waiting period after the purchase. Buy the home, then set up the line based on its finished value and start the&nbsp;project.</p></details>
+      <details><summary>Can I use it on a rental&nbsp;property?</summary><p>No. This program is for primary homes and second homes, on single-family or two&#8209;unit properties. If yours is a rental, Pat can walk you through other&nbsp;options.</p></details>
       <details><summary>Will rental income from the new ADU help me&nbsp;qualify?</summary><p>Plan on qualifying with the income you have today, not on future rent from the new ADU. Rental income is not guaranteed and may not count toward qualification under every program. Pat will tell you how your situation is&nbsp;treated.</p></details>
       <details><summary>What about the rate and&nbsp;costs?</summary><p>Those depend on your credit, your home and the size of the line, so they're covered one on one. Pat lays them out before you decide&nbsp;anything.</p></details>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="band navy final" aria-labelledby="final-title">
+<!-- 11. FINAL: homeowner campaign (deck p18) -->
+<section class="final" aria-labelledby="final-title">
   <div class="wrap">
-    <h2 id="final-title">Your ADU is worth more than your equity says it&nbsp;is</h2>
-    <p>Find out what your project looks like when the line is based on the finished home. It starts with one short&nbsp;conversation.</p>
-    <a class="btn btn-primary" href="#get-started" data-cta="final">Get&nbsp;Pre-qualified</a>
+    <span class="eyebrow">Sound&nbsp;familiar?</span>
+    <h2 id="final-title">Keep the rate and renovate. <em>Improve, don't&nbsp;move.</em></h2>
+    <ul class="qs">
+      <li>Family getting&nbsp;bigger?</li>
+      <li>Working from home for&nbsp;good?</li>
+      <li>Out of space and thinking about&nbsp;moving?</li>
+      <li>Want to add value before you&nbsp;sell?</li>
+      <li>Too little equity last time you&nbsp;checked?</li>
+      <li>Want to keep your low first-mortgage&nbsp;rate?</li>
+    </ul>
+    <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="final">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="cta-note">Opens Pat Collins' secure online application. Pre-qualifying is not a loan&nbsp;approval.</p>
   </div>
 </section>
 </main>
@@ -626,6 +700,10 @@ footer .eho img{width:44px;height:auto;flex:none}
   </div>
 </footer>
 
+<div class="sticky-cta" id="sticky" aria-hidden="true">
+  <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="sticky" tabindex="-1">Get&nbsp;Pre-qualified</a>
+</div>
+
 <div class="cookie" id="cookie" role="region" aria-label="Cookie choice" hidden>
   <p>We use cookies to measure how this page is&nbsp;used.</p>
   <button type="button" id="ck-no">No&nbsp;thanks</button>
@@ -638,10 +716,9 @@ footer .eho img{width:44px;height:auto;flex:none}
   var CFG = {};
   try { CFG = JSON.parse(document.getElementById("page-config").textContent); } catch (e) {}
   function $(id) { return document.getElementById(id); }
-  // Preview copies (claude.ai artifact, a file on disk) never send a lead
-  var PREVIEW = location.protocol === "file:" || /claude/.test(location.hostname) || /[?&]preview=1/.test(location.search);
+  var PREVIEW = location.protocol === "file:" || /claude|localhost|127\.0\.0\.1/.test(location.hostname);
 
-  // ---------- Analytics: nothing loads until the visitor presses Accept ----------
+  // Analytics: nothing loads until the visitor presses Accept
   var CK = "fmadu_consent";
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   window.dataLayer = window.dataLayer || [];
@@ -653,110 +730,27 @@ footer .eho img{width:44px;height:auto;flex:none}
     s.src = "https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(CFG.analyticsId);
     document.head.appendChild(s);
   }
-  function track(ev, data) { if (store(CK) === "yes") window.dataLayer.push(Object.assign({ event: ev }, data || {})); }
   var choice = store(CK);
   if (choice === "yes") loadGtm();
   else if (choice !== "no") $("cookie").hidden = false;
   $("ck-ok").addEventListener("click", function () { store(CK, "yes"); $("cookie").hidden = true; loadGtm(); });
   $("ck-no").addEventListener("click", function () { store(CK, "no"); $("cookie").hidden = true; });
+
+  // Count application clicks (only after consent)
   document.querySelectorAll("[data-cta]").forEach(function (a) {
-    a.addEventListener("click", function () { track("cta_click", { cta_position: a.getAttribute("data-cta") }); setTimeout(function () { $("f-name").focus({ preventScroll: true }); }, 450); });
+    a.addEventListener("click", function () {
+      if (store(CK) === "yes") window.dataLayer.push({ event: "apply_click", cta_position: a.getAttribute("data-cta") });
+    });
   });
 
-  // ---------- UTM and click ids into the hidden fields ----------
-  var form = $("lead");
-  (function () {
-    var p; try { p = new URLSearchParams(location.search); } catch (e) { return; }
-    var keep = {}; try { keep = JSON.parse(sessionStorage.getItem("fmadu_utm") || "{}"); } catch (e) {}
-    ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"].forEach(function (k) {
-      var v = p.get(k) || keep[k] || (CFG.utmDefaults && CFG.utmDefaults[k]) || "";
-      if (p.get(k)) keep[k] = p.get(k);
-      if (form.elements[k]) form.elements[k].value = v;
-    });
-    try { sessionStorage.setItem("fmadu_utm", JSON.stringify(keep)); } catch (e) {}
-  })();
-
-  // ---------- Spam check (Cloudflare Turnstile), off until the server hands out a site key ----------
-  var spam = { key: "", ready: null, id: null };
-  function loadSpamCheck() {
-    if (spam.ready) return spam.ready;
-    if (PREVIEW || !CFG.leadConfigEndpoint) return (spam.ready = Promise.resolve());
-    spam.ready = fetch(CFG.leadConfigEndpoint).then(function (r) { return r.json(); }).then(function (c) {
-      spam.key = (c && c.turnstileSiteKey) || "";
-      if (!spam.key || window.turnstile) return;
-      return new Promise(function (res, rej) {
-        var sc = document.createElement("script");
-        sc.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-        sc.onload = res; sc.onerror = rej; document.head.appendChild(sc);
-      });
-    }).catch(function () { spam.ready = null; });
-    return spam.ready;
+  // Phone: show a bottom "Get Pre-qualified" bar once the hero button scrolls away, hide it at the final CTA
+  var sticky = $("sticky"), heroBtn = document.querySelector('[data-cta="hero"]'), finalSec = document.querySelector(".final");
+  if ("IntersectionObserver" in window && sticky && heroBtn && finalSec) {
+    var heroGone = false, finalIn = false;
+    function upd() { var on = heroGone && !finalIn; sticky.classList.toggle("on", on); sticky.setAttribute("aria-hidden", on ? "false" : "true"); sticky.querySelector("a").tabIndex = on ? 0 : -1; }
+    new IntersectionObserver(function (e) { heroGone = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; upd(); }).observe(heroBtn);
+    new IntersectionObserver(function (e) { finalIn = e[0].isIntersecting; upd(); }).observe(finalSec);
   }
-  function spamToken() {
-    return (loadSpamCheck() || Promise.resolve()).then(function () {
-      if (!spam.key || !window.turnstile) return "";
-      return new Promise(function (res) {
-        var over = false, t = setTimeout(function () { end(""); }, 45000);
-        function end(tok) { if (over) return; over = true; clearTimeout(t); res(tok || ""); }
-        if (spam.id !== null) turnstile.remove(spam.id);
-        spam.id = turnstile.render($("f-ts"), { sitekey: spam.key, action: "lead", appearance: "interaction-only",
-          callback: end, "error-callback": function () { end(""); return true; }, "timeout-callback": function () { end(""); } });
-      });
-    });
-  }
-  form.addEventListener("focusin", loadSpamCheck, { once: true });
-
-  // ---------- Validation ----------
-  function setErr(el, msg) { var s = $(el.id + "-err"); if (s) s.textContent = msg || ""; if (msg) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid"); }
-  function digits(v) { var d = String(v || "").replace(/\D/g, ""); if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1); return d; }
-  ["f-name", "f-email", "f-phone"].forEach(function (id) { $(id).addEventListener("input", function () { setErr($(id), ""); $("f-err").textContent = ""; }); });
-  $("f-consent").addEventListener("change", function () { $("f-consent-err").textContent = ""; });
-  $("f-phone").addEventListener("blur", function () { var d = digits(this.value); if (d.length === 10) this.value = "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6); });
-  function validate() {
-    var ok = true, first = null;
-    var n = $("f-name"), e = $("f-email"), p = $("f-phone"), c = $("f-consent");
-    if (n.value.trim().length < 2) { setErr(n, "Enter your name."); ok = false; first = first || n; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim())) { setErr(e, "Enter an email like name@example.com."); ok = false; first = first || e; }
-    if (digits(p.value).length !== 10) { setErr(p, "Enter a 10-digit phone number."); ok = false; first = first || p; }
-    if (!c.checked) { $("f-consent-err").textContent = "Please check the box so Pat can contact you."; ok = false; first = first || c; }
-    if (first) first.focus();
-    return ok;
-  }
-
-  // ---------- Submit ----------
-  var busy = false;
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    if (busy || !validate()) return;
-    if (form.elements.company_website.value) { done(); return; } // bot filled the hidden field: act normal, send nothing
-    busy = true;
-    var btn = $("f-submit"); btn.disabled = true; btn.textContent = "Sending...";
-    var payload = {
-      name: $("f-name").value.trim(), email: $("f-email").value.trim(), phone: $("f-phone").value.trim(),
-      consent: true, consent_text: $("f-consent").parentNode.textContent.trim().replace(/\s+/g, " "),
-      form_name: CFG.formName || "FinanceMyADU landing", page_url: location.href.split("#")[0], company_website: ""
-    };
-    ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"].forEach(function (k) { if (form.elements[k].value) payload[k] = form.elements[k].value; });
-    var send = PREVIEW
-      ? new Promise(function (res) { console.info("[preview] lead not sent", payload); setTimeout(res, 500); })
-      : spamToken().then(function (token) {
-          payload.turnstile_token = token;
-          return fetch(CFG.leadEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
-            .then(function (r) { if (!r.ok) throw new Error("status " + r.status); });
-        });
-    send.then(function () { track("lead_submit", { form_name: payload.form_name }); done(payload.name); })
-      .catch(function () {
-        busy = false; btn.disabled = false; btn.textContent = "Get Pre-qualified";
-        $("f-err").textContent = "That didn't go through. Please try again in a moment.";
-      });
-  });
-  function done(name) {
-    var first = String(name || "").split(/\s+/)[0];
-    $("f-okname").textContent = first || "thanks";
-    $("f-book").href = CFG.bookingUrl || "#";
-    form.hidden = true; $("f-ok").hidden = false; $("f-ok").focus();
-  }
-  $("f-book").addEventListener("click", function () { track("booking_click"); });
 })();
 </script>
 </body>

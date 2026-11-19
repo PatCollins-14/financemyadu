@@ -46,14 +46,15 @@ These need accounts, DNS or a live site, so they wait until after the initial pr
 Source: the program deck Pat was referred to ("ARV HELOC-Deck 7_2025.pdf", 20 pages, broker-facing). The page shows none of the source company's names, logos, website, contacts or partner lines (build check in `landing/build.mjs`).
 
 ### Needed before it goes live
-- [ ] **Compliance sign-off** at E Mortgage Capital for the whole page, especially the two hypothetical examples (they show home values, a mortgage balance and project budgets as assumptions, with no rate, payment or term) and the consent wording.
+Since 2026-11-20 (D86) the page has no form: every "Get Pre-qualified" button opens Pat's LendingPad application. The page is static and needs no server, webhook or spam keys.
+
+- [ ] **Compliance sign-off** at E Mortgage Capital for the whole page, especially the two hypothetical examples (they show home values, a mortgage balance and project budgets as assumptions, with no rate, payment or term) and the comparison table (renovation mortgages, cash-out refinance, standard HELOC).
 - [ ] **Confirm Pat can offer this program** through E Mortgage Capital as the broker of record (the deck is written for wholesale partners), and whether the lender must be named in a disclosure.
-- [ ] **GoHighLevel:** a webhook (or workflow trigger) for this page's leads. Leads arrive with `form_name` "FinanceMyADU - After-Renovation HELOC landing". Put the URL in the host's environment as `GHL_WEBHOOK_URL`, never in the repo. The old funnel webhook is public in this repo; a new one is safer.
-- [ ] **Cloudflare Turnstile:** a site key and secret for financemyadu.io, set as `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY`. Until both are set the spam check is off (the honeypot still runs).
-- [ ] **Hosting:** the page needs `landing/server.js` running (Node), because GitHub Pages can't run the lead endpoint or the spam check. Hostinger Node web app, the same setup as letstalkadu.com, is the likely fit. Decide the host, then DNS.
-- [ ] **Consent wording:** compliance to approve the text/call consent line (now names Pat Collins and E Mortgage Capital Inc.).
+- [ ] **Confirm the application link** is Pat's own: `https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/` (taken from the LTHM check funnel's "apply" link). LendingPad showed "Not available in your region" to this computer, so open it once from a US connection to be sure it loads. To change it, set `APPLY_URL` in `landing/build.mjs` (or as an environment variable) and rebuild.
+- [ ] **Lead tracking:** the page itself no longer creates a GHL contact. Leads reach GHL only when the LendingPad application syncs (the "Loan Updated" Zap). Visitors who click but don't finish the application are not captured; GTM counts the clicks (`apply_click`) after cookie consent.
+- [ ] **Hosting:** static files only, so GitHub Pages (the repo's existing setup) works again; publish `landing/` as the site root when going live. Decide host, then DNS (D84 has the steps to turn Pages back on).
 - [ ] **Page name:** "After-Renovation HELOC" is a plain description used in place of the deck's product name. Confirm it is fine to use, or give the name you want.
-- [ ] Optional: a headshot of Pat and a line about him for the form card; real ADU projects done with this program (with permission) to replace or sit beside the hypothetical examples.
+- [ ] Optional: a headshot of Pat and a line about him; real ADU projects done with this program (with permission) to sit beside the hypothetical examples.
 
 ### Kept off the page on purpose (numbers and claims from the deck)
 | From the deck | Why it is not on the page |
