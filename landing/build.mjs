@@ -1,8 +1,7 @@
 // Builds landing/index.html from landing/index.src.html:
-//  0. puts Pat's application link (LendingPad) into every {{APPLY_URL}}
-//  1. adds the selected reviews (names inside a review are hidden, like the funnel build)
+//  1. puts Pat's application link (LendingPad) into every {{APPLY_URL}}
 //  2. joins the last two words of every text block with a no-break space (no orphan words)
-//  3. fails on banned phrases (config/banned-phrases.json), on any name of the program's source company,
+//  3. fails on banned phrases (config/banned-phrases.json; dollar figures and percentages only inside <article data-scenario>), on any name of the program's source company,
 //     on a leftover {{...}} and on any form (the page collects nothing; the only action is the application link)
 // Run: node landing/build.mjs
 import fs from 'fs';
@@ -18,27 +17,6 @@ let html = fs.readFileSync(path.join(here, 'index.src.html'), 'utf8');
 const APPLY_URL = process.env.APPLY_URL || 'https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/';
 html = html.split('{{APPLY_URL}}').join(APPLY_URL);
 
-// ---- 1. reviews ----
-// Picked for plain service quotes: no speed claims, no ratings, no numbers
-const PICK = [2, 17, 16, 28, 42, 29];
-const reviews = JSON.parse(read('src/data/reviews.json'));
-const blur = JSON.parse(read('config/blur-names.json')).names.sort((a, b) => b.length - a.length);
-const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const PLATFORM = { bbb: 'BBB', birdeye: 'Birdeye', google: 'Google' };
-function hideNames(text) {
-  let out = esc(text);
-  out = out.replace(/\[\[(.+?)\]\]/g, (_, n) => `\u0000${n.length}\u0000`);
-  const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  for (const n of blur) out = out.replace(new RegExp('(?<![A-Za-z>])' + reEsc(n) + '(?![A-Za-z])', 'g'), m => `\u0000${m.length}\u0000`);
-  return out.replace(/\u0000(\d+)\u0000/g, (_, l) => `<span class="g-blur" aria-hidden="true">${'x'.repeat(+l)}</span><span class="sr">[name hidden]</span>`);
-}
-const cards = PICK.map(i => {
-  const r = reviews.items[i];
-  if (!r) throw new Error('missing review ' + i);
-  return `<figure class="review"><blockquote>${hideNames(r.text)}</blockquote><figcaption><b>${esc(r.name)}</b> &middot; ${PLATFORM[r.p] || r.p} review${r.excerpt ? ' (excerpt)' : ''}</figcaption></figure>`;
-}).join('\n      ');
-html = html.replace('<!--REVIEWS-->', `<div class="reviews">\n      ${cards}\n    </div>\n    <p class="reviews-note">Selected reviews from BBB, Birdeye and Google about E Mortgage Capital and its loan officers. Names of staff inside reviews are hidden. The source sites also have other reviews.</p>`);
-
 // ---- 2. no orphan words ----
 const parts = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>)/);
 const TAGS = 'h1|h2|h3|h4|p|li|button|summary|figcaption|blockquote|dt|dd|a|span|small|div|em|strong|b';
@@ -49,14 +27,15 @@ html = parts.join('');
 // ---- 3. checks ----
 const textOf = h => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<!--[\s\S]*?-->/g, ' ')
   .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&middot;/g, '·').replace(/&amp;/g, '&').replace(/&#?\w+;/g, ' ').replace(/\s+/g, ' ');
-// Dollar figures are allowed only inside the labeled hypothetical examples (data-scenario)
-const scenarioFree = html.replace(/<article class="ex" data-scenario>[\s\S]*?<\/article>/g, ' ');
+// Dollar figures and percentages are allowed only inside the labeled hypothetical examples (<article data-scenario>)
+const scenarioFree = html.replace(/<article[^>]*data-scenario[^>]*>[\s\S]*?<\/article>/g, ' ');
+const SCENARIO_ONLY = ['dollar-amount', 'percent'];
 const banned = JSON.parse(read('config/banned-phrases.json'));
 let body = textOf(html), bodyNoScenario = textOf(scenarioFree);
 for (const ok of banned.allowedExact) { body = body.split(ok).join(' '); bodyNoScenario = bodyNoScenario.split(ok).join(' '); }
 const problems = [];
 for (const p of banned.patterns) {
-  const hay = p.id === 'dollar-amount' ? bodyNoScenario : body;
+  const hay = SCENARIO_ONLY.includes(p.id) ? bodyNoScenario : body;
   const m = hay.match(new RegExp(p.re, 'i'));
   if (m) problems.push(`${p.id}: "${m[0]}"`);
 }

@@ -59,7 +59,6 @@ Since 2026-11-20 (D86) the page has no form: every "Get Pre-qualified" button op
 ### Kept off the page on purpose (numbers and claims from the deck)
 | From the deck | Why it is not on the page |
 |---|---|
-| Borrow up to 95% of after-renovation value; max 125% of as-is value; standard HELOC at 80% / 85% CLTV | Percentages are blocked (preflight `percent`); LTV limits change and read as an offer |
 | Max loan $500,000 up to 95% CLTV, $750,000 up to 65% CLTV; average loan size $300K | Loan amounts as offers are Regulation Z / banned-phrase territory |
 | Interest-only payments for a 10-year draw period, then 20-year amortization | HELOC payment terms are Reg Z trigger terms (need full disclosures) |
 | Rates = Prime plus a FICO/CLTV adjustment | Rate talk without disclosures; covered one to one |
@@ -67,9 +66,9 @@ Since 2026-11-20 (D86) the page has no form: every "Get Pre-qualified" button op
 | Borrower-paid compensation up to 4% | Broker compensation, not for the consumer page |
 | Credit score 640+, DTI 43% (45% at 720+), full documentation, FNMA income calculation | Score and DTI minimums are not shown (compliance rules, Appendix G). The page says "solid credit" and "fully documented income" |
 | Not for jobs under $50K | Dollar figure. The page says "small fix-up jobs. This is built for bigger projects" |
-| "11x more borrowing power on average" and the $5K vs $160K chart | Unverified average and a numeric performance claim. The page keeps the chart as bars with no labels, inside a labeled hypothetical |
-| Scenario 1 results ($16,250 vs $302,500 max loan) | Loan amounts. Kept as bar heights only, the inputs are shown as assumptions |
-| Scenario 2: 5% down, first lien $475,000, max $142,500 | Down payment is a trigger term; the max is a loan amount. Kept as assumptions plus a bar |
+| "11x more borrowing power on average" | Unverified average across the program. The page shows the same property ($400K home) worked out instead, without the "11x" claim |
+| Scenario 2: "only 5% down" | Down payment is a Reg Z trigger term for the purchase loan. The page shows the first mortgage balance ($475,000) without the down payment |
+| Scenario 1: "low 3% rate on the 1st lien" | A rate figure. The page says "low-rate first mortgage" |
 | "Only HELOC based on ARV on the market" | Unverifiable superlative |
 | "Close fast", "quicker process", "get them in the property fast" | Speed claims are flagged by compliance ("fast" wording) |
 | "Can refi down the road", "frees up cash to invest elsewhere" | Future refinance and investment talk invite promises the page can't make |
@@ -77,7 +76,12 @@ Since 2026-11-20 (D86) the page has no form: every "Get Pre-qualified" button op
 | Realtor and contractor pitches ("makes your client a cash buyer", "cut out the bank") | Aimed at partners, not homeowners. Could become separate partner pages later |
 
 ### Numbers that are on the page (need compliance sign-off)
-Inside the two cards labeled "Hypothetical example", as assumptions only: example 1 home value $725,000, first mortgage balance $600,000, project budget about $250,000, value after $950,000; example 2 purchase price and value $500,000, project $100,000, value after $650,000. These match the deck's own scenarios. No rate, APR, payment, term or loan amount is stated. The build allows dollar figures only inside those two cards.
+Since D87 (Pat, 2026-11-20: "add example breakdowns and example properties just like in the PDF") the page shows the deck's worked math for three example properties, inside cards labeled "Example property" with a hypothetical-example notice. The build allows dollar figures and percentages only inside those cards and the formula box above them (`<article data-scenario>`).
+- Formula box: standard HELOC = today's value × the lender's limit (80% to 85% in the examples) minus the first mortgage; After-Renovation HELOC = the lesser of 95% of the finished value or 125% of today's value, minus the first mortgage.
+- Property 1 (deck slide 11): value $400,000, first mortgage $315,000, project $100,000, value after $500,000. Standard at 80%: $5,000. After-renovation: lesser of $185,000 and $160,000 = $160,000.
+- Property 2 (deck slide 15): value $725,000, first mortgage $600,000, project about $250,000, value after $950,000. Standard at 85%: $16,250. After-renovation: lesser of $306,250 and $302,500 = $302,500.
+- Property 3 (deck slide 16): purchase price and value $500,000, first mortgage $475,000, project $100,000, value after $650,000. Standard at 85%: $0 (added for comparison; the deck shows only the after-renovation side). After-renovation: lesser of $150,000 and $142,500 = $142,500; the buyer takes $100,000.
+These "most you could borrow" figures and the CLTV percentages are not Reg Z HELOC trigger terms (those are payment terms, APR and fees, none of which appear), but they are maximum line amounts and loan-to-value limits, which this project blocks by default. Compliance must approve them before launch. The 95% and 125% limits come from the deck (July 2025) and can change.
 
 ## Where each placeholder appears
 Generated by `scripts/pat-scan.ps1` (run `powershell -File scripts\pat-scan.ps1`).
