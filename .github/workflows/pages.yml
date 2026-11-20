@@ -22,9 +22,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Build the draft site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # The landing page (D85-D92): rebuild it so the compliance and copy checks run on every deploy
+      - name: Build the landing page
+        run: node landing/build.mjs
+      - name: Assemble the site
         shell: powershell
-        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/pages-build.ps1
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/landing-site-build.ps1
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
