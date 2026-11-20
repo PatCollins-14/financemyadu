@@ -27,7 +27,7 @@ const APPLY_URL = process.env.APPLY_URL || 'https://prod.lendingpad.com/emci/38d
 html = html.split('{{APPLY_URL}}').join(APPLY_URL);
 
 // ---- 2. (ARV) after every "after renovation" ----
-const AFTER_RENO = /\b(after(?:-|&#8209;|‑|&nbsp;| )renovation)((?:\s|&nbsp;)+value)?(?!(?:\s|&nbsp;)*\(ARV\))/gi;
+const AFTER_RENO = /\b(after(?:-|&#8209;|‑|&nbsp;| )renovation)((?:\s|&nbsp;)+value)?(?!(?:\s|&nbsp;)*\(ARV\))(?!(?:\s|&nbsp;)+value(?:\s|&nbsp;)*\(ARV\))/gi;
 html = onText(html, t => t.replace(AFTER_RENO, (m, a, v) => `${a}${v || ''}&nbsp;(ARV)`));
 
 // ---- 3. no orphan words ----
