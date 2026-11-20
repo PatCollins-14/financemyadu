@@ -45,7 +45,14 @@ const hit = html.match(SOURCE_NAMES);
 if (hit) problems.push(`source company name: "${hit[0]}"`);
 if (/\[PAT:|DRAFT/i.test(textOf(html))) problems.push('visible placeholder or DRAFT text');
 if (/\{\{\w+\}\}/.test(html)) problems.push('leftover template field: ' + html.match(/\{\{\w+\}\}/)[0]);
-if (/<form[\s>]|<input[\s>]/i.test(html)) problems.push('a form or input is on the page (this page links to the application instead)');
+// The page collects nothing: no form, and no input that could hold contact details or be submitted.
+// The calculator's number boxes (no name attribute, inside <article data-scenario>) are the only inputs allowed.
+if (/<form[\s>]/i.test(html)) problems.push('a form is on the page (this page links to the application instead)');
+const inputsOutside = scenarioFree.match(/<input[\s>][^>]*>/gi) || [];
+if (inputsOutside.length) problems.push('an input outside the calculator: ' + inputsOutside[0]);
+const namedInputs = html.match(/<input[^>]*\sname=/gi) || [];
+if (namedInputs.length) problems.push('an input with a name (could be submitted): ' + namedInputs[0]);
+if (/type=["']?(email|tel|password)/i.test(html)) problems.push('an email, phone or password field is on the page');
 if (problems.length) { console.error('BUILD FAILED\n - ' + problems.join('\n - ')); process.exit(1); }
 
 fs.writeFileSync(path.join(here, 'index.html'), html);

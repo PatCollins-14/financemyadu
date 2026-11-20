@@ -59,16 +59,10 @@ Since 2026-11-20 (D86) the page has no form: every "Get Pre-qualified" button op
 ### Kept off the page on purpose (numbers and claims from the deck)
 | From the deck | Why it is not on the page |
 |---|---|
-| Max loan $500,000 up to 95% CLTV, $750,000 up to 65% CLTV; average loan size $300K | Loan amounts as offers are Regulation Z / banned-phrase territory |
-| Interest-only payments for a 10-year draw period, then 20-year amortization | HELOC payment terms are Reg Z trigger terms (need full disclosures) |
 | Rates = Prime plus a FICO/CLTV adjustment | Rate talk without disclosures; covered one to one |
 | Project supervision fee of $149 a month after closing | Dollar figure and a per-month cost. The FAQ says supervision has its own fee and Pat goes over every cost up front. Disclose it in the first call |
 | Borrower-paid compensation up to 4% | Broker compensation, not for the consumer page |
-| Credit score 640+, DTI 43% (45% at 720+), full documentation, FNMA income calculation | Score and DTI minimums are not shown (compliance rules, Appendix G). The page says "solid credit" and "fully documented income" |
-| Not for jobs under $50K | Dollar figure. The page says "small fix-up jobs. This is built for bigger projects" |
 | "11x more borrowing power on average" | Unverified average across the program. The page shows the same property ($400K home) worked out instead, without the "11x" claim |
-| Scenario 2: "only 5% down" | Down payment is a Reg Z trigger term for the purchase loan. The page shows the first mortgage balance ($475,000) without the down payment |
-| Scenario 1: "low 3% rate on the 1st lien" | A rate figure. The page says "low-rate first mortgage" |
 | "Only HELOC based on ARV on the market" | Unverifiable superlative |
 | "Close fast", "quicker process", "get them in the property fast" | Speed claims are flagged by compliance ("fast" wording) |
 | "Can refi down the road", "frees up cash to invest elsewhere" | Future refinance and investment talk invite promises the page can't make |
@@ -82,6 +76,19 @@ Since D87 (Pat, 2026-11-20: "add example breakdowns and example properties just 
 - Property 2 (deck slide 15): value $725,000, first mortgage $600,000, project about $250,000, value after $950,000. Standard at 85%: $16,250. After-renovation: lesser of $306,250 and $302,500 = $302,500.
 - Property 3 (deck slide 16): purchase price and value $500,000, first mortgage $475,000, project $100,000, value after $650,000. Standard at 85%: $0 (added for comparison; the deck shows only the after-renovation side). After-renovation: lesser of $150,000 and $142,500 = $142,500; the buyer takes $100,000.
 These "most you could borrow" figures and the CLTV percentages are not Reg Z HELOC trigger terms (those are payment terms, APR and fees, none of which appear), but they are maximum line amounts and loan-to-value limits, which this project blocks by default. Compliance must approve them before launch. The 95% and 125% limits come from the deck (July 2025) and can change.
+
+### Added at Pat's request on 2026-11-21 (D89): compliance must clear these before launch
+Pat asked for these by name. They are now on the page, so the earlier "kept off" reasons for them no longer apply:
+- **Interest-only payments for the 10-year draw period, then 20-year repayment** (hero, "What it is", FAQ). These are HELOC *payment terms*, which are Regulation Z advertising trigger terms (12 CFR 1026.16(d)). An ad that states them must also give the required disclosures: the APR (for a variable-rate line, the index and margin, and that the rate can change), any fees for opening the plan, the maximum APR (rate cap) and any balloon payment. The page cannot state those because they aren't known here (the deck only says "Prime + FICO/CLTV adjustment"). The footer now says interest-only payments don't reduce the balance and that payments rise when repayment starts, but **that is not the full Reg Z disclosure**. Either compliance supplies the disclosure text and Pat adds it, or the payment terms come back off the page.
+- **Exact program numbers in "Who qualifies"**: $500,000 up to 95% CLTV, $750,000 up to 65% CLTV, $50,000 minimum project, 640+ credit, full-doc income, 43% DTI (45% with 720+). From the July 2025 deck; they can change.
+- **"3%" first-mortgage rate (example 2) and "5% down" (example 3)**. The 3% is the borrower's existing loan, not an offer. "5% down" describes the purchase loan, and a down payment is a Reg Z trigger term for closed-end purchase loans (12 CFR 1026.24(d)).
+- **The calculator**: shows live "Standard HELOC" vs "After-Renovation HELOC" amounts from three numbers the visitor types (80% standard; lesser of 95% after-value or 125% today's value; $500K cap; $750K at 65% CLTV note). Estimates disclaimer under it and in the footer. Nothing typed is stored or sent.
+- **Button wording**: "Lock In These Numbers — Get Pre-Qualified" and "Check Your Numbers / Get Pre-Qualified" (Pat's wording). "Lock in" can read as a rate lock or a promise on a calculator estimate; compliance may want it changed.
+- **Advisor claims**: "Big-box banks size your line on today's equity... so many ADU plans get turned down", "Pat specializes in ADU financing".
+- **FAQ "draw inspections"**: now says no bank draw schedule, no HUD consultant, cash-buyer speed for the contractor, streamlined oversight after closing, one final 1004D completion inspection. The post-closing supervision fee ($149 a month in the deck) is no longer mentioned there; the answer says Pat reviews all rates, terms and costs up front. Make sure that fee is disclosed in the first conversation.
+
+### Contact details now on the page
+Phone (949) 787-2662 (call and text links) and pcollins@emortgagecapital.com (the "send your plans or bid" link) come from the confirmed identity list above. The advisor card shows a "PC" monogram; send a headshot to replace it.
 
 ## Where each placeholder appears
 Generated by `scripts/pat-scan.ps1` (run `powershell -File scripts\pat-scan.ps1`).
