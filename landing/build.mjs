@@ -4,8 +4,8 @@
 //     ("After-Renovation (ARV) HELOC", "after-renovation value (ARV)")
 //  3. joins the last two words of every text block with a no-break space (no orphan words)
 //  4. fails on: banned phrases (config/banned-phrases.json; dollar figures and percentages only inside
-//     <article data-scenario>), any name of the program's source company, Pat's name anywhere outside
-//     the footer, a missing "(ARV)", a leftover {{...}}, and any form or input (the page collects nothing)
+//     <article data-scenario>), any name of the program's source company, Pat's name outside the footer and
+//     the advisor card, a missing "(ARV)", a leftover {{...}}, and any form or input (the page collects nothing)
 // Run: node landing/build.mjs
 import fs from 'fs';
 import path from 'path';
@@ -58,8 +58,8 @@ for (const p of banned.patterns) {
 const SOURCE_NAMES = /reno\s*-?fi|quorum|qfcu|federal credit union|powered by|partners\.\w+\.org/i;
 const hit = html.match(SOURCE_NAMES);
 if (hit) problems.push(`source company name: "${hit[0]}"`);
-// Pat's name only in the footer (licensing lines); everywhere else the page says "your ADU loan advisor"
-const noFooter = html.replace(/<footer[\s\S]*?<\/footer>/, ' ').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, ' ');
+// Pat's name only in the footer (licensing lines) and the advisor card; everywhere else the page says "your ADU loan advisor"
+const noFooter = html.replace(/<footer[\s\S]*?<\/footer>/, ' ').replace(/<section[^>]*aria-labelledby="advisor-title"[\s\S]*?<\/section>/, ' ').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, ' ');
 const pat = noFooter.match(/[^<>"]{0,40}\b(Pat|Collins)\b[^<>"]{0,40}/);
 if (pat) problems.push(`Pat's name outside the footer: "${pat[0].trim()}"`);
 // Every "after renovation" in the text carries (ARV)

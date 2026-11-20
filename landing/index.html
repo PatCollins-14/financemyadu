@@ -288,7 +288,10 @@ footer .eho img{width:44px;height:auto;flex:none}
 .advisor{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:linear-gradient(135deg,var(--sky),#fff 60%);border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--shadow)}
 .adv-id{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
 .avatar{width:148px;height:148px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-ink));display:grid;place-items:center;border:5px solid #fff;box-shadow:0 0 0 3px var(--orange),0 14px 30px rgba(24,45,92,.2)}
-.avatar span{font:800 46px/1 var(--serif);color:#fff;letter-spacing:.02em}
+.avatar{overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.adv-tel{margin:4px 0 0;font-weight:700;font-size:16px}
+.adv-tel a{color:var(--navy-2)}
 .adv-id h2{font-size:clamp(30px,3.4vw,40px)}
 .adv-role{margin:6px 0 0;color:var(--muted);font-size:15px}
 .adv-lead{font-size:18.5px;color:var(--ink);margin:0 0 16px}
@@ -313,7 +316,6 @@ footer .eho img{width:44px;height:auto;flex:none}
   .advisor{padding:30px 24px;gap:24px}
   .adv-id{flex-direction:row;align-items:center}
   .avatar{width:104px;height:104px;flex:none}
-  .avatar span{font-size:34px}
   .hero{padding:36px 0 104px}
   .hero .wrap,.what,.steps-wrap,.two,.contractor{grid-template-columns:1fr}
   .hero .wrap{gap:36px}
@@ -792,15 +794,16 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="advisor">
       <div class="adv-id">
-        <div class="avatar" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9.5 15.5l1.8 1.8 3.5-3.6"/></svg></div>
+        <div class="avatar"><img src="img/pat-collins.webp" alt="Pat Collins" width="360" height="360"></div>
         <div>
-          <span class="eyebrow">Work with an ADU&nbsp;specialist</span>
-          <h2 id="advisor-title">Your ADU Loan&nbsp;Advisor</h2>
-          <p class="adv-role">ADU financing, start to finish &middot; <a href="tel:+19497872662" data-cta="advisor-call" class="nw">(949)&nbsp;787-2662</a></p>
+          <span class="eyebrow">About your ADU loan&nbsp;advisor</span>
+          <h2 id="advisor-title">Pat&nbsp;Collins</h2>
+          <p class="adv-role">ADU loan advisor &middot; <span class="nw">NMLS&nbsp;#1628553</span> &middot; <span class="nw">E Mortgage Capital&nbsp;Inc.</span></p>
+          <p class="adv-tel"><a href="tel:+19497872662" data-cta="advisor-call" class="nw">(949)&nbsp;787-2662</a></p>
         </div>
       </div>
       <div class="adv-body">
-        <p class="adv-lead">Big-box banks size your line on today's equity. That's why so many ADU plans get turned down before the first permit. Our ADU loan advisors specialize in ADU financing and start from what your home will be worth when the ADU is&nbsp;done.</p>
+        <p class="adv-lead">Big-box banks size your line on today's equity. That's why so many ADU plans get turned down before the first permit. Pat specializes in ADU financing and starts from what your home will be worth when the ADU is&nbsp;done.</p>
         <ul class="adv-points">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Runs your numbers on today's value and on the finished value, side by&nbsp;side</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Looks at your ADU plans and contractor bid before you&nbsp;apply</li>
@@ -808,7 +811,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         </ul>
         <div class="adv-ctas">
           <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="advisor">Check Your Numbers / Get&nbsp;Pre-Qualified</a>
-          <a class="adv-link" href="mailto:pcollins@emortgagecapital.com?subject=ADU%20plans%20or%20contractor%20bid%20for%20review" data-cta="advisor-plans">Have ADU Plans or a Contractor Bid? Send It to Your Advisor for a Free Financing Feasibility&nbsp;Check</a>
+          <a class="adv-link" href="mailto:pcollins@emortgagecapital.com?subject=ADU%20plans%20or%20contractor%20bid%20for%20review" data-cta="advisor-plans">Have ADU Plans or a Contractor Bid? Send It to Pat for a Free Financing Feasibility&nbsp;Check</a>
         </div>
       </div>
     </div>
