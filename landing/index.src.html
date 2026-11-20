@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Keep the Rate, Build the ADU | FinanceMyADU</title>
-<meta name="description" content="A home equity line based on what your home will be worth after the ADU is built, not what it is worth today. No refinance. Your first mortgage stays in place.">
+<title>Keep the Rate, Build the ADU or Renovate | FinanceMyADU</title>
+<meta name="description" content="A home equity line based on what your home will be worth after the ADU or renovation is done, not what it is worth today. No refinance. Your first mortgage stays in place.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -79,6 +79,9 @@ p{margin:0 0 14px}
 .value-strip strong{display:block;font:700 15px/1.25 var(--serif);color:var(--navy-deep)}
 .value-strip .after strong{color:var(--orange-ink)}
 .value-strip svg{color:var(--orange)}
+.hero-chips{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.hero-chips li{background:var(--navy-deep);color:#fff;border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600}
+.hero-chips li:first-child{background:var(--orange);color:var(--navy-deep)}
 
 /* proof strip */
 .strip{position:relative;z-index:2;margin-top:-64px}
@@ -194,7 +197,8 @@ section.band{padding:88px 0}
 .fine{font-size:13.5px;color:var(--muted);max-width:860px;margin:26px auto 0;text-align:center}
 
 /* fit */
-.types{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:28px}
+.types{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:28px}
+.type.reno{background:#fffbf1;border-color:#f0d39a}
 .type{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 12px 16px;text-align:center}
 .type img{width:100%;height:96px;object-fit:contain;margin-bottom:8px}
 .type h3{font-size:15px}
@@ -314,7 +318,6 @@ footer .eho img{width:44px;height:auto;flex:none}
   .kit td:first-child small{font-size:13px}
   .kit thead th:not(:first-child),.kit td:not(:first-child){width:23%}
   .types{grid-template-columns:repeat(2,1fr)}
-  .types .type:last-child{grid-column:1 / -1}
   .prop-side,.prop-main{padding:18px}
   .calc{padding:14px}
   .math{font-size:13.5px}
@@ -349,22 +352,23 @@ footer .eho img{width:44px;height:auto;flex:none}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <div>
-      <span class="kicker"><b>NEW</b>A new way to pay for an ADU</span>
-      <h1 id="hero-title">Keep the rate. <em>Build the ADU.</em></h1>
-      <p class="lead">A home equity line based on what your home will be worth <strong>after</strong> the ADU is built, not what it's worth today. No refinance. Your first mortgage stays exactly where it is.</p>
+      <span class="kicker"><b>NEW</b>A new way to pay for an ADU or a remodel</span>
+      <h1 id="hero-title">Keep the rate. <em>Build the ADU or renovate.</em></h1>
+      <p class="lead">A home equity line based on what your home will be worth <strong>after</strong> the ADU or renovation is done, not what it's worth today. No refinance. Your first mortgage stays exactly where it is.</p>
       <a class="btn btn-primary" href="{{APPLY_URL}}" target="_blank" rel="noopener" data-cta="hero">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <p class="cta-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Opens Pat Collins' secure online application. Pre-qualifying is not a loan approval.</p>
     </div>
     <div class="hero-visual">
       <div class="house-card">
-        <img src="art/art-detached.svg" alt="A home with a new detached ADU in the backyard" width="300" height="236">
+        <img src="art/art-detached.svg" alt="A home with a new ADU in the backyard" width="300" height="236">
         <span class="tag t1"><i></i>Your home today</span>
-        <span class="tag t2"><i></i>The new ADU</span>
+        <span class="tag t2"><i></i>New ADU or remodel</span>
         <div class="value-strip">
           <div>A regular line looks at<strong>Today's value</strong></div>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           <div class="after">This line looks at<strong>The finished value</strong></div>
         </div>
+        <ul class="hero-chips" aria-label="Projects it pays for"><li>ADUs</li><li>Kitchens</li><li>Baths</li><li>Additions</li><li>Roofs</li><li>Pools</li></ul>
       </div>
     </div>
   </div>
@@ -386,15 +390,15 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Today's market</span>
-      <h2 id="problem-title">Why so many ADU plans are stuck right now</h2>
+      <h2 id="problem-title">Why so many ADU and remodel plans are stuck right now</h2>
       <p>Rates moved. Prices moved. The way most people pay for a big project didn't. Here's who gets stuck, and how this line gets them moving.</p>
     </div>
     <div class="two">
       <div class="who">
         <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223d78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><div><span>You already own</span><h3>Avoid the refinance</h3></div></div>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>You want to build, and you want to keep the low rate on your first mortgage.</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Your equity today doesn't cover the budget for the ADU.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>You want to build or remodel, and you want to keep the low rate on your first mortgage.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Your equity today doesn't cover the budget for the ADU or the remodel.</li>
         </ul>
         <p class="fix">The fix: a second line based on the finished value. Your first mortgage stays put.</p>
       </div>
@@ -415,7 +419,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">A new tool in the kit</span>
-      <h2 id="kit-title">How it stacks up against the usual ways to pay for a build</h2>
+      <h2 id="kit-title">How it stacks up against the usual ways to pay for an ADU or a remodel</h2>
       <p>Every option has a place. This is the only one on this list that does both of these things.</p>
     </div>
     <div class="kit">
@@ -442,7 +446,7 @@ footer .eho img{width:44px;height:auto;flex:none}
     </div>
     <div class="what">
       <div>
-        <p class="big">You borrow against your home's <em>after-renovation value</em>: what the appraiser says it will be worth once the ADU is done.</p>
+        <p class="big">You borrow against your home's <em>after-renovation value</em>: what the appraiser says it will be worth once the ADU or renovation is done.</p>
         <ul class="points">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Second lien.</b> It sits behind your first mortgage. No refinance.</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>A line of credit.</b> It works like the HELOCs you've heard of.</span></li>
@@ -481,14 +485,14 @@ footer .eho img{width:44px;height:auto;flex:none}
       <article class="prop" data-scenario>
         <div class="prop-side">
           <span class="num">Example property 1</span>
-          <h3>Garage conversion on a starter home</h3>
-          <img src="art/art-garage.svg" alt="" width="300" height="236" loading="lazy">
+          <h3>Kitchen and bath remodel</h3>
+          <img src="art/art-kitchen.svg" alt="" width="300" height="236" loading="lazy">
           <div class="chips"><span>Primary home</span><span>Single-family</span><span>Owned for years</span></div>
           <dl class="facts">
             <div><dt>Home value today</dt><dd>$400,000</dd></div>
             <div><dt>First mortgage balance</dt><dd>$315,000</dd></div>
             <div><dt>Project budget</dt><dd>$100,000</dd></div>
-            <div class="hl"><dt>Value after the ADU</dt><dd>$500,000</dd></div>
+            <div class="hl"><dt>Value after the remodel</dt><dd>$500,000</dd></div>
           </dl>
         </div>
         <div class="prop-main">
@@ -521,7 +525,7 @@ footer .eho img{width:44px;height:auto;flex:none}
               </div>
               <div class="bar-labels" aria-hidden="true"><div>Standard HELOC</div><div>After&#8209;Renovation</div></div>
             </div>
-            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A standard HELOC leaves next to nothing for the build. Based on the finished value, this homeowner can cover the whole garage conversion, with room to spare, and keep the first mortgage.</span></p>
+            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A standard HELOC leaves next to nothing for the build. Based on the finished value, this homeowner can cover the whole kitchen and bath remodel, with room to spare, and keep the first mortgage.</span></p>
           </div>
         </div>
       </article>
@@ -577,8 +581,8 @@ footer .eho img{width:44px;height:auto;flex:none}
       <article class="prop" data-scenario>
         <div class="prop-side">
           <span class="num">Example property 3</span>
-          <h3>New purchase, ADU right after closing</h3>
-          <img src="art/art-attached.svg" alt="" width="300" height="236" loading="lazy">
+          <h3>New purchase, renovate right after closing</h3>
+          <img src="art/art-exterior.svg" alt="" width="300" height="236" loading="lazy">
           <div class="chips"><span>Primary home</span><span>Just bought</span><span>No waiting period</span></div>
           <dl class="facts">
             <div><dt>Purchase price and value</dt><dd>$500,000</dd></div>
@@ -617,7 +621,7 @@ footer .eho img{width:44px;height:auto;flex:none}
               </div>
               <div class="bar-labels" aria-hidden="true"><div>Standard HELOC</div><div>After&#8209;Renovation</div></div>
             </div>
-            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>The buyer only needs $100,000, so that's the line. No waiting period after closing, and the whole project is financed.</span></p>
+            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>The buyer only needs $100,000, so that's the line. No waiting period after closing, and the whole renovation is financed.</span></p>
           </div>
         </div>
       </article>
@@ -636,14 +640,15 @@ footer .eho img{width:44px;height:auto;flex:none}
     <div class="head">
       <span class="eyebrow">Is it a fit?</span>
       <h2 id="fit-title">Built for ADUs and big renovations</h2>
-      <p>Every common type of ADU qualifies, and so does the rest of the project list.</p>
+      <p>Every common type of ADU qualifies, and so do the big renovations: kitchens, baths, additions, roofs and more.</p>
     </div>
     <div class="types">
-      <div class="type"><img src="art/art-garage.svg" alt="" width="300" height="236" loading="lazy"><h3>Garage conversion</h3></div>
       <div class="type"><img src="art/art-detached.svg" alt="" width="300" height="236" loading="lazy"><h3>Detached ADU</h3></div>
-      <div class="type"><img src="art/art-attached.svg" alt="" width="300" height="236" loading="lazy"><h3>Attached ADU</h3></div>
-      <div class="type"><img src="art/art-above.svg" alt="" width="300" height="236" loading="lazy"><h3>ADU above the garage</h3></div>
+      <div class="type"><img src="art/art-garage.svg" alt="" width="300" height="236" loading="lazy"><h3>Garage conversion</h3></div>
       <div class="type"><img src="art/art-jadu.svg" alt="" width="300" height="236" loading="lazy"><h3>Junior ADU (JADU)</h3></div>
+      <div class="type"><img src="art/art-attached.svg" alt="" width="300" height="236" loading="lazy"><h3>Attached ADU or addition</h3></div>
+      <div class="type reno"><img src="art/art-kitchen.svg" alt="" width="300" height="236" loading="lazy"><h3>Kitchen and bath remodel</h3></div>
+      <div class="type reno"><img src="art/art-exterior.svg" alt="" width="300" height="236" loading="lazy"><h3>Roof, siding and decks</h3></div>
     </div>
     <div class="three">
       <div class="list-card navy">
@@ -691,10 +696,10 @@ footer .eho img{width:44px;height:auto;flex:none}
     </div>
     <div class="steps-wrap">
       <ol class="steps">
-        <li><h3>Start your application</h3><p>Click Get Pre-qualified and fill out the secure online application. Pat follows up to go over your home, your first mortgage and the ADU you want.</p></li>
+        <li><h3>Start your application</h3><p>Click Get Pre-qualified and fill out the secure online application. Pat follows up to go over your home, your first mortgage and the ADU or remodel you want.</p></li>
         <li><h3>Your contractor sends the project details</h3><p>The cost estimate, the plans or drawings, their license and insurance, and a short questionnaire.</p></li>
         <li><h3>The project gets reviewed</h3><p>The renovation team checks the budget, scope and contractor. A feasibility review, not a second look at your finances.</p></li>
-        <li><h3>Your home is appraised as finished</h3><p>The appraiser values your home as if the ADU were already built. That's the value your line is based on.</p></li>
+        <li><h3>Your home is appraised as finished</h3><p>The appraiser values your home as if the work were already done. That's the value your line is based on.</p></li>
         <li><h3>Close and build</h3><p>Your line closes, your first mortgage stays put, and the work starts. One final inspection when it's done.</p></li>
       </ol>
       <div class="needs">
@@ -753,10 +758,11 @@ footer .eho img{width:44px;height:auto;flex:none}
       <details><summary>How is this different from a regular HELOC?</summary><p>A regular HELOC is based on what your home is worth today. This one is based on what your home will be worth after the project is finished. To get there, it adds two things: a review of the project, and an appraisal of your home "as finished."</p></details>
       <details><summary>What happens when I click Get Pre-qualified?</summary><p>It opens Pat Collins' secure online application with E Mortgage Capital. Fill it out and Pat follows up to go over your home, your project and your options. Starting an application is not a loan approval.</p></details>
       <details><summary>Can I use my own contractor?</summary><p>Yes. Your contractor gets reviewed: their license and insurance, a short questionnaire, the cost estimate and the plans. If they check out, they build it.</p></details>
+      <details><summary>Does it work for a remodel without an ADU?</summary><p>Yes. Kitchens, bathrooms, additions, interior and exterior remodels, roofing, siding, decks, porches and pools all qualify, on their own or alongside an ADU.</p></details>
       <details><summary>Are there draw inspections or a construction consultant?</summary><p>No standard draw schedule, no draw-by-draw inspections and no construction consultant. There is project supervision after closing, which comes with its own fee, and one final inspection to confirm the work is done. Pat goes over every cost with you up front.</p></details>
       <details><summary>I'm buying a home. Can I use this right after closing?</summary><p>Yes. There's no waiting period after the purchase. Buy the home, then set up the line based on its finished value and start the project.</p></details>
       <details><summary>Can I use it on a rental property?</summary><p>No. This program is for primary homes and second homes, on single-family or two&#8209;unit properties. If yours is a rental, Pat can walk you through other options.</p></details>
-      <details><summary>Will rental income from the new ADU help me qualify?</summary><p>Plan on qualifying with the income you have today, not on future rent from the new ADU. Rental income is not guaranteed and may not count toward qualification under every program. Pat will tell you how your situation is treated.</p></details>
+      <details><summary>Building an ADU to rent out? Will that rent help me qualify?</summary><p>Plan on qualifying with the income you have today, not on future rent from the new ADU. Rental income is not guaranteed and may not count toward qualification under every program. Pat will tell you how your situation is treated.</p></details>
       <details><summary>What about the rate and costs?</summary><p>Those depend on your credit, your home and the size of the line, so they're covered one on one. Pat lays them out before you decide anything.</p></details>
     </div>
   </div>
@@ -772,6 +778,7 @@ footer .eho img{width:44px;height:auto;flex:none}
       <li>Working from home for good?</li>
       <li>Out of space and thinking about moving?</li>
       <li>Want to add value before you sell?</li>
+      <li>Kitchen or bath overdue for a redo?</li>
       <li>Too little equity last time you checked?</li>
       <li>Want to keep your low first-mortgage rate?</li>
     </ul>
