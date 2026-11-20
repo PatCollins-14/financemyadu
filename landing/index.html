@@ -54,6 +54,10 @@ p{margin:0 0 14px}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
 .logo{font-size:22px;font-weight:600;color:#fff;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
 .logo b{font-weight:700;color:var(--orange)}
+.top-phone{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.top-phone .ph-ic{width:38px;height:38px;border-radius:50%;background:var(--orange);color:var(--navy-deep);display:grid;place-items:center;flex:none;transition:background .15s}
+.top-phone:hover .ph-ic{background:var(--orange-hover)}
+.top-phone:hover .ph-num{text-decoration:underline;text-underline-offset:3px}
 
 /* hero */
 .hero{background:radial-gradient(1200px 520px at 85% 10%,rgba(44,82,153,.55),transparent 60%),linear-gradient(180deg,var(--navy-ink),var(--navy-deep));color:#fff;padding:56px 0 120px;position:relative;overflow:hidden}
@@ -65,16 +69,17 @@ p{margin:0 0 14px}
 .hero .lead{font-size:20px;color:var(--on-navy);max-width:560px;margin:0 0 28px}
 .hero .lead strong{color:#fff;font-weight:600}
 .hero .cta-note{color:var(--on-navy-2)}
+.note-tel{color:#fff;font-weight:700;white-space:nowrap}
 .hero-points{list-style:none;margin:-6px 0 26px;padding:0;display:grid;gap:10px;max-width:560px}
 .hero-points li{display:flex;gap:10px;align-items:flex-start;color:var(--on-navy);font-size:16.5px;line-height:1.45}
 .hero-points li svg{flex:none;margin-top:2px}
 .hero-points b{color:#fff;font-weight:600}
 .hero-visual{position:relative}
-.house-card{background:linear-gradient(180deg,#fff,var(--sky));border-radius:24px;padding:26px 26px 22px;box-shadow:0 30px 70px rgba(5,14,36,.45);position:relative}
-.house-card img{width:100%;height:auto;max-height:300px;object-fit:contain}
+.house-card{background:#fff;border-radius:24px;padding:18px 18px 20px;box-shadow:0 30px 70px rgba(5,14,36,.45);position:relative}
+.house-card img{width:100%;height:auto;display:block;border-radius:14px}
 .tag{position:absolute;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy-deep);box-shadow:0 10px 24px rgba(24,45,92,.16);white-space:nowrap}
 .tag i{width:10px;height:10px;border-radius:50%;flex:none}
-.tag.t1{left:-14px;top:22%}
+.tag.t1{left:-14px;top:52%}
 .tag.t1 i{background:var(--line)}
 .tag.t2{right:-14px;top:8%}
 .tag.t2 i{background:var(--orange)}
@@ -166,7 +171,7 @@ section.band{padding:88px 0}
 .prop-side{background:var(--sky);padding:24px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--line)}
 .prop-side .num{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange-ink)}
 .prop-side h3{font-size:22px}
-.prop-side img{width:100%;height:150px;object-fit:contain;background:#fff;border-radius:16px;padding:10px;border:1px solid var(--line)}
+.prop-side img{width:100%;height:auto;aspect-ratio:720/542;object-fit:contain;background:#fff;border-radius:16px;padding:6px;border:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chips span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:13px;font-weight:600;color:var(--navy-deep)}
 .facts{margin:0;display:grid;gap:8px}
@@ -205,7 +210,7 @@ section.band{padding:88px 0}
 .types{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:28px}
 .type.reno{background:#fffbf1;border-color:#f0d39a}
 .type{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 12px 16px;text-align:center}
-.type img{width:100%;height:96px;object-fit:contain;margin-bottom:8px}
+.type img{width:100%;height:auto;aspect-ratio:720/542;object-fit:contain;margin-bottom:8px}
 .type h3{font-size:15px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .list-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 24px}
@@ -279,43 +284,6 @@ footer .eho img{width:44px;height:auto;flex:none}
 .cookie button{font:600 14px var(--sans);border-radius:10px;padding:9px 14px;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--navy)}
 .cookie button.ok{background:var(--navy);border-color:var(--navy);color:#fff}
 
-/* calculator */
-.calc-band{background:linear-gradient(180deg,var(--paper),#fff)}
-.calc-app{display:grid;grid-template-columns:.85fr 1.15fr;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 20px 50px rgba(24,45,92,.12);overflow:hidden;max-width:1080px;margin:0 auto}
-.calc-in{background:var(--navy-deep);color:var(--on-navy);padding:30px 28px;display:flex;flex-direction:column;gap:18px}
-.cfield label{display:block;font-weight:600;color:#fff;font-size:15px;margin-bottom:8px}
-.money{display:flex;align-items:center;background:#fff;border-radius:12px;border:2px solid transparent;transition:border-color .15s}
-.money:focus-within{border-color:var(--orange)}
-.money span{padding:0 0 0 14px;font:700 20px var(--serif);color:var(--muted)}
-.money input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:700 22px var(--serif);color:var(--navy-deep);padding:13px 14px 13px 6px;font-variant-numeric:tabular-nums}
-.calc-hint{font-size:13.5px;color:var(--on-navy-2);margin:0}
-.calc-out{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.out-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.out{border-radius:16px;padding:16px;border:1px solid var(--line)}
-.out span{display:block;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
-.out small{display:block;font-size:12.5px;color:var(--muted);line-height:1.4;margin:2px 0 10px;min-height:35px}
-.out b{display:block;font:800 clamp(26px,3vw,34px)/1.1 var(--serif);color:var(--red-ink);font-variant-numeric:tabular-nums}
-.out.arv{background:var(--orange-soft);border-color:#f0d39a}
-.out.arv span{color:var(--orange-ink)}
-.out.arv b{color:var(--navy-deep)}
-.cbars{display:grid;grid-template-columns:1fr 1fr;gap:12px;height:110px;align-items:end;border-bottom:2px solid var(--line);padding:0 10px}
-.cbars div{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px}
-.cbars i{display:block;width:60%;border-radius:8px 8px 0 0;background:#c9d3de;height:2%;transition:height .35s}
-.cbars .hot i{background:linear-gradient(180deg,var(--orange-hover),var(--orange))}
-.cbars em{font-style:normal;font-size:12px;font-weight:600;color:var(--muted);order:2;display:none}
-.diff{margin:0;background:var(--green-soft);color:#174d33;border-radius:12px;padding:12px 14px;font-weight:600}
-.diff:empty{display:none}
-.diff b{font-family:var(--serif)}
-.cap-note{margin:0;font-size:13.5px;color:var(--muted)}
-.cap-note.warn{color:var(--red-ink);font-weight:600}
-.calc-ctas{display:grid;gap:10px}
-.calc-ctas .btn{width:100%}
-.btn-line{background:#fff;color:var(--navy-deep);border:2px solid var(--navy-deep)}
-.btn-line:hover{background:var(--sky)}
-.calc-contact{margin:-2px 0 0;font-size:14px;text-align:center;color:var(--muted)}
-.calc-fine{margin:0;font-size:12.5px;color:var(--muted)}
-@media (prefers-reduced-motion:reduce){.cbars i{transition:none}}
-
 /* advisor */
 .advisor{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:linear-gradient(135deg,var(--sky),#fff 60%);border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--shadow)}
 .adv-id{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
@@ -341,7 +309,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   .strip li:nth-child(n+3){border-top:1px solid var(--line)}
 }
 @media (max-width:960px){
-  .calc-app,.advisor{grid-template-columns:1fr}
+  .advisor{grid-template-columns:1fr}
   .advisor{padding:30px 24px;gap:24px}
   .adv-id{flex-direction:row;align-items:center}
   .avatar{width:104px;height:104px;flex:none}
@@ -359,8 +327,8 @@ footer .eho img{width:44px;height:auto;flex:none}
   .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
   .top .wrap{height:58px}
   .logo{font-size:20px}
-  .top .btn-sm{padding:9px 12px;font-size:14px}
-  .top .btn-sm svg{display:none}
+  .top-phone{font-size:15px;gap:8px}
+  .top-phone .ph-ic{width:34px;height:34px}
   .hero .lead{font-size:17.5px}
   .hero .btn{width:100%}
   .house-card{padding:18px 16px 16px}
@@ -385,11 +353,6 @@ footer .eho img{width:44px;height:auto;flex:none}
   .result b{font-size:17px}
   .list-card{padding:22px 20px}
   .c-grid{grid-template-columns:1fr}
-  .calc-in,.calc-out{padding:22px 18px}
-  .out-grid{grid-template-columns:1fr;gap:8px}
-  .out{padding:12px 14px;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 10px}
-  .out small{display:none}
-  .out b{font-size:26px}
   .adv-id{flex-direction:column;align-items:flex-start}
   .adv-ctas .btn{width:100%}
   .hero-points li{font-size:15.5px}
@@ -398,7 +361,10 @@ footer .eho img{width:44px;height:auto;flex:none}
   .foot-bottom{flex-direction:column}
   .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(19,36,75,.96);backdrop-filter:blur(8px);transform:translateY(110%);transition:transform .25s}
   .sticky-cta.on{transform:none}
-  .sticky-cta .btn{width:100%;padding:14px 18px}
+  .sticky-cta.on{display:flex}
+  .sticky-cta{gap:10px}
+  .sticky-cta .btn{flex:1;padding:14px 18px}
+  .sticky-call{flex:none;width:52px;border-radius:12px;background:#fff;color:var(--navy-deep);display:grid;place-items:center}
   .cookie{flex-wrap:wrap;bottom:84px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn svg,.sticky-cta{transition:none}}
@@ -410,7 +376,7 @@ footer .eho img{width:44px;height:auto;flex:none}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="FinanceMyADU, back to top">FinanceMy<b>ADU</b></a>
-    <a class="btn btn-primary btn-sm" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="header">Get Pre-qualified<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="top-phone" href="tel:+19497872662" data-cta="header-call" aria-label="Call (949) 787-2662"><span class="ph-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="ph-num">(949)&nbsp;787-2662</span></a>
   </div>
 </header>
 
@@ -422,19 +388,19 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div>
       <span class="kicker"><b>NEW</b>A new way to pay for an ADU or a&nbsp;remodel</span>
-      <h1 id="hero-title">Keep the rate. <em>Build the ADU or&nbsp;renovate.</em></h1>
+      <h1 id="hero-title">After <em>ARV&nbsp;HELOC</em></h1>
       <p class="lead">A home equity line based on what your home will be worth <strong>after</strong> the ADU or renovation is done, not what it's worth today. No refinance. Your first mortgage stays exactly where it&nbsp;is.</p>
       <ul class="hero-points">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Interest-only payments during the 10-year draw&nbsp;period,</b> so payments stay low while the ADU is being&nbsp;built</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Interest-only payments during the 10&#8209;year draw&nbsp;period,</b> so payments stay low while the ADU is being&nbsp;built</span></li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>No&nbsp;refinance.</b> Your first mortgage and its rate stay&nbsp;put</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Pat Collins, your ADU loan&nbsp;advisor,</b> walks you through every&nbsp;number</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>A dedicated ADU loan&nbsp;advisor</b> walks you through every&nbsp;number</span></li>
       </ul>
-      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="hero">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <p class="cta-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Opens Pat Collins' secure online application. Pre-qualifying is not a loan&nbsp;approval.</p>
+      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="hero">Get Pre&#8209;qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="cta-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Opens our secure online application. Pre&#8209;qualifying is not a loan approval. Prefer to talk? Call <a class="note-tel" href="tel:+19497872662">(949)&nbsp;787-2662</a>.</p>
     </div>
     <div class="hero-visual">
       <div class="house-card">
-        <img src="art/art-detached.svg" alt="A home with a new ADU in the backyard" width="300" height="236">
+        <img src="img/hero.webp" alt="Illustration of a home with a new detached ADU in the backyard" width="1200" height="904" fetchpriority="high">
         <span class="tag t1"><i></i>Your home&nbsp;today</span>
         <span class="tag t2"><i></i>New ADU or&nbsp;remodel</span>
         <div class="value-strip">
@@ -452,49 +418,12 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <ul>
       <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>No refinance of your first&nbsp;mortgage</li>
-      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Based on the after-renovation&nbsp;value</li>
+      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Based on the after-renovation value&nbsp;(ARV)</li>
       <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 8l6 6"/></svg></span>No draw inspections or&nbsp;consultant</li>
       <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>ADUs, remodels, additions and&nbsp;more</li>
     </ul>
   </div>
 </div>
-
-<!-- 1b. ADU BORROWING POWER CALCULATOR -->
-<section class="band calc-band" id="calculator" aria-labelledby="calc-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">ADU borrowing power&nbsp;calculator</span>
-      <h2 id="calc-title">Run your own numbers in ten&nbsp;seconds</h2>
-      <p>Enter three numbers. See what a standard HELOC gives you next to a line based on the finished&nbsp;home.</p>
-    </div>
-    <article class="calc-app" data-scenario aria-label="ADU borrowing power calculator">
-      <div class="calc-in">
-        <div class="cfield"><label for="c-now">Current home value</label><div class="money"><span aria-hidden="true">$</span><input id="c-now" type="text" inputmode="numeric" autocomplete="off" value="400,000"></div></div>
-        <div class="cfield"><label for="c-mort">Current mortgage balance</label><div class="money"><span aria-hidden="true">$</span><input id="c-mort" type="text" inputmode="numeric" autocomplete="off" value="315,000"></div></div>
-        <div class="cfield"><label for="c-after">Estimated home value after the ADU</label><div class="money"><span aria-hidden="true">$</span><input id="c-after" type="text" inputmode="numeric" autocomplete="off" value="500,000"></div></div>
-        <p class="calc-hint">Use your best estimates. Nothing you type here is saved or sent anywhere. The starting numbers are example property 1&nbsp;below.</p>
-      </div>
-      <div class="calc-out" aria-live="polite">
-        <div class="out-grid">
-          <div class="out std"><span>Standard&nbsp;HELOC</span><small>80% of today's value, minus your&nbsp;mortgage</small><b id="r-std">$0</b></div>
-          <div class="out arv"><span>After&#8209;Renovation&nbsp;HELOC</span><small>Lesser of 95% of the after-ADU value or 125% of today's value, minus your&nbsp;mortgage</small><b id="r-arv">$0</b></div>
-        </div>
-        <div class="cbars" aria-hidden="true">
-          <div><i id="b-std"></i><em>Standard</em></div>
-          <div class="hot"><i id="b-arv"></i><em>After&#8209;Renovation</em></div>
-        </div>
-        <p class="diff" id="r-diff"></p>
-        <p class="cap-note" id="r-note">Lines are capped at $500,000 up to 95% CLTV. Lines up to $750,000 are available at up to 65%&nbsp;CLTV.</p>
-        <div class="calc-ctas">
-          <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="calculator">Lock In These Numbers — Get&nbsp;Pre-Qualified</a>
-          <a class="btn btn-line" href="tel:+19497872662" data-cta="calc-call">Text/Call Pat to Review Your&nbsp;Scenario</a>
-        </div>
-        <p class="calc-contact">Call <a href="tel:+19497872662">(949)&nbsp;787-2662</a> or <a href="sms:+19497872662">send a&nbsp;text</a></p>
-        <p class="calc-fine">Estimates for illustration only, not an offer, a quote or a commitment to lend. Your actual line depends on credit, income, debts, the appraisal of the finished home and the project review. Projects need to be $50,000 or&nbsp;more.</p>
-      </div>
-    </article>
-  </div>
-</section>
 
 <!-- 2. TODAY'S MARKET ISSUES (deck p6) -->
 <section class="band" aria-labelledby="problem-title">
@@ -540,11 +469,11 @@ footer .eho img{width:44px;height:auto;flex:none}
           <tr><td>Renovation mortgages<small>FHA 203(k), Fannie Mae HomeStyle and&nbsp;similar</small></td><td><span class="no" role="img" aria-label="No">&#10007;</span></td><td><span class="yes" role="img" aria-label="Yes">&#10003;</span></td></tr>
           <tr><td>Cash-out refinance<small>Replaces your first mortgage with a new&nbsp;one</small></td><td><span class="no" role="img" aria-label="No">&#10007;</span></td><td><span class="no" role="img" aria-label="No">&#10007;</span></td></tr>
           <tr><td>Standard HELOC or home equity loan<small>A second loan on today's&nbsp;value</small></td><td><span class="yes" role="img" aria-label="Yes">&#10003;</span></td><td><span class="no" role="img" aria-label="No">&#10007;</span></td></tr>
-          <tr class="new"><td><span class="newtag">NEW</span>After&#8209;Renovation HELOC<small>A second loan on the finished&nbsp;value</small></td><td><span class="yes" role="img" aria-label="Yes">&#10003;</span></td><td><span class="yes" role="img" aria-label="Yes">&#10003;</span></td></tr>
+          <tr class="new"><td><span class="newtag">NEW</span>After&#8209;Renovation&nbsp;(ARV) HELOC<small>A second loan on the finished&nbsp;value</small></td><td><span class="yes" role="img" aria-label="Yes">&#10003;</span></td><td><span class="yes" role="img" aria-label="Yes">&#10003;</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="kit-note">Construction loans, hard money and personal loans are also out there. Each has its own trade-offs. Pat walks you through which one fits your&nbsp;project.</p>
+    <p class="kit-note">Construction loans, hard money and personal loans are also out there. Each has its own trade-offs. Your ADU loan advisor walks you through which one fits your&nbsp;project.</p>
   </div>
 </section>
 
@@ -557,23 +486,23 @@ footer .eho img{width:44px;height:auto;flex:none}
     </div>
     <div class="what">
       <div>
-        <p class="big">You borrow against your home's <em>after-renovation&nbsp;value</em>: what the appraiser says it will be worth once the ADU or renovation is&nbsp;done.</p>
+        <p class="big">You borrow against your home's <em>after-renovation value&nbsp;(ARV)</em>: what the appraiser says it will be worth once the ADU or renovation is&nbsp;done.</p>
         <ul class="points">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Second&nbsp;lien.</b> It sits behind your first mortgage. No&nbsp;refinance.</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>A line of&nbsp;credit.</b> It works like the HELOCs you've heard&nbsp;of.</span></li>
-          <li class="cash"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c-.6-.9-1.7-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.5-.6-3.1-1.6"/></svg><span><b>Interest-only payments for the 10-year draw&nbsp;period,</b> then a 20-year repayment period. Your payment stays low while the ADU is under construction, before any rent from it comes&nbsp;in.</span></li>
+          <li class="cash"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c-.6-.9-1.7-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.5-.6-3.1-1.6"/></svg><span><b>Interest-only payments for the 10&#8209;year draw&nbsp;period,</b> then a 20&#8209;year repayment period. Your payment stays low while the ADU is under construction, before any rent from it comes&nbsp;in.</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>No standard&nbsp;draws.</b> No draw-by-draw inspections and no construction&nbsp;consultant.</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>One final&nbsp;inspection</b> to confirm the work is done, with project supervision after&nbsp;closing.</span></li>
         </ul>
       </div>
       <div class="teams">
-        <div class="team"><h3><i>1</i>Pat Collins, your ADU loan&nbsp;advisor</h3><ul><li>Takes your application and walks you through every&nbsp;number</li><li>Gets your income, assets and credit&nbsp;underwritten</li><li>Gets your line of credit closed and&nbsp;funded</li></ul></div>
+        <div class="team"><h3><i>1</i>Your ADU loan&nbsp;advisor</h3><ul><li>Takes your application and walks you through every&nbsp;number</li><li>Gets your income, assets and credit&nbsp;underwritten</li><li>Gets your line of credit closed and&nbsp;funded</li></ul></div>
         <div class="team reno"><h3><i>2</i>The renovation&nbsp;review</h3><ul><li>Reviews only the project: budget, plans and&nbsp;contractor</li><li>Oversees the project after&nbsp;closing</li></ul></div>
         <div class="plus"><span>Regular HELOC&nbsp;process</span><b>+</b><span>Renovation&nbsp;review</span><b>+</b><span>As-finished&nbsp;appraisal</span></div>
       </div>
     </div>
     <div class="mid-cta">
-      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="what">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="what">Get Pre&#8209;qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -584,12 +513,12 @@ footer .eho img{width:44px;height:auto;flex:none}
     <div class="head">
       <span class="eyebrow">Example&nbsp;breakdowns</span>
       <h2 id="ex-title">Three example ADU properties, worked out line by&nbsp;line</h2>
-      <p>Same math the program uses. Each example puts a standard HELOC on today's value next to the After&#8209;Renovation HELOC on the finished value, so you can see exactly where the difference comes&nbsp;from.</p>
+      <p>Same math the program uses. Each example puts a standard HELOC on today's value next to the After&#8209;Renovation&nbsp;(ARV) HELOC on the finished value, so you can see exactly where the difference comes&nbsp;from.</p>
     </div>
 
     <article class="how-limit" data-scenario aria-label="How the limit is figured in these examples">
       <div><h3>Standard&nbsp;HELOC</h3><p>Today's value &times; the lender's limit (80% to 85% in these examples), minus your first&nbsp;mortgage.</p></div>
-      <div class="arv"><h3>After&#8209;Renovation&nbsp;HELOC</h3><p>The lesser of 95% of the finished value or 125% of today's value, minus your first&nbsp;mortgage.</p></div>
+      <div class="arv"><h3>After&#8209;Renovation&nbsp;(ARV)&nbsp;HELOC</h3><p>The lesser of 95% of the finished value or 125% of today's value, minus your first&nbsp;mortgage.</p></div>
     </article>
 
     <div class="props">
@@ -598,7 +527,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         <div class="prop-side">
           <span class="num">Example property&nbsp;1</span>
           <h3>Garage conversion&nbsp;ADU</h3>
-          <img src="art/art-garage.svg" alt="" width="300" height="236" loading="lazy">
+          <img src="img/adu-garage.webp" alt="" width="720" height="542" loading="lazy">
           <div class="chips"><span>Primary&nbsp;home</span><span>Single-family</span><span>Garage to&nbsp;ADU</span></div>
           <dl class="facts">
             <div><dt>Home value&nbsp;today</dt><dd>$400,000</dd></div>
@@ -619,7 +548,7 @@ footer .eho img{width:44px;height:auto;flex:none}
               <div class="result low">Most you could borrow <b>$5,000</b></div>
             </div>
             <div class="calc arv">
-              <h4>After&#8209;Renovation&nbsp;HELOC</h4>
+              <h4>After&#8209;Renovation&nbsp;(ARV)&nbsp;HELOC</h4>
               <p class="sub">The lesser of these&nbsp;two</p>
               <table class="math"><tbody>
                 <tr><td>$400,000 &times; 125% = $500,000, minus $315,000</td><td>$185,000</td></tr>
@@ -635,7 +564,7 @@ footer .eho img{width:44px;height:auto;flex:none}
                 <div class="bar big"><i style="height:100%"></i></div>
                 <div class="budget" style="bottom:62.5%"><span>Project&nbsp;budget</span></div>
               </div>
-              <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation</div></div>
+              <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation&nbsp;(ARV)</div></div>
             </div>
             <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A standard HELOC leaves next to nothing for the build. Based on the finished value, this homeowner can cover the whole garage conversion, with room to spare, and keep the first&nbsp;mortgage.</span></p>
           </div>
@@ -646,7 +575,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         <div class="prop-side">
           <span class="num">Example property&nbsp;2</span>
           <h3>Detached backyard ADU, 3% first&nbsp;mortgage</h3>
-          <img src="art/art-detached.svg" alt="" width="300" height="236" loading="lazy">
+          <img src="img/adu-detached.webp" alt="" width="720" height="542" loading="lazy">
           <div class="chips"><span>Primary&nbsp;home</span><span>Single-family</span><span>Keeping a 3%&nbsp;rate</span></div>
           <dl class="facts">
             <div><dt>Home value&nbsp;today</dt><dd>$725,000</dd></div>
@@ -667,7 +596,7 @@ footer .eho img{width:44px;height:auto;flex:none}
               <div class="result low">Most you could borrow <b>$16,250</b></div>
             </div>
             <div class="calc arv">
-              <h4>After&#8209;Renovation&nbsp;HELOC</h4>
+              <h4>After&#8209;Renovation&nbsp;(ARV)&nbsp;HELOC</h4>
               <p class="sub">The lesser of these&nbsp;two</p>
               <table class="math"><tbody>
                 <tr><td>$725,000 &times; 125% = $906,250, minus $600,000</td><td>$306,250</td></tr>
@@ -683,9 +612,9 @@ footer .eho img{width:44px;height:auto;flex:none}
                 <div class="bar big"><i style="height:100%"></i></div>
                 <div class="budget" style="bottom:82.6%"><span>Project&nbsp;budget</span></div>
               </div>
-              <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation</div></div>
+              <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation&nbsp;(ARV)</div></div>
             </div>
-            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A standard HELOC covers a sliver of the ADU. The After&#8209;Renovation HELOC covers the whole budget, and the 3% first mortgage never gets&nbsp;touched.</span></p>
+            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A standard HELOC covers a sliver of the ADU. The After&#8209;Renovation&nbsp;(ARV) HELOC covers the whole budget, and the 3% first mortgage never gets&nbsp;touched.</span></p>
           </div>
         </div>
       </article>
@@ -694,7 +623,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         <div class="prop-side">
           <span class="num">Example property&nbsp;3</span>
           <h3>Buy a home + build an&nbsp;ADU</h3>
-          <img src="art/art-attached.svg" alt="" width="300" height="236" loading="lazy">
+          <img src="img/adu-attached.webp" alt="" width="720" height="542" loading="lazy">
           <div class="chips"><span>Just&nbsp;bought</span><span>5%&nbsp;down</span><span>Zero waiting&nbsp;period</span></div>
           <dl class="facts">
             <div><dt>Purchase price and&nbsp;value</dt><dd>$500,000</dd></div>
@@ -715,7 +644,7 @@ footer .eho img{width:44px;height:auto;flex:none}
               <div class="result low">Most you could borrow <b>$0</b></div>
             </div>
             <div class="calc arv">
-              <h4>After&#8209;Renovation&nbsp;HELOC</h4>
+              <h4>After&#8209;Renovation&nbsp;(ARV)&nbsp;HELOC</h4>
               <p class="sub">The lesser of these&nbsp;two</p>
               <table class="math"><tbody>
                 <tr><td>$500,000 &times; 125% = $625,000, minus $475,000</td><td>$150,000</td></tr>
@@ -731,7 +660,7 @@ footer .eho img{width:44px;height:auto;flex:none}
                 <div class="bar big"><i style="height:100%"></i></div>
                 <div class="budget" style="bottom:70.2%"><span>Project&nbsp;budget</span></div>
               </div>
-              <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation</div></div>
+              <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation&nbsp;(ARV)</div></div>
             </div>
             <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>The buyer only needs $100,000, so that's the line. Zero waiting period after closing, and the whole ADU is&nbsp;financed.</span></p>
           </div>
@@ -741,7 +670,7 @@ footer .eho img{width:44px;height:auto;flex:none}
     </div>
     <p class="fine">Hypothetical examples for illustration only, based on the program's published examples. They are not an offer, a quote or a commitment to lend. Home values, balances, budgets and limits are assumptions and can change. What you can borrow depends on your credit, income, debts, the appraisal of your finished home and the project&nbsp;review.</p>
     <div class="mid-cta">
-      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="examples">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="examples">Get Pre&#8209;qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -755,12 +684,12 @@ footer .eho img{width:44px;height:auto;flex:none}
       <p>Every common type of ADU qualifies, and so do the big renovations: kitchens, baths, additions, roofs and&nbsp;more.</p>
     </div>
     <div class="types">
-      <div class="type"><img src="art/art-detached.svg" alt="" width="300" height="236" loading="lazy"><h3>Detached&nbsp;ADU</h3></div>
-      <div class="type"><img src="art/art-garage.svg" alt="" width="300" height="236" loading="lazy"><h3>Garage&nbsp;conversion</h3></div>
-      <div class="type"><img src="art/art-jadu.svg" alt="" width="300" height="236" loading="lazy"><h3>Junior ADU&nbsp;(JADU)</h3></div>
-      <div class="type"><img src="art/art-attached.svg" alt="" width="300" height="236" loading="lazy"><h3>Attached ADU or&nbsp;addition</h3></div>
-      <div class="type reno"><img src="art/art-kitchen.svg" alt="" width="300" height="236" loading="lazy"><h3>Kitchen and bath&nbsp;remodel</h3></div>
-      <div class="type reno"><img src="art/art-exterior.svg" alt="" width="300" height="236" loading="lazy"><h3>Roof, siding and&nbsp;decks</h3></div>
+      <div class="type"><img src="img/adu-detached.webp" alt="" width="720" height="542" loading="lazy"><h3>Detached&nbsp;ADU</h3></div>
+      <div class="type"><img src="img/adu-garage.webp" alt="" width="720" height="542" loading="lazy"><h3>Garage&nbsp;conversion</h3></div>
+      <div class="type"><img src="img/adu-jadu.webp" alt="" width="720" height="542" loading="lazy"><h3>Junior ADU&nbsp;(JADU)</h3></div>
+      <div class="type"><img src="img/adu-attached.webp" alt="" width="720" height="542" loading="lazy"><h3>Attached ADU or&nbsp;addition</h3></div>
+      <div class="type reno"><img src="img/reno-kitchen.webp" alt="" width="720" height="542" loading="lazy"><h3>Kitchen and bath&nbsp;remodel</h3></div>
+      <div class="type reno"><img src="img/reno-exterior.webp" alt="" width="720" height="542" loading="lazy"><h3>Roof, siding and&nbsp;decks</h3></div>
     </div>
     <article class="three" data-scenario>
       <div class="list-card navy">
@@ -808,7 +737,7 @@ footer .eho img{width:44px;height:auto;flex:none}
     </div>
     <div class="steps-wrap">
       <ol class="steps">
-        <li><h3>Start your&nbsp;application</h3><p>Click Get Pre-qualified and fill out the secure online application. Pat follows up to go over your home, your first mortgage and the ADU or remodel you&nbsp;want.</p></li>
+        <li><h3>Start your&nbsp;application</h3><p>Click Get Pre&#8209;qualified and fill out the secure online application. Your ADU loan advisor follows up to go over your home, your first mortgage and the ADU or remodel you&nbsp;want.</p></li>
         <li><h3>Your contractor sends the project&nbsp;details</h3><p>The cost estimate, the plans or drawings, their license and insurance, and a short&nbsp;questionnaire.</p></li>
         <li><h3>The project gets&nbsp;reviewed</h3><p>The renovation team checks the budget, scope and contractor. A feasibility review, not a second look at your&nbsp;finances.</p></li>
         <li><h3>Your home is appraised as&nbsp;finished</h3><p>The appraiser values your home as if the work were already done. That's the value your line is based&nbsp;on.</p></li>
@@ -863,15 +792,15 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="advisor">
       <div class="adv-id">
-        <div class="avatar" aria-hidden="true"><span>PC</span></div>
+        <div class="avatar" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9.5 15.5l1.8 1.8 3.5-3.6"/></svg></div>
         <div>
-          <span class="eyebrow">About your ADU loan&nbsp;advisor</span>
-          <h2 id="advisor-title">Pat&nbsp;Collins</h2>
-          <p class="adv-role">ADU loan advisor &middot; <span class="nw">NMLS&nbsp;#1628553</span> &middot; <span class="nw">E Mortgage Capital&nbsp;Inc.</span></p>
+          <span class="eyebrow">Work with an ADU&nbsp;specialist</span>
+          <h2 id="advisor-title">Your ADU Loan&nbsp;Advisor</h2>
+          <p class="adv-role">ADU financing, start to finish &middot; <a href="tel:+19497872662" data-cta="advisor-call" class="nw">(949)&nbsp;787-2662</a></p>
         </div>
       </div>
       <div class="adv-body">
-        <p class="adv-lead">Big-box banks size your line on today's equity. That's why so many ADU plans get turned down before the first permit. Pat specializes in ADU financing and starts from what your home will be worth when the ADU is&nbsp;done.</p>
+        <p class="adv-lead">Big-box banks size your line on today's equity. That's why so many ADU plans get turned down before the first permit. Our ADU loan advisors specialize in ADU financing and start from what your home will be worth when the ADU is&nbsp;done.</p>
         <ul class="adv-points">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Runs your numbers on today's value and on the finished value, side by&nbsp;side</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Looks at your ADU plans and contractor bid before you&nbsp;apply</li>
@@ -879,7 +808,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         </ul>
         <div class="adv-ctas">
           <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="advisor">Check Your Numbers / Get&nbsp;Pre-Qualified</a>
-          <a class="adv-link" href="mailto:pcollins@emortgagecapital.com?subject=ADU%20plans%20or%20contractor%20bid%20for%20review" data-cta="advisor-plans">Have ADU Plans or a Contractor Bid? Send It to Pat for a Free Financing Feasibility&nbsp;Check</a>
+          <a class="adv-link" href="mailto:pcollins@emortgagecapital.com?subject=ADU%20plans%20or%20contractor%20bid%20for%20review" data-cta="advisor-plans">Have ADU Plans or a Contractor Bid? Send It to Your Advisor for a Free Financing Feasibility&nbsp;Check</a>
         </div>
       </div>
     </div>
@@ -896,15 +825,15 @@ footer .eho img{width:44px;height:auto;flex:none}
     <div class="faq">
       <details><summary>Will I lose my first&nbsp;mortgage?</summary><p>No. This is a second loan that sits behind your first mortgage. There's no refinance, so your first mortgage, its rate and its payment stay exactly as they&nbsp;are.</p></details>
       <details><summary>How is this different from a regular&nbsp;HELOC?</summary><p>A regular HELOC is based on what your home is worth today. This one is based on what your home will be worth after the project is finished. To get there, it adds two things: a review of the project, and an appraisal of your home "as&nbsp;finished."</p></details>
-      <details><summary>What happens when I click Get&nbsp;Pre-qualified?</summary><p>It opens Pat Collins' secure online application with E Mortgage Capital. Fill it out and Pat follows up to go over your home, your project and your options. Starting an application is not a loan&nbsp;approval.</p></details>
+      <details><summary>What happens when I click Get&nbsp;Pre&#8209;qualified?</summary><p>It opens our secure online application with E Mortgage Capital. Fill it out and your ADU loan advisor follows up to go over your home, your project and your options. Starting an application is not a loan&nbsp;approval.</p></details>
       <details><summary>Can I use my own&nbsp;contractor?</summary><p>Yes. Your contractor gets reviewed: their license and insurance, a short questionnaire, the cost estimate and the plans. If they check out, they build&nbsp;it.</p></details>
       <details><summary>Does it work for a remodel without an&nbsp;ADU?</summary><p>Yes. Kitchens, bathrooms, additions, interior and exterior remodels, roofing, siding, decks, porches and pools all qualify, on their own or alongside an&nbsp;ADU.</p></details>
-      <details><summary>Are there draw inspections or a construction&nbsp;consultant?</summary><p>No. There's no bank draw schedule and no HUD consultant, so your contractor works at cash-buyer speed instead of waiting on draw approvals. After closing, project oversight is streamlined, and one final 1004D completion inspection confirms the work is done. Pat reviews all rates, terms and costs with you transparently, up&nbsp;front.</p></details>
-      <details><summary>What are the payments like while the ADU is being&nbsp;built?</summary><p>Interest-only during the 10-year draw period, so the payment stays low while the ADU is under construction and before any rent from it comes in. After that, the balance is repaid over 20 years. Interest-only payments don't pay down the balance, and the payment goes up when repayment starts. Pat shows you the real numbers for your line before you&nbsp;decide.</p></details>
+      <details><summary>Are there draw inspections or a construction&nbsp;consultant?</summary><p>No. There's no bank draw schedule and no HUD consultant, so your contractor works at cash-buyer speed instead of waiting on draw approvals. After closing, project oversight is streamlined, and one final 1004D completion inspection confirms the work is done. Your advisor reviews all rates, terms and costs with you transparently, up&nbsp;front.</p></details>
+      <details><summary>What are the payments like while the ADU is being&nbsp;built?</summary><p>Interest-only during the 10&#8209;year draw period, so the payment stays low while the ADU is under construction and before any rent from it comes in. After that, the balance is repaid over 20 years. Interest-only payments don't pay down the balance, and the payment goes up when repayment starts. Your advisor shows you the real numbers for your line before you&nbsp;decide.</p></details>
       <details><summary>I'm buying a home. Can I use this right after&nbsp;closing?</summary><p>Yes. There's no waiting period after the purchase. Buy the home, then set up the line based on its finished value and start the&nbsp;project.</p></details>
-      <details><summary>Can I use it on a rental&nbsp;property?</summary><p>No. This program is for primary homes and second homes, on single-family or two&#8209;unit properties. If yours is a rental, Pat can walk you through other&nbsp;options.</p></details>
-      <details><summary>Building an ADU to rent out? Will that rent help me&nbsp;qualify?</summary><p>Plan on qualifying with the income you have today, not on future rent from the new ADU. Rental income is not guaranteed and may not count toward qualification under every program. Pat will tell you how your situation is&nbsp;treated.</p></details>
-      <details><summary>What about the rate and&nbsp;costs?</summary><p>Those depend on your credit, your home and the size of the line, so they're covered one on one. Pat lays them out before you decide&nbsp;anything.</p></details>
+      <details><summary>Can I use it on a rental&nbsp;property?</summary><p>No. This program is for primary homes and second homes, on single-family or two&#8209;unit properties. If yours is a rental, your advisor can walk you through other&nbsp;options.</p></details>
+      <details><summary>Building an ADU to rent out? Will that rent help me&nbsp;qualify?</summary><p>Plan on qualifying with the income you have today, not on future rent from the new ADU. Rental income is not guaranteed and may not count toward qualification under every program. Your advisor will tell you how your situation is&nbsp;treated.</p></details>
+      <details><summary>What about the rate and&nbsp;costs?</summary><p>Those depend on your credit, your home and the size of the line, so they're covered one on one. Your advisor lays them out before you decide&nbsp;anything.</p></details>
     </div>
   </div>
 </section>
@@ -923,8 +852,8 @@ footer .eho img{width:44px;height:auto;flex:none}
       <li>Too little equity last time you&nbsp;checked?</li>
       <li>Want to keep your low first-mortgage&nbsp;rate?</li>
     </ul>
-    <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="final">Get Pre-qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <p class="cta-note">Opens Pat Collins' secure online application. Pre-qualifying is not a loan&nbsp;approval.</p>
+    <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="final">Get Pre&#8209;qualified<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="cta-note">Opens our secure online application. Pre&#8209;qualifying is not a loan approval. Or call <a class="note-tel" href="tel:+19497872662">(949)&nbsp;787-2662</a>.</p>
   </div>
 </section>
 </main>
@@ -939,6 +868,7 @@ footer .eho img{width:44px;height:auto;flex:none}
           <li><span class="nw">NMLS&nbsp;#1628553</span> &middot; <span class="nw">DRE&nbsp;#02143449</span></li>
           <li>E Mortgage Capital Inc. &middot; <span class="nw">NMLS&nbsp;#1416824</span></li>
           <li>3750 S. Susan Street, Santa Ana, CA&nbsp;92704</li>
+          <li><a href="tel:+19497872662">(949)&nbsp;787-2662</a></li>
           <li><a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer&nbsp;Access</a></li>
         </ul>
       </div>
@@ -947,8 +877,8 @@ footer .eho img{width:44px;height:auto;flex:none}
     <div class="disclose">
       <p>This is not a commitment to lend. All loans are subject to credit, income, property, and underwriting approval. Programs, rates, and terms may change without&nbsp;notice.</p>
       <p>Rental income is not guaranteed and may not be counted for qualification under every&nbsp;program.</p>
-      <p>Examples and calculator results on this page are hypothetical and for illustration only, not an offer or a commitment to lend. The project review and the appraisal of the finished home are part of approval. Program limits can&nbsp;change.</p>
-      <p>Interest-only payments during the draw period do not reduce the principal balance. Payments increase when the 20-year repayment period&nbsp;begins.</p>
+      <p>Examples on this page are hypothetical and for illustration only, not an offer or a commitment to lend. The project review and the appraisal of the finished home are part of approval. Program limits can&nbsp;change.</p>
+      <p>Interest-only payments during the draw period do not reduce the principal balance. Payments increase when the 20&#8209;year repayment period&nbsp;begins.</p>
     </div>
     <div class="foot-bottom">
       <span>&copy; 2026 Pat Collins. All rights&nbsp;reserved.</span>
@@ -958,7 +888,8 @@ footer .eho img{width:44px;height:auto;flex:none}
 </footer>
 
 <div class="sticky-cta" id="sticky" aria-hidden="true">
-  <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="sticky" tabindex="-1">Get&nbsp;Pre-qualified</a>
+  <a class="btn btn-primary" href="https://prod.lendingpad.com/emci/38d77370-2060-489a-a024-4bdc8db0a865/pos#/" target="_blank" rel="noopener" data-cta="sticky" tabindex="-1">Get&nbsp;Pre&#8209;qualified</a>
+  <a class="sticky-call" href="tel:+19497872662" data-cta="sticky-call" tabindex="-1" aria-label="Call (949) 787-2662"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
 </div>
 
 <div class="cookie" id="cookie" role="region" aria-label="Cookie choice" hidden>
@@ -999,57 +930,6 @@ footer .eho img{width:44px;height:auto;flex:none}
       if (store(CK) === "yes") window.dataLayer.push({ event: "apply_click", cta_position: a.getAttribute("data-cta") });
     });
   });
-
-  // ADU borrowing power calculator. Nothing typed here is stored or sent.
-  // Standard HELOC = 80% of today's value - mortgage.
-  // After-Renovation HELOC = min(95% of after-ADU value, 125% of today's value) - mortgage, capped at $500,000.
-  // Higher tier: up to $750,000 when the line stays within 65% CLTV of the after-ADU value.
-  var CAP = 500000, CAP_HI = 750000, MIN_PROJECT = 50000;
-  var cNow = $("c-now"), cMort = $("c-mort"), cAfter = $("c-after");
-  if (cNow && cMort && cAfter) {
-    var money = function (n) { return "$" + Math.round(n).toLocaleString("en-US"); };
-    var num = function (el) { var v = parseFloat(String(el.value).replace(/[^0-9.]/g, "")); return isFinite(v) ? v : 0; };
-    var used = false;
-    var calc = function () {
-      var now = num(cNow), mort = num(cMort), after = num(cAfter);
-      var std = Math.max(0, 0.80 * now - mort);
-      var raw = Math.min(0.95 * after, 1.25 * now) - mort;
-      var arv = Math.max(0, Math.min(raw, CAP));
-      var hi = Math.max(0, Math.min(Math.min(0.65 * after, 1.25 * now) - mort, CAP_HI));
-      $("r-std").textContent = money(std);
-      $("r-arv").textContent = money(arv);
-      var top = Math.max(std, arv, 1);
-      $("b-std").style.height = Math.max(2, std / top * 100) + "%";
-      $("b-arv").style.height = Math.max(2, arv / top * 100) + "%";
-      var diff = $("r-diff"), note = $("r-note");
-      note.className = "cap-note";
-      if (!now || !after) { diff.textContent = ""; note.textContent = "Enter your home value today and your estimated value after the ADU."; return; }
-      if (after <= now) { diff.textContent = ""; note.className = "cap-note warn"; note.textContent = "Your value after the ADU should be higher than today's value. Pat can help you estimate it."; return; }
-      if (arv > std) {
-        diff.innerHTML = "That's <b>" + money(arv - std) + " more</b> to build your ADU with, and your first mortgage stays put.";
-      } else if (arv > 0 || std > 0) {
-        diff.textContent = "With this much equity today, a standard HELOC may already cover your ADU. Pat will compare both options with you.";
-      } else { diff.textContent = ""; }
-      if (hi > arv) {
-        note.textContent = "Your numbers hit the $500,000 cap at up to 95% CLTV. At up to 65% CLTV, lines go up to $750,000; with these numbers that could be " + money(hi) + ".";
-      } else if (arv > 0 && arv < MIN_PROJECT) {
-        note.className = "cap-note warn";
-        note.textContent = "Projects need to be $50,000 or more. Talk to Pat about other options for a smaller job.";
-      } else if (arv === 0) {
-        note.className = "cap-note warn";
-        note.textContent = "With these numbers there isn't room for a line yet. Pat can look at other ways to pay for the ADU.";
-      } else {
-        note.textContent = "Lines are capped at $500,000 up to 95% CLTV. Lines up to $750,000 are available at up to 65% CLTV.";
-      }
-    };
-    [cNow, cMort, cAfter].forEach(function (el) {
-      el.addEventListener("input", calc);
-      el.addEventListener("change", function () { if (!used && store(CK) === "yes") { used = true; window.dataLayer.push({ event: "calculator_used" }); } });
-      el.addEventListener("blur", function () { var v = num(el); el.value = v ? Math.round(v).toLocaleString("en-US") : ""; });
-      el.addEventListener("focus", function () { el.select(); });
-    });
-    calc();
-  }
 
   // Phone: show a bottom "Get Pre-qualified" bar once the hero button scrolls away, hide it at the final CTA
   var sticky = $("sticky"), heroBtn = document.querySelector('[data-cta="hero"]'), finalSec = document.querySelector(".final");
