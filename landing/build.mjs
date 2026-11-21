@@ -2,10 +2,13 @@
 //  1. puts the LendingPad application link into every {{APPLY_URL}}
 //  2. adds "(ARV)" after every "after renovation" / "after-renovation" in the page text
 //     ("After-Renovation (ARV) HELOC", "after-renovation value (ARV)")
+//  2b. capitalizes every "Renovation" and "Remodel" (renovations, remodels, remodeled, remodeling too) in the
+//     page text, the title, the description, image alt text and labels (Pat's rule, 2026-11-21)
 //  3. joins the last two words of every text block with a no-break space (no orphan words)
 //  4. fails on: banned phrases (config/banned-phrases.json; dollar figures and percentages only inside
 //     <article data-scenario>), any name of the program's source company, Pat's name outside the footer and
-//     the advisor card, a missing "(ARV)", a leftover {{...}}, and any form or input (the page collects nothing)
+//     the advisor card, a missing "(ARV)", a lowercase renovation/remodel, a leftover {{...}}, and any form or
+//     input (the page collects nothing)
 // Run: node landing/build.mjs
 import fs from 'fs';
 import path from 'path';
@@ -29,6 +32,13 @@ html = html.split('{{APPLY_URL}}').join(APPLY_URL);
 // ---- 2. (ARV) after every "after renovation" ----
 const AFTER_RENO = /\b(after(?:-|&#8209;|‑|&nbsp;| )renovation)((?:\s|&nbsp;)+value)?(?!(?:\s|&nbsp;)*\(ARV\))(?!(?:\s|&nbsp;)+value(?:\s|&nbsp;)*\(ARV\))/gi;
 html = onText(html, t => t.replace(AFTER_RENO, (m, a, v) => `${a}${v || ''}&nbsp;(ARV)`));
+
+// ---- 2b. "Renovation" and "Remodel" always capitalized (Pat's rule) ----
+const RENO_WORDS = /\b(renovations?|remodel(?:s|ed|ing)?)\b/gi;
+const capWord = w => w.charAt(0).toUpperCase() + w.slice(1);
+html = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[^>]+>)/).map((part, i) => i % 2
+  ? part.replace(/\b(content|alt|aria-label|title)="([^"]*)"/g, (a, k, v) => k + '="' + v.replace(RENO_WORDS, capWord) + '"')
+  : part.replace(RENO_WORDS, capWord)).join('');
 
 // ---- 3. no orphan words ----
 const parts = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>)/);
@@ -65,6 +75,9 @@ if (pat) problems.push(`Pat's name outside the footer: "${pat[0].trim()}"`);
 // Every "after renovation" in the text carries (ARV)
 const missingArv = textOf(html).match(/after[- ]renovation(?! value \(ARV\))(?! \(ARV\))[^.]{0,20}/i);
 if (missingArv) problems.push(`"after renovation" without (ARV): "${missingArv[0]}"`);
+// Every renovation / remodel word is capitalized (page text, title and description)
+const lowerReno = (textOf(html) + ' ' + (html.match(/<title>[^<]*|content="[^"]*"|alt="[^"]*"|aria-label="[^"]*"/g) || []).join(' ')).match(/\b(renovations?|remodel(?:s|ed|ing)?)\b/);
+if (lowerReno) problems.push(`lowercase "${lowerReno[0]}" (Pat's rule: Renovation / Remodel)`);
 if (/\[PAT:|DRAFT/i.test(textOf(html))) problems.push('visible placeholder or DRAFT text');
 if (/\{\{\w+\}\}/.test(html)) problems.push('leftover template field: ' + html.match(/\{\{\w+\}\}/)[0]);
 // The page collects nothing: no form and no input. The only actions are the application link, call and email.
