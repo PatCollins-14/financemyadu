@@ -1,6 +1,6 @@
 # FinanceMyADU landing page (After ARV HELOC)
 
-One static page. Actions: "Get Pre-qualified" (opens the LendingPad application), call or text (949) 787-2662, and an email link for plans or bids. No form, no server. Not deployed; financemyadu.io is offline (docs/DECISIONS.md D83 to D90).
+One static page. Actions: "Get Pre-qualified" (opens the LendingPad application), call or text (949) 787-2662. No form, no server. Not deployed; financemyadu.io is offline (docs/DECISIONS.md D83 to D90).
 
 ## Files
 - `index.src.html`: the page source (edit this one)
@@ -17,7 +17,7 @@ One static page. Actions: "Get Pre-qualified" (opens the LendingPad application)
 Set in `build.mjs` (`APPLY_URL`), or override when building: `set APPLY_URL=https://...&& node landing\build.mjs`
 
 ## Analytics
-Google Tag Manager (`GTM-TQ8C7WLM`, in the `page-config` block) loads only after the visitor presses Accept. Clicks are pushed as `apply_click` with `cta_position` (hero, what, examples, advisor, final, sticky, header-call, advisor-call, advisor-plans, sticky-call).
+Google Tag Manager (`GTM-TQ8C7WLM`, in the `page-config` block) loads only after the visitor presses Accept. Clicks are pushed as `apply_click` with `cta_position` (hero, what, examples, advisor, final, sticky, header-call, advisor-call, sticky-call).
 
 ## Preview locally
 Any static file server pointed at `landing/`, for example the "fmadu-landing" entry in the Claude preview config (port 5181).
