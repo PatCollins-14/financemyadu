@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>After ARV HELOC for ADUs and Renovations | FinanceMyADU</title>
+<title data-no-arv>After Renovation Value HELOC for ADUs and Renovations | FinanceMyADU</title>
 <meta name="description" content="A home equity line based on what your home will be worth after the ADU or Renovation is done, not what it is worth today. No refinance. Your first mortgage stays in place.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -64,7 +64,7 @@ p{margin:0 0 14px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px}
 .kicker b{background:var(--orange);color:var(--navy-deep);font-size:11px;letter-spacing:.06em;padding:2px 7px;border-radius:6px}
-.hero h1{color:#fff;font-size:clamp(42px,6vw,72px);line-height:1.02;margin:20px 0 18px;letter-spacing:-.03em}
+.hero h1{color:#fff;font-size:clamp(40px,5.4vw,64px);line-height:1.04;margin:20px 0 18px;letter-spacing:-.03em}
 .hero h1 em{font-style:normal;color:var(--orange-glow)}
 .hero .lead{font-size:20px;color:var(--on-navy);max-width:560px;margin:0 0 28px}
 .hero .lead strong{color:#fff;font-weight:600}
@@ -75,22 +75,13 @@ p{margin:0 0 14px}
 .hero-points li svg{flex:none;margin-top:2px}
 .hero-points b{color:#fff;font-weight:600}
 .hero-visual{position:relative}
-.house-card{background:#fff;border-radius:24px;padding:18px 18px 20px;box-shadow:0 30px 70px rgba(5,14,36,.45);position:relative}
-.house-card img{width:100%;height:auto;display:block;border-radius:14px}
-.tag{position:absolute;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy-deep);box-shadow:0 10px 24px rgba(24,45,92,.16);white-space:nowrap}
-.tag i{width:10px;height:10px;border-radius:50%;flex:none}
-.tag.t1{left:-14px;top:52%}
-.tag.t1 i{background:var(--line)}
-.tag.t2{right:-14px;top:8%}
-.tag.t2 i{background:var(--orange)}
+.house-card{background:#fff;border-radius:24px;padding:12px 12px 14px;box-shadow:0 30px 70px rgba(5,14,36,.45);position:relative}
+.house-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:16px}
 .value-strip{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 .value-strip div{font-size:13px;color:var(--muted);line-height:1.35}
 .value-strip strong{display:block;font:700 15px/1.25 var(--serif);color:var(--navy-deep)}
 .value-strip .after strong{color:var(--orange-ink)}
 .value-strip svg{color:var(--orange)}
-.hero-chips{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-.hero-chips li{background:var(--navy-deep);color:#fff;border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600}
-.hero-chips li:first-child{background:var(--orange);color:var(--navy-deep)}
 
 /* proof strip */
 .strip{position:relative;z-index:2;margin-top:-64px}
@@ -334,10 +325,6 @@ footer .eho img{width:44px;height:auto;flex:none}
   .hero .lead{font-size:17.5px}
   .hero .btn{width:100%}
   .house-card{padding:18px 16px 16px}
-  .tag{font-size:12.5px;padding:6px 10px}
-  .tag.t1{left:10px;top:10px}
-  .tag.t2{right:10px;top:10px}
-  .house-card{padding-top:52px}
   .value-strip{grid-template-columns:1fr;text-align:center}
   .value-strip svg{transform:rotate(90deg);margin:0 auto}
   .strip ul{grid-template-columns:1fr}
@@ -380,13 +367,12 @@ footer .eho img{width:44px;height:auto;flex:none}
   .head p{font-size:16px;margin-top:10px}
   /* hero: one clear message, one button, the picture */
   .hero{padding:24px 0 92px}
-  .hero h1{font-size:clamp(34px,10.4vw,44px);margin:14px 0 12px;white-space:nowrap}
+  .hero h1{font-size:clamp(34px,10vw,42px);margin:14px 0 12px}
   .hero .lead{font-size:16.5px;margin-bottom:18px}
   .hero-points{margin:0 0 20px;gap:8px}
   .hero-points li:nth-child(2){display:none}
   .hero .wrap{gap:26px}
-  .hero-chips{display:none}
-  .house-card{padding:46px 12px 12px}
+  .house-card{padding:10px 10px 12px}
   .value-strip{grid-template-columns:1fr auto 1fr;text-align:left;padding:10px 12px;gap:8px}
   .value-strip svg{transform:none;margin:0}
   .value-strip strong{font-size:14px}
@@ -407,7 +393,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   /* what it is: keep the points, drop the two-team boxes */
   .what{gap:18px}
   .what .big{font-size:20px}
-  .teams .team{display:none}
+  .teams .team.reno{display:none}
   .points{gap:10px}
   /* examples: swipe one card at a time; keep the math and the outcome */
   .how-limit{display:none}
@@ -486,7 +472,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div>
       <span class="kicker"><b>NEW</b>A new way to pay for an ADU or a&nbsp;Remodel</span>
-      <h1 id="hero-title">After <em>ARV&nbsp;HELOC</em></h1>
+      <h1 id="hero-title" data-no-arv>After Renovation <em>Value&nbsp;HELOC</em></h1>
       <p class="lead">A home equity line based on what your home will be worth <strong>after</strong> the ADU or Renovation is done, not what it's worth today. No refinance. Your first mortgage stays exactly where it&nbsp;is.</p>
       <ul class="hero-points">
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Interest-only payments during the 10&#8209;year draw&nbsp;period,</b> so payments stay low while the ADU is being&nbsp;built</span></li>
@@ -498,15 +484,12 @@ footer .eho img{width:44px;height:auto;flex:none}
     </div>
     <div class="hero-visual">
       <div class="house-card">
-        <img src="img/hero.webp" alt="Illustration of a home with a new detached ADU in the backyard" width="1200" height="904" fetchpriority="high">
-        <span class="tag t1"><i></i>Your home&nbsp;today</span>
-        <span class="tag t2"><i></i>New ADU or&nbsp;Remodel</span>
+        <img src="img/hero-photo.webp" alt="A California home with a new detached ADU in the backyard" width="1200" height="904" fetchpriority="high">
         <div class="value-strip">
           <div>A regular line looks at<strong>Today's&nbsp;value</strong></div>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           <div class="after">This line looks at<strong>The finished&nbsp;value</strong></div>
         </div>
-        <ul class="hero-chips" aria-label="Projects it pays for"><li>ADUs</li><li>Kitchens</li><li>Baths</li><li>Additions</li><li>Roofs</li><li>Pools</li></ul>
       </div>
     </div>
   </div>
@@ -516,7 +499,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <ul>
       <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>No refinance of your first&nbsp;mortgage</li>
-      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Based on the after-Renovation value&nbsp;(ARV)</li>
+      <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Based on the After-Renovation Value&nbsp;(ARV)</li>
       <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 8l6 6"/></svg></span>No draw inspections or&nbsp;consultant</li>
       <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>ADUs, Remodels, additions and&nbsp;more</li>
     </ul>
@@ -528,12 +511,12 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Today's&nbsp;market</span>
-      <h2 id="problem-title">Why so many ADU and Remodel plans are stuck right&nbsp;now</h2>
+      <h2 id="problem-title">Why So Many ADU and Remodel Plans Are Stuck Right&nbsp;Now</h2>
       <p>Rates moved. Prices moved. The way most people pay for a big project didn't. Here's who gets stuck, and how this line gets them&nbsp;moving.</p>
     </div>
     <div class="two">
       <div class="who">
-        <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223d78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><div><span>You already&nbsp;own</span><h3>Avoid the&nbsp;refinance</h3></div></div>
+        <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223d78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><div><span>You already&nbsp;own</span><h3>Avoid the&nbsp;Refinance</h3></div></div>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>You want to build or Remodel, and you want to keep the low rate on your first&nbsp;mortgage.</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Your equity today doesn't cover the budget for the ADU or the&nbsp;Remodel.</li>
@@ -541,7 +524,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         <p class="fix">The fix: a second line based on the finished value. Your first mortgage stays&nbsp;put.</p>
       </div>
       <div class="who">
-        <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h4v4"/><path d="M19 7l-7 7-3-3-6 6"/></svg></span><div><span>You're&nbsp;buying</span><h3>Win the house, then&nbsp;build</h3></div></div>
+        <div class="who-top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h4v4"/><path d="M19 7l-7 7-3-3-6 6"/></svg></span><div><span>You're&nbsp;buying</span><h3>Win the House, Then&nbsp;Build</h3></div></div>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>It's a competitive market and you need a clean offer to get the&nbsp;house.</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a33a2b" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>You want the ADU or the Remodel, but with little down there's no equity to borrow&nbsp;yet.</li>
@@ -557,7 +540,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">A new tool in the&nbsp;kit</span>
-      <h2 id="kit-title">Usual HELOC vs.&nbsp;ARV</h2>
+      <h2 id="kit-title">Usual HELOC vs. ARV&nbsp;HELOC</h2>
       <p>Every option has a place. This is the only one on this list that does both of these&nbsp;things.</p>
     </div>
     <div class="kit">
@@ -580,11 +563,11 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">What it&nbsp;is</span>
-      <h2 id="what-title">A HELOC based on After&#8209;Renovation Value&nbsp;(ARV)</h2>
+      <h2 id="what-title">A HELOC Based on After&#8209;Renovation Value&nbsp;(ARV)</h2>
     </div>
     <div class="what">
       <div>
-        <p class="big">You borrow against your home's <em>after-Renovation value&nbsp;(ARV)</em>: what the appraiser says it will be worth once the ADU or Renovation is&nbsp;done.</p>
+        <p class="big">You borrow against your home's <em>After-Renovation Value&nbsp;(ARV)</em>: what the appraiser says it will be worth once the ADU or Renovation is&nbsp;done.</p>
         <ul class="points">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Second&nbsp;lien.</b> It sits behind your first mortgage. No&nbsp;refinance.</span></li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>A line of&nbsp;credit.</b> It works like the HELOCs you've heard&nbsp;of.</span></li>
@@ -594,9 +577,9 @@ footer .eho img{width:44px;height:auto;flex:none}
         </ul>
       </div>
       <div class="teams">
-        <div class="team"><h3><i>1</i>Your ADU loan&nbsp;advisor</h3><ul><li>Takes your application and walks you through every&nbsp;number</li><li>Gets your income, assets and credit&nbsp;underwritten</li><li>Gets your line of credit closed and&nbsp;funded</li></ul></div>
-        <div class="team reno"><h3><i>2</i>The Renovation&nbsp;review</h3><ul><li>Reviews only the project: budget, plans and&nbsp;contractor</li><li>Oversees the project after&nbsp;closing</li></ul></div>
-        <div class="plus"><span>Regular HELOC&nbsp;process</span><b>+</b><span>Renovation&nbsp;review</span><b>+</b><span>As-finished&nbsp;appraisal</span></div>
+        <div class="team"><h3><i>1</i>Your ADU Loan&nbsp;Advisor</h3><ul><li>Fill Out the Online&nbsp;Application</li><li>Submit Your Documents and&nbsp;Plans</li><li>Get Approved Based on After&#8209;Renovation Value&nbsp;(ARV)</li><li>Planned Permits Are Not&nbsp;Required</li></ul></div>
+        <div class="team reno"><h3><i>2</i>The Renovation&nbsp;Review</h3><ul><li>Reviews Only the Project: Budget, Plans and&nbsp;Contractor</li><li>Oversees the Project After&nbsp;Closing</li></ul></div>
+        <div class="plus"><span>Regular HELOC&nbsp;Process</span><b>+</b><span>Renovation&nbsp;Review</span><b>+</b><span>As&#8209;Finished&nbsp;Appraisal</span></div>
       </div>
     </div>
     <div class="mid-cta">
@@ -609,8 +592,7 @@ footer .eho img{width:44px;height:auto;flex:none}
 <section class="band white" aria-labelledby="ex-title">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Example&nbsp;breakdowns</span>
-      <h2 id="ex-title">3 example ADU properties, worked out line by&nbsp;line</h2>
+      <h2 id="ex-title">Here's How ARV HELOC&nbsp;Works</h2>
       <p>Same math the program uses. Each example puts a standard HELOC on today's value next to the After&#8209;Renovation&nbsp;(ARV) HELOC on the finished value, so you can see exactly where the difference comes&nbsp;from.</p>
     </div>
 
@@ -625,7 +607,7 @@ footer .eho img{width:44px;height:auto;flex:none}
       <article class="prop" data-scenario>
         <div class="prop-side">
           <span class="num">Example property&nbsp;1</span>
-          <h3>Garage conversion&nbsp;ADU</h3>
+          <h3>Garage Conversion&nbsp;ADU</h3>
           <img src="img/adu-garage.webp" alt="" width="720" height="542" loading="lazy">
           <div class="chips"><span>Primary&nbsp;home</span><span>Single-family</span><span>Garage to&nbsp;ADU</span></div>
           <dl class="facts">
@@ -673,7 +655,7 @@ footer .eho img{width:44px;height:auto;flex:none}
       <article class="prop" data-scenario>
         <div class="prop-side">
           <span class="num">Example property&nbsp;2</span>
-          <h3>Detached backyard ADU, 3% first&nbsp;mortgage</h3>
+          <h3>Detached Backyard ADU, 3% First&nbsp;Mortgage</h3>
           <img src="img/adu-detached.webp" alt="" width="720" height="542" loading="lazy">
           <div class="chips"><span>Primary&nbsp;home</span><span>Single-family</span><span>Keeping a 3%&nbsp;rate</span></div>
           <dl class="facts">
@@ -721,14 +703,14 @@ footer .eho img{width:44px;height:auto;flex:none}
       <article class="prop" data-scenario>
         <div class="prop-side">
           <span class="num">Example property&nbsp;3</span>
-          <h3>Buy a home + build an&nbsp;ADU</h3>
-          <img src="img/adu-attached.webp" alt="" width="720" height="542" loading="lazy">
+          <h3>Buy a Home +&nbsp;Remodeling</h3>
+          <img src="img/buy-remodel.webp" alt="" width="720" height="542" loading="lazy">
           <div class="chips"><span>Just&nbsp;bought</span><span>5%&nbsp;down</span><span>Zero waiting&nbsp;period</span></div>
           <dl class="facts">
             <div><dt>Purchase price and&nbsp;value</dt><dd>$500,000</dd></div>
             <div><dt>First mortgage (5%&nbsp;down)</dt><dd>$475,000</dd></div>
-            <div><dt>ADU&nbsp;budget</dt><dd>$100,000</dd></div>
-            <div class="hl"><dt>Value after the&nbsp;ADU</dt><dd>$650,000</dd></div>
+            <div><dt>Remodel&nbsp;budget</dt><dd>$100,000</dd></div>
+            <div class="hl"><dt>Value after the&nbsp;Remodel</dt><dd>$650,000</dd></div>
           </dl>
         </div>
         <div class="prop-main">
@@ -761,7 +743,7 @@ footer .eho img{width:44px;height:auto;flex:none}
               </div>
               <div class="bar-labels" aria-hidden="true"><div>Standard&nbsp;HELOC</div><div>After&#8209;Renovation&nbsp;(ARV)</div></div>
             </div>
-            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>The buyer only needs $100,000, so that's the line. Zero waiting period after closing, and the whole ADU is&nbsp;financed.</span></p>
+            <p class="outcome"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>The buyer only needs $100,000, so that's the line. Zero waiting period after closing, and the whole Remodel is&nbsp;financed.</span></p>
           </div>
         </div>
       </article>
@@ -780,20 +762,20 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Is it a&nbsp;fit?</span>
-      <h2 id="fit-title">Built for ADUs and big&nbsp;Renovations</h2>
-      <p>Every common type of ADU qualifies, and so do the big Renovations: kitchens, baths, additions, roofs and&nbsp;more.</p>
+      <h2 id="fit-title">Built for ADUs and Big&nbsp;Renovations</h2>
+      <p>Every common type of ADU qualifies, and so do the big Renovations: kitchens, baths, room additions, roofs and&nbsp;more.</p>
     </div>
     <div class="types">
       <div class="type"><img src="img/adu-detached.webp" alt="" width="720" height="542" loading="lazy"><h3>Detached&nbsp;ADU</h3></div>
-      <div class="type"><img src="img/adu-garage.webp" alt="" width="720" height="542" loading="lazy"><h3>Garage&nbsp;conversion</h3></div>
+      <div class="type"><img src="img/adu-garage.webp" alt="" width="720" height="542" loading="lazy"><h3>Garage&nbsp;Conversion</h3></div>
       <div class="type"><img src="img/adu-jadu.webp" alt="" width="720" height="542" loading="lazy"><h3>Junior ADU&nbsp;(JADU)</h3></div>
-      <div class="type"><img src="img/adu-attached.webp" alt="" width="720" height="542" loading="lazy"><h3>Attached ADU or&nbsp;addition</h3></div>
-      <div class="type reno"><img src="img/reno-kitchen.webp" alt="" width="720" height="542" loading="lazy"><h3>Kitchen and bath&nbsp;Remodel</h3></div>
-      <div class="type reno"><img src="img/reno-exterior.webp" alt="" width="720" height="542" loading="lazy"><h3>Roof, siding and&nbsp;decks</h3></div>
+      <div class="type"><img src="img/adu-attached.webp" alt="" width="720" height="542" loading="lazy"><h3>Attached ADU or&nbsp;Addition</h3></div>
+      <div class="type reno"><img src="img/reno-kitchen.webp" alt="" width="720" height="542" loading="lazy"><h3>Kitchen and Bath&nbsp;Remodel</h3></div>
+      <div class="type reno"><img src="img/reno-exterior.webp" alt="" width="720" height="542" loading="lazy"><h3>Roof, Siding and&nbsp;Decks</h3></div>
     </div>
     <article class="three" data-scenario>
       <div class="list-card navy">
-        <h3>Who&nbsp;qualifies</h3>
+        <h3>Who&nbsp;Qualifies</h3>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Loan&nbsp;limits:</b> up to $500,000 (up to 95% CLTV) or $750,000 (up to 65%&nbsp;CLTV)</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Minimum project&nbsp;size:</b> $50,000+</span></li>
@@ -803,7 +785,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         </ul>
       </div>
       <div class="list-card">
-        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>What it pays&nbsp;for</h3>
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>What It Pays&nbsp;For</h3>
         <ul>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Accessory dwelling units&nbsp;(ADUs)</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Additions and&nbsp;extensions</li>
@@ -814,7 +796,7 @@ footer .eho img{width:44px;height:auto;flex:none}
         </ul>
       </div>
       <div class="list-card no">
-        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Not the right tool&nbsp;for</h3>
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Not the Right Tool&nbsp;For</h3>
         <ul>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Full teardowns and&nbsp;rebuilds</li>
           <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Projects already underway (case by&nbsp;case)</li>
@@ -833,19 +815,19 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">How it&nbsp;works</span>
-      <h2 id="how-title">From application to building in 5&nbsp;steps</h2>
+      <h2 id="how-title">From Application to Building in 5&nbsp;Steps</h2>
     </div>
     <div class="steps-wrap">
       <ol class="steps">
-        <li><h3>Start your&nbsp;application</h3><p>Click Get Pre&#8209;qualified and fill out the secure online application. Your ADU loan advisor follows up to go over your home, your first mortgage and the ADU or Remodel you&nbsp;want.</p></li>
-        <li><h3>Your contractor sends the project&nbsp;details</h3><p>The cost estimate, the plans or drawings, their license and insurance, and a short&nbsp;questionnaire.</p></li>
-        <li><h3>The project gets&nbsp;reviewed</h3><p>The Renovation team checks the budget, scope and contractor. A feasibility review, not a second look at your&nbsp;finances.</p></li>
-        <li><h3>Your home is appraised as&nbsp;finished</h3><p>The appraiser values your home as if the work were already done. That's the value your line is based&nbsp;on.</p></li>
-        <li><h3>Close and&nbsp;build</h3><p>Your line closes, your first mortgage stays put, and the work starts. One final inspection when it's&nbsp;done.</p></li>
+        <li><h3>Start Your&nbsp;Application</h3><p>Click Get Pre&#8209;qualified and fill out the secure online application. Your ADU loan advisor follows up to go over your home, your first mortgage and the ADU or Remodel you&nbsp;want.</p></li>
+        <li><h3>Your Contractor Sends the Project&nbsp;Details</h3><p>The cost estimate, the plans or drawings, their license and insurance, and a short&nbsp;questionnaire.</p></li>
+        <li><h3>The Project Gets&nbsp;Reviewed</h3><p>The Renovation team checks the budget, scope and contractor. A feasibility review, not a second look at your&nbsp;finances.</p></li>
+        <li><h3>Your Home Is Appraised as&nbsp;Finished</h3><p>The appraiser values your home as if the work were already done. That's the value your line is based&nbsp;on.</p></li>
+        <li><h3>Close and&nbsp;Build</h3><p>Your line closes, your first mortgage stays put, and the work starts. One final inspection when it's&nbsp;done.</p></li>
       </ol>
       <div class="needs">
         <div class="list-card">
-          <h3>What you'll&nbsp;need</h3>
+          <h3>What You'll&nbsp;Need</h3>
           <ul>
             <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Income documents, such as pay stubs, W-2s or tax&nbsp;returns</li>
             <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Bank and asset&nbsp;statements</li>
@@ -853,7 +835,7 @@ footer .eho img{width:44px;height:auto;flex:none}
           </ul>
         </div>
         <div class="list-card">
-          <h3>What your contractor&nbsp;sends</h3>
+          <h3>What Your Contractor&nbsp;Sends</h3>
           <ul>
             <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>A detailed cost&nbsp;estimate</li>
             <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Plans or drawings for the&nbsp;project</li>
@@ -872,7 +854,7 @@ footer .eho img{width:44px;height:auto;flex:none}
     <div class="contractor">
       <div>
         <span class="eyebrow">Bring your&nbsp;contractor</span>
-        <h2 id="pro-title">Your builder will like this one&nbsp;too</h2>
+        <h2 id="pro-title">Your Builder Will Like This One&nbsp;Too</h2>
         <p>They work directly with you, and you pay for the project like a cash buyer would. No bank consultant in the middle and no draw inspections to schedule&nbsp;around.</p>
       </div>
       <div class="c-grid">
@@ -921,7 +903,7 @@ footer .eho img{width:44px;height:auto;flex:none}
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Straight&nbsp;answers</span>
-      <h2 id="faq-title">Questions people ask&nbsp;first</h2>
+      <h2 id="faq-title">Questions People Ask&nbsp;First</h2>
     </div>
     <div class="faq">
       <details><summary>Will I lose my first&nbsp;mortgage?</summary><p>No. This is a second loan that sits behind your first mortgage. There's no refinance, so your first mortgage, its rate and its payment stay exactly as they&nbsp;are.</p></details>
@@ -943,7 +925,7 @@ footer .eho img{width:44px;height:auto;flex:none}
 <section class="final" aria-labelledby="final-title">
   <div class="wrap">
     <span class="eyebrow">Sound&nbsp;familiar?</span>
-    <h2 id="final-title">Keep the rate and renovate. <em>Improve, don't&nbsp;move.</em></h2>
+    <h2 id="final-title">Keep the Rate and Renovate. <em>Improve, Don't&nbsp;Move.</em></h2>
     <ul class="qs">
       <li>Family getting&nbsp;bigger?</li>
       <li>Working from home for&nbsp;good?</li>

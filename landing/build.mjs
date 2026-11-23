@@ -1,9 +1,11 @@
 // Builds landing/index.html from landing/index.src.html:
 //  1. puts the LendingPad application link into every {{APPLY_URL}}
 //  2. adds "(ARV)" after every "after renovation" / "after-renovation" in the page text
-//     ("After-Renovation (ARV) HELOC", "after-renovation value (ARV)")
+//     ("After-Renovation (ARV) HELOC", "after-renovation value (ARV)"), except inside elements marked
+//     data-no-arv (the headline and tab title read exactly "After Renovation Value HELOC", Pat 2026-11-24)
 //  2b. capitalizes every "Renovation" and "Remodel" (renovations, remodels, remodeled, remodeling too) in the
 //     page text, the title, the description, image alt text and labels (Pat's rule, 2026-11-21)
+//  2c. puts every section and card heading (h2, h3) in Title Case (Pat, 2026-11-24)
 //  3. joins the last two words of every text block with a no-break space (no orphan words)
 //  4. fails on: banned phrases (config/banned-phrases.json; dollar figures and percentages only inside
 //     <article data-scenario>), any name of the program's source company, Pat's name outside the footer and
@@ -31,7 +33,11 @@ html = html.split('{{APPLY_URL}}').join(APPLY_URL);
 
 // ---- 2. (ARV) after every "after renovation" ----
 const AFTER_RENO = /\b(after(?:-|&#8209;|‑|&nbsp;| )renovation)((?:\s|&nbsp;)+value)?(?!(?:\s|&nbsp;)*\(ARV\))(?!(?:\s|&nbsp;)+value(?:\s|&nbsp;)*\(ARV\))/gi;
+const NO_ARV = /<(\w+)\b[^>]*\sdata-no-arv\b[^>]*>[\s\S]*?<\/\1>/g;
+const keptAsIs = [];
+html = html.replace(NO_ARV, m => { keptAsIs.push(m); return `\u0000NOARV${keptAsIs.length - 1}\u0000`; });
 html = onText(html, t => t.replace(AFTER_RENO, (m, a, v) => `${a}${v || ''}&nbsp;(ARV)`));
+html = html.replace(/\u0000NOARV(\d+)\u0000/g, (m, i) => keptAsIs[+i]);
 
 // ---- 2b. "Renovation" and "Remodel" always capitalized (Pat's rule) ----
 const RENO_WORDS = /\b(renovations?|remodel(?:s|ed|ing)?)\b/gi;
@@ -39,6 +45,33 @@ const capWord = w => w.charAt(0).toUpperCase() + w.slice(1);
 html = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[^>]+>)/).map((part, i) => i % 2
   ? part.replace(/\b(content|alt|aria-label|title)="([^"]*)"/g, (a, k, v) => k + '="' + v.replace(RENO_WORDS, capWord) + '"')
   : part.replace(RENO_WORDS, capWord)).join('');
+
+// ---- 2c. Title Case for every h2 and h3 ----
+// Capitalize each word; short articles, conjunctions and prepositions stay lowercase unless they come first.
+// Acronyms (ADU, HELOC, ARV) and entities (&nbsp;, &#8209;) are left alone; hyphenated words get both parts capitalized.
+const SMALL = new Set(['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'in', 'nor', 'of', 'off', 'on', 'or', 'per', 'the', 'to', 'up', 'via', 'vs', 'vs.']);
+function titleCase(text, state) {
+  return text.replace(/&#?\w+;|[A-Za-z][A-Za-z'’.]*(?:(?:-|&#8209;)[A-Za-z][A-Za-z'’]*)*/g, word => {
+    if (word.startsWith('&')) return word;
+    const first = state.first; state.first = false;
+    return word.split(/(-|&#8209;)/).map((part, i) => {
+      if (i % 2) return part;
+      if (!first && i === 0 && SMALL.has(part.toLowerCase())) return part.toLowerCase();
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    }).join('');
+  });
+}
+html = html.replace(/(<h([23])\b[^>]*>)([\s\S]*?)(<\/h\2>)/g, (m, open, lvl, inner, close) => {
+  const state = { first: true };
+  const segs = inner.split(/(<[^>]+>)/).map((p, i) => (i % 2 ? p : titleCase(p, state)));
+  // the last word is always capitalized ("What It Pays For")
+  for (let i = segs.length - 1; i >= 0; i -= 1) {
+    if (i % 2 || !/[A-Za-z]/.test(segs[i].replace(/&#?\w+;/g, ''))) continue;
+    segs[i] = segs[i].replace(/\b([a-z]+)(?=(?:[^A-Za-z&]|&#?\w+;)*$)/, w => w.charAt(0).toUpperCase() + w.slice(1));
+    break;
+  }
+  return open + segs.join('') + close;
+});
 
 // ---- 3. no orphan words ----
 const parts = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>)/);
@@ -73,10 +106,10 @@ const noFooter = html.replace(/<footer[\s\S]*?<\/footer>/, ' ').replace(/<sectio
 const pat = noFooter.match(/[^<>"]{0,40}\b(Pat|Collins)\b[^<>"]{0,40}/);
 if (pat) problems.push(`Pat's name outside the footer: "${pat[0].trim()}"`);
 // Every "after renovation" in the text carries (ARV)
-const missingArv = textOf(html).match(/after[- ]renovation(?! value \(ARV\))(?! \(ARV\))[^.]{0,20}/i);
+const missingArv = textOf(html.replace(NO_ARV, ' ')).match(/after[- ]renovation(?! value \(ARV\))(?! \(ARV\))[^.]{0,20}/i);
 if (missingArv) problems.push(`"after renovation" without (ARV): "${missingArv[0]}"`);
 // Every renovation / remodel word is capitalized (page text, title and description)
-const lowerReno = (textOf(html) + ' ' + (html.match(/<title>[^<]*|content="[^"]*"|alt="[^"]*"|aria-label="[^"]*"/g) || []).join(' ')).match(/\b(renovations?|remodel(?:s|ed|ing)?)\b/);
+const lowerReno = (textOf(html) + ' ' + (html.match(/<title[^>]*>[^<]*|content="[^"]*"|alt="[^"]*"|aria-label="[^"]*"/g) || []).join(' ')).match(/\b(renovations?|remodel(?:s|ed|ing)?)\b/);
 if (lowerReno) problems.push(`lowercase "${lowerReno[0]}" (Pat's rule: Renovation / Remodel)`);
 if (/\[PAT:|DRAFT/i.test(textOf(html))) problems.push('visible placeholder or DRAFT text');
 if (/\{\{\w+\}\}/.test(html)) problems.push('leftover template field: ' + html.match(/\{\{\w+\}\}/)[0]);
