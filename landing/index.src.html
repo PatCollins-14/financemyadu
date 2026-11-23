@@ -204,6 +204,24 @@ section.band{padding:88px 0}
 .type img{width:100%;height:auto;aspect-ratio:720/542;object-fit:contain;margin-bottom:8px}
 .type h3{font-size:15px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fit-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 24px 26px;box-shadow:var(--shadow)}
+.fit-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.fit-head h3{font-size:20px;margin:0}
+.fit-ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center}
+.fit-card.qual{background:var(--navy-deep);border-color:var(--navy-deep)}
+.fit-card.qual .fit-head{border-color:rgba(255,255,255,.14)}
+.fit-card.qual h3{color:#fff}
+.fit-card.qual .fit-ic{background:rgba(246,200,110,.16);color:var(--orange-glow)}
+.fit-card.yes .fit-ic{background:var(--green-soft);color:var(--green)}
+.fit-card.no .fit-ic{background:#fbe3df;color:#b3361f}
+.fit-rows{margin:0;display:grid;gap:14px}
+.fit-rows dt{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange-glow);margin-bottom:2px}
+.fit-rows dd{margin:0;color:#e6ecf7;font-size:15.5px;line-height:1.5}
+.fit-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.fit-list li{display:grid;grid-template-columns:22px 1fr;column-gap:12px;align-items:start;font-size:15.5px;line-height:24px;color:var(--ink)}
+.fit-list li::before{content:"";width:22px;height:22px;margin-top:1px;border-radius:50%;background-position:center;background-repeat:no-repeat;background-size:12px 12px}
+.fit-card.yes li::before{background-color:var(--green-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f7a4d' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")}
+.fit-card.no li::before{background-color:#fbe3df;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b3361f' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E")}
 .list-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 24px}
 .list-card h3{font-size:20px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .list-card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
@@ -422,7 +440,11 @@ footer .eho img{width:44px;height:auto;flex:none}
   .types::-webkit-scrollbar{display:none}
   .types .type{flex:0 0 42%;scroll-snap-align:start;padding:10px 8px 12px}
   .types .type h3{font-size:13.5px}
-  .three>.list-card:nth-child(2){display:none}
+  .three>.fit-card.yes{display:none}
+  .fit-card{padding:20px 18px 22px}
+  .fit-head{padding-bottom:14px;margin-bottom:14px}
+  .fit-head h3{font-size:19px}
+  .fit-list li,.fit-rows dd{font-size:15px}
   .three{gap:14px}
   /* how it works: steps only */
   .needs{display:none}
@@ -774,37 +796,37 @@ footer .eho img{width:44px;height:auto;flex:none}
       <div class="type reno"><img src="img/reno-kitchen.webp" alt="" width="720" height="542" loading="lazy"><h3>Kitchen and bath Remodel</h3></div>
       <div class="type reno"><img src="img/reno-exterior.webp" alt="" width="720" height="542" loading="lazy"><h3>Roof, siding and decks</h3></div>
     </div>
-    <article class="three" data-scenario>
-      <div class="list-card navy">
-        <h3>Who qualifies</h3>
-        <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Loan limits:</b> up to $500,000 (up to 95% CLTV) or $750,000 (up to 65% CLTV)</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Minimum project size:</b> $50,000+</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Credit and DTI:</b> 640+ credit score, full-doc income, up to 43% DTI (45% DTI with 720+ credit)</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Property types:</b> primary residences and second homes, <span class="nw">1&#8211;2 units</span>. No investment-only properties or full teardowns</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f6c86e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Line size:</b> the lesser of 95% of the finished value or 125% of today's value, minus your mortgage</span></li>
+    <article class="three fit" data-scenario>
+      <div class="fit-card qual">
+        <div class="fit-head"><span class="fit-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Who qualifies</h3></div>
+        <dl class="fit-rows">
+          <div><dt>Loan limits</dt><dd>Up to $500,000 (up to 95% CLTV) or $750,000 (up to 65% CLTV)</dd></div>
+          <div><dt>Minimum project</dt><dd>$50,000+</dd></div>
+          <div><dt>Credit and DTI</dt><dd>640+ credit score, full-doc income, up to 43% DTI (45% DTI with 720+ credit)</dd></div>
+          <div><dt>Property types</dt><dd>Primary residences and second homes, <span class="nw">1&#8211;2 units</span></dd></div>
+          <div><dt>Line size</dt><dd>The lesser of 95% of the finished value or 125% of today's value, minus your mortgage</dd></div>
+        </dl>
+      </div>
+      <div class="fit-card yes">
+        <div class="fit-head"><span class="fit-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h3>What it pays for</h3></div>
+        <ul class="fit-list">
+          <li>Accessory dwelling units (ADUs)</li>
+          <li>Room additions and extensions</li>
+          <li>Kitchens and bathrooms</li>
+          <li>Interior and exterior Remodels</li>
+          <li>Roofing, siding, decks and porches</li>
+          <li>Pools and outdoor improvements</li>
         </ul>
       </div>
-      <div class="list-card">
-        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>What it pays for</h3>
-        <ul>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Accessory dwelling units (ADUs)</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Additions and extensions</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Kitchens and bathrooms</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Interior and exterior Remodels</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Roofing, siding, decks and porches</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#e89915"/></svg>Pools and outdoor improvements</li>
-        </ul>
-      </div>
-      <div class="list-card no">
-        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5600" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Not the right tool for</h3>
-        <ul>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Full teardowns and rebuilds</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Projects already underway (case by case)</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Finishing new construction (case by case)</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Health and safety repairs needed to close on a purchase</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Projects under $50,000</li>
-          <li><svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#8a5600"/></svg>Investment-only properties</li>
+      <div class="fit-card no">
+        <div class="fit-head"><span class="fit-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3>Not the right tool for</h3></div>
+        <ul class="fit-list">
+          <li>Full teardowns and rebuilds</li>
+          <li>Projects already underway (case by case)</li>
+          <li>Finishing new construction (case by case)</li>
+          <li>Health and safety repairs needed to close on a purchase</li>
+          <li>Projects under $50,000</li>
+          <li>Investment-only properties</li>
         </ul>
       </div>
     </article>

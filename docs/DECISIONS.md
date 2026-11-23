@@ -321,3 +321,6 @@ The "Regular HELOC Process + Renovation Review + As-Finished Appraisal" pills un
 
 **D98. www.financemyadu.io is the main address (Pat, chat 2026-11-24).**
 Like letstalkadu.com, the site now loads as https://www.financemyadu.io/ and the bare domain redirects there (it was the other way round). GitHub Pages custom domain set to www.financemyadu.io (the existing certificate already covered both names; HTTPS stays enforced), and `scripts/landing-site-build.ps1` writes CNAME `www.financemyadu.io` and points the 404 page's canonical at the www address. DNS at Hostinger is unchanged (A @ 185.199.108.153, CNAME www -> patcollins-14.github.io).
+
+**D99. "Is it a fit?" cards restyled (Pat, chat 2026-11-24).**
+Who Qualifies, What It Pays For and Not the Right Tool For now share one card style: an icon tile and title over a divider, equal heights, the same padding. Bullets are round check (green) or cross (red) marks centered on the first line of text, so they line up with the words. Who Qualifies became label-and-value rows (Loan limits, Minimum project, Credit and DTI, Property types, Line size); "No investment-only properties or full teardowns" was dropped from it because the third card lists both. "Additions" reads "Room additions" here too. Phones still hide What It Pays For.
