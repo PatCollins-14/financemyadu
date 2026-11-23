@@ -318,3 +318,6 @@ The advisor card no longer has the "Have ADU Plans or a Contractor Bid? Send It 
 
 **D97. Process pills removed; advisor and review boxes balanced (Pat, chat 2026-11-24).**
 The "Regular HELOC Process + Renovation Review + As-Finished Appraisal" pills under the two boxes in "What it is" are gone. The two boxes now stretch to the height of the left column, each sized to its content with the leftover space shared evenly, with larger text and round check marks (green for the advisor, orange for the Renovation Review). Both boxes show on phones as well.
+
+**D98. www.financemyadu.io is the main address (Pat, chat 2026-11-24).**
+Like letstalkadu.com, the site now loads as https://www.financemyadu.io/ and the bare domain redirects there (it was the other way round). GitHub Pages custom domain set to www.financemyadu.io (the existing certificate already covered both names; HTTPS stays enforced), and `scripts/landing-site-build.ps1` writes CNAME `www.financemyadu.io` and points the 404 page's canonical at the www address. DNS at Hostinger is unchanged (A @ 185.199.108.153, CNAME www -> patcollins-14.github.io).

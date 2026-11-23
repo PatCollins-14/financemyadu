@@ -1,4 +1,4 @@
-# Builds the live financemyadu.io site from the one-page landing (landing/) into dist-pages/.
+# Builds the live www.financemyadu.io site from the one-page landing (landing/) into dist-pages/.
 # Since D92 (2026-11-21) this replaces pages-build.ps1 in the GitHub Pages workflow.
 # Expects landing/index.html to be freshly built (the workflow runs `node landing/build.mjs` first).
 $ErrorActionPreference = 'Stop'
@@ -18,11 +18,11 @@ Copy-Item (Join-Path $src 'assets') (Join-Path $out 'assets') -Recurse
 Copy-Item (Join-Path $src 'assets\favicon.ico') $out
 Copy-Item (Join-Path $src 'assets\favicon.svg') $out
 
-Write-Text (Join-Path $out 'CNAME') 'financemyadu.io'
+Write-Text (Join-Path $out 'CNAME') 'www.financemyadu.io'
 # Never block crawlers in robots.txt (CLAUDE.md rule 10); the page itself carries noindex
 Write-Text (Join-Path $out 'robots.txt') "User-agent: *`nAllow: /`n"
 # Old funnel and hub addresses (/funnel/, /hub/...) land on the new page
-Write-Text (Join-Path $out '404.html') '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FinanceMyADU</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/"><link rel="canonical" href="https://financemyadu.io/"></head><body><p><a href="/">Go to FinanceMyADU</a></p></body></html>'
+Write-Text (Join-Path $out '404.html') '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FinanceMyADU</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/"><link rel="canonical" href="https://www.financemyadu.io/"></head><body><p><a href="/">Go to FinanceMyADU</a></p></body></html>'
 Write-Text (Join-Path $out '.nojekyll') ''
 
 $n = (Get-ChildItem $out -Recurse -File).Count
