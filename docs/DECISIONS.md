@@ -315,3 +315,6 @@ Headline and tab title read "After Renovation Value HELOC" exactly; they carry `
 
 **D96. "Send your plans or bid" link removed from the advisor card (Pat, chat 2026-11-24).**
 The advisor card no longer has the "Have ADU Plans or a Contractor Bid? Send It to Pat for a Free Financing Feasibility Check" email link; its only action is "Check Your Numbers / Get Pre-Qualified", plus the phone number. The page has no email address anywhere now.
+
+**D97. Process pills removed; advisor and review boxes balanced (Pat, chat 2026-11-24).**
+The "Regular HELOC Process + Renovation Review + As-Finished Appraisal" pills under the two boxes in "What it is" are gone. The two boxes now stretch to the height of the left column, each sized to its content with the leftover space shared evenly, with larger text and round check marks (green for the advisor, orange for the Renovation Review). Both boxes show on phones as well.
