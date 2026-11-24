@@ -324,3 +324,6 @@ Like letstalkadu.com, the site now loads as https://www.financemyadu.io/ and the
 
 **D99. "Is it a fit?" cards restyled (Pat, chat 2026-11-24).**
 Who Qualifies, What It Pays For and Not the Right Tool For now share one card style: an icon tile and title over a divider, equal heights, the same padding. Bullets are round check (green) or cross (red) marks centered on the first line of text, so they line up with the words. Who Qualifies became label-and-value rows (Loan limits, Minimum project, Credit and DTI, Property types, Line size); "No investment-only properties or full teardowns" was dropped from it because the third card lists both. "Additions" reads "Room additions" here too. Phones still hide What It Pays For.
+
+**D100. Hero highlight, intro line, problem cards, steps card (Pat, chat 2026-11-25).**
+Headline: "After Renovation Value" in orange and "HELOC" in white, set as two lines ("After Renovation" / "Value HELOC") so it never leaves HELOC alone or overflows on phones. Intro starts "An After-Renovation Value home equity line is based on…" (the build adds "(ARV)" as everywhere else). Problem cards: "You already own the house / Avoid Refinancing" and "You're buying the house / Then Build ADU & Remodel". The "What You'll Need" card is removed from the 5-steps section; "What Your Contractor Sends" stays.
