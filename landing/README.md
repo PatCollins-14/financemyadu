@@ -1,6 +1,6 @@
 # FinanceMyADU landing page (After ARV HELOC)
 
-One static page. Actions: "Get Pre-qualified" (opens the LendingPad application), call or text (949) 787-2662. No form, no server. Not deployed; financemyadu.io is offline (docs/DECISIONS.md D83 to D90).
+One static page. Actions: "Get Pre-qualified" (opens the LendingPad application), call or text (626) 658-3929. No form, no server. Not deployed; financemyadu.io is offline (docs/DECISIONS.md D83 to D90).
 
 ## Files
 - `index.src.html`: the page source (edit this one)
